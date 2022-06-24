@@ -1,0 +1,28 @@
+private Form activeForm = null;//Permitirá saber si hay un formulario activo (para cerrarlo e instanciar el que necesitamos)
+
+        public void openChildForm(Form childForm, Panel pnlContenedor)//Abrir formularios hijos
+        {
+            if (activeForm != null)//Si existe un formulario abierto
+            {
+                activeForm.Close();//Lo cerramos
+                activeForm = childForm;//Almacenamos el formulario a isntanciar
+                childForm.TopLevel = false;//Indica que el formulario hijo no es de nivel superior, es decir que se comportará como un conrol
+                childForm.FormBorderStyle = FormBorderStyle.None;//Quitamos el borde del formulario
+                childForm.Dock = DockStyle.Fill;//Rellenamos todo el panel contenedor
+                pnlContenedor.Controls.Add(childForm);//ALmacenamos el formulario hijo en el panel contenedor
+                pnlContenedor.Tag = childForm;//Asociamos el formulario con el panel contenedor
+                childForm.BringToFront();//Enviamos el panel al frente
+                childForm.Show();//Mostramos el panel
+            }
+            else
+            {
+                activeForm = childForm;//Almacenamos el formulario a isntanciar
+                childForm.TopLevel = false;//Indica que el formulario hijo no es de nivel superior, es decir que se comportará como un conrol
+                childForm.FormBorderStyle = FormBorderStyle.None;//Quitamos el borde del formulario
+                childForm.Dock = DockStyle.Fill;//Rellenamos todo el panel contenedor
+                pnlContenedor.Controls.Add(childForm);//ALmacenamos el formulario hijo en el panel contenedor
+                pnlContenedor.Tag = childForm;//Asociamos el formulario con el panel contenedor
+                childForm.BringToFront();//Enviamos el panel al frente
+                childForm.Show();//Mostramos el panel
+            }
+        }
