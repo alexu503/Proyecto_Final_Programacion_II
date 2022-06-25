@@ -172,17 +172,14 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                     //Si el número de teléfono ingresado tiene el formato especificado
                     if (Regex.IsMatch(txtTelefono.Text, expresion)){
                         //lblMensaje4.Text = "Número válido";
-                        if (Regex.Replace(txtTelefono.Text, expresion, string.Empty).Length == 0)
-                        {
+                        if (Regex.Replace(txtTelefono.Text, expresion, string.Empty).Length == 0){
                             lblMensaje4.Text = "";
                         }
-                        else
-                        {
+                        else{
                             lblMensaje4.Text = "";
                         }
                     }
-                    else
-                    {
+                    else{
                         lblMensaje4.ForeColor = Color.Red;
                         lblMensaje4.Text = "Número Inválido";
                         return;

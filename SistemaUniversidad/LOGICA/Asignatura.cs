@@ -6,22 +6,20 @@ using System.Threading.Tasks;
 
 namespace SistemaUniversidad.LOGICA
 {
-    public class Asignatura//Clase base (Clase Padre)
-    {
-        private string nombre;
-        private int horasClases;
-        private float parcial1;
-        private float parcial2;
-        private float parcial3;
-        private float parcial4;
+    public class Asignatura{
 
-        public void setNombre(string nombre)
-        {
-            this.nombre = nombre;
-        }
-        //public void setHorasClase()
-        //{
+        public string NombreMateria { get; set; }
+        public string HorasClase { get; set; }
+        public string Carrera { get; set; }
+        public float PrimerParcial { get; set; }
+        public float PrimerLaboratorio { get; set; }
+        public float SegundoParcial { get; set; }
+        public float SegundoLaboratorio { get; set; }
+        public float TercerParcial { get; set; }
+        public float TercerLaboratorio { get; set; }
+        public float CuartoParcial { get; set; }
+        public float CuartoLaboratorio { get; set; }
+        public float PromedioFinal { get; set; }
 
-        //}
     }
 }

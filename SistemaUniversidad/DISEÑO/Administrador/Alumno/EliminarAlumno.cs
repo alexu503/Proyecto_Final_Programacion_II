@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using SistemaUniversidad.LOGICA;
+using SistemaUniversidad.LOGICA.DATABASE;
 
 namespace SistemaUniversidad.DISEÑO.Administrador
 {
@@ -63,149 +65,22 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         #endregion
 
         #region Actualizar
-        private void btnActualizar_Click(object sender, EventArgs e)
-        {
-            if (cmbCarreras.Text != "")
-            {
-                if (cmbCarreras.Text == "Ingeniería de Sistemas Informáticos")//Carrera 1
-                {
-                    if (cboxFiltros.Checked != true)//Sino se está utilixando filtros
-                    {
-                        ActualizarDataSistemas();
-                    }
-                    else
-                    {
-                        if (!VerificarCampoVacio())
-                        {
-                            //Filtrar 1
-                            if (cmbFiltro.Text == "Carnet")//Filtro 1
-                            {
-                                Buscar(txtDato.Text, 1, 1);
-                            }
-                            else if (cmbFiltro.Text == "Nombres")//Filtro 2
-                            {
-                                Buscar(txtDato.Text, 1, 2);
-                            }
-                            else if (cmbFiltro.Text == "Primer apellido")//Filtro 3
-                            {
-                                Buscar(txtDato.Text, 1, 3);
-                            }
-                            else if (cmbFiltro.Text == "Segundo apellido")//Filtro 4
-                            {
-                                Buscar(txtDato.Text, 1, 4);
-                            }
-                            else
-                            {
-                                MessageBox.Show("POR FAVOR, SELECCIONE EL DATO A FILTRAR.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            }
-                        }
-                    }
-                }
-                else if (cmbCarreras.Text == "Ingeniería Agronómica")//Carrera 2
-                {
-                    if (cboxFiltros.Checked != true)//Sino se está utilixando filtros
-                    {
-                        ActualizarDataAgronomia();
-                    }
-                    else
-                    {
-                        if (!VerificarCampoVacio())
-                        {
-                            //Filtrar 2
-                            if (cmbFiltro.Text == "Carnet")//Filtro 1
-                            {
-                                Buscar(txtDato.Text, 2, 1);
-                            }
-                            else if (cmbFiltro.Text == "Nombres")//Filtro 2
-                            {
-                                Buscar(txtDato.Text, 2, 2);
-                            }
-                            else if (cmbFiltro.Text == "Primer apellido")//Filtro 3
-                            {
-                                Buscar(txtDato.Text, 2, 3);
-                            }
-                            else if (cmbFiltro.Text == "Segundo apellido")//Filtro 4
-                            {
-                                Buscar(txtDato.Text, 2, 4);
-                            }
-                            else
-                            {
-                                MessageBox.Show("POR FAVOR, SELECCIONE EL DATO A FILTRAR.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            }
-                        }
-                    }
-                }
-                else if (cmbCarreras.Text == "Ingeniería Eléctrica")//Carrera 3
-                {
-                    if (cboxFiltros.Checked != true)//Sino se está utilixando filtros
-                    {
-                        ActualizarDataElectrica();
-                    }
-                    else
-                    {
-                        if (!VerificarCampoVacio())
-                        {
-                            //Filtrar 3
-                            if (cmbFiltro.Text == "Carnet")//Filtro 1
-                            {
-                                Buscar(txtDato.Text, 3, 1);
-                            }
-                            else if (cmbFiltro.Text == "Nombres")//Filtro 2
-                            {
-                                Buscar(txtDato.Text, 3, 2);
-                            }
-                            else if (cmbFiltro.Text == "Primer apellido")//Filtro 3
-                            {
-                                Buscar(txtDato.Text, 3, 3);
-                            }
-                            else if (cmbFiltro.Text == "Segundo apellido")//Filtro 4
-                            {
-                                Buscar(txtDato.Text, 3, 4);
-                            }
-                            else
-                            {
-                                MessageBox.Show("POR FAVOR, SELECCIONE EL DATO A FILTRAR.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            }
-                        }
-                    }
-                }
-                else if (cmbCarreras.Text == "Ingeniería Industrial")//Carrera 4
-                {
-                    if (cboxFiltros.Checked != true)//Sino se está utilixando filtros
-                    {
-                        ActualizarDataIndustrial();
-                    }
-                    else
-                    {
-                        if (!VerificarCampoVacio())
-                        {
-                            //Filtrar 4
-                            if (cmbFiltro.Text == "Carnet")//Filtro 1
-                            {
-                                Buscar(txtDato.Text, 4, 1);
-                            }
-                            else if (cmbFiltro.Text == "Nombres")//Filtro 2
-                            {
-                                Buscar(txtDato.Text, 4, 2);
-                            }
-                            else if (cmbFiltro.Text == "Primer apellido")//Filtro 3
-                            {
-                                Buscar(txtDato.Text, 4, 3);
-                            }
-                            else if (cmbFiltro.Text == "Segundo apellido")//Filtro 4
-                            {
-                                Buscar(txtDato.Text, 4, 4);
-                            }
-                            else
-                            {
-                                MessageBox.Show("POR FAVOR, SELECCIONE EL DATO A FILTRAR.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                            }
-                        }
-                    }
-                }
+        private void btnActualizar_Click(object sender, EventArgs e){
+
+            if (cmbCarreras.Text != ""){
+                MySqlConnection connection = GenerateConnection.Connection();
+                MySqlCommand command = new MySqlCommand();
+                command.Connection =  connection;
+                command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = @Value";
+                command.Parameters.Add(new MySqlParameter("@Value", cmbCarreras.Text));
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+                dataAdapter.SelectCommand = command;
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                dgvAlumnos.DataSource = dataTable;
+                connection.Close();
             }
-            else
-            {
+            else{
                 MessageBox.Show("POR FAVOR, SELECCIONE UNA CARRERA.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }

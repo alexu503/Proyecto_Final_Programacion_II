@@ -169,6 +169,9 @@
     <EmbeddedResource Include="DISEÑO\Menu\MenuAdmin.resx">
       <DependentUpon>MenuAdmin.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Menu\MenuDocente.resx">
+      <DependentUpon>MenuDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Sesiones\Bienvenido.resx">
       <DependentUpon>Bienvenido.cs</DependentUpon>
     </EmbeddedResource>

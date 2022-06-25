@@ -38,9 +38,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         //Save to database
         void SaveToDatabase() {
 
-            string sqlQuery = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, Carnet, Clave, Matricula, " +
+            string sqlQuery = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, NombreCarrera, Carnet, Clave, Matricula, " +
                 "FechaDeNacimiento, DocumentoDeIdentidad, Sexo, Direccion, Telefono, Celular, Correo, FechaInscripcion, Nacionalidad, EstadoCivil)" +
-                "VALUES(@Nombres, @PrimerApellido, @SegundoApellido, @Carnet, @Clave, @Matricula, @FechaDeNacimiento, @DUI, @Sexo," +
+                "VALUES(@Nombres, @PrimerApellido, @SegundoApellido, @NombreCarrera, @Carnet, @Clave, @Matricula, @FechaDeNacimiento, @DUI, @Sexo," +
                 "@Direccion, @Telefono, @Celular, @Correo, @FechaDeInscripcion, @Nacionalidad, @EstadoCivil)";
 
             
@@ -52,6 +52,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 query.Parameters.Add(new MySqlParameter("@Nombres", x.getNombres().ToString()));
                 query.Parameters.Add(new MySqlParameter("@PrimerApellido", x.getPrimerApellido().ToString()));
                 query.Parameters.Add(new MySqlParameter("@SegundoApellido", x.getSegundoApellido().ToString()));
+                query.Parameters.Add(new MySqlParameter("@NombreCarrera", x.getCarrera().ToString()));
                 query.Parameters.Add(new MySqlParameter("@Carnet", x.getCarnet().ToString()));
                 query.Parameters.Add(new MySqlParameter("@Clave", x.getPasswrd().ToString()));
                 query.Parameters.Add(new MySqlParameter("@Matricula", x.getMatricula().ToString()));
@@ -67,6 +68,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 query.Parameters.Add(new MySqlParameter("@EstadoCivil", x.getEstadoCivil().ToString()));
             }
             query.ExecuteNonQuery();
+            connection.Close();
         }
 
         /// <summary>
