@@ -8,7 +8,7 @@ using MySql.Data.MySqlClient;
 namespace SistemaUniversidad.LOGICA.DATABASE {
     internal class GenerateConnection {
 
-        public MySqlConnection Connection() {
+        public static MySqlConnection Connection() {
 
             string connectionString = "SERVER=sql5.freemysqlhosting.net;PORT=3306;DATABASE=sql5501274; UID=sql5501274;PASSWORD=vrecNc1k4u;";
 

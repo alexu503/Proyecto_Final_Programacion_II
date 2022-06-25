@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using SistemaUniversidad.LOGICA;
+using SistemaUniversidad.LOGICA.DATABASE;
+using MySql.Data.MySqlClient;
 
 namespace SistemaUniversidad.DISEÑO.Administrador
 {
@@ -14,6 +16,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private List<Alumno> listaRagronomia = new List<Alumno>();
         private List<Alumno> listaRelectrica = new List<Alumno>();
         private List<Alumno> listaRindustrial = new List<Alumno>();
+        private List<Alumno> listaAlumnoGenerico = new List<Alumno>();
+
         public void setAlumSistemas(List<Alumno> listR)
         {
             this.listaRsistemas = listR;
@@ -30,6 +34,41 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         {
             this.listaRindustrial = listR;
         }
+
+        //Save to database
+        void SaveToDatabase() {
+
+            string sqlQuery = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, Carnet, Clave, Matricula, " +
+                "FechaDeNacimiento, DocumentoDeIdentidad, Sexo, Direccion, Telefono, Celular, Correo, FechaInscripcion, Nacionalidad, EstadoCivil)" +
+                "VALUES(@Nombres, @PrimerApellido, @SegundoApellido, @Carnet, @Clave, @Matricula, @FechaDeNacimiento, @DUI, @Sexo," +
+                "@Direccion, @Telefono, @Celular, @Correo, @FechaDeInscripcion, @Nacionalidad, @EstadoCivil)";
+
+            
+            MySqlConnection connection = GenerateConnection.Connection();
+            MySqlCommand query = new MySqlCommand();
+            query.Connection = connection;
+            query.CommandText = sqlQuery;
+            foreach (Alumno x in listaAlumnoGenerico) {
+                query.Parameters.Add(new MySqlParameter("@Nombres", x.getNombres().ToString()));
+                query.Parameters.Add(new MySqlParameter("@PrimerApellido", x.getPrimerApellido().ToString()));
+                query.Parameters.Add(new MySqlParameter("@SegundoApellido", x.getSegundoApellido().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Carnet", x.getCarnet().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Clave", x.getPasswrd().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Matricula", x.getMatricula().ToString()));
+                query.Parameters.Add(new MySqlParameter("@FechaDeNacimiento", x.getFechaNacimiento().ToString()));
+                query.Parameters.Add(new MySqlParameter("@DUI", x.getDocumentoIdentidad().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Sexo", x.getSexo().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Direccion", x.getDireccion().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Telefono", x.getTelefono().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Celular", x.getCelular().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Correo", x.getCorreo().ToString()));
+                query.Parameters.Add(new MySqlParameter("@FechaDeInscripcion", x.getFechaInscripcion().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Nacionalidad", x.getNacionalidad().ToString()));
+                query.Parameters.Add(new MySqlParameter("@EstadoCivil", x.getEstadoCivil().ToString()));
+            }
+            query.ExecuteNonQuery();
+        }
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>

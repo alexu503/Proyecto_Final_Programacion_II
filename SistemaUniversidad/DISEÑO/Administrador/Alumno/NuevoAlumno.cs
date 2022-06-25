@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaUniversidad.LOGICA;
 using SistemaUniversidad.DISEÑO;
+using SistemaUniversidad.LOGICA.DATABASE;
 using System.Text.RegularExpressions;
 using MySql.Data.MySqlClient;
 
@@ -17,8 +18,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
     public partial class NuevoAlumno : Form
     {
         public Form nuevoAlumno;
-        public NuevoAlumno()
-        {
+        public NuevoAlumno(){
             InitializeComponent();
             cmbCarreras.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
@@ -265,6 +265,15 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 nuevoAlumno.setFechaInscripcion(txtFechaInscripcion.Text);
                 nuevoAlumno.setNacionalidad(cmbNacionalidad.Text);
                 nuevoAlumno.setEtadoCivil(cmbEstadoCivil.Text);
+                listaAlumnoGenerico.Add(nuevoAlumno);
+                try {
+                    this.SaveToDatabase();
+                    MessageBox.Show("Datos guardados satisfactoriamente");
+                }catch(Exception error) {
+                    MessageBox.Show("Error: " + error.Message);
+                }
+
+                /*
                 if (cmbCarreras.Text == "Ingeniería de Sistemas Informáticos")
                 {
                     num = listaRsistemas.Count;
@@ -289,6 +298,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                     nuevoAlumno.setMatricula(1000+num);
                     listaRindustrial.Add(nuevoAlumno);
                 }
+                */
+
                 #endregion
 
             }

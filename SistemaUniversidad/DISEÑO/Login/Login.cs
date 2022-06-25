@@ -7,16 +7,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using SistemaUniversidad.LOGICA;
 using SistemaUniversidad.DISEÑO.Menu;
+using SistemaUniversidad.LOGICA.DATABASE;
 
 namespace SistemaUniversidad.DISEÑO.Login
 {
     public partial class Login : Form
     {
         public Form logIn;
-        public Login()
-        {
+        public Login(){
             InitializeComponent();
         }
 
@@ -50,61 +51,49 @@ namespace SistemaUniversidad.DISEÑO.Login
         }
         #endregion
 
-        #region Acceder
-        private void btnAcceder_Click(object sender, EventArgs e)
-        {
-            if (txtCorreo.Text != "" && txtClave.Text != "")
-            {
-                //Si todos los campos del formulario están llenos validamos que los datos sean correctos
+        #region Acceder y cargar datos
+        private void btnAcceder_Click(object sender, EventArgs e){
+            if (txtCorreo.Text != "" && txtClave.Text != ""){
 
-                /*
-                 * ---->    DATOS PARA INGRESO (PRUEBAS)     <----
-                 * 
-                 * -> USERS TYPE          EMAIL              PASSWORD
-                 * -> Administrador       admin               123456
-                 * -> Docente             docente             654321
-                 * -> Estudiante          estudiante          987654
-                */
+                MySqlConnection connection = GenerateConnection.Connection();
+                MySqlCommand query = new MySqlCommand();
+                query.Connection = connection;
+                query.CommandText = "SELECT Usuario, Clave FROM Logins WHERE Usuario = @User AND Clave = @Pass;";
+                query.Parameters.Add(new MySqlParameter("@User", txtCorreo.Text));
+                query.Parameters.Add(new MySqlParameter("@Pass", txtClave.Text));
+                MySqlDataReader dr = query.ExecuteReader();
 
-                //Valida si los datos ingresados para entrar como "Administrador" son correctos
-                if (txtCorreo.Text == "admin" && txtClave.Text == "123456")
-                {
-                    /*
-                     * ----> ABRE EL MENU DE ADMINISTRADOS
-                    */
-                    MenuAdmin FormAdmin = new MenuAdmin();
-                    this.Hide();
-                    FormAdmin.Show();
-                    FormAdmin.menuAdmin = this;
-                    //Acá irá el código para pasar las listas
+                if (dr.HasRows) {
+                    dr.Read();
+
+                    if(dr.GetString(0).ToString() == txtCorreo.Text && dr.GetString(1).ToString() == txtClave.Text) {
+                        switch (txtCorreo.Text) {
+                            case "root":
+                                MenuAdmin FormAdmin = new MenuAdmin();
+                                this.Hide();
+                                FormAdmin.Show();
+                                FormAdmin.menuAdmin = this;
+                                break;
+                            case "docente":
+                                MenuDocente FormDocente = new MenuDocente();
+                                FormDocente.Show();
+                                this.Close();
+                                break;
+                            case "estudiante":
+                                MenuEstudiante FormEstudiante = new MenuEstudiante();
+                                FormEstudiante.Show();
+                                this.Close();
+                                break;
+                            default:
+                                MessageBox.Show("Error: datos incorrectos");
+                                break;
+                        }
+                    } else {
+                        MessageBox.Show("DATOS INCORRECTOS", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                //Valida si los datos ingresados para entrar como "Docente" son correctos
-                else if (txtCorreo.Text == "docente" && txtClave.Text == "654321")
-                {
-                    /*
-                     * ----> ABRE EL MENU DE DOCENTE
-                    */
-                    MenuDocente FormDocente = new MenuDocente();
-                    FormDocente.Show();
-                    this.Close();
-                }
-                //Valida si los datos ingresados para entrar como "Estudiante" son correctos
-                else if (txtCorreo.Text == "estudiante" && txtClave.Text == "987654")
-                {
-                    /*
-                     * ----> ABRE EL MENU DE ALUMNO
-                    */
-                    MenuEstudiante FormEstudiante = new MenuEstudiante();
-                    FormEstudiante.Show();
-                    this.Close();
-                }
-                else
-                {
-                    MessageBox.Show("USUARIO NO ENCONTRADO, ASEGURESE DE HABER INSERTADO LOS DATOS CORRECTAMENTE", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
-            else
-            {
+                connection.Close();
+            } else {
                 MessageBox.Show("ASEGURESE DE HABER LLENADO POR COMPLETO EL FORMULARIO.", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
