@@ -12,27 +12,24 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         //Listas de alumnos por cada carrera
-        private List<Alumno> listaRsistemas = new List<Alumno>();
-        private List<Alumno> listaRagronomia = new List<Alumno>();
-        private List<Alumno> listaRelectrica = new List<Alumno>();
-        private List<Alumno> listaRindustrial = new List<Alumno>();
         private List<Alumno> listaAlumnoGenerico = new List<Alumno>();
 
-        public void setAlumSistemas(List<Alumno> listR)
-        {
-            this.listaRsistemas = listR;
-        }
-        public void setAlumAgronomia(List<Alumno> listR)
-        {
-            this.listaRagronomia = listR;
-        }
-        public void setAlumElectrica(List<Alumno> listR)
-        {
-            this.listaRelectrica = listR;
-        }
-        public void setAlumIndustrial(List<Alumno> listR)
-        {
-            this.listaRindustrial = listR;
+        void SaveToLogins() {
+
+            string sqlQuery = "INSERT INTO Logins(Usuario, Clave, Rol) VALUES(@Carnet, @Clave, @Rol)";
+
+            MySqlConnection connection = GenerateConnection.Connection();
+            MySqlCommand query = new MySqlCommand();
+            query.Connection = connection;
+            query.CommandText = sqlQuery;
+
+            foreach (Alumno x in listaAlumnoGenerico) {
+                query.Parameters.Add(new MySqlParameter("@Carnet", x.getCarnet().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Clave", x.getPasswrd().ToString()));
+                query.Parameters.Add(new MySqlParameter("@Rol", "Estudiante"));
+            }
+            query.ExecuteNonQuery();
+            connection.Close();
         }
 
         //Save to database
@@ -68,6 +65,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 query.Parameters.Add(new MySqlParameter("@EstadoCivil", x.getEstadoCivil().ToString()));
             }
             query.ExecuteNonQuery();
+            query.Parameters.Clear();
             connection.Close();
         }
 
@@ -165,6 +163,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.txtCarnet.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarnet.Location = new System.Drawing.Point(128, 34);
+            this.txtCarnet.MaxLength = 7;
             this.txtCarnet.Name = "txtCarnet";
             this.txtCarnet.Size = new System.Drawing.Size(100, 27);
             this.txtCarnet.TabIndex = 1;
@@ -300,6 +299,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.txtDocumentoIdentidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDocumentoIdentidad.Location = new System.Drawing.Point(227, 298);
+            this.txtDocumentoIdentidad.MaxLength = 10;
             this.txtDocumentoIdentidad.Name = "txtDocumentoIdentidad";
             this.txtDocumentoIdentidad.Size = new System.Drawing.Size(100, 27);
             this.txtDocumentoIdentidad.TabIndex = 13;
@@ -362,6 +362,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTelefono.ForeColor = System.Drawing.Color.DimGray;
             this.txtTelefono.Location = new System.Drawing.Point(409, 365);
+            this.txtTelefono.MaxLength = 9;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(92, 27);
             this.txtTelefono.TabIndex = 17;
@@ -386,6 +387,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.txtCelular.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCelular.ForeColor = System.Drawing.Color.DimGray;
             this.txtCelular.Location = new System.Drawing.Point(128, 428);
+            this.txtCelular.MaxLength = 9;
             this.txtCelular.Name = "txtCelular";
             this.txtCelular.Size = new System.Drawing.Size(97, 27);
             this.txtCelular.TabIndex = 18;

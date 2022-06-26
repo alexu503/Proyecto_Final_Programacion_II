@@ -226,11 +226,11 @@ namespace SistemaUniversidad.DISEÑO.Menu
         {
             Administrador.NuevoAlumno NuevoAlumno = new Administrador.NuevoAlumno();
             this.Hide();
-            NuevoAlumno.nuevoAlumno = this;
-            NuevoAlumno.setAlumSistemas(listaRsistemas);
-            NuevoAlumno.setAlumAgronomia(listaRagronomia);
-            NuevoAlumno.setAlumElectrica(listaRelectrica);
-            NuevoAlumno.setAlumIndustrial(listaRindustrial);
+            //NuevoAlumno.nuevoAlumno = this;
+            //NuevoAlumno.setAlumSistemas(listaRsistemas);
+            //NuevoAlumno.setAlumAgronomia(listaRagronomia);
+            //NuevoAlumno.setAlumElectrica(listaRelectrica);
+            //NuevoAlumno.setAlumIndustrial(listaRindustrial);
             NuevoAlumno.Show();
         }
         //----> Eliminar alumno

@@ -265,38 +265,11 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 listaAlumnoGenerico.Add(nuevoAlumno);
                 try {
                     this.SaveToDatabase();
+                    this.SaveToLogins();
                     MessageBox.Show("Datos guardados satisfactoriamente");
                 }catch(Exception error) {
                     MessageBox.Show("Error: " + error.Message);
                 }
-
-                /*
-                if (cmbCarreras.Text == "Ingeniería de Sistemas Informáticos")
-                {
-                    num = listaRsistemas.Count;
-                    nuevoAlumno.setMatricula(1000+num);
-                    listaRsistemas.Add(nuevoAlumno);
-                }
-                else if (cmbCarreras.Text == "Ingeniería Agronómica")
-                {
-                    num = listaRagronomia.Count;
-                    nuevoAlumno.setMatricula(1000+num);
-                    listaRagronomia.Add(nuevoAlumno);
-                }
-                else if (cmbCarreras.Text == "Ingeniería Eléctrica")
-                {
-                    num = listaRelectrica.Count;
-                    nuevoAlumno.setMatricula(1000+num);
-                    listaRelectrica.Add(nuevoAlumno);
-                }
-                else if (cmbCarreras.Text == "Ingeniería Industrial")
-                {
-                    num = listaRindustrial.Count;
-                    nuevoAlumno.setMatricula(1000+num);
-                    listaRindustrial.Add(nuevoAlumno);
-                }
-                */
-
                 #endregion
 
             }
@@ -331,22 +304,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private void btnSalirAggAlumno_Click(object sender, EventArgs e)
         {
             Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();
-            MenuAdmin.menuAdmin = this;
-            MenuAdmin.setAlumSistemas(listaRsistemas);
-            MenuAdmin.setAlumAgronomia(listaRagronomia);
-            MenuAdmin.setAlumElectrica(listaRelectrica);
-            MenuAdmin.setAlumIndustrial(listaRindustrial);
             this.Close();
             MenuAdmin.Show();
         }
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();
-            MenuAdmin.menuAdmin = this;
-            MenuAdmin.setAlumSistemas(listaRsistemas);
-            MenuAdmin.setAlumAgronomia(listaRagronomia);
-            MenuAdmin.setAlumElectrica(listaRelectrica);
-            MenuAdmin.setAlumIndustrial(listaRindustrial);
             this.Close();
             MenuAdmin.Show();
         }

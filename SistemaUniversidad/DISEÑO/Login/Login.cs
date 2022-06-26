@@ -55,44 +55,61 @@ namespace SistemaUniversidad.DISEÑO.Login
         private void btnAcceder_Click(object sender, EventArgs e){
             if (txtCorreo.Text != "" && txtClave.Text != ""){
 
-                MySqlConnection connection = GenerateConnection.Connection();
-                MySqlCommand query = new MySqlCommand();
-                query.Connection = connection;
-                query.CommandText = "SELECT Usuario, Clave FROM Logins WHERE Usuario = @User AND Clave = @Pass;";
-                query.Parameters.Add(new MySqlParameter("@User", txtCorreo.Text));
-                query.Parameters.Add(new MySqlParameter("@Pass", txtClave.Text));
-                MySqlDataReader dr = query.ExecuteReader();
+                try {
+                    MySqlConnection connection = GenerateConnection.Connection();
+                    MySqlCommand query = new MySqlCommand();
+                    query.Connection = connection;
+                    query.CommandText = "SELECT Usuario, Clave, Rol FROM Logins WHERE Usuario = @User AND Clave = @Pass;";
+                    query.Parameters.Add(new MySqlParameter("@User", txtCorreo.Text));
+                    query.Parameters.Add(new MySqlParameter("@Pass", txtClave.Text));
+                    MySqlDataReader dr = query.ExecuteReader();
 
-                if (dr.HasRows) {
-                    dr.Read();
+                    while (dr.Read()) {
 
-                    if(dr.GetString(0).ToString() == txtCorreo.Text && dr.GetString(1).ToString() == txtClave.Text) {
-                        switch (txtCorreo.Text) {
-                            case "root":
-                                MenuAdmin FormAdmin = new MenuAdmin();
-                                this.Hide();
-                                FormAdmin.Show();
-                                FormAdmin.menuAdmin = this;
-                                break;
-                            case "docente":
-                                MenuDocente FormDocente = new MenuDocente();
-                                FormDocente.Show();
-                                this.Close();
-                                break;
-                            case "estudiante":
-                                MenuEstudiante FormEstudiante = new MenuEstudiante();
-                                FormEstudiante.Show();
-                                this.Close();
-                                break;
-                            default:
-                                MessageBox.Show("Error: datos incorrectos");
-                                break;
+                        string username = dr["Usuario"].ToString();
+                        string password = dr["Clave"].ToString();
+                        string rol = dr["Rol"].ToString();
+
+                        if (username == txtCorreo.Text && password == txtClave.Text) {
+                            switch (rol) {
+                                case "Administrador":
+                                    if (username == "root" && password == txtClave.Text) {
+                                        MenuAdmin FormAdmin = new MenuAdmin();
+                                        this.Hide();
+                                        FormAdmin.Show();
+                                        FormAdmin.menuAdmin = this;
+                                    } else {
+                                        MessageBox.Show("DATOS INCORRECTOS", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    break;
+                                case "Docente":
+                                    if (username == txtCorreo.Text && password == txtClave.Text) {
+                                        MenuDocente FormDocente = new MenuDocente();
+                                        FormDocente.Show();
+                                        this.Close();
+                                    } else {
+                                        MessageBox.Show("DATOS INCORRECTOS", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    break;
+                                case "Estudiante":
+                                    if (username == txtCorreo.Text && password == txtClave.Text) {
+                                        MenuEstudiante FormEstudiante = new MenuEstudiante();
+                                        FormEstudiante.Show();
+                                        this.Close();
+                                    } else {
+                                        MessageBox.Show("DATOS INCORRECTOS", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    break;
+                                default:
+                                    MessageBox.Show("Error: datos incorrectos");
+                                    break;
+                            }
                         }
-                    } else {
-                        MessageBox.Show("DATOS INCORRECTOS", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
+                    connection.Close();
+                } catch (Exception ex) {
+                    MessageBox.Show("Error: " + ex.Message);
                 }
-                connection.Close();
             } else {
                 MessageBox.Show("ASEGURESE DE HABER LLENADO POR COMPLETO EL FORMULARIO.", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

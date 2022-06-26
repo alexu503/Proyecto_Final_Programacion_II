@@ -187,7 +187,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.lblDatos = new System.Windows.Forms.Label();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
-            this.cboxFiltros = new System.Windows.Forms.CheckBox();
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
             this.groupBoxBotones = new System.Windows.Forms.GroupBox();
             this.btnRegresar = new System.Windows.Forms.Button();
@@ -196,6 +195,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
             this.dragControl2 = new SistemaUniversidad.LOGICA.DragControl();
+            this.btnFiltrarDatos = new System.Windows.Forms.Button();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.groupBoxFiltro.SuspendLayout();
@@ -294,9 +294,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.groupBoxFiltro.Controls.Add(this.txtDato);
             this.groupBoxFiltro.Controls.Add(this.lblDatos);
+            this.groupBoxFiltro.Controls.Add(this.btnFiltrarDatos);
             this.groupBoxFiltro.Controls.Add(this.cmbFiltro);
             this.groupBoxFiltro.Controls.Add(this.lblFiltro);
-            this.groupBoxFiltro.Controls.Add(this.cboxFiltros);
             this.groupBoxFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxFiltro.Location = new System.Drawing.Point(245, 228);
             this.groupBoxFiltro.Name = "groupBoxFiltro";
@@ -307,7 +307,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             // txtDato
             // 
-            this.txtDato.Location = new System.Drawing.Point(172, 130);
+            this.txtDato.Location = new System.Drawing.Point(198, 81);
             this.txtDato.Name = "txtDato";
             this.txtDato.Size = new System.Drawing.Size(100, 26);
             this.txtDato.TabIndex = 4;
@@ -315,16 +315,17 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // lblDatos
             // 
             this.lblDatos.AutoSize = true;
-            this.lblDatos.Location = new System.Drawing.Point(6, 133);
+            this.lblDatos.Location = new System.Drawing.Point(32, 84);
             this.lblDatos.Name = "lblDatos";
             this.lblDatos.Size = new System.Drawing.Size(160, 20);
             this.lblDatos.TabIndex = 3;
             this.lblDatos.Text = "Introduzca los datos:";
+            this.lblDatos.Click += new System.EventHandler(this.lblDatos_Click);
             // 
             // cmbFiltro
             // 
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(149, 82);
+            this.cmbFiltro.Location = new System.Drawing.Point(134, 37);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(151, 28);
             this.cmbFiltro.TabIndex = 2;
@@ -332,21 +333,11 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(43, 85);
+            this.lblFiltro.Location = new System.Drawing.Point(28, 40);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(101, 20);
             this.lblFiltro.TabIndex = 1;
             this.lblFiltro.Text = "FILTRAR POR:";
-            // 
-            // cboxFiltros
-            // 
-            this.cboxFiltros.AutoSize = true;
-            this.cboxFiltros.Location = new System.Drawing.Point(109, 37);
-            this.cboxFiltros.Name = "cboxFiltros";
-            this.cboxFiltros.Size = new System.Drawing.Size(149, 24);
-            this.cboxFiltros.TabIndex = 0;
-            this.cboxFiltros.Text = "APLICAR FILTROS";
-            this.cboxFiltros.UseVisualStyleBackColor = true;
             // 
             // dgvAlumnos
             // 
@@ -368,7 +359,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.dgvAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvAlumnos.Size = new System.Drawing.Size(968, 242);
             this.dgvAlumnos.TabIndex = 7;
-            this.dgvAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellClick);
             // 
             // groupBoxBotones
             // 
@@ -432,6 +422,17 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.dragControl2.SelectControl = this.lblTitulo;
             // 
+            // btnFiltrarDatos
+            // 
+            this.btnFiltrarDatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltrarDatos.Location = new System.Drawing.Point(86, 123);
+            this.btnFiltrarDatos.Name = "btnFiltrarDatos";
+            this.btnFiltrarDatos.Size = new System.Drawing.Size(151, 42);
+            this.btnFiltrarDatos.TabIndex = 0;
+            this.btnFiltrarDatos.Text = "CARGAR DATOS";
+            this.btnFiltrarDatos.UseVisualStyleBackColor = true;
+            this.btnFiltrarDatos.Click += new System.EventHandler(this.btnFiltrarDatos_Click);
+            // 
             // EliminarAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -474,7 +475,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.ComboBox cmbCarreras;
         private System.Windows.Forms.GroupBox groupBoxFiltro;
-        private System.Windows.Forms.CheckBox cboxFiltros;
         private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.Label lblFiltro;
         private System.Windows.Forms.Label lblDatos;
@@ -488,5 +488,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private Button btnCerrar;
         private DragControl dragControl1;
         private DragControl dragControl2;
+        private Button btnFiltrarDatos;
     }
 }
