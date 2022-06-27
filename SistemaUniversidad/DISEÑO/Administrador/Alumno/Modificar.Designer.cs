@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 using SistemaUniversidad.LOGICA;
+using SistemaUniversidad.LOGICA.DATABASE;
 
 namespace SistemaUniversidad.DISEÑO.Administrador
 {
@@ -11,43 +13,68 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private String[] arrayListaAlumno = new String[17];
+        private List<Alumno> listaModificable = new List<Alumno>();
+        private List<Alumno> listaAlumnoGenerico = new List<Alumno>();
         private int indice;
         private int carrera;
         private string pass;
-
-        public void setDetalles(String[] listaAlumnos) {
-            this.arrayListaAlumno = listaAlumnos;
-        }
+        string previousCarnet;
 
         private void mostrar(){
-            txtNombres.Text = arrayListaAlumno[0];
-            txrtPrimerApellido.Text = arrayListaAlumno[1];
-            txtSegundoApellido.Text = arrayListaAlumno[2];
-            cmbCarreras.Text = arrayListaAlumno[3];
-            txtCarnet.Text = arrayListaAlumno[4];
-            dtPCalendarioNacimiento.Text = arrayListaAlumno[7];
-            txtDocumentoIdentidad.Text = arrayListaAlumno[8];
-            txtDireccion.Text = arrayListaAlumno[10];
-            txtTelefono.Text = arrayListaAlumno[11];
-            txtCelular.Text = arrayListaAlumno[12];
-            txtCorreo.Text = arrayListaAlumno[13];
-            cmbNacionalidad.Text = arrayListaAlumno[15];
-            cmbEstadoCivil.Text = arrayListaAlumno[16];
 
-            if (arrayListaAlumno[9] == "Masculino") {
-                rbtnMasculino.Checked = true;
-                rbtnFemenino.Checked = false;
-            } else {
-                rbtnMasculino.Checked = false;
-                rbtnFemenino.Checked = true;
+            foreach(Alumno x in listaModificable) {
+                txtNombres.Text = x.getNombres();
+                txrtPrimerApellido.Text = x.getPrimerApellido();
+                txtSegundoApellido.Text = x.getSegundoApellido();
+                cmbCarreras.Text = x.getCarrera(); ;
+                txtCarnet.Text = x.getCarnet();
+                txtDocumentoIdentidad.Text = x.getDocumentoIdentidad();
+                txtDireccion.Text = x.getDireccion();
+                txtTelefono.Text = x.getTelefono();
+                txtCelular.Text = x.getCelular();
+                txtCorreo.Text = x.getCorreo();
+                txtFechaInscripcion.Text = x.getFechaInscripcion();
+                cmbNacionalidad.Text = x.getNacionalidad();
+                cmbEstadoCivil.Text = x.getEstadoCivil();
+                previousCarnet = x.getCarnet(); ;
+
+                if (x.getSexo() == "Masculino") {
+                    rbtnMasculino.Checked = true;
+                    rbtnFemenino.Checked = false;
+                } else {
+                    rbtnMasculino.Checked = false;
+                    rbtnFemenino.Checked = true;
+                }
             }
         }
-        public void setResive(int indice, int carrera)
-        {
+
+        public void setDetalles(List<Alumno> listaRecibida) {
+            this.listaModificable = listaRecibida;
+        }
+
+        public void setResive(int indice, int carrera){
             this.indice = indice;
             this.carrera = carrera;
         }
+
+        void SaveToDatabase() {
+
+            MySqlConnection connection = GenerateConnection.Connection();
+            MySqlCommand query = new MySqlCommand();
+            query.Connection = connection;
+            foreach (Alumno x in listaAlumnoGenerico) {
+
+                query.CommandText = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, NombreCarrera, Carnet, Clave, Matricula, " +
+                "FechaDeNacimiento, DocumentoDeIdentidad, Sexo, Direccion, Telefono, Celular, Correo, FechaInscripcion, Nacionalidad, EstadoCivil)" +
+                "VALUES('"+x.getNombres()+"', '"+x.getPrimerApellido()+"', '"+x.getSegundoApellido()+"', '"+x.getCarrera()+"', '"+x.getCarnet()+"', " +
+                "'"+x.getPasswrd()+"', '"+x.getMatricula().ToString()+"', '"+x.getFechaNacimiento()+"', '"+x.getDocumentoIdentidad()+"', '"+x.getSexo()+"'," +
+                "'"+x.getDireccion()+"', '"+x.getTelefono()+"', '"+x.getCelular()+"', '"+x.getCorreo()+"', '"+x.getFechaInscripcion()+"', " +
+                "'"+x.getNacionalidad()+"', '"+x.getEstadoCivil()+"') WHERE Carnet = '"+txtCarnet.Text+"'  ";
+            }
+            query.ExecuteNonQuery();
+            connection.Close();
+        }
+
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -233,6 +260,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.txtCarnet.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarnet.Location = new System.Drawing.Point(128, 34);
+            this.txtCarnet.MaxLength = 7;
             this.txtCarnet.Name = "txtCarnet";
             this.txtCarnet.Size = new System.Drawing.Size(100, 27);
             this.txtCarnet.TabIndex = 1;
@@ -435,6 +463,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // dtPCalendarioNacimiento
             // 
             this.dtPCalendarioNacimiento.CustomFormat = "dd-mm-yyyy";
+            this.dtPCalendarioNacimiento.Enabled = false;
             this.dtPCalendarioNacimiento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtPCalendarioNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtPCalendarioNacimiento.Location = new System.Drawing.Point(57, 296);

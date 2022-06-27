@@ -104,19 +104,26 @@ namespace SistemaUniversidad.DISEÑO.Administrador
 
                 if (carnetAlumno != "") {
                     try {
-                        if (MessageBox.Show("¿Seguro que desea proceder?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
-                            command.CommandText = "DELETE FROM Alumnos WHERE Carnet = '"+carnetAlumno+"'";
-                            command.CommandText = "DELETE FROM Logins WHERE Carnet = '"+carnetAlumno+"'";
-                            command.ExecuteNonQuery();
-                            MessageBox.Show("Datos eliminados satisfactoriamente");
-                            //Update table
-                            command.CommandText = "SELECT * FROM Alumnos";
-                            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
-                            dataAdapter.SelectCommand = command;
-                            DataTable table = new DataTable();
-                            dataAdapter.Fill(table);
-                            dgvAlumnos.DataSource = table;
-                            connection.Close();
+                        if(dgvAlumnos.Rows.Count > 0) {
+                            if (MessageBox.Show("¿Seguro que desea proceder?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                                command.CommandText = "DELETE FROM Alumnos WHERE Carnet = '"+carnetAlumno+"'";
+                                command.CommandText = "DELETE FROM Logins WHERE Carnet = '"+carnetAlumno+"'";
+                                command.ExecuteNonQuery();
+                                MessageBox.Show("Datos eliminados satisfactoriamente");
+                                //Update table
+                                command.CommandText = "SELECT * FROM Alumnos";
+                                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+                                dataAdapter.SelectCommand = command;
+                                DataTable table = new DataTable();
+                                dataAdapter.Fill(table);
+                                dgvAlumnos.DataSource = table;
+                                MessageBox.Show("Datos eliminados");
+                                connection.Close();
+                            } else {
+                                MessageBox.Show("Operación cancelada");
+                            }
+                        } else {
+                            MessageBox.Show("No hay datos para eliminar");
                         }
                     } catch (Exception ex) {
                         MessageBox.Show("Ha ocurrido un error: " + ex.Message);
@@ -146,7 +153,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         }
 
         private void btnFiltrarDatos_Click(object sender, EventArgs e) {
-            if (cmbFiltro.Text == "" || txtDato.Text == "") {
+            if (cmbCarreras.Text == "" && cmbFiltro.Text == "" || txtDato.Text == "") {
                 MessageBox.Show("POR FAVOR, SELECCIONE LOS VALORES A FILTRAR.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             } else {
                 MySqlConnection connection = GenerateConnection.Connection();

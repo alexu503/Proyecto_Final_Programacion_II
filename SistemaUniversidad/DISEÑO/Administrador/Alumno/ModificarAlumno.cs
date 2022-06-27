@@ -74,60 +74,25 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         #region Buscar alumno
         private void btnFiltrarDatos_Click(object sender, EventArgs e) {
 
-            MySqlConnection connect = GenerateConnection.Connection();
-            MySqlCommand command = new MySqlCommand();
-            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
-            DataTable table = new DataTable();
-            command.Connection = connect;
-
-            if (cmbCarreras.Text != "" && cmbFiltro.Text != "" && txtDato.Text != "") {
-                switch (cmbFiltro.Text) {
-                    case "Carnet":
-                        command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = '"+cmbCarreras.Text+"' AND Carnet = '"+txtDato.Text+"'";
-                        dataAdapter.SelectCommand = command;
-                        dataAdapter.Fill(table);
-                        if(table.Rows.Count == 0) {
-                            MessageBox.Show("ALUMNO NO ENCONTRADO.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        } else {
-                            dgvAlumnos.DataSource = table;
-                        }
-                        break;
-                    case "Nombre":
-                        command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = '"+cmbCarreras.Text+"' AND Nombres = '"+txtDato.Text+"'";
-                        dataAdapter.SelectCommand = command;
-                        dataAdapter.Fill(table);
-                        if (table.Rows.Count == 0) {
-                            MessageBox.Show("ALUMNO NO ENCONTRADO.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        } else {
-                            dgvAlumnos.DataSource = table;
-                        }
-                        break;
-                    case "Primer apellido":
-                        command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = '"+cmbCarreras.Text+"' AND PrimerApellido = '"+txtDato.Text+"'";
-                        dataAdapter.SelectCommand = command;
-                        dataAdapter.Fill(table);
-                        if (table.Rows.Count == 0) {
-                            MessageBox.Show("ALUMNO NO ENCONTRADO.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        } else {
-                            dgvAlumnos.DataSource = table;
-                        }
-                        break;
-                    case "Segundo apellido":
-                        command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = '"+cmbCarreras.Text+"' AND SegundoApellido = '"+txtDato.Text+"'";
-                        dataAdapter.SelectCommand = command;
-                        dataAdapter.Fill(table);
-                        if (table.Rows.Count == 0) {
-                            MessageBox.Show("ALUMNO NO ENCONTRADO.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        } else {
-                            dgvAlumnos.DataSource = table;
-                        }
-                        break;
-                    default:
-                        MessageBox.Show("DATO A FILTRAR NO SELECCIONADO.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        break;
-                }
+            if (cmbCarreras.Text == "" && cmbFiltro.Text == "" || txtDato.Text == "") {
+                MessageBox.Show("POR FAVOR, SELECCIONE LOS VALORES A FILTRAR.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            } else {
+                MySqlConnection connection = GenerateConnection.Connection();
+                MySqlCommand command = new MySqlCommand();
+                command.Connection =  connection;
+                command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = @Carrera AND Carnet = @Carnet OR Nombres = @Nombres OR PrimerApellido = @PrimerApellido OR SegundoApellido = @SegundoApellido";
+                command.Parameters.Add(new MySqlParameter("@Carrera", cmbCarreras.Text));
+                command.Parameters.Add(new MySqlParameter("@Carnet", txtDato.Text));
+                command.Parameters.Add(new MySqlParameter("@Nombres", txtDato.Text));
+                command.Parameters.Add(new MySqlParameter("@PrimerApellido", txtDato.Text));
+                command.Parameters.Add(new MySqlParameter("@SegundoApellido", txtDato.Text));
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+                dataAdapter.SelectCommand = command;
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                dgvAlumnos.DataSource = dataTable;
+                connection.Close();
             }
-            connect.Close();
         }
 
         #endregion
@@ -135,15 +100,34 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         #region Abrir Form Editar
         private void btnModificar_Click(object sender, EventArgs e){
 
-            int selectedRow = dgvAlumnos.CurrentCell.RowIndex;
-            String[] arrayAlumno = new String[17];
+            Alumno alumno = new Alumno();
 
-            for(int x = 0; x < dgvAlumnos.Rows.Count; x++) {
-                arrayAlumno[x] = dgvAlumnos.Rows[selectedRow].Cells[x].Value.ToString();
+            if(dgvAlumnos.Rows.Count > 0) {
+                int selectedRow = dgvAlumnos.CurrentCell.RowIndex;
+
+                alumno.setNombres(dgvAlumnos.Rows[selectedRow].Cells[0].Value.ToString());
+                alumno.setPrimerApellido(dgvAlumnos.Rows[selectedRow].Cells[1].Value.ToString());
+                alumno.setSegundoApellido(dgvAlumnos.Rows[selectedRow].Cells[2].Value.ToString());
+                alumno.setCarrera(dgvAlumnos.Rows[selectedRow].Cells[3].Value.ToString());
+                alumno.setCarnet(dgvAlumnos.Rows[selectedRow].Cells[4].Value.ToString());
+                alumno.setDocumentoIdentidad(dgvAlumnos.Rows[selectedRow].Cells[8].Value.ToString());
+                alumno.setSexo(dgvAlumnos.Rows[selectedRow].Cells[9].Value.ToString());
+                alumno.setDireccion(dgvAlumnos.Rows[selectedRow].Cells[10].Value.ToString());
+                alumno.setTelefono(dgvAlumnos.Rows[selectedRow].Cells[11].Value.ToString());
+                alumno.setCelular(dgvAlumnos.Rows[selectedRow].Cells[12].Value.ToString());
+                alumno.setCorreo(dgvAlumnos.Rows[selectedRow].Cells[13].Value.ToString());
+                alumno.setFechaInscripcion(dgvAlumnos.Rows[selectedRow].Cells[14].Value.ToString());
+                alumno.setNacionalidad(dgvAlumnos.Rows[selectedRow].Cells[15].Value.ToString());
+                alumno.setEtadoCivil(dgvAlumnos.Rows[selectedRow].Cells[16].Value.ToString());
+                listaDetallesDeAlumnos.Add(alumno);
+
                 Modificar Modificar = new Modificar();
-                this.Hide();
+                this.Close();
                 Modificar.modificar = this;
-                Modificar.setDetalles(arrayAlumno);
+                Modificar.setDetalles(listaDetallesDeAlumnos);
+                Modificar.Show();
+            } else {
+                MessageBox.Show("NO HAY DATOS PARA MODIFICAR.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion

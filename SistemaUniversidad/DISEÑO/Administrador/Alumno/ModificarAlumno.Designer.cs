@@ -15,14 +15,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private List<Alumno> listaDetallesDeAlumnos = new List<Alumno>();
         private int edit = -1;
 
-        #region Actualizar Data Grid
-        private void ActualizarDataSistemas(){
-            //
-        }
-        #endregion
-
-        private void LimpiarDataGrid()
-        {
+        private void LimpiarDataGrid(){
             dgvAlumnos.Columns.Clear();
             dgvAlumnos.Rows.Clear();
             dgvAlumnos.DataSource = null;

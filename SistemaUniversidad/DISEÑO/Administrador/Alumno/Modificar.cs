@@ -24,8 +24,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             cmbNacionalidad.DropDownStyle = ComboBoxStyle.DropDownList;
         }
         private void Modificar_Load(object sender, EventArgs e){
-            LimpiarTodo();
-            mostrar();
+            this.LimpiarTodo();
+            this.mostrar();
         }
 
         #region Limpiar
@@ -93,10 +93,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             //Valida los correos y números de teléfono
             string expresion = "[0-9]{4}-[0-9]{4}$";//formato para número de télefono
             string expresion2 = "^[_a-z0-9]+(.[_a-z0-9-])*@[a-z0-9]+(.[a-z0-9-]+)*\\.(.[a-z]{2,4})$";
-            if (ValidarFecha())
-            {
-                return;
-            }
             //Valida si todos los campos del formulario están llenos
             if (txtTelefono.Text != "")//Si ingresó algún dato es porque sí tiene teléfono
             {
@@ -121,15 +117,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 }
             }
 
-            if (Regex.IsMatch(txtCelular.Text, expresion))
-            {
+            if (Regex.IsMatch(txtCelular.Text, expresion)){
                 //lblMensaje4.Text = "Número válido";
-                if (Regex.Replace(txtCelular.Text, expresion, string.Empty).Length == 0)
-                {
+                if (Regex.Replace(txtCelular.Text, expresion, string.Empty).Length == 0){
                     lblMensaje5.Text = "";
                 }
-                else
-                {
+                else{
                     lblMensaje5.Text = "";
                 }
             }
@@ -140,14 +133,11 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 return;
             }
             //Si el mail ingresado tiene el formato especificado
-            if (Regex.IsMatch(txtCorreo.Text, expresion2))
-            {
-                if (Regex.Replace(txtCorreo.Text, expresion2, string.Empty).Length == 0)
-                {
+            if (Regex.IsMatch(txtCorreo.Text, expresion2)){
+                if (Regex.Replace(txtCorreo.Text, expresion2, string.Empty).Length == 0){
                     lblMensaje5.Text = "";
                 }
-                else
-                {
+                else{
                     lblMensaje5.Text = "";
                 }
             }
@@ -159,35 +149,26 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             }
 
             #region Guardar alumno
-            //Si todo está completamente lleno
-            //Verificacomo a qué carrera pertenece el nuevo alumnos para almacenarlo en la lista
-            //que le corresponde
-            
-            Alumno nuevoAlumno = new Alumno();
-            nuevoAlumno.setNombres(txtNombres.Text);
-            nuevoAlumno.setPrimerApellido(txrtPrimerApellido.Text);
-            nuevoAlumno.setSegundoApellido(txtSegundoApellido.Text);
-            nuevoAlumno.setCarnet(txtCarnet.Text);
-            nuevoAlumno.setCarrera(cmbCarreras.Text);            
-            nuevoAlumno.setPassword(pass);
-            nuevoAlumno.setFechaNacimiento(dtPCalendarioNacimiento.Value.ToShortDateString());
-            nuevoAlumno.setDocumentoIdentidad(txtDocumentoIdentidad.Text);
-            if (rbtnFemenino.Checked)
-            {
-                nuevoAlumno.setSexo("Femenino");
+
+            string sexo = "";
+
+            if (rbtnFemenino.Checked){
+                sexo = "Femenino";
             }
-            else if (rbtnMasculino.Checked)
-            {
-                nuevoAlumno.setSexo("Masculino");
+            else if (rbtnMasculino.Checked){
+                sexo = "Femenino";
             }
-            nuevoAlumno.setDireccion(txtDireccion.Text);
-            nuevoAlumno.setTelefono(txtTelefono.Text);
-            nuevoAlumno.setCelular(txtCelular.Text);
-            nuevoAlumno.setCorreo(txtCorreo.Text);
-            nuevoAlumno.setFechaInscripcion(txtFechaInscripcion.Text);
-            nuevoAlumno.setNacionalidad(cmbNacionalidad.Text);
-            nuevoAlumno.setEtadoCivil(cmbEstadoCivil.Text);
-            nuevoAlumno.setMatricula(int.Parse(txtMatricula.Text));
+
+            MySqlConnection connection = GenerateConnection.Connection();
+            MySqlCommand command = new MySqlCommand();
+            command.Connection =  connection;
+            command.CommandText = "UPDATE Alumnos SET Nombres = '"+txtNombres.Text+"', PrimerApellido = '"+txtSegundoApellido.Text+"', SegundoApellido = '"+txtSegundoApellido.Text+"'," +
+                "NombreCarrera = '"+cmbCarreras.Text+"', Carnet = '"+txtCarnet.Text+"', DocumentoDeIdentidad = '"+txtDocumentoIdentidad.Text+"', Sexo = '"+sexo+"', " +
+                "Direccion = '"+txtDireccion.Text+"', Telefono = '"+txtTelefono.Text+"', Celular = '"+txtCelular.Text+"', Correo = '"+txtCorreo.Text+"', Nacionalidad = '"+cmbNacionalidad.Text+"', " +
+                "EstadoCivil = '"+cmbEstadoCivil.Text+"' WHERE Nombres = '"+txtNombres.Text+"' AND Carnet = '"+previousCarnet+"'";
+            command.CommandText = "UPDATE Logins SET Usuario = '"+txtCarnet.Text+"'";
+            command.ExecuteNonQuery();
+            connection.Close();
             #endregion
 
             LimpiarEtiquetas();
