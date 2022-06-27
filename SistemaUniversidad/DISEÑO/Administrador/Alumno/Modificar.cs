@@ -162,7 +162,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             MySqlConnection connection = GenerateConnection.Connection();
             MySqlCommand command = new MySqlCommand();
             command.Connection =  connection;
-            command.CommandText = "UPDATE Alumnos SET Nombres = '"+txtNombres.Text+"', PrimerApellido = '"+txtSegundoApellido.Text+"', SegundoApellido = '"+txtSegundoApellido.Text+"'," +
+            command.CommandText = "UPDATE Alumnos SET Nombres = '"+txtNombres.Text+"', PrimerApellido = '"+txrtPrimerApellido.Text+"', SegundoApellido = '"+txtSegundoApellido.Text+"'," +
                 "NombreCarrera = '"+cmbCarreras.Text+"', Carnet = '"+txtCarnet.Text+"', DocumentoDeIdentidad = '"+txtDocumentoIdentidad.Text+"', Sexo = '"+sexo+"', " +
                 "Direccion = '"+txtDireccion.Text+"', Telefono = '"+txtTelefono.Text+"', Celular = '"+txtCelular.Text+"', Correo = '"+txtCorreo.Text+"', Nacionalidad = '"+cmbNacionalidad.Text+"', " +
                 "EstadoCivil = '"+cmbEstadoCivil.Text+"' WHERE Nombres = '"+txtNombres.Text+"' AND Carnet = '"+this.previousCarnet+"'; " +

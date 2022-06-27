@@ -265,8 +265,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 listaAlumnoGenerico.Add(nuevoAlumno);
                 try {
                     this.SaveToDatabase();
-                    this.SaveToLogins();
-                    MessageBox.Show("Datos guardados satisfactoriamente");
                 }catch(Exception error) {
                     MessageBox.Show("Error: " + error.Message);
                 }

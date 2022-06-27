@@ -2,6 +2,7 @@
 using SistemaUniversidad.LOGICA;
 using SistemaUniversidad.LOGICA.DATABASE;
 using MySql.Data.MySqlClient;
+using System.Windows.Forms;
 
 namespace SistemaUniversidad.DISEÑO.Administrador
 {
@@ -21,7 +22,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             query.Connection = connection;
 
             foreach (Alumno x in listaAlumnoGenerico) {
-                query.CommandText = "INSERT INTO Logins(Usuario, Clave, Rol) VALUES('"+x.getCarnet()+"', '"+x.getPasswrd()+"', 'Estudiante')";
+                query.CommandText = "";
             }
             query.ExecuteNonQuery();
             connection.Close();
@@ -33,6 +34,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             MySqlConnection connection = GenerateConnection.Connection();
             MySqlCommand query = new MySqlCommand();
             query.Connection = connection;
+
             foreach (Alumno x in listaAlumnoGenerico) {
 
                 query.CommandText = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, NombreCarrera, Carnet, Clave, Matricula, " +
@@ -40,8 +42,10 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 "VALUES('"+x.getNombres()+"', '"+x.getPrimerApellido()+"', '"+x.getSegundoApellido()+"', '"+x.getCarrera()+"', '"+x.getCarnet()+"', " +
                 "'"+x.getPasswrd()+"', '"+x.getMatricula().ToString()+"', '"+x.getFechaNacimiento()+"', '"+x.getDocumentoIdentidad()+"', '"+x.getSexo()+"'," +
                 "'"+x.getDireccion()+"', '"+x.getTelefono()+"', '"+x.getCelular()+"', '"+x.getCorreo()+"', '"+x.getFechaInscripcion()+"', " +
-                "'"+x.getNacionalidad()+"', '"+x.getEstadoCivil()+"')";
+                "'"+x.getNacionalidad()+"', '"+x.getEstadoCivil()+"');" +
+                "INSERT INTO Logins(Usuario, Clave, Rol) VALUES('"+x.getCarnet()+"', '"+x.getPasswrd()+"', 'Estudiante')";
             }
+            MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             query.ExecuteNonQuery();
             connection.Close();
         }
