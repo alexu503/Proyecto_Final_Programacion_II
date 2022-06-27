@@ -187,12 +187,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.lbldatos = new System.Windows.Forms.Label();
             this.txtDato = new System.Windows.Forms.TextBox();
             this.groupBoxFiltro = new System.Windows.Forms.GroupBox();
-            this.cboxFiltros = new System.Windows.Forms.CheckBox();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.groupBoxBotones = new System.Windows.Forms.GroupBox();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.pnlContenedor = new System.Windows.Forms.Panel();
+            this.btnLoadFilters = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             this.pnlSuperior.SuspendLayout();
             this.groupBoxFiltro.SuspendLayout();
@@ -337,7 +337,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.lbldatos.AutoSize = true;
             this.lbldatos.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbldatos.Location = new System.Drawing.Point(6, 132);
+            this.lbldatos.Location = new System.Drawing.Point(5, 86);
             this.lbldatos.Name = "lbldatos";
             this.lbldatos.Size = new System.Drawing.Size(160, 20);
             this.lbldatos.TabIndex = 14;
@@ -346,14 +346,14 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // txtDato
             // 
             this.txtDato.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDato.Location = new System.Drawing.Point(172, 129);
+            this.txtDato.Location = new System.Drawing.Point(171, 83);
             this.txtDato.Name = "txtDato";
             this.txtDato.Size = new System.Drawing.Size(126, 26);
             this.txtDato.TabIndex = 15;
             // 
             // groupBoxFiltro
             // 
-            this.groupBoxFiltro.Controls.Add(this.cboxFiltros);
+            this.groupBoxFiltro.Controls.Add(this.btnLoadFilters);
             this.groupBoxFiltro.Controls.Add(this.lblFiltro);
             this.groupBoxFiltro.Controls.Add(this.cmbFiltro);
             this.groupBoxFiltro.Controls.Add(this.txtDato);
@@ -366,22 +366,11 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.groupBoxFiltro.TabStop = false;
             this.groupBoxFiltro.Text = "FILTRAR BUSQUEDA";
             // 
-            // cboxFiltros
-            // 
-            this.cboxFiltros.AutoSize = true;
-            this.cboxFiltros.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboxFiltros.Location = new System.Drawing.Point(110, 36);
-            this.cboxFiltros.Name = "cboxFiltros";
-            this.cboxFiltros.Size = new System.Drawing.Size(149, 24);
-            this.cboxFiltros.TabIndex = 19;
-            this.cboxFiltros.Text = "APLICAR FILTROS";
-            this.cboxFiltros.UseVisualStyleBackColor = true;
-            // 
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
             this.lblFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFiltro.Location = new System.Drawing.Point(44, 84);
+            this.lblFiltro.Location = new System.Drawing.Point(43, 38);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(101, 20);
             this.lblFiltro.TabIndex = 17;
@@ -391,7 +380,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.cmbFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(151, 81);
+            this.cmbFiltro.Location = new System.Drawing.Point(150, 35);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(147, 28);
             this.cmbFiltro.TabIndex = 16;
@@ -425,6 +414,18 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.pnlContenedor.Name = "pnlContenedor";
             this.pnlContenedor.Size = new System.Drawing.Size(1027, 743);
             this.pnlContenedor.TabIndex = 21;
+            // 
+            // btnLoadFilters
+            // 
+            this.btnLoadFilters.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLoadFilters.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLoadFilters.Location = new System.Drawing.Point(91, 129);
+            this.btnLoadFilters.Name = "btnLoadFilters";
+            this.btnLoadFilters.Size = new System.Drawing.Size(139, 38);
+            this.btnLoadFilters.TabIndex = 1;
+            this.btnLoadFilters.Text = "Cargar datos";
+            this.btnLoadFilters.UseVisualStyleBackColor = true;
+            this.btnLoadFilters.Click += new System.EventHandler(this.btnLoadFilters_Click);
             // 
             // BuscarAlumno
             // 
@@ -478,8 +479,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private GroupBox groupBoxBotones;
         private Label lblFiltro;
         private ComboBox cmbFiltro;
-        private CheckBox cboxFiltros;
         private PictureBox imgLogo;
         private Panel pnlContenedor;
+        private Button btnLoadFilters;
     }
 }

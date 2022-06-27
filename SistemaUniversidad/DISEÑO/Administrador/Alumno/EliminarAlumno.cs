@@ -16,12 +16,10 @@ namespace SistemaUniversidad.DISEÑO.Administrador
     public partial class EliminarAlumno : Form
     {
         public Form eliminarAlumno;
-        public EliminarAlumno()
-        {
+        public EliminarAlumno(){
             InitializeComponent();
         }
-        private void EliminarAlumno_Load(object sender, EventArgs e)
-        {
+        private void EliminarAlumno_Load(object sender, EventArgs e){
             cmbCarreras.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbCarreras.Items.Clear();
             cmbCarreras.Items.Add("Ingeniería de Sistemas Informáticos");
@@ -39,8 +37,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         }
 
         #region Regresar - Salir
-        private void btnRegresar_Click(object sender, EventArgs e)
-        {
+        private void btnRegresar_Click(object sender, EventArgs e){
             Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();
             MenuAdmin.menuAdmin = this;
             this.Close();
@@ -95,8 +92,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
 
             if(cmbCarreras.Text != "") {
                 //I can't delete directly database's rows positions. So, i get some unique values, consult and delete.
-                string carnetAlumno = "";
-                carnetAlumno = dgvAlumnos.Rows[rowPosition].Cells[4].Value.ToString();
+                string carnetAlumno = dgvAlumnos.Rows[rowPosition].Cells[4].Value.ToString();
 
                 MySqlConnection connection = GenerateConnection.Connection();
                 MySqlCommand command = new MySqlCommand();
@@ -105,9 +101,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 if (carnetAlumno != "") {
                     try {
                         if(dgvAlumnos.Rows.Count > 0) {
-                            if (MessageBox.Show("¿Seguro que desea proceder?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
-                                command.CommandText = "DELETE FROM Alumnos WHERE Carnet = '"+carnetAlumno+"'";
-                                command.CommandText = "DELETE FROM Logins WHERE Carnet = '"+carnetAlumno+"'";
+                            if (MessageBox.Show("¿Seguro que desea proceder?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                                command.CommandText = "DELETE FROM Alumnos WHERE Carnet = '"+carnetAlumno+"'; DELETE FROM Logins WHERE Usuario = '"+carnetAlumno+"'";
                                 command.ExecuteNonQuery();
                                 MessageBox.Show("Datos eliminados satisfactoriamente");
                                 //Update table
@@ -117,7 +112,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                                 DataTable table = new DataTable();
                                 dataAdapter.Fill(table);
                                 dgvAlumnos.DataSource = table;
-                                MessageBox.Show("Datos eliminados");
                                 connection.Close();
                             } else {
                                 MessageBox.Show("Operación cancelada");
