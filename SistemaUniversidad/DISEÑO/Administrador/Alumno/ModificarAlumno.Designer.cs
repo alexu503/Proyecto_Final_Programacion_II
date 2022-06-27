@@ -12,112 +12,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         string carnet = "";//Almacena el carnet a eliminar
-        private List<Alumno> listaRsistemas = new List<Alumno>();
-        private List<Alumno> listaRagronomia = new List<Alumno>();
-        private List<Alumno> listaRelectrica = new List<Alumno>();
-        private List<Alumno> listaRindustrial = new List<Alumno>();
+        private List<Alumno> listaDetallesDeAlumnos = new List<Alumno>();
         private int edit = -1;
-        public void setAlumSistemas(List<Alumno> listR)
-        {
-            this.listaRsistemas = listR;
-        }
-        public void setAlumAgronomia(List<Alumno> listR)
-        {
-            this.listaRagronomia = listR;
-        }
-        public void setAlumElectrica(List<Alumno> listR)
-        {
-            this.listaRelectrica = listR;
-        }
-        public void setAlumIndustrial(List<Alumno> listR)
-        {
-            this.listaRindustrial = listR;
-        }
 
         #region Actualizar Data Grid
-        private void ActualizarDataSistemas()
-        {
-            if (listaRsistemas.Count != 0)
-            {
-                AgregarColumnasDTGV();
-
-                foreach (Alumno item in listaRsistemas)
-                {
-                    string[] registro = {item.getNombres(),item.getPrimerApellido(),item.getSegundoApellido(),
-                    item.getCarnet(),item.getCarrera(),item.getPasswrd(),item.getMatricula().ToString(),item.getFechaNacimiento(),
-                    item.getDocumentoIdentidad(),item.getSexo(),item.getDireccion(),item.getTelefono(),item.getCelular(),
-                    item.getCorreo(),item.getFechaInscripcion(),item.getNacionalidad(),item.getEstadoCivil()};
-                    dgvAlumnos.Rows.Add(registro);
-                }
-            }
-            else
-            {
-                LimpiarDataGrid();
-                MessageBox.Show("NO HAY REGISTRO DE ALUMNOS");
-            }
-        }
-        private void ActualizarDataAgronomia()
-        {
-            if (listaRagronomia.Count != 0)
-            {
-                AgregarColumnasDTGV();
-
-                foreach (Alumno item in listaRagronomia)
-                {
-                    string[] registro = {item.getNombres(),item.getPrimerApellido(),item.getSegundoApellido(),
-                    item.getCarnet(),item.getCarrera(),item.getPasswrd(),item.getMatricula().ToString(),item.getFechaNacimiento(),
-                    item.getDocumentoIdentidad(),item.getSexo(),item.getDireccion(),item.getTelefono(),item.getCelular(),
-                    item.getCorreo(),item.getFechaInscripcion(),item.getNacionalidad(),item.getEstadoCivil()};
-                    dgvAlumnos.Rows.Add(registro);
-                }
-            }
-            else
-            {
-                LimpiarDataGrid();
-                MessageBox.Show("NO HAY REGISTRO DE ALUMNOS");
-            }
-        }
-        private void ActualizarDataElectrica()
-        {
-            if (listaRelectrica.Count != 0)
-            {
-                AgregarColumnasDTGV();
-
-                foreach (Alumno item in listaRelectrica)
-                {
-                    string[] registro = {item.getNombres(),item.getPrimerApellido(),item.getSegundoApellido(),
-                    item.getCarnet(),item.getCarrera(),item.getPasswrd(),item.getMatricula().ToString(),item.getFechaNacimiento(),
-                    item.getDocumentoIdentidad(),item.getSexo(),item.getDireccion(),item.getTelefono(),item.getCelular(),
-                    item.getCorreo(),item.getFechaInscripcion(),item.getNacionalidad(),item.getEstadoCivil()};
-                    dgvAlumnos.Rows.Add(registro);
-                }
-            }
-            else
-            {
-                LimpiarDataGrid();
-                MessageBox.Show("NO HAY REGISTRO DE ALUMNOS");
-            }
-        }
-        private void ActualizarDataIndustrial()
-        {
-            if (listaRindustrial.Count != 0)
-            {
-                AgregarColumnasDTGV();
-
-                foreach (Alumno item in listaRindustrial)
-                {
-                    string[] registro = {item.getNombres(),item.getPrimerApellido(),item.getSegundoApellido(),
-                    item.getCarnet(),item.getCarrera(),item.getPasswrd(),item.getMatricula().ToString(),item.getFechaNacimiento(),
-                    item.getDocumentoIdentidad(),item.getSexo(),item.getDireccion(),item.getTelefono(),item.getCelular(),
-                    item.getCorreo(),item.getFechaInscripcion(),item.getNacionalidad(),item.getEstadoCivil()};
-                    dgvAlumnos.Rows.Add(registro);
-                }
-            }
-            else
-            {
-                LimpiarDataGrid();
-                MessageBox.Show("NO HAY REGISTRO DE ALUMNOS");
-            }
+        private void ActualizarDataSistemas(){
+            //
         }
         #endregion
 
@@ -173,7 +73,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarAlumno));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblTítulo = new System.Windows.Forms.Label();
@@ -186,9 +85,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.groupBoxFiltro = new System.Windows.Forms.GroupBox();
             this.txtDato = new System.Windows.Forms.TextBox();
             this.lblDatos = new System.Windows.Forms.Label();
+            this.btnFiltrarDatos = new System.Windows.Forms.Button();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
-            this.cboxFiltros = new System.Windows.Forms.CheckBox();
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
             this.btnRegresar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
@@ -201,6 +100,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.groupBoxFiltro.SuspendLayout();
             this.groupBoxBotones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
+            this.pnlContendor.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlSuperior
@@ -294,9 +194,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.groupBoxFiltro.Controls.Add(this.txtDato);
             this.groupBoxFiltro.Controls.Add(this.lblDatos);
+            this.groupBoxFiltro.Controls.Add(this.btnFiltrarDatos);
             this.groupBoxFiltro.Controls.Add(this.cmbFiltro);
             this.groupBoxFiltro.Controls.Add(this.lblFiltro);
-            this.groupBoxFiltro.Controls.Add(this.cboxFiltros);
             this.groupBoxFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxFiltro.Location = new System.Drawing.Point(245, 228);
             this.groupBoxFiltro.Name = "groupBoxFiltro";
@@ -307,7 +207,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             // txtDato
             // 
-            this.txtDato.Location = new System.Drawing.Point(172, 130);
+            this.txtDato.Location = new System.Drawing.Point(172, 81);
             this.txtDato.Name = "txtDato";
             this.txtDato.Size = new System.Drawing.Size(100, 26);
             this.txtDato.TabIndex = 4;
@@ -315,16 +215,27 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // lblDatos
             // 
             this.lblDatos.AutoSize = true;
-            this.lblDatos.Location = new System.Drawing.Point(6, 133);
+            this.lblDatos.Location = new System.Drawing.Point(6, 84);
             this.lblDatos.Name = "lblDatos";
             this.lblDatos.Size = new System.Drawing.Size(160, 20);
             this.lblDatos.TabIndex = 3;
             this.lblDatos.Text = "Introduzca los datos:";
             // 
+            // btnFiltrarDatos
+            // 
+            this.btnFiltrarDatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltrarDatos.Location = new System.Drawing.Point(82, 123);
+            this.btnFiltrarDatos.Name = "btnFiltrarDatos";
+            this.btnFiltrarDatos.Size = new System.Drawing.Size(151, 40);
+            this.btnFiltrarDatos.TabIndex = 0;
+            this.btnFiltrarDatos.Text = "FILTRAR DATOS";
+            this.btnFiltrarDatos.UseVisualStyleBackColor = true;
+            this.btnFiltrarDatos.Click += new System.EventHandler(this.btnFiltrarDatos_Click);
+            // 
             // cmbFiltro
             // 
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(149, 82);
+            this.cmbFiltro.Location = new System.Drawing.Point(149, 33);
             this.cmbFiltro.Name = "cmbFiltro";
             this.cmbFiltro.Size = new System.Drawing.Size(151, 28);
             this.cmbFiltro.TabIndex = 2;
@@ -332,21 +243,11 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // lblFiltro
             // 
             this.lblFiltro.AutoSize = true;
-            this.lblFiltro.Location = new System.Drawing.Point(43, 85);
+            this.lblFiltro.Location = new System.Drawing.Point(43, 36);
             this.lblFiltro.Name = "lblFiltro";
             this.lblFiltro.Size = new System.Drawing.Size(101, 20);
             this.lblFiltro.TabIndex = 1;
             this.lblFiltro.Text = "FILTRAR POR:";
-            // 
-            // cboxFiltros
-            // 
-            this.cboxFiltros.AutoSize = true;
-            this.cboxFiltros.Location = new System.Drawing.Point(109, 37);
-            this.cboxFiltros.Name = "cboxFiltros";
-            this.cboxFiltros.Size = new System.Drawing.Size(149, 24);
-            this.cboxFiltros.TabIndex = 0;
-            this.cboxFiltros.Text = "APLICAR FILTROS";
-            this.cboxFiltros.UseVisualStyleBackColor = true;
             // 
             // cmbCarreras
             // 
@@ -403,29 +304,15 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             // dgvAlumnos
             // 
-            this.dgvAlumnos.AllowUserToAddRows = false;
-            this.dgvAlumnos.AllowUserToDeleteRows = false;
-            this.dgvAlumnos.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlumnos.Location = new System.Drawing.Point(22, 436);
+            this.dgvAlumnos.Location = new System.Drawing.Point(19, 433);
             this.dgvAlumnos.Name = "dgvAlumnos";
-            this.dgvAlumnos.ReadOnly = true;
-            this.dgvAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAlumnos.Size = new System.Drawing.Size(968, 242);
-            this.dgvAlumnos.TabIndex = 13;
-            this.dgvAlumnos.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAlumnos_CellClick);
+            this.dgvAlumnos.Size = new System.Drawing.Size(966, 243);
+            this.dgvAlumnos.TabIndex = 0;
             // 
             // pnlContendor
             // 
             this.pnlContendor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlContendor.Controls.Add(this.dgvAlumnos);
             this.pnlContendor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContendor.Location = new System.Drawing.Point(0, 0);
             this.pnlContendor.Name = "pnlContendor";
@@ -437,7 +324,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1011, 704);
-            this.Controls.Add(this.dgvAlumnos);
             this.Controls.Add(this.groupBoxFiltro);
             this.Controls.Add(this.cmbCarreras);
             this.Controls.Add(this.groupBoxBotones);
@@ -458,6 +344,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.groupBoxFiltro.PerformLayout();
             this.groupBoxBotones.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
+            this.pnlContendor.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -478,7 +365,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private System.Windows.Forms.Label lblDatos;
         private System.Windows.Forms.ComboBox cmbFiltro;
         private System.Windows.Forms.Label lblFiltro;
-        private System.Windows.Forms.CheckBox cboxFiltros;
         private System.Windows.Forms.ComboBox cmbCarreras;
         private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Button btnModificar;
@@ -487,5 +373,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private System.Windows.Forms.DataGridView dgvAlumnos;
         private Button btnCerrar;
         private Panel pnlContendor;
+        private Button btnFiltrarDatos;
     }
 }

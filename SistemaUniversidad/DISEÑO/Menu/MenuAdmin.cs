@@ -226,11 +226,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
         {
             Administrador.NuevoAlumno NuevoAlumno = new Administrador.NuevoAlumno();
             this.Hide();
-            //NuevoAlumno.nuevoAlumno = this;
-            //NuevoAlumno.setAlumSistemas(listaRsistemas);
-            //NuevoAlumno.setAlumAgronomia(listaRagronomia);
-            //NuevoAlumno.setAlumElectrica(listaRelectrica);
-            //NuevoAlumno.setAlumIndustrial(listaRindustrial);
             NuevoAlumno.Show();
         }
         //----> Eliminar alumno
@@ -239,10 +234,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             Administrador.EliminarAlumno EliminarAlumno = new Administrador.EliminarAlumno();
             this.Hide();
             EliminarAlumno.eliminarAlumno = this;
-            EliminarAlumno.setAlumSistemas(listaRsistemas);
-            EliminarAlumno.setAlumAgronomia(listaRagronomia);
-            EliminarAlumno.setAlumElectrica(listaRelectrica);
-            EliminarAlumno.setAlumIndustrial(listaRindustrial);
             EliminarAlumno.Show();
         }
         //----> Modificar datos de alumno
@@ -251,10 +242,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             Administrador.ModificarAlumno ModificarAlumno = new Administrador.ModificarAlumno();
             this.Hide();
             ModificarAlumno.modificarAlumno = this;
-            ModificarAlumno.setAlumSistemas(listaRsistemas);
-            ModificarAlumno.setAlumAgronomia(listaRagronomia);
-            ModificarAlumno.setAlumElectrica(listaRelectrica);
-            ModificarAlumno.setAlumIndustrial(listaRindustrial);
             ModificarAlumno.Show();
         }
         //----> Buscar alumno
@@ -263,10 +250,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             Administrador.BuscarAlumno BuscarAlumno = new Administrador.BuscarAlumno();
             this.Hide();
             BuscarAlumno.buscarAlumno = this;
-            BuscarAlumno.setAlumSistemas(listaRsistemas);
-            BuscarAlumno.setAlumAgronomia(listaRagronomia);
-            BuscarAlumno.setAlumElectrica(listaRelectrica);
-            BuscarAlumno.setAlumIndustrial(listaRindustrial);
             BuscarAlumno.Show();
             
         }

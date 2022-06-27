@@ -16,17 +16,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador
 
         void SaveToLogins() {
 
-            string sqlQuery = "INSERT INTO Logins(Usuario, Clave, Rol) VALUES(@Carnet, @Clave, @Rol)";
-
             MySqlConnection connection = GenerateConnection.Connection();
             MySqlCommand query = new MySqlCommand();
             query.Connection = connection;
-            query.CommandText = sqlQuery;
 
             foreach (Alumno x in listaAlumnoGenerico) {
-                query.Parameters.Add(new MySqlParameter("@Carnet", x.getCarnet().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Clave", x.getPasswrd().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Rol", "Estudiante"));
+                query.CommandText = "INSERT INTO Logins(Usuario, Clave, Rol) VALUES('"+x.getCarnet()+"', '"+x.getPasswrd()+"', 'Estudiante')";
             }
             query.ExecuteNonQuery();
             connection.Close();
@@ -34,38 +29,20 @@ namespace SistemaUniversidad.DISEÑO.Administrador
 
         //Save to database
         void SaveToDatabase() {
-
-            string sqlQuery = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, NombreCarrera, Carnet, Clave, Matricula, " +
-                "FechaDeNacimiento, DocumentoDeIdentidad, Sexo, Direccion, Telefono, Celular, Correo, FechaInscripcion, Nacionalidad, EstadoCivil)" +
-                "VALUES(@Nombres, @PrimerApellido, @SegundoApellido, @NombreCarrera, @Carnet, @Clave, @Matricula, @FechaDeNacimiento, @DUI, @Sexo," +
-                "@Direccion, @Telefono, @Celular, @Correo, @FechaDeInscripcion, @Nacionalidad, @EstadoCivil)";
-
             
             MySqlConnection connection = GenerateConnection.Connection();
             MySqlCommand query = new MySqlCommand();
             query.Connection = connection;
-            query.CommandText = sqlQuery;
             foreach (Alumno x in listaAlumnoGenerico) {
-                query.Parameters.Add(new MySqlParameter("@Nombres", x.getNombres().ToString()));
-                query.Parameters.Add(new MySqlParameter("@PrimerApellido", x.getPrimerApellido().ToString()));
-                query.Parameters.Add(new MySqlParameter("@SegundoApellido", x.getSegundoApellido().ToString()));
-                query.Parameters.Add(new MySqlParameter("@NombreCarrera", x.getCarrera().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Carnet", x.getCarnet().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Clave", x.getPasswrd().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Matricula", x.getMatricula().ToString()));
-                query.Parameters.Add(new MySqlParameter("@FechaDeNacimiento", x.getFechaNacimiento().ToString()));
-                query.Parameters.Add(new MySqlParameter("@DUI", x.getDocumentoIdentidad().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Sexo", x.getSexo().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Direccion", x.getDireccion().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Telefono", x.getTelefono().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Celular", x.getCelular().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Correo", x.getCorreo().ToString()));
-                query.Parameters.Add(new MySqlParameter("@FechaDeInscripcion", x.getFechaInscripcion().ToString()));
-                query.Parameters.Add(new MySqlParameter("@Nacionalidad", x.getNacionalidad().ToString()));
-                query.Parameters.Add(new MySqlParameter("@EstadoCivil", x.getEstadoCivil().ToString()));
+
+                query.CommandText = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, NombreCarrera, Carnet, Clave, Matricula, " +
+                "FechaDeNacimiento, DocumentoDeIdentidad, Sexo, Direccion, Telefono, Celular, Correo, FechaInscripcion, Nacionalidad, EstadoCivil)" +
+                "VALUES('"+x.getNombres()+"', '"+x.getPrimerApellido()+"', '"+x.getSegundoApellido()+"', '"+x.getCarrera()+"', '"+x.getCarnet()+"', " +
+                "'"+x.getPasswrd()+"', '"+x.getMatricula().ToString()+"', '"+x.getFechaNacimiento()+"', '"+x.getDocumentoIdentidad()+"', '"+x.getSexo()+"'," +
+                "'"+x.getDireccion()+"', '"+x.getTelefono()+"', '"+x.getCelular()+"', '"+x.getCorreo()+"', '"+x.getFechaInscripcion()+"', " +
+                "'"+x.getNacionalidad()+"', '"+x.getEstadoCivil()+"')";
             }
             query.ExecuteNonQuery();
-            query.Parameters.Clear();
             connection.Close();
         }
 

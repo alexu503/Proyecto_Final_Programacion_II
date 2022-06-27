@@ -11,143 +11,36 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private List<Alumno> listaRsistemas = new List<Alumno>();
-        private List<Alumno> listaRagronomia = new List<Alumno>();
-        private List<Alumno> listaRelectrica = new List<Alumno>();
-        private List<Alumno> listaRindustrial = new List<Alumno>();
+        private String[] arrayListaAlumno = new String[17];
         private int indice;
         private int carrera;
         private string pass;
-        public void setAlumSistemas(List<Alumno> listR)
-        {
-            this.listaRsistemas = listR;
+
+        public void setDetalles(String[] listaAlumnos) {
+            this.arrayListaAlumno = listaAlumnos;
         }
-        public void setAlumAgronomia(List<Alumno> listR)
-        {
-            this.listaRagronomia = listR;
-        }
-        public void setAlumElectrica(List<Alumno> listR)
-        {
-            this.listaRelectrica = listR;
-        }
-        public void setAlumIndustrial(List<Alumno> listR)
-        {
-            this.listaRindustrial = listR;
-        }
-        private void mostrar()
-        {
-            if (carrera == 1)//Carrera -> Sistemas
-            {
-                Alumno Alo = listaRsistemas[indice];
-                txtCarnet.Text = Alo.getCarnet();
-                txtMatricula.Text = Alo.getMatricula().ToString();
-                cmbCarreras.Text = Alo.getCarrera();
-                txrtPrimerApellido.Text = Alo.getPrimerApellido();
-                txtSegundoApellido.Text = Alo.getSegundoApellido();
-                txtNombres.Text = Alo.getNombres();
-                txtCelular.Text = Alo.getCelular();
-                txtCorreo.Text = Alo.getCorreo();
-                txtDireccion.Text = Alo.getDireccion();
-                txtDocumentoIdentidad.Text = Alo.getDocumentoIdentidad();
-                txtFechaInscripcion.Text = Alo.getFechaInscripcion();
-                txtTelefono.Text = Alo.getTelefono();
-                pass = Alo.getPasswrd();
-                cmbEstadoCivil.Text = Alo.getEstadoCivil();
-                cmbNacionalidad.Text = Alo.getNacionalidad();
-                if (Alo.getSexo() == "Masculino")
-                {
-                    rbtnMasculino.Checked = true;
-                }
-                else
-                {
-                    rbtnFemenino.Checked = true;
-                }
-                dtPCalendarioNacimiento.Value = Convert.ToDateTime(Alo.getFechaNacimiento());
-                
-            }
-            else if (carrera == 2)//Carreras -> Agronomia
-            {
-                Alumno Alo = listaRagronomia[indice];
-                txtCarnet.Text = Alo.getCarnet();                
-                cmbCarreras.Text = Alo.getCarrera();
-                txrtPrimerApellido.Text = Alo.getPrimerApellido();
-                txtSegundoApellido.Text = Alo.getSegundoApellido();
-                txtNombres.Text = Alo.getNombres();
-                txtCelular.Text = Alo.getCelular();
-                txtCorreo.Text = Alo.getCorreo();
-                txtMatricula.Text = Alo.getMatricula().ToString();
-                txtDireccion.Text = Alo.getDireccion();
-                txtDocumentoIdentidad.Text = Alo.getDocumentoIdentidad();
-                txtFechaInscripcion.Text = Alo.getFechaInscripcion();
-                txtTelefono.Text = Alo.getTelefono();
-                cmbEstadoCivil.Text = Alo.getEstadoCivil();
-                cmbNacionalidad.Text = Alo.getNacionalidad();
-                pass = Alo.getPasswrd();
-                if (Alo.getSexo() == "Masculino")
-                {
-                    rbtnMasculino.Checked = true;
-                }
-                else
-                {
-                    rbtnFemenino.Checked = true;
-                }
-                dtPCalendarioNacimiento.Value = Convert.ToDateTime(Alo.getFechaNacimiento());
-            }
-            else if (carrera == 3)//Carreras -> Electrica
-            {
-                Alumno Alo = listaRelectrica[indice];
-                txtCarnet.Text = Alo.getCarnet();
-                txtMatricula.Text = Alo.getMatricula().ToString();
-                cmbCarreras.Text = Alo.getCarrera();
-                txrtPrimerApellido.Text = Alo.getPrimerApellido();
-                txtSegundoApellido.Text = Alo.getSegundoApellido();
-                txtNombres.Text = Alo.getNombres();
-                txtCelular.Text = Alo.getCelular();
-                txtCorreo.Text = Alo.getCorreo();
-                txtDireccion.Text = Alo.getDireccion();
-                txtDocumentoIdentidad.Text = Alo.getDocumentoIdentidad();
-                txtFechaInscripcion.Text = Alo.getFechaInscripcion();
-                txtTelefono.Text = Alo.getTelefono();
-                pass = Alo.getPasswrd();
-                cmbEstadoCivil.Text = Alo.getEstadoCivil();
-                cmbNacionalidad.Text = Alo.getNacionalidad();
-                if (Alo.getSexo() == "Masculino")
-                {
-                    rbtnMasculino.Checked = true;
-                }
-                else
-                {
-                    rbtnFemenino.Checked = true;
-                }
-                dtPCalendarioNacimiento.Value = Convert.ToDateTime(Alo.getFechaNacimiento());
-            }
-            else if (carrera == 4)//Carreras -> Industrail
-            {
-                Alumno Alo = listaRindustrial[indice];
-                txtCarnet.Text = Alo.getCarnet();
-                txtMatricula.Text = Alo.getMatricula().ToString();
-                cmbCarreras.Text = Alo.getCarrera();
-                txrtPrimerApellido.Text = Alo.getPrimerApellido();
-                txtSegundoApellido.Text = Alo.getSegundoApellido();
-                txtNombres.Text = Alo.getNombres();
-                txtCelular.Text = Alo.getCelular();
-                txtCorreo.Text = Alo.getCorreo();
-                txtDireccion.Text = Alo.getDireccion();
-                txtDocumentoIdentidad.Text = Alo.getDocumentoIdentidad();
-                txtFechaInscripcion.Text = Alo.getFechaInscripcion();
-                txtTelefono.Text = Alo.getTelefono();
-                cmbEstadoCivil.Text = Alo.getEstadoCivil();
-                cmbNacionalidad.Text = Alo.getNacionalidad();
-                pass = Alo.getPasswrd();
-                if (Alo.getSexo() == "Masculino")
-                {
-                    rbtnMasculino.Checked = true;
-                }
-                else
-                {
-                    rbtnFemenino.Checked = true;
-                }
-                dtPCalendarioNacimiento.Value = Convert.ToDateTime(Alo.getFechaNacimiento());
+
+        private void mostrar(){
+            txtNombres.Text = arrayListaAlumno[0];
+            txrtPrimerApellido.Text = arrayListaAlumno[1];
+            txtSegundoApellido.Text = arrayListaAlumno[2];
+            cmbCarreras.Text = arrayListaAlumno[3];
+            txtCarnet.Text = arrayListaAlumno[4];
+            dtPCalendarioNacimiento.Text = arrayListaAlumno[7];
+            txtDocumentoIdentidad.Text = arrayListaAlumno[8];
+            txtDireccion.Text = arrayListaAlumno[10];
+            txtTelefono.Text = arrayListaAlumno[11];
+            txtCelular.Text = arrayListaAlumno[12];
+            txtCorreo.Text = arrayListaAlumno[13];
+            cmbNacionalidad.Text = arrayListaAlumno[15];
+            cmbEstadoCivil.Text = arrayListaAlumno[16];
+
+            if (arrayListaAlumno[9] == "Masculino") {
+                rbtnMasculino.Checked = true;
+                rbtnFemenino.Checked = false;
+            } else {
+                rbtnMasculino.Checked = false;
+                rbtnFemenino.Checked = true;
             }
         }
         public void setResive(int indice, int carrera)

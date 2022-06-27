@@ -9,21 +9,21 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
+using MySql.Data.MySqlClient;
+using SistemaUniversidad.LOGICA.DATABASE;
 
 namespace SistemaUniversidad.DISEÑO.Administrador
 {
     public partial class Modificar : Form
     {
         public Form modificar;
-        public Modificar()
-        {
+        public Modificar(){
             InitializeComponent();
             cmbCarreras.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbNacionalidad.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        private void Modificar_Load(object sender, EventArgs e)
-        {
+        private void Modificar_Load(object sender, EventArgs e){
             LimpiarTodo();
             mostrar();
         }
@@ -75,20 +75,14 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         }
         #endregion
 
-        private void btnSalirAggAlumno_Click(object sender, EventArgs e)
-        {
+        private void btnSalirAggAlumno_Click(object sender, EventArgs e){
             ModificarAlumno Modificar = new ModificarAlumno();
             Modificar.modificarAlumno = this;
-            Modificar.setAlumSistemas(listaRsistemas);
-            Modificar.setAlumAgronomia(listaRagronomia);
-            Modificar.setAlumElectrica(listaRelectrica);
-            Modificar.setAlumIndustrial(listaRindustrial);
             this.Close();
             Modificar.Show();
         }
 
-        private void btnLimpiar_Click(object sender, EventArgs e)
-        {
+        private void btnLimpiar_Click(object sender, EventArgs e){
             LimpiarTodo();
         }
 
@@ -194,22 +188,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             nuevoAlumno.setNacionalidad(cmbNacionalidad.Text);
             nuevoAlumno.setEtadoCivil(cmbEstadoCivil.Text);
             nuevoAlumno.setMatricula(int.Parse(txtMatricula.Text));
-            if (cmbCarreras.Text == "Ingeniería de Sistemas Informáticos")
-            {                
-                listaRsistemas[indice] = nuevoAlumno;
-            }
-            else if (cmbCarreras.Text == "Ingeniería Agronómica")
-            {
-                listaRagronomia[indice] = nuevoAlumno;
-            }
-            else if (cmbCarreras.Text == "Ingeniería Eléctrica")
-            {
-                listaRelectrica[indice] = nuevoAlumno;
-            }
-            else if (cmbCarreras.Text == "Ingeniería Industrial")
-            {
-                listaRindustrial[indice] = nuevoAlumno;
-            }
             #endregion
 
             LimpiarEtiquetas();

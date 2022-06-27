@@ -172,7 +172,7 @@
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(57, 17);
             this.lblCorreo.TabIndex = 5;
-            this.lblCorreo.Text = "Correo:";
+            this.lblCorreo.Text = "Carnet:";
             // 
             // txtClave
             // 

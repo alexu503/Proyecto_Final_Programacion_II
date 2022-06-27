@@ -185,6 +185,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.groupBoxFiltro = new System.Windows.Forms.GroupBox();
             this.txtDato = new System.Windows.Forms.TextBox();
             this.lblDatos = new System.Windows.Forms.Label();
+            this.btnFiltrarDatos = new System.Windows.Forms.Button();
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
@@ -195,7 +196,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.pnlContenedor = new System.Windows.Forms.Panel();
             this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
             this.dragControl2 = new SistemaUniversidad.LOGICA.DragControl();
-            this.btnFiltrarDatos = new System.Windows.Forms.Button();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.groupBoxFiltro.SuspendLayout();
@@ -322,6 +322,17 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.lblDatos.Text = "Introduzca los datos:";
             this.lblDatos.Click += new System.EventHandler(this.lblDatos_Click);
             // 
+            // btnFiltrarDatos
+            // 
+            this.btnFiltrarDatos.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnFiltrarDatos.Location = new System.Drawing.Point(86, 123);
+            this.btnFiltrarDatos.Name = "btnFiltrarDatos";
+            this.btnFiltrarDatos.Size = new System.Drawing.Size(151, 42);
+            this.btnFiltrarDatos.TabIndex = 0;
+            this.btnFiltrarDatos.Text = "CARGAR DATOS";
+            this.btnFiltrarDatos.UseVisualStyleBackColor = true;
+            this.btnFiltrarDatos.Click += new System.EventHandler(this.btnFiltrarDatos_Click);
+            // 
             // cmbFiltro
             // 
             this.cmbFiltro.FormattingEnabled = true;
@@ -390,7 +401,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(151, 52);
             this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "ELIMIAR REGISTRO";
+            this.btnEliminar.Text = "ELIMINAR REGISTRO";
             this.btnEliminar.UseVisualStyleBackColor = true;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
@@ -421,17 +432,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // dragControl2
             // 
             this.dragControl2.SelectControl = this.lblTitulo;
-            // 
-            // btnFiltrarDatos
-            // 
-            this.btnFiltrarDatos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltrarDatos.Location = new System.Drawing.Point(86, 123);
-            this.btnFiltrarDatos.Name = "btnFiltrarDatos";
-            this.btnFiltrarDatos.Size = new System.Drawing.Size(151, 42);
-            this.btnFiltrarDatos.TabIndex = 0;
-            this.btnFiltrarDatos.Text = "CARGAR DATOS";
-            this.btnFiltrarDatos.UseVisualStyleBackColor = true;
-            this.btnFiltrarDatos.Click += new System.EventHandler(this.btnFiltrarDatos_Click);
             // 
             // EliminarAlumno
             // 

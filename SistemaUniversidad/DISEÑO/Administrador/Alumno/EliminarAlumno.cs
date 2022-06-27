@@ -43,10 +43,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         {
             Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();
             MenuAdmin.menuAdmin = this;
-            MenuAdmin.setAlumSistemas(listaRsistemas);
-            MenuAdmin.setAlumAgronomia(listaRagronomia);
-            MenuAdmin.setAlumElectrica(listaRelectrica);
-            MenuAdmin.setAlumIndustrial(listaRindustrial);
             this.Close();
             MenuAdmin.Show();
         }
@@ -54,10 +50,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         {
             Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();
             MenuAdmin.menuAdmin = this;
-            MenuAdmin.setAlumSistemas(listaRsistemas);
-            MenuAdmin.setAlumAgronomia(listaRagronomia);
-            MenuAdmin.setAlumElectrica(listaRelectrica);
-            MenuAdmin.setAlumIndustrial(listaRindustrial);
             this.Close();
             MenuAdmin.Show();
         }
@@ -79,7 +71,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 MySqlConnection connection = GenerateConnection.Connection();
                 MySqlCommand command = new MySqlCommand();
                 command.Connection =  connection;
-                command.CommandText = "SELECT * FROM Alumnos WHERE Carrera = @Carrera";
+                command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = @Carrera";
                 command.Parameters.Add(new MySqlParameter("@Carrera", cmbCarreras.Text));
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
                 dataAdapter.SelectCommand = command;
@@ -99,39 +91,41 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         #region Eliminar Alumno
         private void btnEliminar_Click(object sender, EventArgs e){
 
-            int filaSeleccionada = dgvAlumnos.CurrentCell.RowIndex;
-            //I can't delete directly database's positions. So, i get some unique values, consult and delete.
-            string carnetAlumno = "", duiAlumno = "";
-            carnetAlumno = dgvAlumnos.Rows[filaSeleccionada].Cells[4].Value.ToString();
-            duiAlumno = dgvAlumnos.Rows[filaSeleccionada].Cells[8].Value.ToString();
+            int rowPosition = dgvAlumnos.CurrentCell.RowIndex;
 
-            MySqlConnection connection = GenerateConnection.Connection();
-            MySqlCommand command = new MySqlCommand();
-            command.Connection =  connection;
+            if(cmbCarreras.Text != "") {
+                //I can't delete directly database's rows positions. So, i get some unique values, consult and delete.
+                string carnetAlumno = "";
+                carnetAlumno = dgvAlumnos.Rows[rowPosition].Cells[4].Value.ToString();
 
-            if (carnetAlumno != "" && duiAlumno != "") {
-                try {
-                    if (MessageBox.Show("¿Seguro que desea proceder?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
-                        command.CommandText = "DELETE FROM Alumnos WHERE Carnet = @Carnet AND DocumentoDeIdentidad = @DUI";
-                        command.Parameters.Add(new MySqlParameter("@Carnet", carnetAlumno));
-                        command.Parameters.Add(new MySqlParameter("@DocumentoDeIdentidad", duiAlumno));
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Datos eliminados satisfactoriamente");
-                        //Update table
-                        command.CommandText = "SELECT * FROM Persona";
-                        MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
-                        dataAdapter.SelectCommand = command;
-                        DataTable table = new DataTable();
-                        dataAdapter.Fill(table);
-                        dgvAlumnos.DataSource = table;
-                        connection.Close();
+                MySqlConnection connection = GenerateConnection.Connection();
+                MySqlCommand command = new MySqlCommand();
+                command.Connection =  connection;
+
+                if (carnetAlumno != "") {
+                    try {
+                        if (MessageBox.Show("¿Seguro que desea proceder?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                            command.CommandText = "DELETE FROM Alumnos WHERE Carnet = '"+carnetAlumno+"'";
+                            command.CommandText = "DELETE FROM Logins WHERE Carnet = '"+carnetAlumno+"'";
+                            command.ExecuteNonQuery();
+                            MessageBox.Show("Datos eliminados satisfactoriamente");
+                            //Update table
+                            command.CommandText = "SELECT * FROM Alumnos";
+                            MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+                            dataAdapter.SelectCommand = command;
+                            DataTable table = new DataTable();
+                            dataAdapter.Fill(table);
+                            dgvAlumnos.DataSource = table;
+                            connection.Close();
+                        }
+                    } catch (Exception ex) {
+                        MessageBox.Show("Ha ocurrido un error: " + ex.Message);
                     }
-                } catch (Exception ex) {
-                    MessageBox.Show("Ha ocurrido un error: " + ex.Message);
+                } else {
+                    MessageBox.Show("POR FAVOR SELECCIONE UN REGISTRO.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-            }
-            else {
-                MessageBox.Show("POR FAVOR SELECCIONE UN REGISTRO.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            } else {
+                MessageBox.Show("POR FAVOR SELECCIONE UNA CARRERA.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         #endregion
