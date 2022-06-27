@@ -175,8 +175,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             MessageBox.Show("EL REGISTRO HA SIDO ACTUALIZADO CON EXITO", "¡ATENCION!" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
             btnSalirAggAlumno_Click(sender,e);
         }
-        private bool ValidarFecha()
-        {
+        private bool ValidarFecha(){
 
             if (dtPCalendarioNacimiento.Value == DateTime.Today)
             {
