@@ -36,7 +36,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 txtFechaInscripcion.Text = x.getFechaInscripcion();
                 cmbNacionalidad.Text = x.getNacionalidad();
                 cmbEstadoCivil.Text = x.getEstadoCivil();
-                previousCarnet = x.getCarnet(); ;
+                previousCarnet = x.getCarnet();
 
                 if (x.getSexo() == "Masculino") {
                     rbtnMasculino.Checked = true;

@@ -165,8 +165,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             command.CommandText = "UPDATE Alumnos SET Nombres = '"+txtNombres.Text+"', PrimerApellido = '"+txtSegundoApellido.Text+"', SegundoApellido = '"+txtSegundoApellido.Text+"'," +
                 "NombreCarrera = '"+cmbCarreras.Text+"', Carnet = '"+txtCarnet.Text+"', DocumentoDeIdentidad = '"+txtDocumentoIdentidad.Text+"', Sexo = '"+sexo+"', " +
                 "Direccion = '"+txtDireccion.Text+"', Telefono = '"+txtTelefono.Text+"', Celular = '"+txtCelular.Text+"', Correo = '"+txtCorreo.Text+"', Nacionalidad = '"+cmbNacionalidad.Text+"', " +
-                "EstadoCivil = '"+cmbEstadoCivil.Text+"' WHERE Nombres = '"+txtNombres.Text+"' AND Carnet = '"+previousCarnet+"'";
-            command.CommandText = "UPDATE Logins SET Usuario = '"+txtCarnet.Text+"'";
+                "EstadoCivil = '"+cmbEstadoCivil.Text+"' WHERE Nombres = '"+txtNombres.Text+"' AND Carnet = '"+this.previousCarnet+"'; " +
+                "UPDATE Logins SET Usuario = '"+txtCarnet.Text+"' WHERE Usuario = '"+this.previousCarnet+"'";
+            //command.CommandText = "";
             command.ExecuteNonQuery();
             connection.Close();
             #endregion
