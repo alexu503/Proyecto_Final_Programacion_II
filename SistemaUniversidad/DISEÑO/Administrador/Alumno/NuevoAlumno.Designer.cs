@@ -4,10 +4,8 @@ using SistemaUniversidad.LOGICA.DATABASE;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
 
-namespace SistemaUniversidad.DISEÑO.Administrador
-{
-    partial class NuevoAlumno
-    {
+namespace SistemaUniversidad.DISEÑO.Administrador{
+    partial class NuevoAlumno{
         /// <summary>
         /// Required designer variable.
         /// </summary>

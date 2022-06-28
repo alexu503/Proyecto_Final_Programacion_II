@@ -13,10 +13,8 @@ using SistemaUniversidad.LOGICA.DATABASE;
 using System.Text.RegularExpressions;
 using MySql.Data.MySqlClient;
 
-namespace SistemaUniversidad.DISEÑO.Administrador
-{
-    public partial class NuevoAlumno : Form
-    {
+namespace SistemaUniversidad.DISEÑO.Administrador{
+    public partial class NuevoAlumno : Form{
         public Form nuevoAlumno;
         public NuevoAlumno(){
             InitializeComponent();
@@ -24,8 +22,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             cmbEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbNacionalidad.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        private void NuevoAlumno_Load(object sender, EventArgs e)
-        {
+        private void NuevoAlumno_Load(object sender, EventArgs e){
             DateTime fechaInscripcion = DateTime.Today;
             txtFechaInscripcion.Text = fechaInscripcion.ToShortDateString().ToString();
             LimpiarTodo();
@@ -149,8 +146,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         #endregion
 
         #region Guardar
-        private void btnGuardar_Click(object sender, EventArgs e)
-        {
+        private void btnGuardar_Click(object sender, EventArgs e){
             DateTime fechaHoy = DateTime.Today;
             LimpiarEtiquetas();
             //Valida los correos y números de teléfono
@@ -186,15 +182,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                     }
                 }
                 
-                if (Regex.IsMatch(txtCelular.Text, expresion))
-                {
+                if (Regex.IsMatch(txtCelular.Text, expresion)){
                     //lblMensaje4.Text = "Número válido";
-                    if (Regex.Replace(txtCelular.Text, expresion, string.Empty).Length == 0)
-                    {
+                    if (Regex.Replace(txtCelular.Text, expresion, string.Empty).Length == 0){
                         lblMensaje5.Text = "";
                     }
-                    else
-                    {
+                    else{
                         lblMensaje5.Text = "";
                     }
                 }

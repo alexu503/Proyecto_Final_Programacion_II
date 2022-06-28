@@ -254,11 +254,15 @@ namespace SistemaUniversidad.DISEÑO.Menu
             
         }
 
-
-
         #endregion
 
         #endregion
 
+        private void btnAgregarAsignatura_Click(object sender, EventArgs e) {
+            Administrador.Asignaturas.AgregarAsignatura aggAsig = new Administrador.Asignaturas.AgregarAsignatura();
+            this.Hide();
+            aggAsig.agregarAsignatura = this;
+            aggAsig.Show();
+        }
     }
 }

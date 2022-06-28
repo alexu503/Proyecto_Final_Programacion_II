@@ -730,6 +730,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnAgregarAsignatura.TabIndex = 1;
             this.btnAgregarAsignatura.Text = "Agregar";
             this.btnAgregarAsignatura.UseVisualStyleBackColor = true;
+            this.btnAgregarAsignatura.Click += new System.EventHandler(this.btnAgregarAsignatura_Click);
             // 
             // btnModificarAsignatura
             // 

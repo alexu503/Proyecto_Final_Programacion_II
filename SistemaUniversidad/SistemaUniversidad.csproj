@@ -104,6 +104,36 @@
     <Compile Include="DISEÑO\Administrador\Alumno\Modificar.Designer.cs">
       <DependentUpon>Modificar.cs</DependentUpon>
     </Compile>
+    <Compile Include="DISEÑO\Administrador\Asignaturas\AgregarAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Asignaturas\AgregarAsignatura.Designer.cs">
+      <DependentUpon>AgregarAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Asignaturas\EliminarAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Asignaturas\EliminarAsignatura.Designer.cs">
+      <DependentUpon>EliminarAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Docente\AgregarCalificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Docente\AgregarCalificaciones.Designer.cs">
+      <DependentUpon>AgregarCalificaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Estudiante\BuscarAsignaturas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Estudiante\BuscarAsignaturas.Designer.cs">
+      <DependentUpon>BuscarAsignaturas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Estudiante\VerCalificaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Estudiante\VerCalificaciones.Designer.cs">
+      <DependentUpon>VerCalificaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="DISEÑO\Login\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -163,6 +193,18 @@
     <EmbeddedResource Include="DISEÑO\Administrador\Alumno\Modificar.resx">
       <DependentUpon>Modificar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Asignaturas\AgregarAsignatura.resx">
+      <DependentUpon>AgregarAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Docente\AgregarCalificaciones.resx">
+      <DependentUpon>AgregarCalificaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Estudiante\BuscarAsignaturas.resx">
+      <DependentUpon>BuscarAsignaturas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Estudiante\VerCalificaciones.resx">
+      <DependentUpon>VerCalificaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
@@ -200,9 +242,56 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DISEÑO\Administrador\Docentes\" />
-    <Folder Include="DISEÑO\Docente\" />
-    <Folder Include="DISEÑO\Estudiante\" />
     <Folder Include="DISEÑO\Registro\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Images\1-login.png" />
+    <Content Include="Images\1486503746-book-learning-bookmark-ribbon-education-mark-school_81290.ico" />
+    <Content Include="Images\2login.png" />
+    <Content Include="Images\Aggar.png" />
+    <Content Include="Images\Agregar.png" />
+    <Content Include="Images\asigIcon.png" />
+    <Content Include="Images\avatarUser.png" />
+    <Content Include="Images\AvatarUsuarioW.png" />
+    <Content Include="Images\Buscar.png" />
+    <Content Include="Images\CalificacionP.png" />
+    <Content Include="Images\Carreras.png" />
+    <Content Include="Images\Cerrar-sesion.png" />
+    <Content Include="Images\cerrar.png" />
+    <Content Include="Images\CerrarA.png" />
+    <Content Include="Images\CerrarAplicacion.png" />
+    <Content Include="Images\clientes.png" />
+    <Content Include="Images\CloseApp.png" />
+    <Content Include="Images\CloseFinal.png" />
+    <Content Include="Images\Editar.png" />
+    <Content Include="Images\Eliminar.png" />
+    <Content Include="Images\empleados.png" />
+    <Content Include="Images\HomeP1.png" />
+    <Content Include="Images\HomeP2.png" />
+    <Content Include="Images\Horarios.png" />
+    <Content Include="Images\HorariosC.png" />
+    <Content Include="Images\HorariosClases.png" />
+    <Content Include="Images\iconoF.png" />
+    <Content Include="Images\icons8-password-key-48.png" />
+    <Content Include="Images\icons8-password-key-80.png" />
+    <Content Include="Images\icons8-user-16.png" />
+    <Content Include="Images\icons8-user-40.png" />
+    <Content Include="Images\imgBarra.png" />
+    <Content Include="Images\key.png" />
+    <Content Include="Images\login-img.png" />
+    <Content Include="Images\login.png" />
+    <Content Include="Images\LogoTipo.png" />
+    <Content Include="Images\maxi.png" />
+    <Content Include="Images\Maximizar.png" />
+    <Content Include="Images\minimazar.png" />
+    <Content Include="Images\Minimizar.png" />
+    <Content Include="Images\Mision.JPG" />
+    <Content Include="Images\res.png" />
+    <Content Include="Images\Restaurar.png" />
+    <Content Include="Images\SalirF.png" />
+    <Content Include="Images\User-80_icon-icons.com_57249.png" />
+    <Content Include="Images\user-login-305.png" />
+    <Content Include="Images\Vision.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.6\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets" Condition="Exists('..\packages\SQLitePCLRaw.lib.e_sqlite3.2.0.6\build\net461\SQLitePCLRaw.lib.e_sqlite3.targets')" />
