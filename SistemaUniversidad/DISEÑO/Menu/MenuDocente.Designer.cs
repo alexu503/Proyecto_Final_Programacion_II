@@ -30,21 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuDocente));
             this.pnlConten = new System.Windows.Forms.Panel();
+            this.pnlMenuLateral = new System.Windows.Forms.Panel();
+            this.btnGestionarCalificaciones = new System.Windows.Forms.Button();
+            this.pnlHome = new System.Windows.Forms.Panel();
+            this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.pnlMenuLateral = new System.Windows.Forms.Panel();
-            this.pnlHome = new System.Windows.Forms.Panel();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.btnGestionarCalificaciones = new System.Windows.Forms.Button();
-            this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
             this.imgMasOpciones = new System.Windows.Forms.PictureBox();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
             this.pnlConten.SuspendLayout();
-            this.pnlSuperior.SuspendLayout();
             this.pnlMenuLateral.SuspendLayout();
             this.pnlHome.SuspendLayout();
+            this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -58,6 +58,66 @@
             this.pnlConten.Name = "pnlConten";
             this.pnlConten.Size = new System.Drawing.Size(1016, 637);
             this.pnlConten.TabIndex = 0;
+            // 
+            // pnlMenuLateral
+            // 
+            this.pnlMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(51)))));
+            this.pnlMenuLateral.Controls.Add(this.btnGestionarCalificaciones);
+            this.pnlMenuLateral.Controls.Add(this.pnlHome);
+            this.pnlMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
+            this.pnlMenuLateral.Location = new System.Drawing.Point(0, 35);
+            this.pnlMenuLateral.Name = "pnlMenuLateral";
+            this.pnlMenuLateral.Size = new System.Drawing.Size(206, 600);
+            this.pnlMenuLateral.TabIndex = 2;
+            // 
+            // btnGestionarCalificaciones
+            // 
+            this.btnGestionarCalificaciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionarCalificaciones.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarCalificaciones.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGestionarCalificaciones.FlatAppearance.BorderSize = 2;
+            this.btnGestionarCalificaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGestionarCalificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarCalificaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarCalificaciones.ForeColor = System.Drawing.Color.White;
+            this.btnGestionarCalificaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarCalificaciones.Image")));
+            this.btnGestionarCalificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarCalificaciones.Location = new System.Drawing.Point(0, 50);
+            this.btnGestionarCalificaciones.Name = "btnGestionarCalificaciones";
+            this.btnGestionarCalificaciones.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnGestionarCalificaciones.Size = new System.Drawing.Size(206, 35);
+            this.btnGestionarCalificaciones.TabIndex = 26;
+            this.btnGestionarCalificaciones.Text = "    Calificaciones";
+            this.btnGestionarCalificaciones.UseVisualStyleBackColor = true;
+            this.btnGestionarCalificaciones.Click += new System.EventHandler(this.btnGestionarCalificaciones_Click);
+            // 
+            // pnlHome
+            // 
+            this.pnlHome.Controls.Add(this.btnCerrarSesion);
+            this.pnlHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHome.Location = new System.Drawing.Point(0, 0);
+            this.pnlHome.Name = "pnlHome";
+            this.pnlHome.Size = new System.Drawing.Size(206, 50);
+            this.pnlHome.TabIndex = 2;
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
+            this.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
+            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
+            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(1, 0);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(205, 50);
+            this.btnCerrarSesion.TabIndex = 1;
+            this.btnCerrarSesion.Text = "      Cerrar sesion";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // pnlSuperior
             // 
@@ -116,6 +176,18 @@
             this.btnMinimizar.TabIndex = 4;
             this.btnMinimizar.UseVisualStyleBackColor = true;
             // 
+            // imgMasOpciones
+            // 
+            this.imgMasOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgMasOpciones.Image = ((System.Drawing.Image)(resources.GetObject("imgMasOpciones.Image")));
+            this.imgMasOpciones.Location = new System.Drawing.Point(7, 0);
+            this.imgMasOpciones.Name = "imgMasOpciones";
+            this.imgMasOpciones.Size = new System.Drawing.Size(36, 34);
+            this.imgMasOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgMasOpciones.TabIndex = 3;
+            this.imgMasOpciones.TabStop = false;
+            this.imgMasOpciones.Click += new System.EventHandler(this.imgMasOpciones_Click_1);
+            // 
             // btnCerrar
             // 
             this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -130,81 +202,9 @@
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.UseVisualStyleBackColor = true;
             // 
-            // pnlMenuLateral
-            // 
-            this.pnlMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(51)))));
-            this.pnlMenuLateral.Controls.Add(this.btnGestionarCalificaciones);
-            this.pnlMenuLateral.Controls.Add(this.pnlHome);
-            this.pnlMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenuLateral.Location = new System.Drawing.Point(0, 35);
-            this.pnlMenuLateral.Name = "pnlMenuLateral";
-            this.pnlMenuLateral.Size = new System.Drawing.Size(206, 600);
-            this.pnlMenuLateral.TabIndex = 2;
-            // 
-            // pnlHome
-            // 
-            this.pnlHome.Controls.Add(this.btnCerrarSesion);
-            this.pnlHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHome.Location = new System.Drawing.Point(0, 0);
-            this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(206, 50);
-            this.pnlHome.TabIndex = 2;
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrarSesion.FlatAppearance.BorderSize = 0;
-            this.btnCerrarSesion.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
-            this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(1, 0);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnCerrarSesion.Size = new System.Drawing.Size(205, 50);
-            this.btnCerrarSesion.TabIndex = 1;
-            this.btnCerrarSesion.Text = "      Cerrar sesion";
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-            // btnGestionarCalificaciones
-            // 
-            this.btnGestionarCalificaciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGestionarCalificaciones.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGestionarCalificaciones.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnGestionarCalificaciones.FlatAppearance.BorderSize = 2;
-            this.btnGestionarCalificaciones.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnGestionarCalificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionarCalificaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionarCalificaciones.ForeColor = System.Drawing.Color.White;
-            this.btnGestionarCalificaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarCalificaciones.Image")));
-            this.btnGestionarCalificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionarCalificaciones.Location = new System.Drawing.Point(0, 50);
-            this.btnGestionarCalificaciones.Name = "btnGestionarCalificaciones";
-            this.btnGestionarCalificaciones.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
-            this.btnGestionarCalificaciones.Size = new System.Drawing.Size(206, 35);
-            this.btnGestionarCalificaciones.TabIndex = 26;
-            this.btnGestionarCalificaciones.Text = "    Calificaciones";
-            this.btnGestionarCalificaciones.UseVisualStyleBackColor = true;
-            this.btnGestionarCalificaciones.Click += new System.EventHandler(this.btnGestionarCalificaciones_Click);
-            // 
             // dragControl1
             // 
             this.dragControl1.SelectControl = this.pnlSuperior;
-            // 
-            // imgMasOpciones
-            // 
-            this.imgMasOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgMasOpciones.Image = ((System.Drawing.Image)(resources.GetObject("imgMasOpciones.Image")));
-            this.imgMasOpciones.Location = new System.Drawing.Point(7, 0);
-            this.imgMasOpciones.Name = "imgMasOpciones";
-            this.imgMasOpciones.Size = new System.Drawing.Size(36, 34);
-            this.imgMasOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgMasOpciones.TabIndex = 3;
-            this.imgMasOpciones.TabStop = false;
-            this.imgMasOpciones.Click += new System.EventHandler(this.imgMasOpciones_Click_1);
             // 
             // MenuDocente
             // 
@@ -216,9 +216,9 @@
             this.Name = "MenuDocente";
             this.Text = "MenuDocente";
             this.pnlConten.ResumeLayout(false);
-            this.pnlSuperior.ResumeLayout(false);
             this.pnlMenuLateral.ResumeLayout(false);
             this.pnlHome.ResumeLayout(false);
+            this.pnlSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).EndInit();
             this.ResumeLayout(false);
 

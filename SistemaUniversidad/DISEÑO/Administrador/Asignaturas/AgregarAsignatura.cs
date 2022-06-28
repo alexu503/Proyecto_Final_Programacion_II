@@ -63,12 +63,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas
                     query.Connection = connection;
 
                     try {
-                        query.CommandText = "INSERT INTO Materias(NombreCarrera, NombreMateria, PrimerParcial, PrimerLaboratorio, " +
-                            "SegundoParcial, SegundoLaboratorio, TercerParcial, TercerLaboratorio, CuartoParcial, CuartoLaboratorio)" +
-                            "VALUES('"+cmbCarreras.Text+"', '"+txtNombre.Text+"', '0', '0', '0', '0', '0', '0', '0', '0')";
+                        query.CommandText = "INSERT INTO Materias(NombreCarrera, NombreMateria) VALUES('"+cmbCarreras.Text+"', '"+txtNombre.Text+"')";
                         query.ExecuteNonQuery();
 
                         MessageBox.Show("DATOS GUARDADOS", "ATENCIÓN", MessageBoxButtons.OK);
+                        cmbCarreras.Text = "";
+                        txtNombre.Clear();
 
                     }catch(Exception ex) {
                         MessageBox.Show("Error: " + ex.Message);
@@ -86,10 +86,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e) {
             if (char.IsDigit(e.KeyChar)) {
                 MessageBox.Show("NO SE PERMITEN NÚMEROS ARÁBIGOS. EN SU LUGAR, USE NÚMEROS ROMANOS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombre.Clear();
             }
 
             if (char.IsPunctuation(e.KeyChar)) {
                 MessageBox.Show("NO SE PERMITEN SIGNOS DE PUNTUACIÓN", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtNombre.Clear();
             }
         }
     }

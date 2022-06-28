@@ -1,4 +1,11 @@
-﻿namespace SistemaUniversidad.DISEÑO.Docente
+﻿using System;
+using System.Collections.Generic;
+using MySql.Data.MySqlClient;
+using System.Windows.Forms;
+using SistemaUniversidad.LOGICA;
+using SistemaUniversidad.LOGICA.DATABASE;
+
+namespace SistemaUniversidad.DISEÑO.Docente
 {
     partial class AgregarCalificaciones
     {
@@ -6,13 +13,37 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        List<Calificaciones> lstCalificaciones = new List<Calificaciones>();
 
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
+        /// 
+
+        void UpdateData() {
+            MySqlConnection connection = GenerateConnection.Connection();
+            MySqlCommand query = new MySqlCommand();
+            query.Connection = connection;
+
+            try {
+                foreach (Calificaciones x in lstCalificaciones) {
+
+                    query.CommandText = "INSERT INTO Notas(CarnetAlumno, PrimerParcial, PrimerLab, SegundoParcial, SegundoLab, TecerParcial, TercerLab, CuartoParcial, CuartoLab, PromedioFinal)" +
+                    "VALUES('"+txtGetCarnetAlumno.Text+"', '"+x.PrimerParcial+"', '"+x.PrimerLab+"', '"+x.SegundoParcial+"', '"+x.SegundoParcial+"', '"+x.SegundoLab+"', " +
+                    "'"+x.TercerParcial+"', '"+x.TercerLab+"', '"+x.CuartoParcial+"', '"+x.CuartoLab+"', '"+x.Promedio+"') " +
+                    "WHERE NombreCarrera = '"+cmbCarreras.Text+"' AND '"+txtGetCarnetAlumno.Text+"'";
+
+                    MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            } catch(Exception ex) {
+                MessageBox.Show("Error: " + ex.Message);
+            } finally {
+                connection.Close();
+            }
+        }
+
+        protected override void Dispose(bool disposing){
             if (disposing && (components != null))
             {
                 components.Dispose();
@@ -30,6 +61,17 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarCalificaciones));
             this.pnlConten = new System.Windows.Forms.Panel();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.txtGetCuartoLab = new System.Windows.Forms.TextBox();
+            this.txtGetCuartoParcial = new System.Windows.Forms.TextBox();
+            this.txtGetSegundoLab = new System.Windows.Forms.TextBox();
+            this.txtGetTercerLab = new System.Windows.Forms.TextBox();
+            this.txtGetTercerParcial = new System.Windows.Forms.TextBox();
+            this.txtGetPrimerLab = new System.Windows.Forms.TextBox();
+            this.txtGetSegundoParcial = new System.Windows.Forms.TextBox();
+            this.txtGetPrimerParcial = new System.Windows.Forms.TextBox();
+            this.lblNotasLabs = new System.Windows.Forms.Label();
+            this.lblNotasParciales = new System.Windows.Forms.Label();
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
             this.groupBoxBotones = new System.Windows.Forms.GroupBox();
             this.btnRegresar = new System.Windows.Forms.Button();
@@ -41,26 +83,19 @@
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.cmbMaterias = new System.Windows.Forms.ComboBox();
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
+            this.lblMateria = new System.Windows.Forms.Label();
+            this.lblCarnetAlumno = new System.Windows.Forms.Label();
             this.lblCarrera = new System.Windows.Forms.Label();
+            this.txtGetCarnetAlumno = new System.Windows.Forms.TextBox();
             this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
             this.dragControl2 = new SistemaUniversidad.LOGICA.DragControl();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblNotasParciales = new System.Windows.Forms.Label();
-            this.lblNotasLabs = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
             this.pnlConten.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
             this.groupBoxBotones.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // pnlConten
@@ -70,13 +105,127 @@
             this.pnlConten.Controls.Add(this.dgvAlumnos);
             this.pnlConten.Controls.Add(this.groupBoxBotones);
             this.pnlConten.Controls.Add(this.pnlSuperior);
+            this.pnlConten.Controls.Add(this.cmbMaterias);
             this.pnlConten.Controls.Add(this.cmbCarreras);
+            this.pnlConten.Controls.Add(this.lblMateria);
+            this.pnlConten.Controls.Add(this.lblCarnetAlumno);
             this.pnlConten.Controls.Add(this.lblCarrera);
+            this.pnlConten.Controls.Add(this.txtGetCarnetAlumno);
             this.pnlConten.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConten.Location = new System.Drawing.Point(0, 0);
             this.pnlConten.Name = "pnlConten";
             this.pnlConten.Size = new System.Drawing.Size(847, 589);
             this.pnlConten.TabIndex = 0;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtGetCuartoLab);
+            this.groupBox1.Controls.Add(this.txtGetCuartoParcial);
+            this.groupBox1.Controls.Add(this.txtGetSegundoLab);
+            this.groupBox1.Controls.Add(this.txtGetTercerLab);
+            this.groupBox1.Controls.Add(this.txtGetTercerParcial);
+            this.groupBox1.Controls.Add(this.txtGetPrimerLab);
+            this.groupBox1.Controls.Add(this.txtGetSegundoParcial);
+            this.groupBox1.Controls.Add(this.txtGetPrimerParcial);
+            this.groupBox1.Controls.Add(this.lblNotasLabs);
+            this.groupBox1.Controls.Add(this.lblNotasParciales);
+            this.groupBox1.Location = new System.Drawing.Point(215, 99);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(619, 202);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
+            // 
+            // txtGetCuartoLab
+            // 
+            this.txtGetCuartoLab.Location = new System.Drawing.Point(455, 163);
+            this.txtGetCuartoLab.Multiline = true;
+            this.txtGetCuartoLab.Name = "txtGetCuartoLab";
+            this.txtGetCuartoLab.Size = new System.Drawing.Size(65, 31);
+            this.txtGetCuartoLab.TabIndex = 1;
+            this.txtGetCuartoLab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetCuartoLab_KeyPress);
+            // 
+            // txtGetCuartoParcial
+            // 
+            this.txtGetCuartoParcial.Location = new System.Drawing.Point(94, 163);
+            this.txtGetCuartoParcial.Multiline = true;
+            this.txtGetCuartoParcial.Name = "txtGetCuartoParcial";
+            this.txtGetCuartoParcial.Size = new System.Drawing.Size(65, 31);
+            this.txtGetCuartoParcial.TabIndex = 1;
+            this.txtGetCuartoParcial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetCuartoParcial_KeyPress);
+            // 
+            // txtGetSegundoLab
+            // 
+            this.txtGetSegundoLab.Location = new System.Drawing.Point(455, 89);
+            this.txtGetSegundoLab.Multiline = true;
+            this.txtGetSegundoLab.Name = "txtGetSegundoLab";
+            this.txtGetSegundoLab.Size = new System.Drawing.Size(65, 31);
+            this.txtGetSegundoLab.TabIndex = 1;
+            this.txtGetSegundoLab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetSegundoLab_KeyPress);
+            // 
+            // txtGetTercerLab
+            // 
+            this.txtGetTercerLab.Location = new System.Drawing.Point(455, 126);
+            this.txtGetTercerLab.Multiline = true;
+            this.txtGetTercerLab.Name = "txtGetTercerLab";
+            this.txtGetTercerLab.Size = new System.Drawing.Size(65, 31);
+            this.txtGetTercerLab.TabIndex = 1;
+            this.txtGetTercerLab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetTecerLab_KeyPress);
+            // 
+            // txtGetTercerParcial
+            // 
+            this.txtGetTercerParcial.Location = new System.Drawing.Point(94, 126);
+            this.txtGetTercerParcial.Multiline = true;
+            this.txtGetTercerParcial.Name = "txtGetTercerParcial";
+            this.txtGetTercerParcial.Size = new System.Drawing.Size(65, 31);
+            this.txtGetTercerParcial.TabIndex = 1;
+            this.txtGetTercerParcial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetTercerParcial_KeyPress);
+            // 
+            // txtGetPrimerLab
+            // 
+            this.txtGetPrimerLab.Location = new System.Drawing.Point(455, 52);
+            this.txtGetPrimerLab.Multiline = true;
+            this.txtGetPrimerLab.Name = "txtGetPrimerLab";
+            this.txtGetPrimerLab.Size = new System.Drawing.Size(65, 31);
+            this.txtGetPrimerLab.TabIndex = 1;
+            this.txtGetPrimerLab.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetPrimerLab_KeyPress);
+            // 
+            // txtGetSegundoParcial
+            // 
+            this.txtGetSegundoParcial.Location = new System.Drawing.Point(94, 89);
+            this.txtGetSegundoParcial.Multiline = true;
+            this.txtGetSegundoParcial.Name = "txtGetSegundoParcial";
+            this.txtGetSegundoParcial.Size = new System.Drawing.Size(65, 31);
+            this.txtGetSegundoParcial.TabIndex = 1;
+            this.txtGetSegundoParcial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetSegundoParcial_KeyPress);
+            // 
+            // txtGetPrimerParcial
+            // 
+            this.txtGetPrimerParcial.Location = new System.Drawing.Point(94, 52);
+            this.txtGetPrimerParcial.Multiline = true;
+            this.txtGetPrimerParcial.Name = "txtGetPrimerParcial";
+            this.txtGetPrimerParcial.Size = new System.Drawing.Size(65, 31);
+            this.txtGetPrimerParcial.TabIndex = 1;
+            this.txtGetPrimerParcial.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetPrimerParcial_KeyPress);
+            // 
+            // lblNotasLabs
+            // 
+            this.lblNotasLabs.AutoSize = true;
+            this.lblNotasLabs.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.lblNotasLabs.Location = new System.Drawing.Point(364, 21);
+            this.lblNotasLabs.Name = "lblNotasLabs";
+            this.lblNotasLabs.Size = new System.Drawing.Size(247, 20);
+            this.lblNotasLabs.TabIndex = 0;
+            this.lblNotasLabs.Text = "Calificaciones para laboratorios:";
+            // 
+            // lblNotasParciales
+            // 
+            this.lblNotasParciales.AutoSize = true;
+            this.lblNotasParciales.Font = new System.Drawing.Font("Century Gothic", 11.25F);
+            this.lblNotasParciales.Location = new System.Drawing.Point(21, 21);
+            this.lblNotasParciales.Name = "lblNotasParciales";
+            this.lblNotasParciales.Size = new System.Drawing.Size(223, 20);
+            this.lblNotasParciales.TabIndex = 0;
+            this.lblNotasParciales.Text = "Calificaciones para parciales";
             // 
             // dgvAlumnos
             // 
@@ -121,6 +270,7 @@
             this.btnAsignarNota.TabIndex = 1;
             this.btnAsignarNota.Text = "ASIGNAR NOTAS";
             this.btnAsignarNota.UseVisualStyleBackColor = true;
+            this.btnAsignarNota.Click += new System.EventHandler(this.btnAsignarNota_Click);
             // 
             // btnActualizar
             // 
@@ -131,6 +281,7 @@
             this.btnActualizar.TabIndex = 0;
             this.btnActualizar.Text = "CARGAR DATOS";
             this.btnActualizar.UseVisualStyleBackColor = true;
+            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // pnlSuperior
             // 
@@ -218,14 +369,44 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
+            // cmbMaterias
+            // 
+            this.cmbMaterias.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbMaterias.FormattingEnabled = true;
+            this.cmbMaterias.Location = new System.Drawing.Point(457, 56);
+            this.cmbMaterias.Name = "cmbMaterias";
+            this.cmbMaterias.Size = new System.Drawing.Size(150, 28);
+            this.cmbMaterias.TabIndex = 16;
+            // 
             // cmbCarreras
             // 
             this.cmbCarreras.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarreras.FormattingEnabled = true;
-            this.cmbCarreras.Location = new System.Drawing.Point(197, 56);
+            this.cmbCarreras.Location = new System.Drawing.Point(96, 56);
             this.cmbCarreras.Name = "cmbCarreras";
-            this.cmbCarreras.Size = new System.Drawing.Size(311, 28);
+            this.cmbCarreras.Size = new System.Drawing.Size(278, 28);
             this.cmbCarreras.TabIndex = 16;
+            this.cmbCarreras.SelectedValueChanged += new System.EventHandler(this.cmbCarreras_SelectedValueChanged);
+            // 
+            // lblMateria
+            // 
+            this.lblMateria.AutoSize = true;
+            this.lblMateria.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMateria.Location = new System.Drawing.Point(381, 59);
+            this.lblMateria.Name = "lblMateria";
+            this.lblMateria.Size = new System.Drawing.Size(67, 20);
+            this.lblMateria.TabIndex = 15;
+            this.lblMateria.Text = "Materia";
+            // 
+            // lblCarnetAlumno
+            // 
+            this.lblCarnetAlumno.AutoSize = true;
+            this.lblCarnetAlumno.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCarnetAlumno.Location = new System.Drawing.Point(613, 59);
+            this.lblCarnetAlumno.Name = "lblCarnetAlumno";
+            this.lblCarnetAlumno.Size = new System.Drawing.Size(122, 20);
+            this.lblCarnetAlumno.TabIndex = 15;
+            this.lblCarnetAlumno.Text = "Carnet alumno:";
             // 
             // lblCarrera
             // 
@@ -233,9 +414,19 @@
             this.lblCarrera.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCarrera.Location = new System.Drawing.Point(20, 59);
             this.lblCarrera.Name = "lblCarrera";
-            this.lblCarrera.Size = new System.Drawing.Size(171, 20);
+            this.lblCarrera.Size = new System.Drawing.Size(70, 20);
             this.lblCarrera.TabIndex = 15;
-            this.lblCarrera.Text = "Seleccione la carrera:";
+            this.lblCarrera.Text = "Carrera:";
+            // 
+            // txtGetCarnetAlumno
+            // 
+            this.txtGetCarnetAlumno.Location = new System.Drawing.Point(741, 53);
+            this.txtGetCarnetAlumno.MaxLength = 7;
+            this.txtGetCarnetAlumno.Multiline = true;
+            this.txtGetCarnetAlumno.Name = "txtGetCarnetAlumno";
+            this.txtGetCarnetAlumno.Size = new System.Drawing.Size(93, 31);
+            this.txtGetCarnetAlumno.TabIndex = 1;
+            this.txtGetCarnetAlumno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetPrimerParcial_KeyPress);
             // 
             // dragControl1
             // 
@@ -244,108 +435,6 @@
             // dragControl2
             // 
             this.dragControl2.SelectControl = this.lblTitulo;
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Controls.Add(this.textBox8);
-            this.groupBox1.Controls.Add(this.textBox4);
-            this.groupBox1.Controls.Add(this.textBox7);
-            this.groupBox1.Controls.Add(this.textBox3);
-            this.groupBox1.Controls.Add(this.textBox6);
-            this.groupBox1.Controls.Add(this.textBox5);
-            this.groupBox1.Controls.Add(this.textBox2);
-            this.groupBox1.Controls.Add(this.textBox1);
-            this.groupBox1.Controls.Add(this.lblNotasLabs);
-            this.groupBox1.Controls.Add(this.lblNotasParciales);
-            this.groupBox1.Location = new System.Drawing.Point(215, 99);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(619, 202);
-            this.groupBox1.TabIndex = 21;
-            this.groupBox1.TabStop = false;
-            // 
-            // lblNotasParciales
-            // 
-            this.lblNotasParciales.AutoSize = true;
-            this.lblNotasParciales.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.lblNotasParciales.Location = new System.Drawing.Point(21, 21);
-            this.lblNotasParciales.Name = "lblNotasParciales";
-            this.lblNotasParciales.Size = new System.Drawing.Size(223, 20);
-            this.lblNotasParciales.TabIndex = 0;
-            this.lblNotasParciales.Text = "Calificaciones para parciales";
-            // 
-            // lblNotasLabs
-            // 
-            this.lblNotasLabs.AutoSize = true;
-            this.lblNotasLabs.Font = new System.Drawing.Font("Century Gothic", 11.25F);
-            this.lblNotasLabs.Location = new System.Drawing.Point(364, 21);
-            this.lblNotasLabs.Name = "lblNotasLabs";
-            this.lblNotasLabs.Size = new System.Drawing.Size(247, 20);
-            this.lblNotasLabs.TabIndex = 0;
-            this.lblNotasLabs.Text = "Calificaciones para laboratorios:";
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(94, 52);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(65, 31);
-            this.textBox1.TabIndex = 1;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(94, 89);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(65, 31);
-            this.textBox2.TabIndex = 1;
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(94, 126);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(65, 31);
-            this.textBox3.TabIndex = 1;
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(94, 163);
-            this.textBox4.Multiline = true;
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(65, 31);
-            this.textBox4.TabIndex = 1;
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(455, 52);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(65, 31);
-            this.textBox5.TabIndex = 1;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(455, 89);
-            this.textBox6.Multiline = true;
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(65, 31);
-            this.textBox6.TabIndex = 1;
-            // 
-            // textBox7
-            // 
-            this.textBox7.Location = new System.Drawing.Point(455, 126);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(65, 31);
-            this.textBox7.TabIndex = 1;
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(455, 163);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(65, 31);
-            this.textBox8.TabIndex = 1;
             // 
             // AgregarCalificaciones
             // 
@@ -358,12 +447,12 @@
             this.Text = "AgregarCalificaciones";
             this.pnlConten.ResumeLayout(false);
             this.pnlConten.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
             this.groupBoxBotones.ResumeLayout(false);
             this.pnlSuperior.ResumeLayout(false);
             this.pnlSuperior.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -389,13 +478,17 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblNotasLabs;
         private System.Windows.Forms.Label lblNotasParciales;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox7;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtGetCuartoLab;
+        private System.Windows.Forms.TextBox txtGetCuartoParcial;
+        private System.Windows.Forms.TextBox txtGetTercerLab;
+        private System.Windows.Forms.TextBox txtGetTercerParcial;
+        private System.Windows.Forms.TextBox txtGetPrimerLab;
+        private System.Windows.Forms.TextBox txtGetSegundoParcial;
+        private System.Windows.Forms.TextBox txtGetPrimerParcial;
+        private System.Windows.Forms.TextBox txtGetSegundoLab;
+        private System.Windows.Forms.Label lblCarnetAlumno;
+        private System.Windows.Forms.TextBox txtGetCarnetAlumno;
+        private ComboBox cmbMaterias;
+        private Label lblMateria;
     }
 }

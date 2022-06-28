@@ -156,7 +156,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 sexo = "Femenino";
             }
             else if (rbtnMasculino.Checked){
-                sexo = "Femenino";
+                sexo = "Masculino";
             }
 
             MySqlConnection connection = GenerateConnection.Connection();

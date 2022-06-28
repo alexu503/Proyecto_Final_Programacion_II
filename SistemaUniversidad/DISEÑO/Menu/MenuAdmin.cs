@@ -45,17 +45,9 @@ namespace SistemaUniversidad.DISEÑO.Menu
             {
                 pnlSubMenuAsignaturas.Visible = false;
             }
-            if (pnlSubMenuCarreras.Visible == true)
-            {
-                pnlSubMenuCarreras.Visible = false;
-            }
             if (pnlSubMenuDocentes.Visible == true)
             {
                 pnlSubMenuDocentes.Visible = false;
-            }
-            if (pnlSubMenuHorarios.Visible == true)
-            {
-                pnlSubMenuHorarios.Visible = false;
             }
             if (pnlSubMenuCalificaciones.Visible == true)
             {
@@ -202,17 +194,9 @@ namespace SistemaUniversidad.DISEÑO.Menu
         {
             MostrarSubMenu(pnlSubMenuAsignaturas);
         }
-        private void btnGestionarCarreras_Click(object sender, EventArgs e)
-        {
-            MostrarSubMenu(pnlSubMenuCarreras);
-        }
         private void btnGestionarDocentes_Click(object sender, EventArgs e)
         {
             MostrarSubMenu(pnlSubMenuDocentes);
-        }
-        private void btnGestionarHorarios_Click(object sender, EventArgs e)
-        {
-            MostrarSubMenu(pnlSubMenuHorarios);
         }
         private void btnGestionarCalificaciones_Click(object sender, EventArgs e)
         {
@@ -222,23 +206,20 @@ namespace SistemaUniversidad.DISEÑO.Menu
 
         #region Alumnos
         //----> Agregar nuevo alumno
-        private void btnAgregarAlumno_Click(object sender, EventArgs e)
-        {
+        private void btnAgregarAlumno_Click(object sender, EventArgs e){
             Administrador.NuevoAlumno NuevoAlumno = new Administrador.NuevoAlumno();
             this.Hide();
             NuevoAlumno.Show();
         }
         //----> Eliminar alumno
-        private void btnEliminarAlumno_Click(object sender, EventArgs e)
-        {
+        private void btnEliminarAlumno_Click(object sender, EventArgs e){
             Administrador.EliminarAlumno EliminarAlumno = new Administrador.EliminarAlumno();
             this.Hide();
             EliminarAlumno.eliminarAlumno = this;
             EliminarAlumno.Show();
         }
         //----> Modificar datos de alumno
-        private void btnModificarAlumno_Click(object sender, EventArgs e)
-        {
+        private void btnModificarAlumno_Click(object sender, EventArgs e){
             Administrador.ModificarAlumno ModificarAlumno = new Administrador.ModificarAlumno();
             this.Hide();
             ModificarAlumno.modificarAlumno = this;

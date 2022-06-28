@@ -168,6 +168,7 @@
     <Compile Include="LOGICA\Asignaturas\Matematica.cs" />
     <Compile Include="LOGICA\BD\Datos.cs" />
     <Compile Include="LOGICA\BotonesPnlSuperior.cs" />
+    <Compile Include="LOGICA\Calificaciones.cs" />
     <Compile Include="LOGICA\Carrera.cs" />
     <Compile Include="LOGICA\DATABASE\GenerateConnection.cs" />
     <Compile Include="LOGICA\Docente.cs" />
@@ -195,6 +196,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Administrador\Asignaturas\AgregarAsignatura.resx">
       <DependentUpon>AgregarAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Asignaturas\EliminarAsignatura.resx">
+      <DependentUpon>EliminarAsignatura.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Docente\AgregarCalificaciones.resx">
       <DependentUpon>AgregarCalificaciones.cs</DependentUpon>

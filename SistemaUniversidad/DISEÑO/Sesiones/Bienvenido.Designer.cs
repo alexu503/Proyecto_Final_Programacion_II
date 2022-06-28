@@ -32,15 +32,12 @@
             this.lblBienvenido = new System.Windows.Forms.Label();
             this.lblLineaDivisora = new System.Windows.Forms.Label();
             this.btnIniciarSesion = new System.Windows.Forms.Button();
-            this.btnRegistrarse = new System.Windows.Forms.Button();
             this.groupBoxIniciarSesión = new System.Windows.Forms.GroupBox();
-            this.groupBoxRegistrarse = new System.Windows.Forms.GroupBox();
             this.pnlContBienve = new System.Windows.Forms.Panel();
             this.pnlSuperiorBienvenido = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.dragControlBienvenido = new SistemaUniversidad.LOGICA.DragControl();
             this.groupBoxIniciarSesión.SuspendLayout();
-            this.groupBoxRegistrarse.SuspendLayout();
             this.pnlContBienve.SuspendLayout();
             this.pnlSuperiorBienvenido.SuspendLayout();
             this.SuspendLayout();
@@ -82,50 +79,24 @@
             this.btnIniciarSesion.UseVisualStyleBackColor = true;
             this.btnIniciarSesion.Click += new System.EventHandler(this.btnIniciarSesion_Click);
             // 
-            // btnRegistrarse
-            // 
-            this.btnRegistrarse.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnRegistrarse.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegistrarse.Image = ((System.Drawing.Image)(resources.GetObject("btnRegistrarse.Image")));
-            this.btnRegistrarse.Location = new System.Drawing.Point(6, 18);
-            this.btnRegistrarse.Name = "btnRegistrarse";
-            this.btnRegistrarse.Size = new System.Drawing.Size(129, 130);
-            this.btnRegistrarse.TabIndex = 3;
-            this.btnRegistrarse.UseVisualStyleBackColor = true;
-            this.btnRegistrarse.Click += new System.EventHandler(this.btnRegistrarse_Click);
-            // 
             // groupBoxIniciarSesión
             // 
             this.groupBoxIniciarSesión.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBoxIniciarSesión.Controls.Add(this.btnIniciarSesion);
             this.groupBoxIniciarSesión.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxIniciarSesión.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxIniciarSesión.Location = new System.Drawing.Point(32, 224);
+            this.groupBoxIniciarSesión.Location = new System.Drawing.Point(130, 236);
             this.groupBoxIniciarSesión.Name = "groupBoxIniciarSesión";
             this.groupBoxIniciarSesión.Size = new System.Drawing.Size(141, 154);
             this.groupBoxIniciarSesión.TabIndex = 4;
             this.groupBoxIniciarSesión.TabStop = false;
             this.groupBoxIniciarSesión.Text = "Iniciar sesión";
             // 
-            // groupBoxRegistrarse
-            // 
-            this.groupBoxRegistrarse.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBoxRegistrarse.Controls.Add(this.btnRegistrarse);
-            this.groupBoxRegistrarse.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxRegistrarse.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxRegistrarse.Location = new System.Drawing.Point(213, 224);
-            this.groupBoxRegistrarse.Name = "groupBoxRegistrarse";
-            this.groupBoxRegistrarse.Size = new System.Drawing.Size(141, 154);
-            this.groupBoxRegistrarse.TabIndex = 5;
-            this.groupBoxRegistrarse.TabStop = false;
-            this.groupBoxRegistrarse.Text = "Registrare";
-            // 
             // pnlContBienve
             // 
             this.pnlContBienve.BackColor = System.Drawing.SystemColors.Control;
             this.pnlContBienve.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pnlContBienve.Controls.Add(this.pnlSuperiorBienvenido);
-            this.pnlContBienve.Controls.Add(this.groupBoxRegistrarse);
             this.pnlContBienve.Controls.Add(this.lblBienvenido);
             this.pnlContBienve.Controls.Add(this.lblLineaDivisora);
             this.pnlContBienve.Controls.Add(this.groupBoxIniciarSesión);
@@ -182,7 +153,6 @@
             this.Text = "Bienvenido";
             this.Load += new System.EventHandler(this.Bienvenido_Load);
             this.groupBoxIniciarSesión.ResumeLayout(false);
-            this.groupBoxRegistrarse.ResumeLayout(false);
             this.pnlContBienve.ResumeLayout(false);
             this.pnlContBienve.PerformLayout();
             this.pnlSuperiorBienvenido.ResumeLayout(false);
@@ -195,9 +165,7 @@
         private System.Windows.Forms.Label lblBienvenido;
         private System.Windows.Forms.Label lblLineaDivisora;
         private System.Windows.Forms.Button btnIniciarSesion;
-        private System.Windows.Forms.Button btnRegistrarse;
         private System.Windows.Forms.GroupBox groupBoxIniciarSesión;
-        private System.Windows.Forms.GroupBox groupBoxRegistrarse;
         private System.Windows.Forms.Panel pnlContBienve;
         private System.Windows.Forms.Panel pnlSuperiorBienvenido;
         private LOGICA.DragControl dragControlBienvenido;

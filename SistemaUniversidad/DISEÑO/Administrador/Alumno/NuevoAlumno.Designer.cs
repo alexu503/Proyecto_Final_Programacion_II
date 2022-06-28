@@ -41,7 +41,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
                 "'"+x.getPasswrd()+"', '"+x.getMatricula().ToString()+"', '"+x.getFechaNacimiento()+"', '"+x.getDocumentoIdentidad()+"', '"+x.getSexo()+"'," +
                 "'"+x.getDireccion()+"', '"+x.getTelefono()+"', '"+x.getCelular()+"', '"+x.getCorreo()+"', '"+x.getFechaInscripcion()+"', " +
                 "'"+x.getNacionalidad()+"', '"+x.getEstadoCivil()+"');" +
-                "INSERT INTO Logins(Usuario, Clave, Rol) VALUES('"+x.getCarnet()+"', '"+x.getPasswrd()+"', 'Estudiante')";
+                "INSERT INTO Logins(Usuario, Clave, Rol) VALUES('"+x.getCarnet()+"', '"+x.getPasswrd()+"', 'Estudiante');";
             }
             MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             query.ExecuteNonQuery();
