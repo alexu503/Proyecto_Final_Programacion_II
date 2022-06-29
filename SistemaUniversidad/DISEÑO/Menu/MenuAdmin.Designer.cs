@@ -61,8 +61,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.imgLogoTipo = new System.Windows.Forms.PictureBox();
             this.pnlMenuLateral = new System.Windows.Forms.Panel();
             this.pnlSubMenuAsignaturas = new System.Windows.Forms.Panel();
-            this.btnEliminarAsignatura = new System.Windows.Forms.Button();
-            this.btnBuscarAsignatura = new System.Windows.Forms.Button();
             this.btnAgregarAsignatura = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnGestionarAsignaturas = new System.Windows.Forms.Button();
@@ -170,51 +168,13 @@ namespace SistemaUniversidad.DISEÑO.Menu
             // 
             // pnlSubMenuAsignaturas
             // 
-            this.pnlSubMenuAsignaturas.Controls.Add(this.btnEliminarAsignatura);
-            this.pnlSubMenuAsignaturas.Controls.Add(this.btnBuscarAsignatura);
             this.pnlSubMenuAsignaturas.Controls.Add(this.btnAgregarAsignatura);
             this.pnlSubMenuAsignaturas.Controls.Add(this.panel2);
             this.pnlSubMenuAsignaturas.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenuAsignaturas.Location = new System.Drawing.Point(0, 236);
             this.pnlSubMenuAsignaturas.Name = "pnlSubMenuAsignaturas";
-            this.pnlSubMenuAsignaturas.Size = new System.Drawing.Size(200, 89);
+            this.pnlSubMenuAsignaturas.Size = new System.Drawing.Size(200, 36);
             this.pnlSubMenuAsignaturas.TabIndex = 5;
-            // 
-            // btnEliminarAsignatura
-            // 
-            this.btnEliminarAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminarAsignatura.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnEliminarAsignatura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnEliminarAsignatura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarAsignatura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarAsignatura.ForeColor = System.Drawing.Color.White;
-            this.btnEliminarAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarAsignatura.Image")));
-            this.btnEliminarAsignatura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarAsignatura.Location = new System.Drawing.Point(6, 28);
-            this.btnEliminarAsignatura.Name = "btnEliminarAsignatura";
-            this.btnEliminarAsignatura.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnEliminarAsignatura.Size = new System.Drawing.Size(198, 30);
-            this.btnEliminarAsignatura.TabIndex = 1;
-            this.btnEliminarAsignatura.Text = "Eliminar";
-            this.btnEliminarAsignatura.UseVisualStyleBackColor = true;
-            // 
-            // btnBuscarAsignatura
-            // 
-            this.btnBuscarAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscarAsignatura.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnBuscarAsignatura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnBuscarAsignatura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscarAsignatura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscarAsignatura.ForeColor = System.Drawing.Color.White;
-            this.btnBuscarAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarAsignatura.Image")));
-            this.btnBuscarAsignatura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarAsignatura.Location = new System.Drawing.Point(6, 55);
-            this.btnBuscarAsignatura.Name = "btnBuscarAsignatura";
-            this.btnBuscarAsignatura.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnBuscarAsignatura.Size = new System.Drawing.Size(198, 30);
-            this.btnBuscarAsignatura.TabIndex = 1;
-            this.btnBuscarAsignatura.Text = "Buscar";
-            this.btnBuscarAsignatura.UseVisualStyleBackColor = true;
             // 
             // btnAgregarAsignatura
             // 
@@ -229,7 +189,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnAgregarAsignatura.Location = new System.Drawing.Point(6, -1);
             this.btnAgregarAsignatura.Name = "btnAgregarAsignatura";
             this.btnAgregarAsignatura.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.btnAgregarAsignatura.Size = new System.Drawing.Size(198, 30);
+            this.btnAgregarAsignatura.Size = new System.Drawing.Size(198, 34);
             this.btnAgregarAsignatura.TabIndex = 1;
             this.btnAgregarAsignatura.Text = "Agregar";
             this.btnAgregarAsignatura.UseVisualStyleBackColor = true;
@@ -547,10 +507,8 @@ namespace SistemaUniversidad.DISEÑO.Menu
         private System.Windows.Forms.Button btnModificarAlumno;
         private System.Windows.Forms.Button btnEliminarAlumno;
         private System.Windows.Forms.Button btnAgregarAlumno;
-        private System.Windows.Forms.Button btnBuscarAsignatura;
         private System.Windows.Forms.Button btnAgregarAsignatura;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnEliminarAsignatura;
         private System.Windows.Forms.PictureBox imgMasOpciones;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnRestaurar;

@@ -42,9 +42,9 @@ namespace SistemaUniversidad.DISEÑO.Docente
                 connection.Close();
             }
 
-            cmbCarreras.Text = "";
-            cmbMaterias.Text = "";
-            cmbGetCarnet.Text = "";
+            cmbCarreras.Items.Clear();
+            cmbMaterias.Items.Clear();
+            cmbGetCarnet.Items.Clear();
             txtGetPrimerParcial.Clear();
             txtGetPrimerLab.Clear();
             txtGetSegundoParcial.Clear();
