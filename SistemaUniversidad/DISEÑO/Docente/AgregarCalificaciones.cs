@@ -277,8 +277,8 @@ namespace SistemaUniversidad.DISEÑO.Docente
 
 
                         double promedio = (promedioComputo1 + promedioComputo2 + promedioComputo3 + promedioComputo4);
-                        promedio = Math.Round(promedio, 2);
-                        calificaciones.Promedio = promedio/100;
+                        promedio = promedio/10;
+                        calificaciones.Promedio = Math.Round(promedio, 1);
                         lstCalificaciones.Add(calificaciones);
                         this.UpdateData();
                     } else {

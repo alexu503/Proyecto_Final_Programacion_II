@@ -41,22 +41,31 @@
             this.imgMasOpciones = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
+            this.imgVision = new System.Windows.Forms.PictureBox();
+            this.imgMision = new System.Windows.Forms.PictureBox();
+            this.imgLogoTipo = new System.Windows.Forms.PictureBox();
             this.pnlConten.SuspendLayout();
             this.pnlMenuLateral.SuspendLayout();
             this.pnlHome.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgVision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoTipo)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlConten
             // 
             this.pnlConten.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlConten.Controls.Add(this.imgVision);
             this.pnlConten.Controls.Add(this.pnlMenuLateral);
+            this.pnlConten.Controls.Add(this.imgMision);
             this.pnlConten.Controls.Add(this.pnlSuperior);
+            this.pnlConten.Controls.Add(this.imgLogoTipo);
             this.pnlConten.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConten.Location = new System.Drawing.Point(0, 0);
             this.pnlConten.Name = "pnlConten";
-            this.pnlConten.Size = new System.Drawing.Size(1016, 637);
+            this.pnlConten.Size = new System.Drawing.Size(1019, 637);
             this.pnlConten.TabIndex = 0;
             // 
             // pnlMenuLateral
@@ -130,7 +139,7 @@
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(1014, 35);
+            this.pnlSuperior.Size = new System.Drawing.Size(1017, 35);
             this.pnlSuperior.TabIndex = 1;
             // 
             // btnRestaurar
@@ -141,7 +150,7 @@
             this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
             this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(926, 0);
+            this.btnRestaurar.Location = new System.Drawing.Point(929, 0);
             this.btnRestaurar.Name = "btnRestaurar";
             this.btnRestaurar.Size = new System.Drawing.Size(45, 35);
             this.btnRestaurar.TabIndex = 5;
@@ -156,7 +165,7 @@
             this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(926, 0);
+            this.btnMaximizar.Location = new System.Drawing.Point(929, 0);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(45, 35);
             this.btnMaximizar.TabIndex = 5;
@@ -170,7 +179,7 @@
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(886, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(889, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 35);
             this.btnMinimizar.TabIndex = 4;
@@ -196,7 +205,7 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(970, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(973, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(45, 35);
             this.btnCerrar.TabIndex = 2;
@@ -206,11 +215,44 @@
             // 
             this.dragControl1.SelectControl = this.pnlSuperior;
             // 
+            // imgVision
+            // 
+            this.imgVision.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgVision.Image = ((System.Drawing.Image)(resources.GetObject("imgVision.Image")));
+            this.imgVision.Location = new System.Drawing.Point(325, 461);
+            this.imgVision.Name = "imgVision";
+            this.imgVision.Size = new System.Drawing.Size(558, 126);
+            this.imgVision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgVision.TabIndex = 5;
+            this.imgVision.TabStop = false;
+            // 
+            // imgMision
+            // 
+            this.imgMision.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgMision.Image = ((System.Drawing.Image)(resources.GetObject("imgMision.Image")));
+            this.imgMision.Location = new System.Drawing.Point(325, 309);
+            this.imgMision.Name = "imgMision";
+            this.imgMision.Size = new System.Drawing.Size(558, 126);
+            this.imgMision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgMision.TabIndex = 4;
+            this.imgMision.TabStop = false;
+            // 
+            // imgLogoTipo
+            // 
+            this.imgLogoTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgLogoTipo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogoTipo.Image")));
+            this.imgLogoTipo.Location = new System.Drawing.Point(456, 80);
+            this.imgLogoTipo.Name = "imgLogoTipo";
+            this.imgLogoTipo.Size = new System.Drawing.Size(254, 188);
+            this.imgLogoTipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgLogoTipo.TabIndex = 3;
+            this.imgLogoTipo.TabStop = false;
+            // 
             // MenuDocente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 637);
+            this.ClientSize = new System.Drawing.Size(1019, 637);
             this.Controls.Add(this.pnlConten);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "MenuDocente";
@@ -220,6 +262,9 @@
             this.pnlHome.ResumeLayout(false);
             this.pnlSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgVision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoTipo)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -238,5 +283,8 @@
         private System.Windows.Forms.Button btnGestionarCalificaciones;
         private LOGICA.DragControl dragControl1;
         private System.Windows.Forms.PictureBox imgMasOpciones;
+        private System.Windows.Forms.PictureBox imgVision;
+        private System.Windows.Forms.PictureBox imgMision;
+        private System.Windows.Forms.PictureBox imgLogoTipo;
     }
 }

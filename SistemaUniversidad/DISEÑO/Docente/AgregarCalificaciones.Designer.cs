@@ -29,7 +29,7 @@ namespace SistemaUniversidad.DISEÑO.Docente
 
             try {
                 foreach (Calificaciones x in lstCalificaciones) {
-                    query.CommandText = "UPDATE Notas SET PrimerParcial = '"+x.PrimerParcial+"', PrimerLab = '"+x.PrimerLab+"', SegundoParcial = '"+x.SegundoParcial+"', " +
+                    query.CommandText = "UPDATE Notas SET NombreMateria = '"+cmbMaterias.Text+"', PrimerParcial = '"+x.PrimerParcial+"', PrimerLab = '"+x.PrimerLab+"', SegundoParcial = '"+x.SegundoParcial+"', " +
                         "SegundoLab = '"+x.SegundoParcial+"', TercerParcial = '"+x.TercerParcial+"' , TercerLab = '"+x.TercerLab+"', CuartoParcial = '"+x.CuartoParcial+"', " +
                         "CuartoLab = '"+x.CuartoLab+"', PromedioFinal = '"+x.Promedio+"' " +
                         "WHERE CarnetAlumno = '"+cmbGetCarnet.Text+"'";
@@ -41,6 +41,18 @@ namespace SistemaUniversidad.DISEÑO.Docente
             } finally {
                 connection.Close();
             }
+
+            cmbCarreras.Text = "";
+            cmbMaterias.Text = "";
+            cmbGetCarnet.Text = "";
+            txtGetPrimerParcial.Clear();
+            txtGetPrimerLab.Clear();
+            txtGetSegundoParcial.Clear();
+            txtGetSegundoLab.Clear();
+            txtGetTercerParcial.Clear();
+            txtGetTercerLab.Clear();
+            txtGetCuartoParcial.Clear();
+            txtGetCuartoLab.Clear();
         }
 
         protected override void Dispose(bool disposing){

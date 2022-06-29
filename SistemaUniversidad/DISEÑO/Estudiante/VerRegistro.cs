@@ -81,6 +81,7 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
         }
 
         private void btnCargar_Click(object sender, EventArgs e) {
+
             if(cmbVerMaterias.Text != "") {
 
                 MySqlConnection connection = GenerateConnection.Connection();
@@ -89,6 +90,7 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
 
                 try {
                     query.CommandText = "SELECT * FROM Notas WHERE NombreMateria = '"+cmbVerMaterias.Text+"' AND CarnetAlumno = '"+this.loginID+"'";
+                    query.ExecuteNonQuery();
                     MySqlDataAdapter da = new MySqlDataAdapter();
                     da.SelectCommand = query;
                     DataTable table = new DataTable();

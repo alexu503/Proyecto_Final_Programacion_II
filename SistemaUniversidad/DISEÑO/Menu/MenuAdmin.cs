@@ -45,14 +45,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             {
                 pnlSubMenuAsignaturas.Visible = false;
             }
-            if (pnlSubMenuDocentes.Visible == true)
-            {
-                pnlSubMenuDocentes.Visible = false;
-            }
-            if (pnlSubMenuCalificaciones.Visible == true)
-            {
-                pnlSubMenuCalificaciones.Visible = false;
-            }
         }
         //Muestra el panel de Sub Menú indicado como parámetro
         private void MostrarSubMenu(Panel mostrar)
@@ -193,14 +185,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
         private void btnGestionarAsignaturas_Click(object sender, EventArgs e)
         {
             MostrarSubMenu(pnlSubMenuAsignaturas);
-        }
-        private void btnGestionarDocentes_Click(object sender, EventArgs e)
-        {
-            MostrarSubMenu(pnlSubMenuDocentes);
-        }
-        private void btnGestionarCalificaciones_Click(object sender, EventArgs e)
-        {
-            MostrarSubMenu(pnlSubMenuCalificaciones);
         }
         #endregion
 
