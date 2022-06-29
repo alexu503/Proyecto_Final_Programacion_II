@@ -54,9 +54,9 @@
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(12, 6);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(181, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(178, 20);
             this.lblTitulo.TabIndex = 3;
-            this.lblTitulo.Text = "AGREGAR ASIGNATURA";
+            this.lblTitulo.Text = "ELIMINAR ASIGNATURA";
             // 
             // btnMinimizar
             // 
@@ -121,7 +121,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.pnlSuperior);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EliminarAsignatura";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EliminarAsignatura";

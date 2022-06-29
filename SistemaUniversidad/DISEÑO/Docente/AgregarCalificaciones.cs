@@ -291,5 +291,10 @@ namespace SistemaUniversidad.DISEÑO.Docente
                 MessageBox.Show("RELLENE TODOS LOS CAMPOS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
+        private void btnCerrar_Click_1(object sender, EventArgs e)
+        {
+            btnCerrar_Click(sender, e);
+        }
     }
 }

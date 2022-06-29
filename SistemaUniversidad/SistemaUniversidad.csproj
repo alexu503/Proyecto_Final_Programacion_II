@@ -160,7 +160,6 @@
     </Compile>
     <Compile Include="LOGICA\Alumno.cs" />
     <Compile Include="LOGICA\Asignaturas\Matematica.cs" />
-    <Compile Include="LOGICA\BD\Datos.cs" />
     <Compile Include="LOGICA\BotonesPnlSuperior.cs" />
     <Compile Include="LOGICA\Calificaciones.cs" />
     <Compile Include="LOGICA\Carrera.cs" />
@@ -223,6 +222,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -239,7 +239,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DISEÑO\Administrador\Docentes\" />
     <Folder Include="DISEÑO\Registro\" />
   </ItemGroup>
   <ItemGroup>

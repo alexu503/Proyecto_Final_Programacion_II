@@ -166,9 +166,9 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(11, 7);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(166, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(167, 20);
             this.lblTitulo.TabIndex = 6;
-            this.lblTitulo.Text = "BUSCAR ASIGNATURA";
+            this.lblTitulo.Text = "VER CALIFICACIONES";
             // 
             // btnMaximizar
             // 

@@ -165,7 +165,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             command.CommandText = "UPDATE Alumnos SET Nombres = '"+txtNombres.Text+"', PrimerApellido = '"+txrtPrimerApellido.Text+"', SegundoApellido = '"+txtSegundoApellido.Text+"'," +
                 "NombreCarrera = '"+cmbCarreras.Text+"', Carnet = '"+txtCarnet.Text+"', DocumentoDeIdentidad = '"+txtDocumentoIdentidad.Text+"', Sexo = '"+sexo+"', " +
                 "Direccion = '"+txtDireccion.Text+"', Telefono = '"+txtTelefono.Text+"', Celular = '"+txtCelular.Text+"', Correo = '"+txtCorreo.Text+"', Nacionalidad = '"+cmbNacionalidad.Text+"', " +
-                "EstadoCivil = '"+cmbEstadoCivil.Text+"' WHERE Nombres = '"+txtNombres.Text+"' AND Carnet = '"+this.previousCarnet+"'; " +
+                "EstadoCivil = '"+cmbEstadoCivil.Text+"' WHERE Carnet = '"+this.previousCarnet+"'; " +
                 "UPDATE Logins SET Usuario = '"+txtCarnet.Text+"' WHERE Usuario = '"+this.previousCarnet+"';" +
                 "UPDATE Notas SET NombreCarrera = '"+cmbCarreras.Text+"', CarnetAlumno = '"+txtCarnet.Text+"'";
             //command.CommandText = "";
@@ -174,7 +174,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             #endregion
 
             LimpiarEtiquetas();
-            MessageBox.Show("EL REGISTRO HA SIDO ACTUALIZADO CON EXITO", "¡ATENCION!" ,MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show("EL REGISTRO HA SIDO ACTUALIZADO CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //this.SaveToDatabase();
             btnSalirAggAlumno_Click(sender,e);
         }
         private bool ValidarFecha(){

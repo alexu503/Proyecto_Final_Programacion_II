@@ -62,16 +62,30 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             MySqlConnection connection = GenerateConnection.Connection();
             MySqlCommand query = new MySqlCommand();
             query.Connection = connection;
-            foreach (Alumno x in listaAlumnoGenerico) {
 
-                query.CommandText = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, NombreCarrera, Carnet, Clave, Matricula, " +
-                "FechaDeNacimiento, DocumentoDeIdentidad, Sexo, Direccion, Telefono, Celular, Correo, FechaInscripcion, Nacionalidad, EstadoCivil)" +
-                "VALUES('"+x.getNombres()+"', '"+x.getPrimerApellido()+"', '"+x.getSegundoApellido()+"', '"+x.getCarrera()+"', '"+x.getCarnet()+"', " +
-                "'"+x.getPasswrd()+"', '"+x.getMatricula().ToString()+"', '"+x.getFechaNacimiento()+"', '"+x.getDocumentoIdentidad()+"', '"+x.getSexo()+"'," +
-                "'"+x.getDireccion()+"', '"+x.getTelefono()+"', '"+x.getCelular()+"', '"+x.getCorreo()+"', '"+x.getFechaInscripcion()+"', " +
-                "'"+x.getNacionalidad()+"', '"+x.getEstadoCivil()+"') WHERE Carnet = '"+txtCarnet.Text+"'  ";
+            foreach (Alumno x in listaAlumnoGenerico) {
+                query.CommandText = "UPDATE Alumnos SET " +
+                    "Nombres = '"+x.getNombres()+"', " +
+                    "PrimerApellido = '"+x.getPrimerApellido()+"', " +
+                    "SegundoApellido = '"+x.getSegundoApellido()+"', " +
+                    "NombreCarrera = '"+x.getCarrera()+"', " +
+                    "Carnet = '"+x.getCarnet()+"', " +
+                    "Clave = '"+x.getPasswrd()+"', " +
+                    "Matricula = '"+x.getMatricula().ToString()+"', " +
+                    "FechaDeNacimiento = '"+x.getFechaNacimiento()+"', " +
+                    "DocumentoDeIdentidad = '"+x.getDocumentoIdentidad()+"', " +
+                    "Sexo = '"+x.getSexo()+"', " +
+                    "Direccion = '"+x.getDireccion()+"', " +
+                    "Telefono = '"+x.getTelefono()+"', " +
+                    "Celular = '"+x.getCelular()+"', " +
+                    "Correo = '"+x.getCorreo()+"', " +
+                    "FechaInscripcion = '"+x.getFechaInscripcion()+"', " +
+                    "Nacionalidad = '"+x.getNacionalidad()+"', " +
+                    "EstadoCivil = '"+x.getEstadoCivil()+"' " +
+                    "WHERE Carnet = '"+x.getCarnet()+"'";
+                query.ExecuteNonQuery();
             }
-            query.ExecuteNonQuery();
+            MessageBox.Show("EL REGISTRO HA SIDO ACTUALIZADO CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             connection.Close();
         }
 
@@ -258,6 +272,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             // txtCarnet
             // 
+            this.txtCarnet.Enabled = false;
             this.txtCarnet.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCarnet.Location = new System.Drawing.Point(128, 34);
             this.txtCarnet.MaxLength = 7;

@@ -42,9 +42,9 @@ namespace SistemaUniversidad.DISEÑO.Docente
                 connection.Close();
             }
 
-            cmbCarreras.Text = "";
-            cmbMaterias.Text = "";
-            cmbGetCarnet.Text = "";
+            cmbCarreras.Items.Clear();
+            cmbMaterias.Items.Clear();
+            cmbGetCarnet.Items.Clear();
             txtGetPrimerParcial.Clear();
             txtGetPrimerLab.Clear();
             txtGetSegundoParcial.Clear();
@@ -332,9 +332,9 @@ namespace SistemaUniversidad.DISEÑO.Docente
             this.lblTitulo.ForeColor = System.Drawing.Color.White;
             this.lblTitulo.Location = new System.Drawing.Point(11, 7);
             this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(166, 20);
+            this.lblTitulo.Size = new System.Drawing.Size(206, 20);
             this.lblTitulo.TabIndex = 6;
-            this.lblTitulo.Text = "BUSCAR ASIGNATURA";
+            this.lblTitulo.Text = "ASIGNAR CALIFICACIONES";
             // 
             // btnMaximizar
             // 
@@ -379,6 +379,7 @@ namespace SistemaUniversidad.DISEÑO.Docente
             this.btnCerrar.Size = new System.Drawing.Size(45, 35);
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click_1);
             // 
             // cmbGetCarnet
             // 
