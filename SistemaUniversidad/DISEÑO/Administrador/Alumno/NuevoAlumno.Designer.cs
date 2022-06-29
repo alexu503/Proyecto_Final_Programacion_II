@@ -41,10 +41,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
                 "'"+x.getPasswrd()+"', '"+x.getMatricula().ToString()+"', '"+x.getFechaNacimiento()+"', '"+x.getDocumentoIdentidad()+"', '"+x.getSexo()+"'," +
                 "'"+x.getDireccion()+"', '"+x.getTelefono()+"', '"+x.getCelular()+"', '"+x.getCorreo()+"', '"+x.getFechaInscripcion()+"', " +
                 "'"+x.getNacionalidad()+"', '"+x.getEstadoCivil()+"');" +
-                "INSERT INTO Logins(Usuario, Clave, Rol) VALUES('"+x.getCarnet()+"', '"+x.getPasswrd()+"', 'Estudiante');" +
-                "INSERT INTO Notas(NombreCarrera, NombreMateria, CarnetAlumno, PrimerParcial, PrimerLab, SegundoParcial, SegundoLab" +
-                "TercerParcial, TercerLab, CuartoParcial, CuartoLab) VALUES('"+x.getCarrera()+"', '----', '"+x.getCarnet()+"', '0', '0', " +
-                "'0', '0', '0', '0', '0', '0')";
+                "INSERT INTO Logins(Usuario, Clave, Rol) VALUES('"+x.getCarnet()+"', '"+x.getPasswrd()+"', 'Estudiante'); " +
+                "INSERT INTO Notas(NombreCarrera, NombreMateria, CarnetAlumno, PrimerParcial, PrimerLab, SegundoParcial, SegundoLab, TercerParcial, TercerLab, CuartoParcial, CuartoLab, PromedioFinal) " +
+                "VALUES('"+x.getCarrera()+"', '----', '"+x.getCarnet()+"', '0', '0', '0', '0', '0', '0', '0', '0', '0')";
             }
             MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             query.ExecuteNonQuery();
