@@ -181,6 +181,7 @@ namespace SistemaUniversidad.DISEÑO.Docente
             string query = "Select Carnet FROM Alumnos WHERE NombreCarrera = '"+cmbCarreras.Text+"'";
             MySqlConnection connection = GenerateConnection.Connection();
             MySqlCommand command = new MySqlCommand(query, connection);
+            command.ExecuteNonQuery();
             MySqlDataReader dr = command.ExecuteReader();
 
             try {
@@ -216,6 +217,7 @@ namespace SistemaUniversidad.DISEÑO.Docente
             string query = "Select NombreMateria FROM Materias";
             MySqlConnection connection = GenerateConnection.Connection();
             MySqlCommand command = new MySqlCommand(query, connection);
+            command.ExecuteNonQuery();
             MySqlDataReader dr = command.ExecuteReader();
 
             try {
@@ -268,14 +270,14 @@ namespace SistemaUniversidad.DISEÑO.Docente
                         calificaciones.TercerLab = int.Parse(txtGetTercerLab.Text);
                         calificaciones.CuartoLab = int.Parse(txtGetCuartoLab.Text);
 
-                        float promedioComputo1 = ((int.Parse(txtGetPrimerParcial.Text)) * 0.15f) + ((int.Parse(txtGetPrimerLab.Text)) * 0.1f);
-                        float promedioComputo2 = ((int.Parse(txtGetSegundoParcial.Text)) * 0.15f) + ((int.Parse(txtGetSegundoLab.Text)) * 0.1f);
-                        float promedioComputo3 = ((int.Parse(txtGetTercerParcial.Text)) * 0.15f) + ((int.Parse(txtGetTercerLab.Text)) * 0.1f);
-                        float promedioComputo4 = ((int.Parse(txtGetCuartoParcial.Text)) * 0.15f) + ((int.Parse(txtGetCuartoLab.Text)) * 0.1f);
+                        double promedioComputo1 = ((int.Parse(txtGetPrimerParcial.Text)) * 0.15f) + ((int.Parse(txtGetPrimerLab.Text)) * 0.1f);
+                        double promedioComputo2 = ((int.Parse(txtGetSegundoParcial.Text)) * 0.15f) + ((int.Parse(txtGetSegundoLab.Text)) * 0.1f);
+                        double promedioComputo3 = ((int.Parse(txtGetTercerParcial.Text)) * 0.15f) + ((int.Parse(txtGetTercerLab.Text)) * 0.1f);
+                        double promedioComputo4 = ((int.Parse(txtGetCuartoParcial.Text)) * 0.15f) + ((int.Parse(txtGetCuartoLab.Text)) * 0.1f);
 
 
-                        float promedio = (promedioComputo1 + promedioComputo2 + promedioComputo3 + promedioComputo4);
-                        promedio = (float)Math.Round(promedio, 2);
+                        double promedio = (promedioComputo1 + promedioComputo2 + promedioComputo3 + promedioComputo4);
+                        promedio = Math.Round(promedio, 2);
                         calificaciones.Promedio = promedio/100;
                         lstCalificaciones.Add(calificaciones);
                         this.UpdateData();

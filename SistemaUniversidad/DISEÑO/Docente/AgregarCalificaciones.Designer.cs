@@ -29,12 +29,13 @@ namespace SistemaUniversidad.DISEÑO.Docente
 
             try {
                 foreach (Calificaciones x in lstCalificaciones) {
-                    query.CommandText = "UPDATE Notas SET PrimerParcial = '"+x.PrimerParcial+"', PrimerLab = '"+x.PrimerLab+"', SegundoParcial = '"+x.SegundoParcial+"', SegundoLab = '"+x.SegundoParcial+"', " +
-                        "TecerParcial = , TercerLab = '"+x.TercerLab+"', CuartoParcial = '"+x.CuartoParcial+"', CuartoLab = '"+x.CuartoLab+"', PromedioFinal = '"+x.TercerParcial+"'" +
-                    "WHERE CarnetAlumno = '"+cmbGetCarnet.Text+"'";
-                    query.ExecuteNonQuery();
-                    MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    query.CommandText = "UPDATE Notas SET PrimerParcial = '"+x.PrimerParcial+"', PrimerLab = '"+x.PrimerLab+"', SegundoParcial = '"+x.SegundoParcial+"', " +
+                        "SegundoLab = '"+x.SegundoParcial+"', TercerParcial = '"+x.TercerParcial+"' , TercerLab = '"+x.TercerLab+"', CuartoParcial = '"+x.CuartoParcial+"', " +
+                        "CuartoLab = '"+x.CuartoLab+"', PromedioFinal = '"+x.Promedio+"' " +
+                        "WHERE CarnetAlumno = '"+cmbGetCarnet.Text+"'";
                 }
+                query.ExecuteNonQuery();
+                MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             } catch(Exception ex) {
                 MessageBox.Show("Error: " + ex.Message);
             } finally {

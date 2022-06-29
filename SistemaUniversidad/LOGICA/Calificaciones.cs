@@ -15,7 +15,7 @@ namespace SistemaUniversidad.LOGICA {
         public int SegundoLab { get; set; }
         public int TercerLab { get; set; }
         public int CuartoLab { get; set; }
-        public float Promedio { get; set; }
+        public double Promedio { get; set; }
 
     }
 }

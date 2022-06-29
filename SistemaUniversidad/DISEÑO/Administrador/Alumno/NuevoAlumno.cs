@@ -270,7 +270,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
                 MessageBox.Show("ASEGURESE DE HABER LLENADO TODOS LOS CAMPOS DEL FORMULARIO", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
-            LimpiarTodo();
+            //LimpiarTodo();
         }
         private bool ValidarFecha()
         {
