@@ -93,7 +93,7 @@ namespace SistemaUniversidad.DISEÑO.Login
                                     break;
                                 case "Estudiante":
                                     if (username == txtCorreo.Text && password == txtClave.Text) {
-                                        MenuEstudiante FormEstudiante = new MenuEstudiante();
+                                        MenuEstudiante FormEstudiante = new MenuEstudiante(txtCorreo.Text);
                                         FormEstudiante.Show();
                                         this.Close();
                                     } else {

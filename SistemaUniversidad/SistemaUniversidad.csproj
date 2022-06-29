@@ -122,17 +122,11 @@
     <Compile Include="DISEÑO\Docente\AgregarCalificaciones.Designer.cs">
       <DependentUpon>AgregarCalificaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="DISEÑO\Estudiante\BuscarAsignaturas.cs">
+    <Compile Include="DISEÑO\Estudiante\VerRegistro.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DISEÑO\Estudiante\BuscarAsignaturas.Designer.cs">
-      <DependentUpon>BuscarAsignaturas.cs</DependentUpon>
-    </Compile>
-    <Compile Include="DISEÑO\Estudiante\VerCalificaciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="DISEÑO\Estudiante\VerCalificaciones.Designer.cs">
-      <DependentUpon>VerCalificaciones.cs</DependentUpon>
+    <Compile Include="DISEÑO\Estudiante\VerRegistro.Designer.cs">
+      <DependentUpon>VerRegistro.cs</DependentUpon>
     </Compile>
     <Compile Include="DISEÑO\Login\Login.cs">
       <SubType>Form</SubType>
@@ -203,11 +197,8 @@
     <EmbeddedResource Include="DISEÑO\Docente\AgregarCalificaciones.resx">
       <DependentUpon>AgregarCalificaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="DISEÑO\Estudiante\BuscarAsignaturas.resx">
-      <DependentUpon>BuscarAsignaturas.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="DISEÑO\Estudiante\VerCalificaciones.resx">
-      <DependentUpon>VerCalificaciones.cs</DependentUpon>
+    <EmbeddedResource Include="DISEÑO\Estudiante\VerRegistro.resx">
+      <DependentUpon>VerRegistro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Login\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -217,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Menu\MenuDocente.resx">
       <DependentUpon>MenuDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Menu\MenuEstudiante.resx">
+      <DependentUpon>MenuEstudiante.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Sesiones\Bienvenido.resx">
       <DependentUpon>Bienvenido.cs</DependentUpon>

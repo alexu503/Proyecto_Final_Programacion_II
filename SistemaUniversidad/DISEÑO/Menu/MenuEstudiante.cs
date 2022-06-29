@@ -16,9 +16,10 @@ namespace SistemaUniversidad.DISEÑO.Menu
         public Form menuEstudiante;
         private const int AnchoNormal = 200;
         private const int AnchoIconos = 62;
-        public MenuEstudiante()
-        {
+        string loginID = "";
+        public MenuEstudiante(string carnetAlumno){
             InitializeComponent();
+            this.loginID = carnetAlumno;
         }
         private void MenuEstudiante_Load(object sender, EventArgs e)
         {
@@ -35,21 +36,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
                 FormLogIn.logIn = this;
                 FormLogIn.Show();
             }
-        }
-        private void btnGestionarAsignaturas_Click_1(object sender, EventArgs e)
-        {
-            Estudiante.BuscarAsignaturas Buscar = new Estudiante.BuscarAsignaturas();
-            this.Close();
-            Buscar.buscarMateria = this;
-            Buscar.Show();
-        }
-
-        private void btnGestionarCalificaciones_Click_1(object sender, EventArgs e)
-        {
-            Estudiante.VerCalificaciones Ver = new Estudiante.VerCalificaciones();
-            this.Close();
-            Ver.verCalificaciones = this;
-            Ver.Show();
         }
         #endregion
 
@@ -102,5 +88,11 @@ namespace SistemaUniversidad.DISEÑO.Menu
 
         #endregion
 
+        private void btnGestionarCalificaciones_Click(object sender, EventArgs e) {
+            Estudiante.VerRegistro Buscar = new Estudiante.VerRegistro(this.loginID);
+            this.Close();
+            Buscar.buscarMateria = this;
+            Buscar.Show();
+        }
     }
 }

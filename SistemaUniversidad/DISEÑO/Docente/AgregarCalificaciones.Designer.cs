@@ -22,18 +22,17 @@ namespace SistemaUniversidad.DISEÑO.Docente
         /// 
 
         void UpdateData() {
+
             MySqlConnection connection = GenerateConnection.Connection();
             MySqlCommand query = new MySqlCommand();
             query.Connection = connection;
 
             try {
                 foreach (Calificaciones x in lstCalificaciones) {
-
-                    query.CommandText = "INSERT INTO Notas(CarnetAlumno, PrimerParcial, PrimerLab, SegundoParcial, SegundoLab, TecerParcial, TercerLab, CuartoParcial, CuartoLab, PromedioFinal)" +
-                    "VALUES('"+txtGetCarnetAlumno.Text+"', '"+x.PrimerParcial+"', '"+x.PrimerLab+"', '"+x.SegundoParcial+"', '"+x.SegundoParcial+"', '"+x.SegundoLab+"', " +
-                    "'"+x.TercerParcial+"', '"+x.TercerLab+"', '"+x.CuartoParcial+"', '"+x.CuartoLab+"', '"+x.Promedio+"') " +
-                    "WHERE NombreCarrera = '"+cmbCarreras.Text+"' AND '"+txtGetCarnetAlumno.Text+"'";
-
+                    query.CommandText = "UPDATE Notas SET PrimerParcial = '"+x.PrimerParcial+"', PrimerLab = '"+x.PrimerLab+"', SegundoParcial = '"+x.SegundoParcial+"', SegundoLab = '"+x.SegundoParcial+"', " +
+                        "TecerParcial = , TercerLab = '"+x.TercerLab+"', CuartoParcial = '"+x.CuartoParcial+"', CuartoLab = '"+x.CuartoLab+"', PromedioFinal = '"+x.TercerParcial+"'" +
+                    "WHERE CarnetAlumno = '"+cmbGetCarnet.Text+"'";
+                    query.ExecuteNonQuery();
                     MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
             } catch(Exception ex) {
@@ -83,12 +82,12 @@ namespace SistemaUniversidad.DISEÑO.Docente
             this.btnMaximizar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
+            this.cmbGetCarnet = new System.Windows.Forms.ComboBox();
             this.cmbMaterias = new System.Windows.Forms.ComboBox();
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
             this.lblMateria = new System.Windows.Forms.Label();
             this.lblCarnetAlumno = new System.Windows.Forms.Label();
             this.lblCarrera = new System.Windows.Forms.Label();
-            this.txtGetCarnetAlumno = new System.Windows.Forms.TextBox();
             this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
             this.dragControl2 = new SistemaUniversidad.LOGICA.DragControl();
             this.pnlConten.SuspendLayout();
@@ -105,12 +104,12 @@ namespace SistemaUniversidad.DISEÑO.Docente
             this.pnlConten.Controls.Add(this.dgvAlumnos);
             this.pnlConten.Controls.Add(this.groupBoxBotones);
             this.pnlConten.Controls.Add(this.pnlSuperior);
+            this.pnlConten.Controls.Add(this.cmbGetCarnet);
             this.pnlConten.Controls.Add(this.cmbMaterias);
             this.pnlConten.Controls.Add(this.cmbCarreras);
             this.pnlConten.Controls.Add(this.lblMateria);
             this.pnlConten.Controls.Add(this.lblCarnetAlumno);
             this.pnlConten.Controls.Add(this.lblCarrera);
-            this.pnlConten.Controls.Add(this.txtGetCarnetAlumno);
             this.pnlConten.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConten.Location = new System.Drawing.Point(0, 0);
             this.pnlConten.Name = "pnlConten";
@@ -270,7 +269,7 @@ namespace SistemaUniversidad.DISEÑO.Docente
             this.btnAsignarNota.TabIndex = 1;
             this.btnAsignarNota.Text = "ASIGNAR NOTAS";
             this.btnAsignarNota.UseVisualStyleBackColor = true;
-            this.btnAsignarNota.Click += new System.EventHandler(this.btnAsignarNota_Click);
+            this.btnAsignarNota.Click += new System.EventHandler(this.btnAsignarNota_Click_1);
             // 
             // btnActualizar
             // 
@@ -367,7 +366,15 @@ namespace SistemaUniversidad.DISEÑO.Docente
             this.btnCerrar.Size = new System.Drawing.Size(45, 35);
             this.btnCerrar.TabIndex = 2;
             this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // cmbGetCarnet
+            // 
+            this.cmbGetCarnet.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetCarnet.FormattingEnabled = true;
+            this.cmbGetCarnet.Location = new System.Drawing.Point(741, 59);
+            this.cmbGetCarnet.Name = "cmbGetCarnet";
+            this.cmbGetCarnet.Size = new System.Drawing.Size(93, 28);
+            this.cmbGetCarnet.TabIndex = 16;
             // 
             // cmbMaterias
             // 
@@ -417,16 +424,6 @@ namespace SistemaUniversidad.DISEÑO.Docente
             this.lblCarrera.Size = new System.Drawing.Size(70, 20);
             this.lblCarrera.TabIndex = 15;
             this.lblCarrera.Text = "Carrera:";
-            // 
-            // txtGetCarnetAlumno
-            // 
-            this.txtGetCarnetAlumno.Location = new System.Drawing.Point(741, 53);
-            this.txtGetCarnetAlumno.MaxLength = 7;
-            this.txtGetCarnetAlumno.Multiline = true;
-            this.txtGetCarnetAlumno.Name = "txtGetCarnetAlumno";
-            this.txtGetCarnetAlumno.Size = new System.Drawing.Size(93, 31);
-            this.txtGetCarnetAlumno.TabIndex = 1;
-            this.txtGetCarnetAlumno.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetPrimerParcial_KeyPress);
             // 
             // dragControl1
             // 
@@ -487,8 +484,8 @@ namespace SistemaUniversidad.DISEÑO.Docente
         private System.Windows.Forms.TextBox txtGetPrimerParcial;
         private System.Windows.Forms.TextBox txtGetSegundoLab;
         private System.Windows.Forms.Label lblCarnetAlumno;
-        private System.Windows.Forms.TextBox txtGetCarnetAlumno;
         private ComboBox cmbMaterias;
         private Label lblMateria;
+        private ComboBox cmbGetCarnet;
     }
 }

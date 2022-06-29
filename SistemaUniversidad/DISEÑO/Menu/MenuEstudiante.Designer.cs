@@ -38,7 +38,6 @@
             this.pnlConte = new System.Windows.Forms.Panel();
             this.pnlMenuLateral = new System.Windows.Forms.Panel();
             this.btnGestionarCalificaciones = new System.Windows.Forms.Button();
-            this.btnGestionarAsignaturas = new System.Windows.Forms.Button();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
@@ -86,7 +85,6 @@
             this.btnMaximizar.FlatAppearance.BorderSize = 0;
             this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
             this.btnMaximizar.Location = new System.Drawing.Point(1054, 0);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(45, 35);
@@ -112,7 +110,6 @@
             // imgMasOpciones
             // 
             this.imgMasOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgMasOpciones.Image = ((System.Drawing.Image)(resources.GetObject("imgMasOpciones.Image")));
             this.imgMasOpciones.Location = new System.Drawing.Point(7, 0);
             this.imgMasOpciones.Name = "imgMasOpciones";
             this.imgMasOpciones.Size = new System.Drawing.Size(36, 34);
@@ -151,7 +148,6 @@
             // 
             this.pnlMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(51)))));
             this.pnlMenuLateral.Controls.Add(this.btnGestionarCalificaciones);
-            this.pnlMenuLateral.Controls.Add(this.btnGestionarAsignaturas);
             this.pnlMenuLateral.Controls.Add(this.pnlHome);
             this.pnlMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
             this.pnlMenuLateral.Location = new System.Drawing.Point(0, 35);
@@ -169,37 +165,15 @@
             this.btnGestionarCalificaciones.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGestionarCalificaciones.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGestionarCalificaciones.ForeColor = System.Drawing.Color.White;
-            this.btnGestionarCalificaciones.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarCalificaciones.Image")));
             this.btnGestionarCalificaciones.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionarCalificaciones.Location = new System.Drawing.Point(0, 85);
+            this.btnGestionarCalificaciones.Location = new System.Drawing.Point(0, 50);
             this.btnGestionarCalificaciones.Name = "btnGestionarCalificaciones";
             this.btnGestionarCalificaciones.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnGestionarCalificaciones.Size = new System.Drawing.Size(206, 35);
             this.btnGestionarCalificaciones.TabIndex = 25;
             this.btnGestionarCalificaciones.Text = "    Calificaciones";
             this.btnGestionarCalificaciones.UseVisualStyleBackColor = true;
-            this.btnGestionarCalificaciones.Click += new System.EventHandler(this.btnGestionarCalificaciones_Click_1);
-            // 
-            // btnGestionarAsignaturas
-            // 
-            this.btnGestionarAsignaturas.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnGestionarAsignaturas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnGestionarAsignaturas.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnGestionarAsignaturas.FlatAppearance.BorderSize = 2;
-            this.btnGestionarAsignaturas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnGestionarAsignaturas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGestionarAsignaturas.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGestionarAsignaturas.ForeColor = System.Drawing.Color.White;
-            this.btnGestionarAsignaturas.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarAsignaturas.Image")));
-            this.btnGestionarAsignaturas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionarAsignaturas.Location = new System.Drawing.Point(0, 50);
-            this.btnGestionarAsignaturas.Name = "btnGestionarAsignaturas";
-            this.btnGestionarAsignaturas.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnGestionarAsignaturas.Size = new System.Drawing.Size(206, 35);
-            this.btnGestionarAsignaturas.TabIndex = 21;
-            this.btnGestionarAsignaturas.Text = "       Asignaturas";
-            this.btnGestionarAsignaturas.UseVisualStyleBackColor = true;
-            this.btnGestionarAsignaturas.Click += new System.EventHandler(this.btnGestionarAsignaturas_Click_1);
+            this.btnGestionarCalificaciones.Click += new System.EventHandler(this.btnGestionarCalificaciones_Click);
             // 
             // pnlHome
             // 
@@ -218,7 +192,6 @@
             this.btnCerrarSesion.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.White;
-            this.btnCerrarSesion.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrarSesion.Image")));
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrarSesion.Location = new System.Drawing.Point(1, 0);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
@@ -265,7 +238,6 @@
         private System.Windows.Forms.Button btnRestaurar;
         private System.Windows.Forms.Panel pnlHome;
         private System.Windows.Forms.Button btnGestionarCalificaciones;
-        private System.Windows.Forms.Button btnGestionarAsignaturas;
         private System.Windows.Forms.Button btnCerrarSesion;
         private LOGICA.DragControl dragControl1;
     }

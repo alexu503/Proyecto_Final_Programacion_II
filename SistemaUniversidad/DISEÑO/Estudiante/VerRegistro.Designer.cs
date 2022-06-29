@@ -4,7 +4,7 @@ using SistemaUniversidad.LOGICA;
 
 namespace SistemaUniversidad.DISEÑO.Estudiante
 {
-    partial class BuscarAsignaturas
+    partial class VerRegistro
     {
         /// <summary>
         /// Required designer variable.
@@ -35,13 +35,13 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BuscarAsignaturas));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(VerRegistro));
             this.pnlConten = new System.Windows.Forms.Panel();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCargar = new System.Windows.Forms.Button();
             this.dgvAsignaturas = new System.Windows.Forms.DataGridView();
-            this.cmbCarreras = new System.Windows.Forms.ComboBox();
-            this.lblCarrera = new System.Windows.Forms.Label();
+            this.cmbVerMaterias = new System.Windows.Forms.ComboBox();
+            this.lblMaterias = new System.Windows.Forms.Label();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.lblTitulo = new System.Windows.Forms.Label();
@@ -61,22 +61,22 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
             this.pnlConten.Controls.Add(this.btnSalir);
             this.pnlConten.Controls.Add(this.btnCargar);
             this.pnlConten.Controls.Add(this.dgvAsignaturas);
-            this.pnlConten.Controls.Add(this.cmbCarreras);
-            this.pnlConten.Controls.Add(this.lblCarrera);
+            this.pnlConten.Controls.Add(this.cmbVerMaterias);
+            this.pnlConten.Controls.Add(this.lblMaterias);
             this.pnlConten.Controls.Add(this.pnlSuperior);
             this.pnlConten.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlConten.Location = new System.Drawing.Point(0, 0);
             this.pnlConten.Name = "pnlConten";
-            this.pnlConten.Size = new System.Drawing.Size(1027, 743);
+            this.pnlConten.Size = new System.Drawing.Size(1027, 527);
             this.pnlConten.TabIndex = 0;
             // 
             // btnSalir
             // 
             this.btnSalir.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSalir.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSalir.Location = new System.Drawing.Point(485, 181);
+            this.btnSalir.Location = new System.Drawing.Point(877, 63);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(128, 54);
+            this.btnSalir.Size = new System.Drawing.Size(128, 36);
             this.btnSalir.TabIndex = 15;
             this.btnSalir.Text = "SALIR";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -86,12 +86,13 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
             // 
             this.btnCargar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCargar.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCargar.Location = new System.Drawing.Point(351, 181);
+            this.btnCargar.Location = new System.Drawing.Point(350, 60);
             this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(128, 54);
+            this.btnCargar.Size = new System.Drawing.Size(128, 36);
             this.btnCargar.TabIndex = 15;
-            this.btnCargar.Text = "VER MATERIAS";
+            this.btnCargar.Text = "VER NOTAS";
             this.btnCargar.UseVisualStyleBackColor = true;
+            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
             // 
             // dgvAsignaturas
             // 
@@ -108,34 +109,34 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
             this.dgvAsignaturas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvAsignaturas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvAsignaturas.EnableHeadersVisualStyles = false;
-            this.dgvAsignaturas.Location = new System.Drawing.Point(351, 287);
+            this.dgvAsignaturas.Location = new System.Drawing.Point(27, 148);
             this.dgvAsignaturas.Name = "dgvAsignaturas";
             this.dgvAsignaturas.ReadOnly = true;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.dgvAsignaturas.RowsDefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvAsignaturas.Size = new System.Drawing.Size(276, 150);
+            this.dgvAsignaturas.Size = new System.Drawing.Size(978, 346);
             this.dgvAsignaturas.TabIndex = 13;
             // 
-            // cmbCarreras
+            // cmbVerMaterias
             // 
-            this.cmbCarreras.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCarreras.FormattingEnabled = true;
-            this.cmbCarreras.Location = new System.Drawing.Point(428, 94);
-            this.cmbCarreras.Name = "cmbCarreras";
-            this.cmbCarreras.Size = new System.Drawing.Size(311, 28);
-            this.cmbCarreras.TabIndex = 12;
+            this.cmbVerMaterias.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbVerMaterias.FormattingEnabled = true;
+            this.cmbVerMaterias.Location = new System.Drawing.Point(107, 60);
+            this.cmbVerMaterias.Name = "cmbVerMaterias";
+            this.cmbVerMaterias.Size = new System.Drawing.Size(154, 28);
+            this.cmbVerMaterias.TabIndex = 12;
             // 
-            // lblCarrera
+            // lblMaterias
             // 
-            this.lblCarrera.AutoSize = true;
-            this.lblCarrera.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarrera.Location = new System.Drawing.Point(251, 97);
-            this.lblCarrera.Name = "lblCarrera";
-            this.lblCarrera.Size = new System.Drawing.Size(171, 20);
-            this.lblCarrera.TabIndex = 11;
-            this.lblCarrera.Text = "Seleccione la carrera:";
+            this.lblMaterias.AutoSize = true;
+            this.lblMaterias.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaterias.Location = new System.Drawing.Point(30, 63);
+            this.lblMaterias.Name = "lblMaterias";
+            this.lblMaterias.Size = new System.Drawing.Size(71, 20);
+            this.lblMaterias.TabIndex = 11;
+            this.lblMaterias.Text = "Materia:";
             // 
             // pnlSuperior
             // 
@@ -231,14 +232,14 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
             // 
             this.dragControl2.SelectControl = this.lblTitulo;
             // 
-            // BuscarAsignaturas
+            // VerRegistro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1027, 743);
+            this.ClientSize = new System.Drawing.Size(1027, 527);
             this.Controls.Add(this.pnlConten);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "BuscarAsignaturas";
+            this.Name = "VerRegistro";
             this.Text = "BuscarAsignaturas";
             this.Load += new System.EventHandler(this.BuscarAsignaturas_Load);
             this.pnlConten.ResumeLayout(false);
@@ -260,11 +261,11 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblTitulo;
         private LOGICA.DragControl dragControl1;
-        private System.Windows.Forms.ComboBox cmbCarreras;
-        private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.DataGridView dgvAsignaturas;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnCargar;
         private DragControl dragControl2;
+        private ComboBox cmbVerMaterias;
+        private Label lblMaterias;
     }
 }
