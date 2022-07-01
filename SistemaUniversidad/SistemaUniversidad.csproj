@@ -264,6 +264,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DISEÑO\Registro\" />
+    <Folder Include="LOGICA\DATABASE\Queries\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Images\1-login.png" />

@@ -64,7 +64,7 @@ namespace SistemaUniversidad.DISEÑO.Sesiones
         }
 
         private void pnlContBienve_Paint(object sender, PaintEventArgs e) {
-            GenerateConnection.GetConnection();
+            //GenerateConnection.GetConnection();
         }
     }
 }
