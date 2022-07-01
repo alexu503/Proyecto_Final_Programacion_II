@@ -11,24 +11,24 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         string carnet = "";//Almacena el carnet a eliminar
-        private List<Alumno> listaRsistemas = new List<Alumno>();
-        private List<Alumno> listaRagronomia = new List<Alumno>();
-        private List<Alumno> listaRelectrica = new List<Alumno>();
-        private List<Alumno> listaRindustrial = new List<Alumno>();
+        private List<Student> listaRsistemas = new List<Student>();
+        private List<Student> listaRagronomia = new List<Student>();
+        private List<Student> listaRelectrica = new List<Student>();
+        private List<Student> listaRindustrial = new List<Student>();
         private int eliminar = -1;
-        public void setAlumSistemas(List<Alumno> listR)
+        public void setAlumSistemas(List<Student> listR)
         {
             this.listaRsistemas = listR;
         }
-        public void setAlumAgronomia(List<Alumno> listR)
+        public void setAlumAgronomia(List<Student> listR)
         {
             this.listaRagronomia = listR;
         }
-        public void setAlumElectrica(List<Alumno> listR)
+        public void setAlumElectrica(List<Student> listR)
         {
             this.listaRelectrica = listR;
         }
-        public void setAlumIndustrial(List<Alumno> listR)
+        public void setAlumIndustrial(List<Student> listR)
         {
             this.listaRindustrial = listR;
         }
@@ -40,7 +40,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             {
                 AgregarColumnasDTGV();
 
-                foreach (Alumno item in listaRsistemas)
+                foreach (Student item in listaRsistemas)
                 {
                     string[] registro = {item.getNombres(),item.getPrimerApellido(),item.getSegundoApellido(),
                     item.getCarnet(),item.getCarrera(),item.getPasswrd(),item.getMatricula().ToString(),item.getFechaNacimiento(),
@@ -61,7 +61,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             {
                 AgregarColumnasDTGV();
 
-                foreach (Alumno item in listaRagronomia)
+                foreach (Student item in listaRagronomia)
                 {
                     string[] registro = {item.getNombres(),item.getPrimerApellido(),item.getSegundoApellido(),
                     item.getCarnet(),item.getCarrera(),item.getPasswrd(),item.getMatricula().ToString(),item.getFechaNacimiento(),
@@ -82,7 +82,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             {
                 AgregarColumnasDTGV();
 
-                foreach (Alumno item in listaRelectrica)
+                foreach (Student item in listaRelectrica)
                 {
                     string[] registro = {item.getNombres(),item.getPrimerApellido(),item.getSegundoApellido(),
                     item.getCarnet(),item.getCarrera(),item.getPasswrd(),item.getMatricula().ToString(),item.getFechaNacimiento(),
@@ -103,7 +103,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             {
                 AgregarColumnasDTGV();
 
-                foreach (Alumno item in listaRindustrial)
+                foreach (Student item in listaRindustrial)
                 {
                     string[] registro = {item.getNombres(),item.getPrimerApellido(),item.getSegundoApellido(),
                     item.getCarnet(),item.getCarrera(),item.getPasswrd(),item.getMatricula().ToString(),item.getFechaNacimiento(),

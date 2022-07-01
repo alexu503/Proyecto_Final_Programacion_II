@@ -13,8 +13,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private List<Alumno> listaModificable = new List<Alumno>();
-        private List<Alumno> listaAlumnoGenerico = new List<Alumno>();
+        private List<Student> listaModificable = new List<Student>();
+        private List<Student> listaAlumnoGenerico = new List<Student>();
         private int indice;
         private int carrera;
         private string pass;
@@ -22,7 +22,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
 
         private void mostrar(){
 
-            foreach(Alumno x in listaModificable) {
+            foreach(Student x in listaModificable) {
                 txtNombres.Text = x.getNombres();
                 txrtPrimerApellido.Text = x.getPrimerApellido();
                 txtSegundoApellido.Text = x.getSegundoApellido();
@@ -48,7 +48,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             }
         }
 
-        public void setDetalles(List<Alumno> listaRecibida) {
+        public void setDetalles(List<Student> listaRecibida) {
             this.listaModificable = listaRecibida;
         }
 
@@ -63,7 +63,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             MySqlCommand query = new MySqlCommand();
             query.Connection = connection;
 
-            foreach (Alumno x in listaAlumnoGenerico) {
+            foreach (Student x in listaAlumnoGenerico) {
                 query.CommandText = "UPDATE Alumnos SET " +
                     "Nombres = '"+x.getNombres()+"', " +
                     "PrimerApellido = '"+x.getPrimerApellido()+"', " +

@@ -100,7 +100,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         #region Abrir Form Editar
         private void btnModificar_Click(object sender, EventArgs e){
 
-            Alumno alumno = new Alumno();
+            Student alumno = new Student();
 
             if(dgvAlumnos.Rows.Count > 0) {
                 int selectedRow = dgvAlumnos.CurrentCell.RowIndex;

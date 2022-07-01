@@ -99,7 +99,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 if (filtro == 1)//Filtro -> Carnet
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRsistemas)
+                    foreach (Student item in listaRsistemas)
                     {
                         if (dato == item.getCarnet())
                         {
@@ -120,7 +120,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 2)//Filtro -> Nombres
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRsistemas)
+                    foreach (Student item in listaRsistemas)
                     {
                         if (dato == item.getNombres())
                         {
@@ -141,7 +141,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 3)//Filtro -> Primer Apellido
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRsistemas)
+                    foreach (Student item in listaRsistemas)
                     {
                         if (dato == item.getPrimerApellido())
                         {
@@ -162,7 +162,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 4)//Filtro -> Segundo Apellido
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRsistemas)
+                    foreach (Student item in listaRsistemas)
                     {
                         if (dato == item.getSegundoApellido())
                         {
@@ -187,7 +187,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 if (filtro == 1)//Filtro -> Carnet
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRagronomia)
+                    foreach (Student item in listaRagronomia)
                     {
                         if (dato == item.getCarnet())
                         {
@@ -208,7 +208,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 2)//Filtro -> Nombres
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRagronomia)
+                    foreach (Student item in listaRagronomia)
                     {
                         if (dato == item.getNombres())
                         {
@@ -229,7 +229,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 3)//Filtro -> Primer Apellido
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRagronomia)
+                    foreach (Student item in listaRagronomia)
                     {
                         if (dato == item.getPrimerApellido())
                         {
@@ -250,7 +250,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 4)//Filtro -> Segundo Apellido
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRagronomia)
+                    foreach (Student item in listaRagronomia)
                     {
                         if (dato == item.getSegundoApellido())
                         {
@@ -274,7 +274,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 if (filtro == 1)//Filtro -> Carnet
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRelectrica)
+                    foreach (Student item in listaRelectrica)
                     {
                         if (dato == item.getCarnet())
                         {
@@ -295,7 +295,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 2)//Filtro -> Nombres
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRelectrica)
+                    foreach (Student item in listaRelectrica)
                     {
                         if (dato == item.getNombres())
                         {
@@ -316,7 +316,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 3)//Filtro -> Primer Apellido
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRelectrica)
+                    foreach (Student item in listaRelectrica)
                     {
                         if (dato == item.getPrimerApellido())
                         {
@@ -337,7 +337,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 4)//Filtro -> Segundo Apellido
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRelectrica)
+                    foreach (Student item in listaRelectrica)
                     {
                         if (dato == item.getSegundoApellido())
                         {
@@ -361,7 +361,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 if (filtro == 1)//Filtro -> Carnet
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRindustrial)
+                    foreach (Student item in listaRindustrial)
                     {
                         if (dato == item.getCarnet())
                         {
@@ -382,7 +382,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 2)//Filtro -> Nombres
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRindustrial)
+                    foreach (Student item in listaRindustrial)
                     {
                         if (dato == item.getNombres())
                         {
@@ -403,7 +403,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 3)//Filtro -> Primer Apellido
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRindustrial)
+                    foreach (Student item in listaRindustrial)
                     {
                         if (dato == item.getPrimerApellido())
                         {
@@ -424,7 +424,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 else if (filtro == 4)//Filtro -> Segundo Apellido
                 {
                     AgregarColumnasDTGV();
-                    foreach (Alumno item in listaRindustrial)
+                    foreach (Student item in listaRindustrial)
                     {
                         if (dato == item.getSegundoApellido())
                         {

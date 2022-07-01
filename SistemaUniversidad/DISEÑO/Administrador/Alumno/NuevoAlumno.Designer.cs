@@ -11,7 +11,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         //Listas de alumnos por cada carrera
-        private List<Alumno> listaAlumnoGenerico = new List<Alumno>();
+        private List<Student> listaAlumnoGenerico = new List<Student>();
 
         void SaveToLogins() {
 
@@ -19,7 +19,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
             MySqlCommand query = new MySqlCommand();
             query.Connection = connection;
 
-            foreach (Alumno x in listaAlumnoGenerico) {
+            foreach (Student x in listaAlumnoGenerico) {
                 query.CommandText = "";
             }
             query.ExecuteNonQuery();
@@ -33,7 +33,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
             MySqlCommand query = new MySqlCommand();
             query.Connection = connection;
 
-            foreach (Alumno x in listaAlumnoGenerico) {
+            foreach (Student x in listaAlumnoGenerico) {
 
                 query.CommandText = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, NombreCarrera, Carnet, Clave, Matricula, " +
                 "FechaDeNacimiento, DocumentoDeIdentidad, Sexo, Direccion, Telefono, Celular, Correo, FechaInscripcion, Nacionalidad, EstadoCivil)" +

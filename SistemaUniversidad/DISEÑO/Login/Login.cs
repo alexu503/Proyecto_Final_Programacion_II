@@ -26,7 +26,7 @@ namespace SistemaUniversidad.DISEÑO.Login{
 
         void VolverIncio(Form cerrar, object sender, EventArgs e){
             //Vuelve al Inicio
-            if (MessageBox.Show("¿SEGURO QUE DESEA VOLVER?", "¡ATENCION!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
+            if (MessageBox.Show("¿Seguro que desea volver?", "¡ATENCIÓN!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes){
                 Sesiones.Bienvenido formBienvenido = new Sesiones.Bienvenido();//Crea un objeto del formulario de incio
                 formBienvenido.Show();//Se muestra el formulario de Inicio
                 cerrar.Close();//Oculta éste formulario

@@ -11,23 +11,23 @@ namespace SistemaUniversidad.DISEÑO.Menu
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         //Listas de alumnos por cada carrera
-        private List<Alumno> listaRsistemas = new List<Alumno>();
-        private List<Alumno> listaRagronomia = new List<Alumno>();
-        private List<Alumno> listaRelectrica = new List<Alumno>();
-        private List<Alumno> listaRindustrial = new List<Alumno>();
-        public void setAlumSistemas(List<Alumno> listR)
+        private List<Student> listaRsistemas = new List<Student>();
+        private List<Student> listaRagronomia = new List<Student>();
+        private List<Student> listaRelectrica = new List<Student>();
+        private List<Student> listaRindustrial = new List<Student>();
+        public void setAlumSistemas(List<Student> listR)
         {
             this.listaRsistemas = listR;
         }
-        public void setAlumAgronomia(List<Alumno> listR)
+        public void setAlumAgronomia(List<Student> listR)
         {
             this.listaRagronomia = listR;
         }
-        public void setAlumElectrica(List<Alumno> listR)
+        public void setAlumElectrica(List<Student> listR)
         {
             this.listaRelectrica = listR;
         }
-        public void setAlumIndustrial(List<Alumno> listR)
+        public void setAlumIndustrial(List<Student> listR)
         {
             this.listaRindustrial = listR;
         }

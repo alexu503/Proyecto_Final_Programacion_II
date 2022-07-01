@@ -223,7 +223,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
                 string pass;
                 Random aleatorio = new Random();
                 int num = aleatorio.Next(20, 100);
-                Alumno nuevoAlumno = new Alumno();
+                Student nuevoAlumno = new Student();
                 nuevoAlumno.setNombres(txtNombres.Text);
                 nuevoAlumno.setPrimerApellido(txrtPrimerApellido.Text);
                 nuevoAlumno.setSegundoApellido(txtSegundoApellido.Text);

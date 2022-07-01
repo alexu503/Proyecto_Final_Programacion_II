@@ -48,7 +48,7 @@
             this.lblBienvenido.AutoSize = true;
             this.lblBienvenido.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F);
             this.lblBienvenido.ForeColor = System.Drawing.Color.Black;
-            this.lblBienvenido.Location = new System.Drawing.Point(111, 94);
+            this.lblBienvenido.Location = new System.Drawing.Point(130, 94);
             this.lblBienvenido.Name = "lblBienvenido";
             this.lblBienvenido.Size = new System.Drawing.Size(160, 31);
             this.lblBienvenido.TabIndex = 0;
@@ -60,7 +60,7 @@
             this.lblLineaDivisora.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lblLineaDivisora.AutoSize = true;
             this.lblLineaDivisora.ForeColor = System.Drawing.Color.Black;
-            this.lblLineaDivisora.Location = new System.Drawing.Point(29, 152);
+            this.lblLineaDivisora.Location = new System.Drawing.Point(35, 151);
             this.lblLineaDivisora.Name = "lblLineaDivisora";
             this.lblLineaDivisora.Size = new System.Drawing.Size(325, 13);
             this.lblLineaDivisora.TabIndex = 1;
@@ -85,7 +85,7 @@
             this.groupBoxIniciarSesión.Controls.Add(this.btnIniciarSesion);
             this.groupBoxIniciarSesión.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxIniciarSesión.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxIniciarSesión.Location = new System.Drawing.Point(130, 236);
+            this.groupBoxIniciarSesión.Location = new System.Drawing.Point(130, 245);
             this.groupBoxIniciarSesión.Name = "groupBoxIniciarSesión";
             this.groupBoxIniciarSesión.Size = new System.Drawing.Size(141, 154);
             this.groupBoxIniciarSesión.TabIndex = 4;
@@ -100,7 +100,6 @@
             this.pnlContBienve.Controls.Add(this.lblBienvenido);
             this.pnlContBienve.Controls.Add(this.lblLineaDivisora);
             this.pnlContBienve.Controls.Add(this.groupBoxIniciarSesión);
-            this.pnlContBienve.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContBienve.Location = new System.Drawing.Point(0, 0);
             this.pnlContBienve.Name = "pnlContBienve";
             this.pnlContBienve.Size = new System.Drawing.Size(397, 526);
@@ -112,7 +111,6 @@
             // 
             this.pnlSuperiorBienvenido.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
             this.pnlSuperiorBienvenido.Controls.Add(this.btnCerrar);
-            this.pnlSuperiorBienvenido.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperiorBienvenido.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperiorBienvenido.Name = "pnlSuperiorBienvenido";
             this.pnlSuperiorBienvenido.Size = new System.Drawing.Size(395, 35);
@@ -152,7 +150,6 @@
             this.Name = "Bienvenido";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Bienvenido";
-            this.Load += new System.EventHandler(this.Bienvenido_Load);
             this.groupBoxIniciarSesión.ResumeLayout(false);
             this.pnlContBienve.ResumeLayout(false);
             this.pnlContBienve.PerformLayout();

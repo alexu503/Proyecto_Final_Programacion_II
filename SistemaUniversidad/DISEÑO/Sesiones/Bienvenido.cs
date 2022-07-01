@@ -20,11 +20,6 @@ namespace SistemaUniversidad.DISEÑO.Sesiones
             InitializeComponent();
         }
 
-        private void Bienvenido_Load(object sender, EventArgs e)
-        {
-            
-        }
-
         #region Mover el Formulario
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
@@ -46,20 +41,13 @@ namespace SistemaUniversidad.DISEÑO.Sesiones
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
         #endregion
-        private void btnIniciarSesion_Click(object sender, EventArgs e)
-        {
+        private void btnIniciarSesion_Click(object sender, EventArgs e){
             Login.Login formLogin = new Login.Login();//Crea un objeto del formulario login
             this.Hide();//Oculta éste formulario
             formLogin.Show();//Se muestra el formulario de Login
         }
 
-        private void btnRegistrarse_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
+        private void btnCerrar_Click(object sender, EventArgs e){
             Application.Exit();
         }
 
