@@ -105,6 +105,7 @@
             this.pnlContBienve.Name = "pnlContBienve";
             this.pnlContBienve.Size = new System.Drawing.Size(397, 526);
             this.pnlContBienve.TabIndex = 7;
+            this.pnlContBienve.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlContBienve_Paint);
             this.pnlContBienve.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlContBienve_MouseDown);
             // 
             // pnlSuperiorBienvenido

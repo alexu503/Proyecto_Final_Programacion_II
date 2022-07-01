@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SQLite;
 using System.Runtime.InteropServices;
+using SistemaUniversidad.LOGICA.DATABASE;
 
 namespace SistemaUniversidad.DISEÑO.Sesiones
 {
@@ -59,6 +61,10 @@ namespace SistemaUniversidad.DISEÑO.Sesiones
         private void btnCerrar_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void pnlContBienve_Paint(object sender, PaintEventArgs e) {
+            GenerateConnection.GetConnection();
         }
     }
 }

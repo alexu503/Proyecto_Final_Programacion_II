@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data.SQLite;
 using SistemaUniversidad.LOGICA;
 using SistemaUniversidad.LOGICA.DATABASE;
 
@@ -44,7 +45,6 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
                 dr.Close();
                 connection.Close();
             }
-
         }
 
         #region Botones Minimizar Maximizar Cerrar
