@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SQLite;
-using SistemaUniversidad.LOGICA;
+using SistemaUniversidad.LOGICA.LogicalClasses;
 using SistemaUniversidad.LOGICA.DATABASE;
 
 namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
-    internal class InsertData {
+    internal static class InsertData {
 
-        void InsertToProfessorTable(ref List<AcademicStaff> lstData) {
+        static void InsertToProfessorTable(ref List<Student> lstData) {
 
             string command = "INSERT INTO Professor(" +
                 "FirstName," +
@@ -56,12 +56,12 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
                 query.Parameters.Add(new SQLiteParameter("@Phone", x.Phone));
                 query.Parameters.Add(new SQLiteParameter("@MobilePhone", x.MobilePhone));
                 query.Parameters.Add(new SQLiteParameter("@Nationality", x.Nationality));
-                query.Parameters.Add(new SQLiteParameter("@CivilStatus", x.CivilStatus));
+                query.Parameters.Add(new SQLiteParameter("@CivilStatus", x.MaritalStatus));
             }
             query.ExecuteNonQuery();
         }
 
-        void InsertToStudentsTable(ref List<AcademicStaff> lstData) {
+        static void InsertToStudentsTable(ref List<Student> lstData) {
 
             string command = "INSERT INTO Student(" +
                 "FirstName," +
@@ -104,12 +104,12 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
                 query.Parameters.Add(new SQLiteParameter("@Phone", x.Phone));
                 query.Parameters.Add(new SQLiteParameter("@MobilePhone", x.MobilePhone));
                 query.Parameters.Add(new SQLiteParameter("@Nationality", x.Nationality));
-                query.Parameters.Add(new SQLiteParameter("@CivilStatus", x.CivilStatus));
+                query.Parameters.Add(new SQLiteParameter("@CivilStatus", x.MaritalStatus));
             }
             query.ExecuteNonQuery();
         }
 
-        void InsertToLogins(ref List<Login> lstData) {
+        static void InsertToLogins(ref List<Student> lstData) {
             string command = "INSERT INTO Logins(" +
                 "Username," +
                 "Password," +
@@ -123,28 +123,25 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
             query.Connection = connection;
             //Execute query:
             query.CommandText = command;
-            foreach(Login l in lstData) {
-                query.Parameters.Add(new SQLiteParameter("@Username", l.Username));
-                query.Parameters.Add(new SQLiteParameter("@Password", l.Password));
-                query.Parameters.Add(new SQLiteParameter("@Rol", l.Rol));
+            foreach(Student l in lstData) {
+                //query.Parameters.Add(new SQLiteParameter("@Username", l.Username));
+                //query.Parameters.Add(new SQLiteParameter("@Password", l.Password));
+                //query.Parameters.Add(new SQLiteParameter("@Rol", l.Rol));
             }
             query.ExecuteNonQuery();
         }
 
-        public void InsertToDB(ref string staffType, ref List<AcademicStaff> lstAddNewStaff, ref List<Login> lstAddNewLogin) {
+        public static void InsertToDB(string staffType, ref List<Student> lstAddNewStaff) {
 
             switch (staffType) {
                 case "Docente":
                     InsertToProfessorTable(ref lstAddNewStaff);
-                    InsertToLogins(ref lstAddNewLogin);
                     break;
                 case "Estudiante":
                     InsertToStudentsTable(ref lstAddNewStaff);
-                    InsertToLogins(ref lstAddNewLogin);
                     break;
                 case "Estudiante (en prácticas)":
                     InsertToStudentsTable(ref lstAddNewStaff);
-                    InsertToLogins(ref lstAddNewLogin);
                     break;
                 default:
                     break;

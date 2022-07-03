@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaUniversidad.LOGICA;
+using SistemaUniversidad.LOGICA.LogicalClasses;
 using SistemaUniversidad.DISEÑO;
 using SistemaUniversidad.LOGICA.DATABASE;
 using System.Text.RegularExpressions;

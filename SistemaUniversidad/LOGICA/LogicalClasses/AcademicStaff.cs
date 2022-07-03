@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaUniversidad.LOGICA {
+namespace SistemaUniversidad.LOGICA.LogicalClasses {
     public abstract class AcademicStaff {
 
         public string FirstName{get; set;}
@@ -20,7 +20,7 @@ namespace SistemaUniversidad.LOGICA {
         public string MobilePhone { get; set; }
         public string Email { get; set; }
         public string InscriptionDate { get; set; }
-        public string CivilStatus { get; set; }
+        public string MaritalStatus { get; set; }
         public string Nationality { get; set; }
 
         public abstract void AddNewStaff();

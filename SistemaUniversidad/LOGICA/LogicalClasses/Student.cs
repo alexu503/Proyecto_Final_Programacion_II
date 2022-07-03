@@ -4,8 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace SistemaUniversidad.LOGICA
-{
+namespace SistemaUniversidad.LOGICA.LogicalClasses{
     public class Student: AcademicStaff{
 
         private string name;
@@ -58,7 +57,7 @@ namespace SistemaUniversidad.LOGICA
             MobilePhone = mobilephone;
             Email = email;
             InscriptionDate = inscriptiondate;
-            CivilStatus = civilstate;
+            MaritalStatus = civilstate;
             Nationality = nationality;
         }
     }

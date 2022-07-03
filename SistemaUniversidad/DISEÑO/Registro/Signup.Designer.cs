@@ -1,9 +1,13 @@
-﻿namespace SistemaUniversidad.DISEÑO.Registro {
+﻿using System.Collections.Generic;
+using SistemaUniversidad.LOGICA.LogicalClasses;
+
+namespace SistemaUniversidad.DISEÑO.Registro {
     partial class Signup {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        List<Student> lstStudent = new List<Student>();
 
         /// <summary>
         /// Clean up any resources being used.
@@ -27,36 +31,36 @@
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblDescrip = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnCancell = new System.Windows.Forms.Button();
+            this.btnSignup = new System.Windows.Forms.Button();
             this.lblNoObli = new System.Windows.Forms.Label();
-            this.cmbNacionalidad = new System.Windows.Forms.ComboBox();
-            this.lblCarreras = new System.Windows.Forms.Label();
-            this.cmbCarreras = new System.Windows.Forms.ComboBox();
+            this.cmbGetNationality = new System.Windows.Forms.ComboBox();
+            this.lblCareer = new System.Windows.Forms.Label();
+            this.cmbGetCareer = new System.Windows.Forms.ComboBox();
             this.lblLastname = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
-            this.cmbEstadoCivil = new System.Windows.Forms.ComboBox();
-            this.txrtLastname = new System.Windows.Forms.TextBox();
+            this.cmbGetMaritalStatus = new System.Windows.Forms.ComboBox();
+            this.txtGetLastname = new System.Windows.Forms.TextBox();
             this.txtGetName = new System.Windows.Forms.TextBox();
-            this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.dtPCalendarioNacimiento = new System.Windows.Forms.DateTimePicker();
-            this.txtCelular = new System.Windows.Forms.TextBox();
-            this.lblFechaNacimiento = new System.Windows.Forms.Label();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.lblDocumentoIdentidad = new System.Windows.Forms.Label();
-            this.txtDireccion = new System.Windows.Forms.TextBox();
-            this.txtDocumentoIdentidad = new System.Windows.Forms.TextBox();
-            this.lblCorreo = new System.Windows.Forms.Label();
-            this.rbtnMasculino = new System.Windows.Forms.RadioButton();
-            this.lblEstadoCivil = new System.Windows.Forms.Label();
-            this.rbtnFemenino = new System.Windows.Forms.RadioButton();
+            this.txtGetEmail = new System.Windows.Forms.TextBox();
+            this.dtPGetBirthday = new System.Windows.Forms.DateTimePicker();
+            this.txtGetMobilePhone = new System.Windows.Forms.TextBox();
+            this.lblBirthday = new System.Windows.Forms.Label();
+            this.txtGetPhone = new System.Windows.Forms.TextBox();
+            this.lblSex = new System.Windows.Forms.Label();
+            this.lblDNI = new System.Windows.Forms.Label();
+            this.txtGetAddress = new System.Windows.Forms.TextBox();
+            this.txtGetDNI = new System.Windows.Forms.TextBox();
+            this.lblEmail = new System.Windows.Forms.Label();
+            this.rbtnMale = new System.Windows.Forms.RadioButton();
+            this.lblMaritalStatus = new System.Windows.Forms.Label();
+            this.rbtnFemale = new System.Windows.Forms.RadioButton();
             this.lblNacionalidad = new System.Windows.Forms.Label();
-            this.lblDireccion = new System.Windows.Forms.Label();
-            this.lblTelefono = new System.Windows.Forms.Label();
-            this.lblCelular = new System.Windows.Forms.Label();
+            this.lblAddress = new System.Windows.Forms.Label();
+            this.lblPhone = new System.Windows.Forms.Label();
+            this.lblMobilePhone = new System.Windows.Forms.Label();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
@@ -87,39 +91,60 @@
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBox1.Controls.Add(this.button2);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btnCancell);
+            this.groupBox1.Controls.Add(this.btnSignup);
             this.groupBox1.Controls.Add(this.lblNoObli);
-            this.groupBox1.Controls.Add(this.cmbNacionalidad);
-            this.groupBox1.Controls.Add(this.lblCarreras);
-            this.groupBox1.Controls.Add(this.cmbCarreras);
+            this.groupBox1.Controls.Add(this.cmbGetNationality);
+            this.groupBox1.Controls.Add(this.lblCareer);
+            this.groupBox1.Controls.Add(this.cmbGetCareer);
             this.groupBox1.Controls.Add(this.lblLastname);
             this.groupBox1.Controls.Add(this.lblName);
-            this.groupBox1.Controls.Add(this.cmbEstadoCivil);
-            this.groupBox1.Controls.Add(this.txrtLastname);
+            this.groupBox1.Controls.Add(this.cmbGetMaritalStatus);
+            this.groupBox1.Controls.Add(this.txtGetLastname);
             this.groupBox1.Controls.Add(this.txtGetName);
-            this.groupBox1.Controls.Add(this.txtCorreo);
-            this.groupBox1.Controls.Add(this.dtPCalendarioNacimiento);
-            this.groupBox1.Controls.Add(this.txtCelular);
-            this.groupBox1.Controls.Add(this.lblFechaNacimiento);
-            this.groupBox1.Controls.Add(this.txtTelefono);
-            this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.lblDocumentoIdentidad);
-            this.groupBox1.Controls.Add(this.txtDireccion);
-            this.groupBox1.Controls.Add(this.txtDocumentoIdentidad);
-            this.groupBox1.Controls.Add(this.lblCorreo);
-            this.groupBox1.Controls.Add(this.rbtnMasculino);
-            this.groupBox1.Controls.Add(this.lblEstadoCivil);
-            this.groupBox1.Controls.Add(this.rbtnFemenino);
+            this.groupBox1.Controls.Add(this.txtGetEmail);
+            this.groupBox1.Controls.Add(this.dtPGetBirthday);
+            this.groupBox1.Controls.Add(this.txtGetMobilePhone);
+            this.groupBox1.Controls.Add(this.lblBirthday);
+            this.groupBox1.Controls.Add(this.txtGetPhone);
+            this.groupBox1.Controls.Add(this.lblSex);
+            this.groupBox1.Controls.Add(this.lblDNI);
+            this.groupBox1.Controls.Add(this.txtGetAddress);
+            this.groupBox1.Controls.Add(this.txtGetDNI);
+            this.groupBox1.Controls.Add(this.lblEmail);
+            this.groupBox1.Controls.Add(this.rbtnMale);
+            this.groupBox1.Controls.Add(this.lblMaritalStatus);
+            this.groupBox1.Controls.Add(this.rbtnFemale);
             this.groupBox1.Controls.Add(this.lblNacionalidad);
-            this.groupBox1.Controls.Add(this.lblDireccion);
-            this.groupBox1.Controls.Add(this.lblTelefono);
-            this.groupBox1.Controls.Add(this.lblCelular);
+            this.groupBox1.Controls.Add(this.lblAddress);
+            this.groupBox1.Controls.Add(this.lblPhone);
+            this.groupBox1.Controls.Add(this.lblMobilePhone);
             this.groupBox1.Location = new System.Drawing.Point(156, 41);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(926, 600);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
+            // 
+            // btnCancell
+            // 
+            this.btnCancell.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancell.Location = new System.Drawing.Point(571, 528);
+            this.btnCancell.Name = "btnCancell";
+            this.btnCancell.Size = new System.Drawing.Size(113, 44);
+            this.btnCancell.TabIndex = 27;
+            this.btnCancell.Text = "Cancelar";
+            this.btnCancell.UseVisualStyleBackColor = true;
+            // 
+            // btnSignup
+            // 
+            this.btnSignup.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSignup.Location = new System.Drawing.Point(198, 528);
+            this.btnSignup.Name = "btnSignup";
+            this.btnSignup.Size = new System.Drawing.Size(113, 44);
+            this.btnSignup.TabIndex = 27;
+            this.btnSignup.Text = "Registrarme";
+            this.btnSignup.UseVisualStyleBackColor = true;
+            this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
             // lblNoObli
             // 
@@ -132,33 +157,33 @@
             this.lblNoObli.TabIndex = 26;
             this.lblNoObli.Text = "NO OBLIGATORIO";
             // 
-            // cmbNacionalidad
+            // cmbGetNationality
             // 
-            this.cmbNacionalidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbNacionalidad.FormattingEnabled = true;
-            this.cmbNacionalidad.Location = new System.Drawing.Point(609, 368);
-            this.cmbNacionalidad.Name = "cmbNacionalidad";
-            this.cmbNacionalidad.Size = new System.Drawing.Size(151, 29);
-            this.cmbNacionalidad.TabIndex = 25;
+            this.cmbGetNationality.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetNationality.FormattingEnabled = true;
+            this.cmbGetNationality.Location = new System.Drawing.Point(609, 376);
+            this.cmbGetNationality.Name = "cmbGetNationality";
+            this.cmbGetNationality.Size = new System.Drawing.Size(151, 29);
+            this.cmbGetNationality.TabIndex = 25;
             // 
-            // lblCarreras
+            // lblCareer
             // 
-            this.lblCarreras.AutoSize = true;
-            this.lblCarreras.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarreras.Location = new System.Drawing.Point(475, 459);
-            this.lblCarreras.Name = "lblCarreras";
-            this.lblCarreras.Size = new System.Drawing.Size(70, 21);
-            this.lblCarreras.TabIndex = 4;
-            this.lblCarreras.Text = "Carrera";
+            this.lblCareer.AutoSize = true;
+            this.lblCareer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCareer.Location = new System.Drawing.Point(477, 459);
+            this.lblCareer.Name = "lblCareer";
+            this.lblCareer.Size = new System.Drawing.Size(70, 21);
+            this.lblCareer.TabIndex = 4;
+            this.lblCareer.Text = "Carrera";
             // 
-            // cmbCarreras
+            // cmbGetCareer
             // 
-            this.cmbCarreras.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbCarreras.FormattingEnabled = true;
-            this.cmbCarreras.Location = new System.Drawing.Point(571, 451);
-            this.cmbCarreras.Name = "cmbCarreras";
-            this.cmbCarreras.Size = new System.Drawing.Size(307, 29);
-            this.cmbCarreras.TabIndex = 5;
+            this.cmbGetCareer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetCareer.FormattingEnabled = true;
+            this.cmbGetCareer.Location = new System.Drawing.Point(571, 454);
+            this.cmbGetCareer.Name = "cmbGetCareer";
+            this.cmbGetCareer.Size = new System.Drawing.Size(307, 29);
+            this.cmbGetCareer.TabIndex = 5;
             // 
             // lblLastname
             // 
@@ -180,22 +205,23 @@
             this.lblName.TabIndex = 6;
             this.lblName.Text = "Nombres";
             // 
-            // cmbEstadoCivil
+            // cmbGetMaritalStatus
             // 
-            this.cmbEstadoCivil.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbEstadoCivil.FormattingEnabled = true;
-            this.cmbEstadoCivil.Location = new System.Drawing.Point(135, 446);
-            this.cmbEstadoCivil.Name = "cmbEstadoCivil";
-            this.cmbEstadoCivil.Size = new System.Drawing.Size(172, 29);
-            this.cmbEstadoCivil.TabIndex = 22;
+            this.cmbGetMaritalStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetMaritalStatus.FormattingEnabled = true;
+            this.cmbGetMaritalStatus.Location = new System.Drawing.Point(135, 451);
+            this.cmbGetMaritalStatus.Name = "cmbGetMaritalStatus";
+            this.cmbGetMaritalStatus.Size = new System.Drawing.Size(172, 29);
+            this.cmbGetMaritalStatus.TabIndex = 22;
             // 
-            // txrtLastname
+            // txtGetLastname
             // 
-            this.txrtLastname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txrtLastname.Location = new System.Drawing.Point(131, 46);
-            this.txrtLastname.Name = "txrtLastname";
-            this.txrtLastname.Size = new System.Drawing.Size(132, 27);
-            this.txrtLastname.TabIndex = 7;
+            this.txtGetLastname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGetLastname.Location = new System.Drawing.Point(131, 46);
+            this.txtGetLastname.Name = "txtGetLastname";
+            this.txtGetLastname.Size = new System.Drawing.Size(132, 27);
+            this.txtGetLastname.TabIndex = 7;
+            this.txtGetLastname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetLastname_KeyPress);
             // 
             // txtGetName
             // 
@@ -204,132 +230,144 @@
             this.txtGetName.Name = "txtGetName";
             this.txtGetName.Size = new System.Drawing.Size(142, 27);
             this.txtGetName.TabIndex = 9;
+            this.txtGetName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetName_KeyPress);
             // 
-            // txtCorreo
+            // txtGetEmail
             // 
-            this.txtCorreo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCorreo.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCorreo.Location = new System.Drawing.Point(559, 214);
-            this.txtCorreo.Name = "txtCorreo";
-            this.txtCorreo.Size = new System.Drawing.Size(201, 27);
-            this.txtCorreo.TabIndex = 19;
-            this.txtCorreo.Tag = "universidad@gmail.com";
-            this.txtCorreo.Text = "universidad@gmail.com";
+            this.txtGetEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGetEmail.ForeColor = System.Drawing.Color.DimGray;
+            this.txtGetEmail.Location = new System.Drawing.Point(559, 214);
+            this.txtGetEmail.Name = "txtGetEmail";
+            this.txtGetEmail.Size = new System.Drawing.Size(201, 27);
+            this.txtGetEmail.TabIndex = 19;
+            this.txtGetEmail.Tag = "universidad@gmail.com";
+            this.txtGetEmail.Text = "universidad@gmail.com";
             // 
-            // dtPCalendarioNacimiento
+            // dtPGetBirthday
             // 
-            this.dtPCalendarioNacimiento.CustomFormat = "dd-mm-yyyy";
-            this.dtPCalendarioNacimiento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtPCalendarioNacimiento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtPCalendarioNacimiento.Location = new System.Drawing.Point(242, 129);
-            this.dtPCalendarioNacimiento.Name = "dtPCalendarioNacimiento";
-            this.dtPCalendarioNacimiento.Size = new System.Drawing.Size(131, 27);
-            this.dtPCalendarioNacimiento.TabIndex = 10;
+            this.dtPGetBirthday.CustomFormat = "dd-mm-yyyy";
+            this.dtPGetBirthday.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtPGetBirthday.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtPGetBirthday.Location = new System.Drawing.Point(242, 135);
+            this.dtPGetBirthday.Name = "dtPGetBirthday";
+            this.dtPGetBirthday.Size = new System.Drawing.Size(131, 27);
+            this.dtPGetBirthday.TabIndex = 10;
             // 
-            // txtCelular
+            // txtGetMobilePhone
             // 
-            this.txtCelular.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCelular.ForeColor = System.Drawing.Color.DimGray;
-            this.txtCelular.Location = new System.Drawing.Point(242, 280);
-            this.txtCelular.MaxLength = 9;
-            this.txtCelular.Name = "txtCelular";
-            this.txtCelular.Size = new System.Drawing.Size(97, 27);
-            this.txtCelular.TabIndex = 18;
-            this.txtCelular.Tag = "7259-8563";
-            this.txtCelular.Text = "7259-8563";
+            this.txtGetMobilePhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGetMobilePhone.ForeColor = System.Drawing.Color.DimGray;
+            this.txtGetMobilePhone.Location = new System.Drawing.Point(242, 286);
+            this.txtGetMobilePhone.MaxLength = 9;
+            this.txtGetMobilePhone.Name = "txtGetMobilePhone";
+            this.txtGetMobilePhone.Size = new System.Drawing.Size(136, 27);
+            this.txtGetMobilePhone.TabIndex = 18;
+            this.txtGetMobilePhone.Tag = "7259-8563";
+            this.txtGetMobilePhone.Text = "7259-8563";
             // 
-            // lblFechaNacimiento
+            // lblBirthday
             // 
-            this.lblFechaNacimiento.AutoSize = true;
-            this.lblFechaNacimiento.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFechaNacimiento.Location = new System.Drawing.Point(26, 135);
-            this.lblFechaNacimiento.Name = "lblFechaNacimiento";
-            this.lblFechaNacimiento.Size = new System.Drawing.Size(177, 21);
-            this.lblFechaNacimiento.TabIndex = 11;
-            this.lblFechaNacimiento.Text = "Fecha de nacimiento";
+            this.lblBirthday.AutoSize = true;
+            this.lblBirthday.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBirthday.Location = new System.Drawing.Point(26, 135);
+            this.lblBirthday.Name = "lblBirthday";
+            this.lblBirthday.Size = new System.Drawing.Size(177, 21);
+            this.lblBirthday.TabIndex = 11;
+            this.lblBirthday.Text = "Fecha de nacimiento";
             // 
-            // txtTelefono
+            // txtGetPhone
             // 
-            this.txtTelefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTelefono.ForeColor = System.Drawing.Color.DimGray;
-            this.txtTelefono.Location = new System.Drawing.Point(558, 286);
-            this.txtTelefono.MaxLength = 9;
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(92, 27);
-            this.txtTelefono.TabIndex = 17;
-            this.txtTelefono.Tag = "7259-8563";
-            this.txtTelefono.Text = "7259-8563";
+            this.txtGetPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGetPhone.ForeColor = System.Drawing.Color.DimGray;
+            this.txtGetPhone.Location = new System.Drawing.Point(558, 286);
+            this.txtGetPhone.MaxLength = 9;
+            this.txtGetPhone.Name = "txtGetPhone";
+            this.txtGetPhone.Size = new System.Drawing.Size(92, 27);
+            this.txtGetPhone.TabIndex = 17;
+            this.txtGetPhone.Tag = "7259-8563";
+            this.txtGetPhone.Text = "7259-8563";
             // 
-            // lblDocumentoIdentidad
+            // lblSex
             // 
-            this.lblDocumentoIdentidad.AutoSize = true;
-            this.lblDocumentoIdentidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDocumentoIdentidad.Location = new System.Drawing.Point(27, 211);
-            this.lblDocumentoIdentidad.Name = "lblDocumentoIdentidad";
-            this.lblDocumentoIdentidad.Size = new System.Drawing.Size(210, 21);
-            this.lblDocumentoIdentidad.TabIndex = 12;
-            this.lblDocumentoIdentidad.Text = "Documento de identidad";
+            this.lblSex.AutoSize = true;
+            this.lblSex.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSex.Location = new System.Drawing.Point(475, 130);
+            this.lblSex.Name = "lblSex";
+            this.lblSex.Size = new System.Drawing.Size(46, 21);
+            this.lblSex.TabIndex = 12;
+            this.lblSex.Text = "Sexo";
             // 
-            // txtDireccion
+            // lblDNI
             // 
-            this.txtDireccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDireccion.Location = new System.Drawing.Point(131, 370);
-            this.txtDireccion.Name = "txtDireccion";
-            this.txtDireccion.Size = new System.Drawing.Size(318, 27);
-            this.txtDireccion.TabIndex = 16;
+            this.lblDNI.AutoSize = true;
+            this.lblDNI.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDNI.Location = new System.Drawing.Point(27, 211);
+            this.lblDNI.Name = "lblDNI";
+            this.lblDNI.Size = new System.Drawing.Size(210, 21);
+            this.lblDNI.TabIndex = 12;
+            this.lblDNI.Text = "Documento de identidad";
             // 
-            // txtDocumentoIdentidad
+            // txtGetAddress
             // 
-            this.txtDocumentoIdentidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDocumentoIdentidad.Location = new System.Drawing.Point(243, 208);
-            this.txtDocumentoIdentidad.MaxLength = 10;
-            this.txtDocumentoIdentidad.Name = "txtDocumentoIdentidad";
-            this.txtDocumentoIdentidad.Size = new System.Drawing.Size(135, 27);
-            this.txtDocumentoIdentidad.TabIndex = 13;
+            this.txtGetAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGetAddress.Location = new System.Drawing.Point(131, 370);
+            this.txtGetAddress.Name = "txtGetAddress";
+            this.txtGetAddress.Size = new System.Drawing.Size(318, 27);
+            this.txtGetAddress.TabIndex = 16;
             // 
-            // lblCorreo
+            // txtGetDNI
             // 
-            this.lblCorreo.AutoSize = true;
-            this.lblCorreo.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCorreo.Location = new System.Drawing.Point(478, 214);
-            this.lblCorreo.Name = "lblCorreo";
-            this.lblCorreo.Size = new System.Drawing.Size(63, 21);
-            this.lblCorreo.TabIndex = 15;
-            this.lblCorreo.Text = "Correo";
+            this.txtGetDNI.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGetDNI.Location = new System.Drawing.Point(243, 208);
+            this.txtGetDNI.MaxLength = 10;
+            this.txtGetDNI.Name = "txtGetDNI";
+            this.txtGetDNI.Size = new System.Drawing.Size(135, 27);
+            this.txtGetDNI.TabIndex = 13;
+            this.txtGetDNI.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetDNI_KeyPress);
             // 
-            // rbtnMasculino
+            // lblEmail
             // 
-            this.rbtnMasculino.AutoSize = true;
-            this.rbtnMasculino.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnMasculino.Location = new System.Drawing.Point(533, 126);
-            this.rbtnMasculino.Name = "rbtnMasculino";
-            this.rbtnMasculino.Size = new System.Drawing.Size(106, 25);
-            this.rbtnMasculino.TabIndex = 14;
-            this.rbtnMasculino.TabStop = true;
-            this.rbtnMasculino.Text = "Masculino";
-            this.rbtnMasculino.UseVisualStyleBackColor = true;
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(478, 214);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(63, 21);
+            this.lblEmail.TabIndex = 15;
+            this.lblEmail.Text = "Correo";
             // 
-            // lblEstadoCivil
+            // rbtnMale
             // 
-            this.lblEstadoCivil.AutoSize = true;
-            this.lblEstadoCivil.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEstadoCivil.Location = new System.Drawing.Point(32, 454);
-            this.lblEstadoCivil.Name = "lblEstadoCivil";
-            this.lblEstadoCivil.Size = new System.Drawing.Size(97, 21);
-            this.lblEstadoCivil.TabIndex = 15;
-            this.lblEstadoCivil.Text = "Estado civil";
+            this.rbtnMale.AutoSize = true;
+            this.rbtnMale.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnMale.Location = new System.Drawing.Point(527, 130);
+            this.rbtnMale.Name = "rbtnMale";
+            this.rbtnMale.Size = new System.Drawing.Size(106, 25);
+            this.rbtnMale.TabIndex = 14;
+            this.rbtnMale.TabStop = true;
+            this.rbtnMale.Text = "Masculino";
+            this.rbtnMale.UseVisualStyleBackColor = true;
             // 
-            // rbtnFemenino
+            // lblMaritalStatus
             // 
-            this.rbtnFemenino.AutoSize = true;
-            this.rbtnFemenino.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnFemenino.Location = new System.Drawing.Point(645, 126);
-            this.rbtnFemenino.Name = "rbtnFemenino";
-            this.rbtnFemenino.Size = new System.Drawing.Size(104, 25);
-            this.rbtnFemenino.TabIndex = 14;
-            this.rbtnFemenino.TabStop = true;
-            this.rbtnFemenino.Text = "Femenino";
-            this.rbtnFemenino.UseVisualStyleBackColor = true;
+            this.lblMaritalStatus.AutoSize = true;
+            this.lblMaritalStatus.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMaritalStatus.Location = new System.Drawing.Point(32, 454);
+            this.lblMaritalStatus.Name = "lblMaritalStatus";
+            this.lblMaritalStatus.Size = new System.Drawing.Size(97, 21);
+            this.lblMaritalStatus.TabIndex = 15;
+            this.lblMaritalStatus.Text = "Estado civil";
+            // 
+            // rbtnFemale
+            // 
+            this.rbtnFemale.AutoSize = true;
+            this.rbtnFemale.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtnFemale.Location = new System.Drawing.Point(639, 130);
+            this.rbtnFemale.Name = "rbtnFemale";
+            this.rbtnFemale.Size = new System.Drawing.Size(104, 25);
+            this.rbtnFemale.TabIndex = 14;
+            this.rbtnFemale.TabStop = true;
+            this.rbtnFemale.Text = "Femenino";
+            this.rbtnFemale.UseVisualStyleBackColor = true;
             // 
             // lblNacionalidad
             // 
@@ -341,35 +379,35 @@
             this.lblNacionalidad.TabIndex = 15;
             this.lblNacionalidad.Text = "Nacionalidad";
             // 
-            // lblDireccion
+            // lblAddress
             // 
-            this.lblDireccion.AutoSize = true;
-            this.lblDireccion.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDireccion.Location = new System.Drawing.Point(32, 373);
-            this.lblDireccion.Name = "lblDireccion";
-            this.lblDireccion.Size = new System.Drawing.Size(83, 21);
-            this.lblDireccion.TabIndex = 15;
-            this.lblDireccion.Text = "Dirección";
+            this.lblAddress.AutoSize = true;
+            this.lblAddress.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAddress.Location = new System.Drawing.Point(32, 373);
+            this.lblAddress.Name = "lblAddress";
+            this.lblAddress.Size = new System.Drawing.Size(83, 21);
+            this.lblAddress.TabIndex = 15;
+            this.lblAddress.Text = "Dirección";
             // 
-            // lblTelefono
+            // lblPhone
             // 
-            this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(477, 289);
-            this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(76, 21);
-            this.lblTelefono.TabIndex = 15;
-            this.lblTelefono.Text = "Teléfono";
+            this.lblPhone.AutoSize = true;
+            this.lblPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPhone.Location = new System.Drawing.Point(477, 289);
+            this.lblPhone.Name = "lblPhone";
+            this.lblPhone.Size = new System.Drawing.Size(76, 21);
+            this.lblPhone.TabIndex = 15;
+            this.lblPhone.Text = "Teléfono";
             // 
-            // lblCelular
+            // lblMobilePhone
             // 
-            this.lblCelular.AutoSize = true;
-            this.lblCelular.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCelular.Location = new System.Drawing.Point(26, 286);
-            this.lblCelular.Name = "lblCelular";
-            this.lblCelular.Size = new System.Drawing.Size(144, 21);
-            this.lblCelular.TabIndex = 15;
-            this.lblCelular.Text = "Teléfono (celular)";
+            this.lblMobilePhone.AutoSize = true;
+            this.lblMobilePhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMobilePhone.Location = new System.Drawing.Point(26, 292);
+            this.lblMobilePhone.Name = "lblMobilePhone";
+            this.lblMobilePhone.Size = new System.Drawing.Size(144, 21);
+            this.lblMobilePhone.TabIndex = 15;
+            this.lblMobilePhone.Text = "Teléfono (celular)";
             // 
             // pnlSuperior
             // 
@@ -395,36 +433,6 @@
             this.btnCerrar.Size = new System.Drawing.Size(43, 35);
             this.btnCerrar.TabIndex = 0;
             this.btnCerrar.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(475, 130);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 21);
-            this.label1.TabIndex = 12;
-            this.label1.Text = "Sexo";
-            // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(198, 528);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(113, 44);
-            this.button1.TabIndex = 27;
-            this.button1.Text = "Registrarme";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(571, 528);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(113, 44);
-            this.button2.TabIndex = 27;
-            this.button2.Text = "Cancelar";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // Signup
             // 
@@ -452,34 +460,34 @@
         private System.Windows.Forms.Label lblDescrip;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblNoObli;
-        private System.Windows.Forms.ComboBox cmbNacionalidad;
-        private System.Windows.Forms.Label lblCarreras;
-        private System.Windows.Forms.ComboBox cmbCarreras;
+        private System.Windows.Forms.ComboBox cmbGetNationality;
+        private System.Windows.Forms.Label lblCareer;
+        private System.Windows.Forms.ComboBox cmbGetCareer;
         private System.Windows.Forms.Label lblLastname;
         private System.Windows.Forms.Label lblName;
-        private System.Windows.Forms.ComboBox cmbEstadoCivil;
-        private System.Windows.Forms.TextBox txrtLastname;
+        private System.Windows.Forms.ComboBox cmbGetMaritalStatus;
+        private System.Windows.Forms.TextBox txtGetLastname;
         private System.Windows.Forms.TextBox txtGetName;
-        private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.DateTimePicker dtPCalendarioNacimiento;
-        private System.Windows.Forms.TextBox txtCelular;
-        private System.Windows.Forms.Label lblFechaNacimiento;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.Label lblDocumentoIdentidad;
-        private System.Windows.Forms.TextBox txtDireccion;
-        private System.Windows.Forms.TextBox txtDocumentoIdentidad;
-        private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.RadioButton rbtnMasculino;
-        private System.Windows.Forms.Label lblEstadoCivil;
-        private System.Windows.Forms.RadioButton rbtnFemenino;
+        private System.Windows.Forms.TextBox txtGetEmail;
+        private System.Windows.Forms.DateTimePicker dtPGetBirthday;
+        private System.Windows.Forms.TextBox txtGetMobilePhone;
+        private System.Windows.Forms.Label lblBirthday;
+        private System.Windows.Forms.TextBox txtGetPhone;
+        private System.Windows.Forms.Label lblDNI;
+        private System.Windows.Forms.TextBox txtGetAddress;
+        private System.Windows.Forms.TextBox txtGetDNI;
+        private System.Windows.Forms.Label lblEmail;
+        private System.Windows.Forms.RadioButton rbtnMale;
+        private System.Windows.Forms.Label lblMaritalStatus;
+        private System.Windows.Forms.RadioButton rbtnFemale;
         private System.Windows.Forms.Label lblNacionalidad;
-        private System.Windows.Forms.Label lblDireccion;
-        private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.Label lblCelular;
+        private System.Windows.Forms.Label lblAddress;
+        private System.Windows.Forms.Label lblPhone;
+        private System.Windows.Forms.Label lblMobilePhone;
         private System.Windows.Forms.Panel pnlSuperior;
         private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnCancell;
+        private System.Windows.Forms.Button btnSignup;
+        private System.Windows.Forms.Label lblSex;
     }
 }

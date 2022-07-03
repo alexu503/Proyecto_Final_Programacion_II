@@ -13,8 +13,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-        private List<Student> listaModificable = new List<Student>();
-        private List<Student> listaAlumnoGenerico = new List<Student>();
+        //private List<Student> listaModificable = new List<Student>();
+        //private List<Student> listaAlumnoGenerico = new List<Student>();
         private int indice;
         private int carrera;
         private string pass;
@@ -48,9 +48,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         //    }
         //}
         //
-        public void setDetalles(List<Student> listaRecibida) {
-            this.listaModificable = listaRecibida;
-        }
+        //public void setDetalles(List<Student> listaRecibida) {
+        //    this.listaModificable = listaRecibida;
+        //}
 
         public void setResive(int indice, int carrera){
             this.indice = indice;

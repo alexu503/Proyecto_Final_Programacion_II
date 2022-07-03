@@ -54,5 +54,11 @@ namespace SistemaUniversidad.DISEÑO.Sesiones
         private void pnlContBienve_Paint(object sender, PaintEventArgs e) {
             //GenerateConnection.GetConnection();
         }
+
+        private void btnSignup_Click(object sender, EventArgs e) {
+            Registro.Signup signup = new Registro.Signup();
+            this.Hide();//Oculta éste formulario
+            signup.Show();//Se muestra el formulario de Login
+        }
     }
 }

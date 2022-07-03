@@ -12,7 +12,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         string carnet = "";//Almacena el carnet a eliminar
-        private List<Student> listaDetallesDeAlumnos = new List<Student>();
+        //private List<Student> listaDetallesDeAlumnos = new List<Student>();
         private int edit = -1;
 
         private void LimpiarDataGrid(){

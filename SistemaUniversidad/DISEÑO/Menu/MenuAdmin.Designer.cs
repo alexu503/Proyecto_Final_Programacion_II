@@ -11,26 +11,26 @@ namespace SistemaUniversidad.DISEÑO.Menu
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         //Listas de alumnos por cada carrera
-        private List<Student> listaRsistemas = new List<Student>();
-        private List<Student> listaRagronomia = new List<Student>();
-        private List<Student> listaRelectrica = new List<Student>();
-        private List<Student> listaRindustrial = new List<Student>();
-        public void setAlumSistemas(List<Student> listR)
-        {
-            this.listaRsistemas = listR;
-        }
-        public void setAlumAgronomia(List<Student> listR)
-        {
-            this.listaRagronomia = listR;
-        }
-        public void setAlumElectrica(List<Student> listR)
-        {
-            this.listaRelectrica = listR;
-        }
-        public void setAlumIndustrial(List<Student> listR)
-        {
-            this.listaRindustrial = listR;
-        }
+        //private List<Student> listaRsistemas = new List<Student>();
+        //private List<Student> listaRagronomia = new List<Student>();
+        //private List<Student> listaRelectrica = new List<Student>();
+        //private List<Student> listaRindustrial = new List<Student>();
+        //public void setAlumSistemas(List<Student> listR)
+        //{
+        //    this.listaRsistemas = listR;
+        //}
+        //public void setAlumAgronomia(List<Student> listR)
+        //{
+        //    this.listaRagronomia = listR;
+        //}
+        //public void setAlumElectrica(List<Student> listR)
+        //{
+        //    this.listaRelectrica = listR;
+        //}
+        //public void setAlumIndustrial(List<Student> listR)
+        //{
+        //    this.listaRindustrial = listR;
+        //}
 
         /// <summary>
         /// Clean up any resources being used.

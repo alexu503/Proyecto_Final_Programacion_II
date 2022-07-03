@@ -11,27 +11,27 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         /// </summary>
         private System.ComponentModel.IContainer components = null;
         string carnet = "";//Almacena el carnet a eliminar
-        private List<Student> listaRsistemas = new List<Student>();
-        private List<Student> listaRagronomia = new List<Student>();
-        private List<Student> listaRelectrica = new List<Student>();
-        private List<Student> listaRindustrial = new List<Student>();
+        //private List<Student> listaRsistemas = new List<Student>();
+        //private List<Student> listaRagronomia = new List<Student>();
+        //private List<Student> listaRelectrica = new List<Student>();
+        //private List<Student> listaRindustrial = new List<Student>();
         private int eliminar = -1;
-        public void setAlumSistemas(List<Student> listR)
-        {
-            this.listaRsistemas = listR;
-        }
-        public void setAlumAgronomia(List<Student> listR)
-        {
-            this.listaRagronomia = listR;
-        }
-        public void setAlumElectrica(List<Student> listR)
-        {
-            this.listaRelectrica = listR;
-        }
-        public void setAlumIndustrial(List<Student> listR)
-        {
-            this.listaRindustrial = listR;
-        }
+        //public void setAlumSistemas(List<Student> listR)
+        //{
+        //    this.listaRsistemas = listR;
+        //}
+        //public void setAlumAgronomia(List<Student> listR)
+        //{
+        //    this.listaRagronomia = listR;
+        //}
+        //public void setAlumElectrica(List<Student> listR)
+        //{
+        //    this.listaRelectrica = listR;
+        //}
+        //public void setAlumIndustrial(List<Student> listR)
+        //{
+        //    this.listaRindustrial = listR;
+        //}
 
         #region Actualizar Data Grid
         //

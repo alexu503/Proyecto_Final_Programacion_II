@@ -172,6 +172,12 @@
     <Compile Include="DISEÑO\Menu\MenuEstudiante.Designer.cs">
       <DependentUpon>MenuEstudiante.cs</DependentUpon>
     </Compile>
+    <Compile Include="DISEÑO\Registro\Signup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Registro\Signup.Designer.cs">
+      <DependentUpon>Signup.cs</DependentUpon>
+    </Compile>
     <Compile Include="DISEÑO\Sesiones\Bienvenido.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -179,24 +185,24 @@
       <DependentUpon>Bienvenido.cs</DependentUpon>
     </Compile>
     <Compile Include="LOGICA\DATABASE\Queries\ValidateUserLogin.cs" />
-    <Compile Include="LOGICA\Login.cs" />
-    <Compile Include="LOGICA\Student.cs" />
+    <Compile Include="LOGICA\LogicalClasses\Login.cs" />
+    <Compile Include="LOGICA\LogicalClasses\Student.cs" />
     <Compile Include="LOGICA\Asignaturas\Matematica.cs" />
-    <Compile Include="LOGICA\BotonesPnlSuperior.cs" />
-    <Compile Include="LOGICA\Calificaciones.cs" />
-    <Compile Include="LOGICA\Carrera.cs" />
+    <Compile Include="LOGICA\LogicalClasses\BotonesPnlSuperior.cs" />
+    <Compile Include="LOGICA\LogicalClasses\Calificaciones.cs" />
+    <Compile Include="LOGICA\LogicalClasses\Carrera.cs" />
     <Compile Include="LOGICA\DATABASE\GenerateConnection.cs" />
     <Compile Include="LOGICA\DATABASE\Queries\DeleteData.cs" />
     <Compile Include="LOGICA\DATABASE\Queries\InsertData.cs" />
     <Compile Include="LOGICA\DATABASE\Queries\SearchData.cs" />
     <Compile Include="LOGICA\DATABASE\Queries\UpdateData.cs" />
-    <Compile Include="LOGICA\Docente.cs" />
-    <Compile Include="LOGICA\DragControl.cs">
+    <Compile Include="LOGICA\LogicalClasses\Docente.cs" />
+    <Compile Include="LOGICA\LogicalClasses\DragControl.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="LOGICA\Asignatura.cs" />
-    <Compile Include="LOGICA\AcademicStaff.cs" />
-    <Compile Include="LOGICA\Validaciones.cs" />
+    <Compile Include="LOGICA\LogicalClasses\Asignatura.cs" />
+    <Compile Include="LOGICA\LogicalClasses\AcademicStaff.cs" />
+    <Compile Include="LOGICA\LogicalClasses\Validaciones.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="DISEÑO\Administrador\Alumno\BuscarAlumno.resx">
@@ -238,6 +244,9 @@
     <EmbeddedResource Include="DISEÑO\Menu\MenuEstudiante.resx">
       <DependentUpon>MenuEstudiante.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Registro\Signup.resx">
+      <DependentUpon>Signup.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Sesiones\Bienvenido.resx">
       <DependentUpon>Bienvenido.cs</DependentUpon>
     </EmbeddedResource>
@@ -269,9 +278,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DISEÑO\Registro\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Images\1-login.png" />
     <Content Include="Images\1486503746-book-learning-bookmark-ribbon-education-mark-school_81290.ico" />

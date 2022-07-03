@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
-using SistemaUniversidad.LOGICA;
+using SistemaUniversidad.LOGICA.LogicalClasses;
 using SistemaUniversidad.LOGICA.DATABASE;
 using MySql.Data.MySqlClient;
 using System.Windows.Forms;
+
 
 namespace SistemaUniversidad.DISEÑO.Administrador{
     partial class NuevoAlumno{
@@ -122,8 +123,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
             this.lblDescrip = new System.Windows.Forms.Label();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
-            this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
-            this.dragControl2 = new SistemaUniversidad.LOGICA.DragControl();
+            //this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
+            //this.dragControl2 = new SistemaUniversidad.LOGICA.DragControl();
             this.groupBox1.SuspendLayout();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
@@ -704,11 +705,11 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
             // 
             // dragControl1
             // 
-            this.dragControl1.SelectControl = this.pnlSuperior;
-            // 
-            // dragControl2
-            // 
-            this.dragControl2.SelectControl = this.lblTitulo;
+            //this.dragControl1.SelectControl = this.pnlSuperior;
+            //// 
+            //// dragControl2
+            //// 
+            //this.dragControl2.SelectControl = this.lblTitulo;
             // 
             // NuevoAlumno
             // 
@@ -779,8 +780,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
         private System.Windows.Forms.Panel pnlSuperior;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblTitulo;
-        private DragControl dragControl1;
-        private DragControl dragControl2;
+        //private DragControl dragControl1;
+        //private DragControl dragControl2;
         private System.Windows.Forms.ComboBox cmbNacionalidad;
         private System.Windows.Forms.Button btnDescrip;
         private System.Windows.Forms.Label lblDescrip;
