@@ -1,8 +1,5 @@
 ﻿using System.Collections.Generic;
 using SistemaUniversidad.LOGICA.LogicalClasses;
-using SistemaUniversidad.LOGICA.DATABASE;
-using MySql.Data.MySqlClient;
-using System.Windows.Forms;
 
 
 namespace SistemaUniversidad.DISEÑO.Administrador{

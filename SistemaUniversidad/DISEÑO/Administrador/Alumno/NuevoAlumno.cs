@@ -14,16 +14,16 @@ using SistemaUniversidad.LOGICA.DATABASE;
 using System.Text.RegularExpressions;
 using MySql.Data.MySqlClient;
 
-namespace SistemaUniversidad.DISEÑO.Administrador{
-    public partial class NuevoAlumno : Form{
+namespace SistemaUniversidad.DISEÑO.Administrador {
+    public partial class NuevoAlumno : Form {
         public Form nuevoAlumno;
-        public NuevoAlumno(){
+        public NuevoAlumno() {
             InitializeComponent();
             cmbCarreras.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbEstadoCivil.DropDownStyle = ComboBoxStyle.DropDownList;
             cmbNacionalidad.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        private void NuevoAlumno_Load(object sender, EventArgs e){
+        private void NuevoAlumno_Load(object sender, EventArgs e) {
             DateTime fechaInscripcion = DateTime.Today;
             txtFechaInscripcion.Text = fechaInscripcion.ToShortDateString().ToString();
             LimpiarTodo();
@@ -31,7 +31,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
         }
 
         #region Limpiar
-        private void LimpiarEtiquetas(){
+        private void LimpiarEtiquetas() {
             lblMensaje1.ForeColor = Color.Black;
             lblMensaje1.Text = "";
 
@@ -50,7 +50,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
             lblMensaje6.ForeColor = Color.Black;
             lblMensaje6.Text = "";
         }
-        public void LimpiarTodo(){
+        public void LimpiarTodo() {
             cmbCarreras.Items.Clear();
             cmbCarreras.Items.Add("Ingeniería de Sistemas Informáticos");
             cmbCarreras.Items.Add("Ingeniería Agronómica");
@@ -93,53 +93,46 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
             txtCorreo.ForeColor = Color.DimGray;
             dtPCalendarioNacimiento.Value = DateTime.Today;
         }
-        private void btnLimpiar_Click(object sender, EventArgs e){
+        private void btnLimpiar_Click(object sender, EventArgs e) {
             LimpiarTodo();
         }
         #endregion
 
         #region Validaciones
-        private void txtCarnet_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        private void txtCarnet_KeyPress(object sender, KeyPressEventArgs e) {
             LimpiarEtiquetas();
             Validaciones validar = new Validaciones();
             validar.ValidarLetrasNumero(sender, e, lblMensaje1);
         }
 
-        private void txrtPrimerApellido_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        private void txrtPrimerApellido_KeyPress(object sender, KeyPressEventArgs e) {
             LimpiarEtiquetas();
             Validaciones validar = new Validaciones();
             validar.ValidarLetras(sender, e, lblMensaje2);
         }
 
-        private void txtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        private void txtSegundoApellido_KeyPress(object sender, KeyPressEventArgs e) {
             LimpiarEtiquetas();
             txrtPrimerApellido_KeyPress(sender, e);//Acá?
         }
 
-        private void txtNombres_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        private void txtNombres_KeyPress(object sender, KeyPressEventArgs e) {
             LimpiarEtiquetas();
             txrtPrimerApellido_KeyPress(sender, e);
         }
 
-        private void txtDocumentoIdentidad_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        private void txtDocumentoIdentidad_KeyPress(object sender, KeyPressEventArgs e) {
             LimpiarEtiquetas();
             Validaciones validar = new Validaciones();
             validar.ValidarDigitos(sender, e, lblMensaje3);
         }
-        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        private void txtTelefono_KeyPress(object sender, KeyPressEventArgs e) {
             LimpiarEtiquetas();
             Validaciones validar = new Validaciones();
             validar.ValidarDigitos(sender, e, lblMensaje4);
         }
 
-        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e)
-        {
+        private void txtCelular_KeyPress(object sender, KeyPressEventArgs e) {
             LimpiarEtiquetas();
             Validaciones validar = new Validaciones();
             validar.ValidarDigitos(sender, e, lblMensaje5);
@@ -147,7 +140,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
         #endregion
 
         #region Guardar
-        private void btnGuardar_Click(object sender, EventArgs e){
+        private void btnGuardar_Click(object sender, EventArgs e) {
             DateTime fechaHoy = DateTime.Today;
             LimpiarEtiquetas();
             //Valida los correos y números de teléfono
@@ -159,59 +152,47 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
                 && txtSegundoApellido.Text != "" && txtNombres.Text != "" && txtDocumentoIdentidad.Text != ""
                 && true != (rbtnMasculino.Checked == true && rbtnFemenino.Checked == true) && txtDireccion.Text != ""
                 && txtCelular.Text != "" && txtCorreo.Text != "" && cmbNacionalidad.Text != ""
-                && cmbEstadoCivil.Text != "")
-            {
-                if (ValidarFecha()){
+                && cmbEstadoCivil.Text != "") {
+                if (ValidarFecha()) {
                     return;
                 }
                 //Si ingresó algún dato es porque sí tiene teléfono
-                if (txtTelefono.Text != ""){
+                if (txtTelefono.Text != "") {
                     //Si el número de teléfono ingresado tiene el formato especificado
-                    if (Regex.IsMatch(txtTelefono.Text, expresion)){
+                    if (Regex.IsMatch(txtTelefono.Text, expresion)) {
                         //lblMensaje4.Text = "Número válido";
-                        if (Regex.Replace(txtTelefono.Text, expresion, string.Empty).Length == 0){
+                        if (Regex.Replace(txtTelefono.Text, expresion, string.Empty).Length == 0) {
+                            lblMensaje4.Text = "";
+                        } else {
                             lblMensaje4.Text = "";
                         }
-                        else{
-                            lblMensaje4.Text = "";
-                        }
-                    }
-                    else{
+                    } else {
                         lblMensaje4.ForeColor = Color.Red;
                         lblMensaje4.Text = "Número Inválido";
                         return;
                     }
                 }
-                
-                if (Regex.IsMatch(txtCelular.Text, expresion)){
+
+                if (Regex.IsMatch(txtCelular.Text, expresion)) {
                     //lblMensaje4.Text = "Número válido";
-                    if (Regex.Replace(txtCelular.Text, expresion, string.Empty).Length == 0){
+                    if (Regex.Replace(txtCelular.Text, expresion, string.Empty).Length == 0) {
+                        lblMensaje5.Text = "";
+                    } else {
                         lblMensaje5.Text = "";
                     }
-                    else{
-                        lblMensaje5.Text = "";
-                    }
-                }
-                else
-                {
+                } else {
                     lblMensaje5.ForeColor = Color.Red;
                     lblMensaje5.Text = "Número Inválido";
                     return;
                 }
                 //Si el mail ingresado tiene el formato especificado
-                if (Regex.IsMatch(txtCorreo.Text, expresion2))
-                {
-                    if (Regex.Replace(txtCorreo.Text, expresion2, string.Empty).Length == 0)
-                    {
+                if (Regex.IsMatch(txtCorreo.Text, expresion2)) {
+                    if (Regex.Replace(txtCorreo.Text, expresion2, string.Empty).Length == 0) {
+                        lblMensaje5.Text = "";
+                    } else {
                         lblMensaje5.Text = "";
                     }
-                    else
-                    {
-                        lblMensaje5.Text = "";
-                    }
-                }
-                else
-                {
+                } else {
                     lblMensaje5.ForeColor = Color.Red;
                     lblMensaje5.Text = "Correo inválido";
                     return;
@@ -264,26 +245,20 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
                 //}
                 #endregion
 
-            }
-            else
-            {
+            } else {
                 //Si al menos un campo no está lleno
                 MessageBox.Show("ASEGURESE DE HABER LLENADO TODOS LOS CAMPOS DEL FORMULARIO", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 return;
             }
             //LimpiarTodo();
         }
-        private bool ValidarFecha()
-        {
+        private bool ValidarFecha() {
 
-            if (dtPCalendarioNacimiento.Value == DateTime.Today)
-            {
+            if (dtPCalendarioNacimiento.Value == DateTime.Today) {
                 MessageBox.Show("FECHA INVALIDA, NO PUEDE SELECCIONAR LA FECHA ACTUAL", "Error de ingreso",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
-            }
-            else if (dtPCalendarioNacimiento.Value > DateTime.Today)
-            {
+            } else if (dtPCalendarioNacimiento.Value > DateTime.Today) {
                 MessageBox.Show("FECHA INVALIDA, NO PUEDE SELECCIONAR UNA FECHA FUTURA", "Error de ingreso",
                 MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return true;
@@ -293,14 +268,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
         #endregion
 
         #region Regresar
-        private void btnSalirAggAlumno_Click(object sender, EventArgs e)
-        {
+        private void btnSalirAggAlumno_Click(object sender, EventArgs e) {
             Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();
             this.Close();
             MenuAdmin.Show();
         }
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
+        private void btnCerrar_Click(object sender, EventArgs e) {
             Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();
             this.Close();
             MenuAdmin.Show();
@@ -308,17 +281,14 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
         #endregion
 
         #region Indicaciones txt
-        private void txtTelefono_Enter(object sender, EventArgs e)
-        {
+        private void txtTelefono_Enter(object sender, EventArgs e) {
             TextBox textb = (TextBox)sender;
-            if (textb.Text == textb.Tag.ToString())
-            {
+            if (textb.Text == textb.Tag.ToString()) {
                 textb.Text = string.Empty;
                 textb.ForeColor = Color.Black;
             }
         }
-        private void txtTelefono_Leave(object sender, EventArgs e)
-        {
+        private void txtTelefono_Leave(object sender, EventArgs e) {
             TextBox textb = (TextBox)sender;
             if (string.IsNullOrEmpty(textb.Text))//Si el texto está nulo o vacío
             {
