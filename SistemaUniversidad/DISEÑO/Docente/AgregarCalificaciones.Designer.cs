@@ -23,25 +23,25 @@ namespace SistemaUniversidad.DISEÑO.Docente
 
         void UpdateData() {
 
-            MySqlConnection connection = GenerateConnection.Connection();
-            MySqlCommand query = new MySqlCommand();
-            query.Connection = connection;
-
-            try {
-                foreach (Calificaciones x in lstCalificaciones) {
-                    query.CommandText = "UPDATE Notas SET NombreMateria = '"+cmbMaterias.Text+"', PrimerParcial = '"+x.PrimerParcial+"', PrimerLab = '"+x.PrimerLab+"', SegundoParcial = '"+x.SegundoParcial+"', " +
-                        "SegundoLab = '"+x.SegundoParcial+"', TercerParcial = '"+x.TercerParcial+"' , TercerLab = '"+x.TercerLab+"', CuartoParcial = '"+x.CuartoParcial+"', " +
-                        "CuartoLab = '"+x.CuartoLab+"', PromedioFinal = '"+x.Promedio+"' " +
-                        "WHERE CarnetAlumno = '"+cmbGetCarnet.Text+"'";
-                }
-                query.ExecuteNonQuery();
-                MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            } catch(Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            } finally {
-                connection.Close();
-            }
-
+            //MySqlConnection connection = GenerateConnection.Connection();
+            //MySqlCommand query = new MySqlCommand();
+            //query.Connection = connection;
+            //
+            //try {
+            //    foreach (Calificaciones x in lstCalificaciones) {
+            //        query.CommandText = "UPDATE Notas SET NombreMateria = '"+cmbMaterias.Text+"', PrimerParcial = '"+x.PrimerParcial+"', PrimerLab = '"+x.PrimerLab+"', SegundoParcial = '"+x.SegundoParcial+"', " +
+            //            "SegundoLab = '"+x.SegundoParcial+"', TercerParcial = '"+x.TercerParcial+"' , TercerLab = '"+x.TercerLab+"', CuartoParcial = '"+x.CuartoParcial+"', " +
+            //            "CuartoLab = '"+x.CuartoLab+"', PromedioFinal = '"+x.Promedio+"' " +
+            //            "WHERE CarnetAlumno = '"+cmbGetCarnet.Text+"'";
+            //    }
+            //    query.ExecuteNonQuery();
+            //    MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //} catch(Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //} finally {
+            //    connection.Close();
+            //}
+            //
             cmbCarreras.Items.Clear();
             cmbMaterias.Items.Clear();
             cmbGetCarnet.Items.Clear();

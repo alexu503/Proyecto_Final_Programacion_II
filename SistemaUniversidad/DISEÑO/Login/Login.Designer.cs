@@ -34,8 +34,8 @@
             this.groupBoxDatosLogin = new System.Windows.Forms.GroupBox();
             this.lblMensaje2 = new System.Windows.Forms.Label();
             this.lblMensaje1 = new System.Windows.Forms.Label();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnAcceder = new System.Windows.Forms.Button();
+            this.BtnCancelar = new System.Windows.Forms.Button();
+            this.BtnAcceder = new System.Windows.Forms.Button();
             this.lblClave = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
@@ -84,8 +84,8 @@
             this.groupBoxDatosLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBoxDatosLogin.Controls.Add(this.lblMensaje2);
             this.groupBoxDatosLogin.Controls.Add(this.lblMensaje1);
-            this.groupBoxDatosLogin.Controls.Add(this.btnCancelar);
-            this.groupBoxDatosLogin.Controls.Add(this.btnAcceder);
+            this.groupBoxDatosLogin.Controls.Add(this.BtnCancelar);
+            this.groupBoxDatosLogin.Controls.Add(this.BtnAcceder);
             this.groupBoxDatosLogin.Controls.Add(this.lblClave);
             this.groupBoxDatosLogin.Controls.Add(this.lblCorreo);
             this.groupBoxDatosLogin.Controls.Add(this.txtClave);
@@ -123,32 +123,32 @@
             this.lblMensaje1.Text = "Mensaje 1";
             this.lblMensaje1.Visible = false;
             // 
-            // btnCancelar
+            // BtnCancelar
             // 
-            this.btnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.btnCancelar.Location = new System.Drawing.Point(208, 329);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 8;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.BtnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnCancelar.ForeColor = System.Drawing.Color.Black;
+            this.BtnCancelar.Location = new System.Drawing.Point(208, 329);
+            this.BtnCancelar.Name = "BtnCancelar";
+            this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
+            this.BtnCancelar.TabIndex = 8;
+            this.BtnCancelar.Text = "Cancelar";
+            this.BtnCancelar.UseVisualStyleBackColor = true;
+            this.BtnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // btnAcceder
+            // BtnAcceder
             // 
-            this.btnAcceder.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btnAcceder.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnAcceder.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAcceder.ForeColor = System.Drawing.Color.Black;
-            this.btnAcceder.Location = new System.Drawing.Point(104, 329);
-            this.btnAcceder.Name = "btnAcceder";
-            this.btnAcceder.Size = new System.Drawing.Size(75, 23);
-            this.btnAcceder.TabIndex = 7;
-            this.btnAcceder.Text = "Acceder";
-            this.btnAcceder.UseVisualStyleBackColor = true;
-            this.btnAcceder.Click += new System.EventHandler(this.btnAcceder_Click);
+            this.BtnAcceder.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.BtnAcceder.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnAcceder.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnAcceder.ForeColor = System.Drawing.Color.Black;
+            this.BtnAcceder.Location = new System.Drawing.Point(104, 329);
+            this.BtnAcceder.Name = "BtnAcceder";
+            this.BtnAcceder.Size = new System.Drawing.Size(75, 23);
+            this.BtnAcceder.TabIndex = 7;
+            this.BtnAcceder.Text = "Acceder";
+            this.BtnAcceder.UseVisualStyleBackColor = true;
+            this.BtnAcceder.Click += new System.EventHandler(this.BtnAcceder_Click);
             // 
             // lblClave
             // 
@@ -327,8 +327,8 @@
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblClave;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnAcceder;
+        private System.Windows.Forms.Button BtnCancelar;
+        private System.Windows.Forms.Button BtnAcceder;
         private System.Windows.Forms.Label lblMensaje2;
         private System.Windows.Forms.Label lblMensaje1;
         private System.Windows.Forms.Panel pnlSuperior;

@@ -224,43 +224,43 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
                 Random aleatorio = new Random();
                 int num = aleatorio.Next(20, 100);
                 Student nuevoAlumno = new Student();
-                nuevoAlumno.setNombres(txtNombres.Text);
-                nuevoAlumno.setPrimerApellido(txrtPrimerApellido.Text);
-                nuevoAlumno.setSegundoApellido(txtSegundoApellido.Text);
-                nuevoAlumno.setCarnet(txtCarnet.Text);
-                nuevoAlumno.setCarrera(cmbCarreras.Text);
-                pass = nuevoAlumno.getNombres().Substring(0, 3)+nuevoAlumno.getPrimerApellido().Substring(0, 3) + num.ToString();
-                nuevoAlumno.setPassword(pass);
-                nuevoAlumno.setFechaNacimiento(dtPCalendarioNacimiento.Value.ToShortDateString());
-                nuevoAlumno.setDocumentoIdentidad(txtDocumentoIdentidad.Text);
-                if (rbtnFemenino.Checked)
-                {
-                    nuevoAlumno.setSexo("Femenino");
-                }
-                else if (rbtnMasculino.Checked)
-                {
-                    nuevoAlumno.setSexo("Masculino");
-                }
-                nuevoAlumno.setDireccion(txtDireccion.Text);
-                if (txtTelefono.Text != txtTelefono.Tag.ToString())
-                {
-                    nuevoAlumno.setTelefono(txtTelefono.Text);
-                }
-                else
-                {
-                    nuevoAlumno.setTelefono("0000-0000");
-                }
-                nuevoAlumno.setCelular(txtCelular.Text);
-                nuevoAlumno.setCorreo(txtCorreo.Text);
-                nuevoAlumno.setFechaInscripcion(txtFechaInscripcion.Text);
-                nuevoAlumno.setNacionalidad(cmbNacionalidad.Text);
-                nuevoAlumno.setEtadoCivil(cmbEstadoCivil.Text);
-                listaAlumnoGenerico.Add(nuevoAlumno);
-                try {
-                    this.SaveToDatabase();
-                }catch(Exception error) {
-                    MessageBox.Show("Error: " + error.Message);
-                }
+                //nuevoAlumno.setNombres(txtNombres.Text);
+                //nuevoAlumno.setPrimerApellido(txrtPrimerApellido.Text);
+                //nuevoAlumno.setSegundoApellido(txtSegundoApellido.Text);
+                //nuevoAlumno.setCarnet(txtCarnet.Text);
+                //nuevoAlumno.setCarrera(cmbCarreras.Text);
+                //pass = nuevoAlumno.getNombres().Substring(0, 3)+nuevoAlumno.getPrimerApellido().Substring(0, 3) + num.ToString();
+                //nuevoAlumno.setPassword(pass);
+                //nuevoAlumno.setFechaNacimiento(dtPCalendarioNacimiento.Value.ToShortDateString());
+                //nuevoAlumno.setDocumentoIdentidad(txtDocumentoIdentidad.Text);
+                //if (rbtnFemenino.Checked)
+                //{
+                //    nuevoAlumno.setSexo("Femenino");
+                //}
+                //else if (rbtnMasculino.Checked)
+                //{
+                //    nuevoAlumno.setSexo("Masculino");
+                //}
+                //nuevoAlumno.setDireccion(txtDireccion.Text);
+                //if (txtTelefono.Text != txtTelefono.Tag.ToString())
+                //{
+                //    nuevoAlumno.setTelefono(txtTelefono.Text);
+                //}
+                //else
+                //{
+                //    nuevoAlumno.setTelefono("0000-0000");
+                //}
+                //nuevoAlumno.setCelular(txtCelular.Text);
+                //nuevoAlumno.setCorreo(txtCorreo.Text);
+                //nuevoAlumno.setFechaInscripcion(txtFechaInscripcion.Text);
+                //nuevoAlumno.setNacionalidad(cmbNacionalidad.Text);
+                //nuevoAlumno.setEtadoCivil(cmbEstadoCivil.Text);
+                //listaAlumnoGenerico.Add(nuevoAlumno);
+                //try {
+                //    this.SaveToDatabase();
+                //}catch(Exception error) {
+                //    MessageBox.Show("Error: " + error.Message);
+                //}
                 #endregion
 
             }

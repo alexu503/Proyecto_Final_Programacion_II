@@ -61,26 +61,26 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             string datoFiltrado = txtDato.Text;
 
 
-            if(cmbCarreras.Text == "") {
-                MessageBox.Show("POR FAVOR, SELECCIONE UNA CARRERA.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            } 
-            else {
-                MySqlConnection connection = GenerateConnection.Connection();
-                MySqlCommand command = new MySqlCommand();
-                command.Connection =  connection;
-                command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = @Carrera";
-                command.Parameters.Add(new MySqlParameter("@Carrera", cmbCarreras.Text));
-                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
-                dataAdapter.SelectCommand = command;
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                if(dataTable.Rows.Count == 0) {
-                    MessageBox.Show("NO HAY ALUMNOS REGISTRADOS EN ESTA CARRERA");
-                } else {
-                    dgvAlumnos.DataSource = dataTable;
-                }
-                connection.Close();
-            }
+            //if(cmbCarreras.Text == "") {
+            //    MessageBox.Show("POR FAVOR, SELECCIONE UNA CARRERA.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //} 
+            //else {
+            //    MySqlConnection connection = GenerateConnection.Connection();
+            //    MySqlCommand command = new MySqlCommand();
+            //    command.Connection =  connection;
+            //    command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = @Carrera";
+            //    command.Parameters.Add(new MySqlParameter("@Carrera", cmbCarreras.Text));
+            //    MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            //    dataAdapter.SelectCommand = command;
+            //    DataTable dataTable = new DataTable();
+            //    dataAdapter.Fill(dataTable);
+            //    if(dataTable.Rows.Count == 0) {
+            //        MessageBox.Show("NO HAY ALUMNOS REGISTRADOS EN ESTA CARRERA");
+            //    } else {
+            //        dgvAlumnos.DataSource = dataTable;
+            //    }
+            //    connection.Close();
+            //}
         }
 
         #endregion
@@ -94,37 +94,37 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 //I can't delete directly database's rows positions. So, i get some unique values, consult and delete.
                 string carnetAlumno = dgvAlumnos.Rows[rowPosition].Cells[4].Value.ToString();
 
-                MySqlConnection connection = GenerateConnection.Connection();
-                MySqlCommand command = new MySqlCommand();
-                command.Connection =  connection;
-
-                if (carnetAlumno != "") {
-                    try {
-                        if(dgvAlumnos.Rows.Count > 0) {
-                            if (MessageBox.Show("¿Seguro que desea proceder?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes) {
-                                command.CommandText = "DELETE FROM Alumnos WHERE Carnet = '"+carnetAlumno+"'; DELETE FROM Logins WHERE Usuario = '"+carnetAlumno+"'";
-                                command.ExecuteNonQuery();
-                                MessageBox.Show("Datos eliminados satisfactoriamente");
-                                //Update table
-                                command.CommandText = "SELECT * FROM Alumnos";
-                                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
-                                dataAdapter.SelectCommand = command;
-                                DataTable table = new DataTable();
-                                dataAdapter.Fill(table);
-                                dgvAlumnos.DataSource = table;
-                                connection.Close();
-                            } else {
-                                MessageBox.Show("Operación cancelada");
-                            }
-                        } else {
-                            MessageBox.Show("No hay datos para eliminar");
-                        }
-                    } catch (Exception ex) {
-                        MessageBox.Show("Ha ocurrido un error: " + ex.Message);
-                    }
-                } else {
-                    MessageBox.Show("POR FAVOR SELECCIONE UN REGISTRO.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                //MySqlConnection connection = GenerateConnection.Connection();
+                //MySqlCommand command = new MySqlCommand();
+                //command.Connection =  connection;
+                //
+                //if (carnetAlumno != "") {
+                //    try {
+                //        if(dgvAlumnos.Rows.Count > 0) {
+                //            if (MessageBox.Show("¿Seguro que desea proceder?", "Atención", MessageBoxButtons.YesNo) == DialogResult.Yes) {
+                //                command.CommandText = "DELETE FROM Alumnos WHERE Carnet = '"+carnetAlumno+"'; DELETE FROM Logins WHERE Usuario = '"+carnetAlumno+"'";
+                //                command.ExecuteNonQuery();
+                //                MessageBox.Show("Datos eliminados satisfactoriamente");
+                //                //Update table
+                //                command.CommandText = "SELECT * FROM Alumnos";
+                //                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+                //                dataAdapter.SelectCommand = command;
+                //                DataTable table = new DataTable();
+                //                dataAdapter.Fill(table);
+                //                dgvAlumnos.DataSource = table;
+                //                connection.Close();
+                //            } else {
+                //                MessageBox.Show("Operación cancelada");
+                //            }
+                //        } else {
+                //            MessageBox.Show("No hay datos para eliminar");
+                //        }
+                //    } catch (Exception ex) {
+                //        MessageBox.Show("Ha ocurrido un error: " + ex.Message);
+                //    }
+                //} else {
+                //    MessageBox.Show("POR FAVOR SELECCIONE UN REGISTRO.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //}
             } else {
                 MessageBox.Show("POR FAVOR SELECCIONE UNA CARRERA.", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -147,25 +147,25 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         }
 
         private void btnFiltrarDatos_Click(object sender, EventArgs e) {
-            if (cmbCarreras.Text == "" && cmbFiltro.Text == "" || txtDato.Text == "") {
-                MessageBox.Show("POR FAVOR, SELECCIONE LOS VALORES A FILTRAR.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-            } else {
-                MySqlConnection connection = GenerateConnection.Connection();
-                MySqlCommand command = new MySqlCommand();
-                command.Connection =  connection;
-                command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = @Carrera AND Carnet = @Carnet OR Nombres = @Nombres OR PrimerApellido = @PrimerApellido OR SegundoApellido = @SegundoApellido";
-                command.Parameters.Add(new MySqlParameter("@Carrera", cmbCarreras.Text));
-                command.Parameters.Add(new MySqlParameter("@Carnet", txtDato.Text));
-                command.Parameters.Add(new MySqlParameter("@Nombres", txtDato.Text));
-                command.Parameters.Add(new MySqlParameter("@PrimerApellido", txtDato.Text));
-                command.Parameters.Add(new MySqlParameter("@SegundoApellido", txtDato.Text));
-                MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
-                dataAdapter.SelectCommand = command;
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                dgvAlumnos.DataSource = dataTable;
-                connection.Close();
-            }
+            //if (cmbCarreras.Text == "" && cmbFiltro.Text == "" || txtDato.Text == "") {
+            //    MessageBox.Show("POR FAVOR, SELECCIONE LOS VALORES A FILTRAR.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            //} else {
+            //    MySqlConnection connection = GenerateConnection.Connection();
+            //    MySqlCommand command = new MySqlCommand();
+            //    command.Connection =  connection;
+            //    command.CommandText = "SELECT * FROM Alumnos WHERE NombreCarrera = @Carrera AND Carnet = @Carnet OR Nombres = @Nombres OR PrimerApellido = @PrimerApellido OR SegundoApellido = @SegundoApellido";
+            //    command.Parameters.Add(new MySqlParameter("@Carrera", cmbCarreras.Text));
+            //    command.Parameters.Add(new MySqlParameter("@Carnet", txtDato.Text));
+            //    command.Parameters.Add(new MySqlParameter("@Nombres", txtDato.Text));
+            //    command.Parameters.Add(new MySqlParameter("@PrimerApellido", txtDato.Text));
+            //    command.Parameters.Add(new MySqlParameter("@SegundoApellido", txtDato.Text));
+            //    MySqlDataAdapter dataAdapter = new MySqlDataAdapter();
+            //    dataAdapter.SelectCommand = command;
+            //    DataTable dataTable = new DataTable();
+            //    dataAdapter.Fill(dataTable);
+            //    dgvAlumnos.DataSource = dataTable;
+            //    connection.Close();
+            //}
         }
     }
 }

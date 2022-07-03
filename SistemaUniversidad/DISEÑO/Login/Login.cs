@@ -12,6 +12,7 @@ using System.Data.SQLite;
 using SistemaUniversidad.LOGICA;
 using SistemaUniversidad.DISEÑO.Menu;
 using SistemaUniversidad.LOGICA.DATABASE;
+using SistemaUniversidad.LOGICA.DATABASE.Queries;
 
 namespace SistemaUniversidad.DISEÑO.Login{
 
@@ -32,7 +33,7 @@ namespace SistemaUniversidad.DISEÑO.Login{
                 cerrar.Close();//Oculta éste formulario
             }
         }
-        private void btnCancelar_Click(object sender, EventArgs e){
+        private void BtnCancelar_Click(object sender, EventArgs e){
             //Si el usuario Indica que "sí" desea salir if (MessageBox.Show("¿SEGURO QUE DESEA SALIR?", "¡ATENCION!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
              VolverIncio(this, sender, e);
         }
@@ -63,49 +64,26 @@ namespace SistemaUniversidad.DISEÑO.Login{
         #endregion
 
         #region Acceder y cargar datos
-        private void btnAcceder_Click(object sender, EventArgs e){
+        private void BtnAcceder_Click(object sender, EventArgs e) {
 
-            SQLiteConnection connection = GenerateConnection.GetConnection();
-            SQLiteCommand query = new SQLiteCommand();
-            query.Connection = connection;
-
-            if (txtCorreo.Text != "" && txtClave.Text != ""){
+            if (txtCorreo.Text != "" && txtClave.Text != "") {
                 try {
-                    query.CommandText = "SELECT Username, Password, Rol FROM Logins WHERE Username = @Username AND Password = @Password";
-                    query.Parameters.Add(new SQLiteParameter("@Username", txtCorreo.Text));
-                    query.Parameters.Add(new SQLiteParameter("@Password", txtClave.Text));
-                    query.ExecuteNonQuery();
-                    SQLiteDataReader dr = query.ExecuteReader();
-
-                    while (dr.Read()) {
-
-                        string username = dr["Username"].ToString();
-                        string password = dr["Password"].ToString();
-                        string rol = dr["Rol"].ToString();
-
-                        if (username == txtCorreo.Text && password == txtClave.Text) {
-                            switch (rol) {
-                                case "Administrador":
-                                    GoToAdminPannel();
-                                    break;
-                                case "Docente":
-                                    GoToProfessorPannel();
-                                    break;
-                                case "Estudiante":
-                                    GoToStudentPannel();
-                                    break;
-                                default:
-                                    MessageBox.Show("Error: datos incorrectos");
-                                    break;
-                            }
-                        } else {
+                    switch (ValidateUserLogin.CorrectCredentials(txtCorreo.Text, txtClave.Text)) {
+                        case "Administrador":
+                            GoToAdminPannel();
+                            break;
+                        case "Docente":
+                            GoToProfessorPannel();
+                            break;
+                        case "Estudiante":
+                            GoToStudentPannel();
+                            break;
+                        default:
                             MessageBox.Show("DATOS INCORRECTOS", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        }
+                            break;
                     }
                 } catch (Exception ex) {
                     MessageBox.Show("Error: " + ex.Message);
-                } finally {
-                    connection.Close();
                 }
             } else {
                 MessageBox.Show("ASEGURESE DE HABER LLENADO POR COMPLETO EL FORMULARIO.", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -24,27 +24,27 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
         }
         private void BuscarAsignaturas_Load(object sender, EventArgs e){
 
-            string query = "Select NombreMateria FROM Materias";
-            MySqlConnection connection = GenerateConnection.Connection();
-            MySqlCommand command = new MySqlCommand(query, connection);
-            MySqlDataReader dr = command.ExecuteReader();
-
-            try {
-                if (dr.HasRows) {
-                    while (dr.Read()) {
-                        cmbVerMaterias.Items.Add(dr.GetString("NombreMateria"));
-                    }
-                } else {
-                    MessageBox.Show("No hay materias disponibles");
-                    btnCargar.Enabled = false;
-                    return;
-                }
-            } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            } finally {
-                dr.Close();
-                connection.Close();
-            }
+            //string query = "Select NombreMateria FROM Materias";
+            //MySqlConnection connection = GenerateConnection.Connection();
+            //MySqlCommand command = new MySqlCommand(query, connection);
+            //MySqlDataReader dr = command.ExecuteReader();
+            //
+            //try {
+            //    if (dr.HasRows) {
+            //        while (dr.Read()) {
+            //            cmbVerMaterias.Items.Add(dr.GetString("NombreMateria"));
+            //        }
+            //    } else {
+            //        MessageBox.Show("No hay materias disponibles");
+            //        btnCargar.Enabled = false;
+            //        return;
+            //    }
+            //} catch (Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //} finally {
+            //    dr.Close();
+            //    connection.Close();
+            //}
         }
 
         #region Botones Minimizar Maximizar Cerrar
@@ -82,27 +82,27 @@ namespace SistemaUniversidad.DISEÑO.Estudiante
 
         private void btnCargar_Click(object sender, EventArgs e) {
 
-            if(cmbVerMaterias.Text != "") {
-
-                MySqlConnection connection = GenerateConnection.Connection();
-                MySqlCommand query = new MySqlCommand();
-                query.Connection = connection;
-
-                try {
-                    query.CommandText = "SELECT * FROM Notas WHERE NombreMateria = '"+cmbVerMaterias.Text+"' AND CarnetAlumno = '"+this.loginID+"'";
-                    query.ExecuteNonQuery();
-                    MySqlDataAdapter da = new MySqlDataAdapter();
-                    da.SelectCommand = query;
-                    DataTable table = new DataTable();
-                    da.Fill(table);
-                    dgvAsignaturas.DataSource = table;
-                    MessageBox.Show("DATOS ACTUALIZADOS", "ATENCIÓN", MessageBoxButtons.OK);
-                } catch (Exception ex) {
-                    MessageBox.Show("Error: " + ex.Message);
-                } finally {
-                    connection.Close();
-                }
-            }
+            //if(cmbVerMaterias.Text != "") {
+            //
+            //    MySqlConnection connection = GenerateConnection.Connection();
+            //    MySqlCommand query = new MySqlCommand();
+            //    query.Connection = connection;
+            //
+            //    try {
+            //        query.CommandText = "SELECT * FROM Notas WHERE NombreMateria = '"+cmbVerMaterias.Text+"' AND CarnetAlumno = '"+this.loginID+"'";
+            //        query.ExecuteNonQuery();
+            //        MySqlDataAdapter da = new MySqlDataAdapter();
+            //        da.SelectCommand = query;
+            //        DataTable table = new DataTable();
+            //        da.Fill(table);
+            //        dgvAsignaturas.DataSource = table;
+            //        MessageBox.Show("DATOS ACTUALIZADOS", "ATENCIÓN", MessageBoxButtons.OK);
+            //    } catch (Exception ex) {
+            //        MessageBox.Show("Error: " + ex.Message);
+            //    } finally {
+            //        connection.Close();
+            //    }
+            //}
         }
     }
 }

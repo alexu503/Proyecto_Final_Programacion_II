@@ -56,31 +56,31 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas
         }
 
         private void btnGuardar_Click(object sender, EventArgs e) {
-            if(cmbCarreras.Text != "") {
-                if(txtNombre.Text != "" || txtNombre.Text.Length < 7) {
-                    MySqlConnection connection = GenerateConnection.Connection();
-                    MySqlCommand query = new MySqlCommand();
-                    query.Connection = connection;
-
-                    try {
-                        query.CommandText = "INSERT INTO Materias(NombreCarrera, NombreMateria) VALUES('"+cmbCarreras.Text+"', '"+txtNombre.Text+"')";
-                        query.ExecuteNonQuery();
-
-                        MessageBox.Show("DATOS GUARDADOS", "ATENCIÓN", MessageBoxButtons.OK);
-                        cmbCarreras.Text = "";
-                        txtNombre.Clear();
-
-                    }catch(Exception ex) {
-                        MessageBox.Show("Error: " + ex.Message);
-                    } finally {
-                        connection.Close();
-                    }
-                } else {
-                    MessageBox.Show("INGRESE EL NOMBRE DE LA MATERIA CORRECTAMENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            } else {
-                MessageBox.Show("SELECCIONE UNA CARRERA", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            //if(cmbCarreras.Text != "") {
+            //    if(txtNombre.Text != "" || txtNombre.Text.Length < 7) {
+            //        MySqlConnection connection = GenerateConnection.Connection();
+            //        MySqlCommand query = new MySqlCommand();
+            //        query.Connection = connection;
+            //
+            //        try {
+            //            query.CommandText = "INSERT INTO Materias(NombreCarrera, NombreMateria) VALUES('"+cmbCarreras.Text+"', '"+txtNombre.Text+"')";
+            //            query.ExecuteNonQuery();
+            //
+            //            MessageBox.Show("DATOS GUARDADOS", "ATENCIÓN", MessageBoxButtons.OK);
+            //            cmbCarreras.Text = "";
+            //            txtNombre.Clear();
+            //
+            //        }catch(Exception ex) {
+            //            MessageBox.Show("Error: " + ex.Message);
+            //        } finally {
+            //            connection.Close();
+            //        }
+            //    } else {
+            //        MessageBox.Show("INGRESE EL NOMBRE DE LA MATERIA CORRECTAMENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //    }
+            //} else {
+            //    MessageBox.Show("SELECCIONE UNA CARRERA", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //}
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e) {

@@ -20,34 +20,34 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private string pass;
         string previousCarnet;
 
-        private void mostrar(){
-
-            foreach(Student x in listaModificable) {
-                txtNombres.Text = x.getNombres();
-                txrtPrimerApellido.Text = x.getPrimerApellido();
-                txtSegundoApellido.Text = x.getSegundoApellido();
-                cmbCarreras.Text = x.getCarrera(); ;
-                txtCarnet.Text = x.getCarnet();
-                txtDocumentoIdentidad.Text = x.getDocumentoIdentidad();
-                txtDireccion.Text = x.getDireccion();
-                txtTelefono.Text = x.getTelefono();
-                txtCelular.Text = x.getCelular();
-                txtCorreo.Text = x.getCorreo();
-                txtFechaInscripcion.Text = x.getFechaInscripcion();
-                cmbNacionalidad.Text = x.getNacionalidad();
-                cmbEstadoCivil.Text = x.getEstadoCivil();
-                previousCarnet = x.getCarnet();
-
-                if (x.getSexo() == "Masculino") {
-                    rbtnMasculino.Checked = true;
-                    rbtnFemenino.Checked = false;
-                } else {
-                    rbtnMasculino.Checked = false;
-                    rbtnFemenino.Checked = true;
-                }
-            }
-        }
-
+        //private void mostrar(){
+        //
+        //    foreach(Student x in listaModificable) {
+        //        txtNombres.Text = x.getNombres();
+        //        txrtPrimerApellido.Text = x.getPrimerApellido();
+        //        txtSegundoApellido.Text = x.getSegundoApellido();
+        //        cmbCarreras.Text = x.getCarrera(); ;
+        //        txtCarnet.Text = x.getCarnet();
+        //        txtDocumentoIdentidad.Text = x.getDocumentoIdentidad();
+        //        txtDireccion.Text = x.getDireccion();
+        //        txtTelefono.Text = x.getTelefono();
+        //        txtCelular.Text = x.getCelular();
+        //        txtCorreo.Text = x.getCorreo();
+        //        txtFechaInscripcion.Text = x.getFechaInscripcion();
+        //        cmbNacionalidad.Text = x.getNacionalidad();
+        //        cmbEstadoCivil.Text = x.getEstadoCivil();
+        //        previousCarnet = x.getCarnet();
+        //
+        //        if (x.getSexo() == "Masculino") {
+        //            rbtnMasculino.Checked = true;
+        //            rbtnFemenino.Checked = false;
+        //        } else {
+        //            rbtnMasculino.Checked = false;
+        //            rbtnFemenino.Checked = true;
+        //        }
+        //    }
+        //}
+        //
         public void setDetalles(List<Student> listaRecibida) {
             this.listaModificable = listaRecibida;
         }
@@ -57,37 +57,37 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.carrera = carrera;
         }
 
-        void SaveToDatabase() {
-
-            MySqlConnection connection = GenerateConnection.Connection();
-            MySqlCommand query = new MySqlCommand();
-            query.Connection = connection;
-
-            foreach (Student x in listaAlumnoGenerico) {
-                query.CommandText = "UPDATE Alumnos SET " +
-                    "Nombres = '"+x.getNombres()+"', " +
-                    "PrimerApellido = '"+x.getPrimerApellido()+"', " +
-                    "SegundoApellido = '"+x.getSegundoApellido()+"', " +
-                    "NombreCarrera = '"+x.getCarrera()+"', " +
-                    "Carnet = '"+x.getCarnet()+"', " +
-                    "Clave = '"+x.getPasswrd()+"', " +
-                    "Matricula = '"+x.getMatricula().ToString()+"', " +
-                    "FechaDeNacimiento = '"+x.getFechaNacimiento()+"', " +
-                    "DocumentoDeIdentidad = '"+x.getDocumentoIdentidad()+"', " +
-                    "Sexo = '"+x.getSexo()+"', " +
-                    "Direccion = '"+x.getDireccion()+"', " +
-                    "Telefono = '"+x.getTelefono()+"', " +
-                    "Celular = '"+x.getCelular()+"', " +
-                    "Correo = '"+x.getCorreo()+"', " +
-                    "FechaInscripcion = '"+x.getFechaInscripcion()+"', " +
-                    "Nacionalidad = '"+x.getNacionalidad()+"', " +
-                    "EstadoCivil = '"+x.getEstadoCivil()+"' " +
-                    "WHERE Carnet = '"+x.getCarnet()+"'";
-                query.ExecuteNonQuery();
-            }
-            MessageBox.Show("EL REGISTRO HA SIDO ACTUALIZADO CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            connection.Close();
-        }
+        //void SaveToDatabase() {
+        //
+        //    MySqlConnection connection = GenerateConnection.Connection();
+        //    MySqlCommand query = new MySqlCommand();
+        //    query.Connection = connection;
+        //
+        //    foreach (Student x in listaAlumnoGenerico) {
+        //        query.CommandText = "UPDATE Alumnos SET " +
+        //            "Nombres = '"+x.getNombres()+"', " +
+        //            "PrimerApellido = '"+x.getPrimerApellido()+"', " +
+        //            "SegundoApellido = '"+x.getSegundoApellido()+"', " +
+        //            "NombreCarrera = '"+x.getCarrera()+"', " +
+        //            "Carnet = '"+x.getCarnet()+"', " +
+        //            "Clave = '"+x.getPasswrd()+"', " +
+        //            "Matricula = '"+x.getMatricula().ToString()+"', " +
+        //            "FechaDeNacimiento = '"+x.getFechaNacimiento()+"', " +
+        //            "DocumentoDeIdentidad = '"+x.getDocumentoIdentidad()+"', " +
+        //            "Sexo = '"+x.getSexo()+"', " +
+        //            "Direccion = '"+x.getDireccion()+"', " +
+        //            "Telefono = '"+x.getTelefono()+"', " +
+        //            "Celular = '"+x.getCelular()+"', " +
+        //            "Correo = '"+x.getCorreo()+"', " +
+        //            "FechaInscripcion = '"+x.getFechaInscripcion()+"', " +
+        //            "Nacionalidad = '"+x.getNacionalidad()+"', " +
+        //            "EstadoCivil = '"+x.getEstadoCivil()+"' " +
+        //            "WHERE Carnet = '"+x.getCarnet()+"'";
+        //        query.ExecuteNonQuery();
+        //    }
+        //    MessageBox.Show("EL REGISTRO HA SIDO ACTUALIZADO CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    connection.Close();
+        //}
 
         /// <summary>
         /// Clean up any resources being used.

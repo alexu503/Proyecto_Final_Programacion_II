@@ -13,42 +13,42 @@ namespace SistemaUniversidad.DISEÑO.Administrador{
         //Listas de alumnos por cada carrera
         private List<Student> listaAlumnoGenerico = new List<Student>();
 
-        void SaveToLogins() {
-
-            MySqlConnection connection = GenerateConnection.Connection();
-            MySqlCommand query = new MySqlCommand();
-            query.Connection = connection;
-
-            foreach (Student x in listaAlumnoGenerico) {
-                query.CommandText = "";
-            }
-            query.ExecuteNonQuery();
-            connection.Close();
-        }
+        //void SaveToLogins() {
+        //
+        //    MySqlConnection connection = GenerateConnection.Connection();
+        //    MySqlCommand query = new MySqlCommand();
+        //    query.Connection = connection;
+        //
+        //    foreach (Student x in listaAlumnoGenerico) {
+        //        query.CommandText = "";
+        //    }
+        //    query.ExecuteNonQuery();
+        //    connection.Close();
+        //}
 
         //Save to database
-        void SaveToDatabase() {
-            
-            MySqlConnection connection = GenerateConnection.Connection();
-            MySqlCommand query = new MySqlCommand();
-            query.Connection = connection;
-
-            foreach (Student x in listaAlumnoGenerico) {
-
-                query.CommandText = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, NombreCarrera, Carnet, Clave, Matricula, " +
-                "FechaDeNacimiento, DocumentoDeIdentidad, Sexo, Direccion, Telefono, Celular, Correo, FechaInscripcion, Nacionalidad, EstadoCivil)" +
-                "VALUES('"+x.getNombres()+"', '"+x.getPrimerApellido()+"', '"+x.getSegundoApellido()+"', '"+x.getCarrera()+"', '"+x.getCarnet()+"', " +
-                "'"+x.getPasswrd()+"', '"+x.getMatricula().ToString()+"', '"+x.getFechaNacimiento()+"', '"+x.getDocumentoIdentidad()+"', '"+x.getSexo()+"'," +
-                "'"+x.getDireccion()+"', '"+x.getTelefono()+"', '"+x.getCelular()+"', '"+x.getCorreo()+"', '"+x.getFechaInscripcion()+"', " +
-                "'"+x.getNacionalidad()+"', '"+x.getEstadoCivil()+"');" +
-                "INSERT INTO Logins(Usuario, Clave, Rol) VALUES('"+x.getCarnet()+"', '"+x.getPasswrd()+"', 'Estudiante'); " +
-                "INSERT INTO Notas(NombreCarrera, NombreMateria, CarnetAlumno, PrimerParcial, PrimerLab, SegundoParcial, SegundoLab, TercerParcial, TercerLab, CuartoParcial, CuartoLab, PromedioFinal) " +
-                "VALUES('"+x.getCarrera()+"', '----', '"+x.getCarnet()+"', '0', '0', '0', '0', '0', '0', '0', '0', '0')";
-            }
-            MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            query.ExecuteNonQuery();
-            connection.Close();
-        }
+        //void SaveToDatabase() {
+        //    
+        //    MySqlConnection connection = GenerateConnection.Connection();
+        //    MySqlCommand query = new MySqlCommand();
+        //    query.Connection = connection;
+        //
+        //    foreach (Student x in listaAlumnoGenerico) {
+        //
+        //        query.CommandText = "INSERT INTO Alumnos(Nombres, PrimerApellido, SegundoApellido, NombreCarrera, Carnet, Clave, Matricula, " +
+        //        "FechaDeNacimiento, DocumentoDeIdentidad, Sexo, Direccion, Telefono, Celular, Correo, FechaInscripcion, Nacionalidad, EstadoCivil)" +
+        //        "VALUES('"+x.getNombres()+"', '"+x.getPrimerApellido()+"', '"+x.getSegundoApellido()+"', '"+x.getCarrera()+"', '"+x.getCarnet()+"', " +
+        //        "'"+x.getPasswrd()+"', '"+x.getMatricula().ToString()+"', '"+x.getFechaNacimiento()+"', '"+x.getDocumentoIdentidad()+"', '"+x.getSexo()+"'," +
+        //        "'"+x.getDireccion()+"', '"+x.getTelefono()+"', '"+x.getCelular()+"', '"+x.getCorreo()+"', '"+x.getFechaInscripcion()+"', " +
+        //        "'"+x.getNacionalidad()+"', '"+x.getEstadoCivil()+"');" +
+        //        "INSERT INTO Logins(Usuario, Clave, Rol) VALUES('"+x.getCarnet()+"', '"+x.getPasswrd()+"', 'Estudiante'); " +
+        //        "INSERT INTO Notas(NombreCarrera, NombreMateria, CarnetAlumno, PrimerParcial, PrimerLab, SegundoParcial, SegundoLab, TercerParcial, TercerLab, CuartoParcial, CuartoLab, PromedioFinal) " +
+        //        "VALUES('"+x.getCarrera()+"', '----', '"+x.getCarnet()+"', '0', '0', '0', '0', '0', '0', '0', '0', '0')";
+        //    }
+        //    MessageBox.Show("DATOS GUARDADOS CON EXITO", "¡ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //    query.ExecuteNonQuery();
+        //    connection.Close();
+        //}
 
         /// <summary>
         /// Clean up any resources being used.

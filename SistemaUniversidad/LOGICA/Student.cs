@@ -10,7 +10,6 @@ namespace SistemaUniversidad.LOGICA
 
         private string name;
         private string firstLastname;
-        private string secondLastname;
         private string career;
         private string passwrd;
         private string birthday;
@@ -25,10 +24,9 @@ namespace SistemaUniversidad.LOGICA
         private string nationality;
         //private float[] notas;
 
-        public Student(string n, string fl, string sl, string c, string p, string b, string dni, string sex, string add, string ph, string mph, string e, string id, string cs, string nn) {
+        public Student(string n, string fl, string c, string p, string b, string dni, string sex, string add, string ph, string mph, string e, string id, string cs, string nn) {
             name = n;
             firstLastname = fl;
-            secondLastname = sl;
             career = c;
             passwrd = p;
             birthday = b;
@@ -48,9 +46,8 @@ namespace SistemaUniversidad.LOGICA
         }
 
         public override void AddNewStaff() {
-            Name = this.name;
-            FirstLastname = firstLastname;
-            SecondLastname = secondLastname;
+            FirstName = this.name;
+            Lastname = firstLastname;
             CareerA = career;
             Password = passwrd;
             BirthDate = birthday;

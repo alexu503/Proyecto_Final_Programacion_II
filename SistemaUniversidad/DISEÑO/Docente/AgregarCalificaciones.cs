@@ -153,23 +153,23 @@ namespace SistemaUniversidad.DISEÑO.Docente
 
         private void btnActualizar_Click(object sender, EventArgs e) {
 
-            MySqlConnection connection = GenerateConnection.Connection();
-            MySqlCommand query = new MySqlCommand();
-            query.Connection = connection;
-
-            try {
-                query.CommandText = "SELECT * FROM Notas WHERE NombreCarrera = '"+cmbCarreras.Text+"' AND CarnetAlumno = '"+cmbGetCarnet.Text+"'";
-                MySqlDataAdapter da = new MySqlDataAdapter();
-                da.SelectCommand = query;
-                DataTable table = new DataTable();
-                da.Fill(table);
-                dgvAlumnos.DataSource = table;
-                MessageBox.Show("DATOS ACTUALIZADOS", "ATENCIÓN", MessageBoxButtons.OK);
-            } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            } finally {
-                connection.Close();
-            }
+            //MySqlConnection connection = GenerateConnection.Connection();
+            //MySqlCommand query = new MySqlCommand();
+            //query.Connection = connection;
+            //
+            //try {
+            //    query.CommandText = "SELECT * FROM Notas WHERE NombreCarrera = '"+cmbCarreras.Text+"' AND CarnetAlumno = '"+cmbGetCarnet.Text+"'";
+            //    MySqlDataAdapter da = new MySqlDataAdapter();
+            //    da.SelectCommand = query;
+            //    DataTable table = new DataTable();
+            //    da.Fill(table);
+            //    dgvAlumnos.DataSource = table;
+            //    MessageBox.Show("DATOS ACTUALIZADOS", "ATENCIÓN", MessageBoxButtons.OK);
+            //} catch (Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //} finally {
+            //    connection.Close();
+            //}
         }
 
         //private void btnAsignarNota_Click(object sender, EventArgs e) {
@@ -178,75 +178,75 @@ namespace SistemaUniversidad.DISEÑO.Docente
         //}
 
         void FillCmbGetCarnet() {
-            string query = "Select Carnet FROM Alumnos WHERE NombreCarrera = '"+cmbCarreras.Text+"'";
-            MySqlConnection connection = GenerateConnection.Connection();
-            MySqlCommand command = new MySqlCommand(query, connection);
-            command.ExecuteNonQuery();
-            MySqlDataReader dr = command.ExecuteReader();
-
-            try {
-                if (dr.HasRows) {
-                    while (dr.Read()) {
-                        cmbGetCarnet.Items.Add(dr.GetString("Carnet"));
-                    }
-                } else {
-                    MessageBox.Show("AUN NO HAY ALUMNOS INSCRITOS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cmbMaterias.Enabled = false;
-                    cmbGetCarnet.Enabled = false;
-                    txtGetPrimerParcial.Enabled = false;
-                    txtGetPrimerLab.Enabled = false;
-                    txtGetSegundoParcial.Enabled = false;
-                    txtGetSegundoLab.Enabled = false;
-                    txtGetTercerParcial.Enabled = false;
-                    txtGetTercerLab.Enabled = false;
-                    txtGetCuartoParcial.Enabled = false;
-                    txtGetCuartoLab.Enabled = false;
-                    btnActualizar.Enabled = false;
-                    btnAsignarNota.Enabled = false;
-                    return;
-                }
-            } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            } finally {
-                dr.Close();
-                connection.Close();
-            }
+            //string query = "Select Carnet FROM Alumnos WHERE NombreCarrera = '"+cmbCarreras.Text+"'";
+            //MySqlConnection connection = GenerateConnection.Connection();
+            //MySqlCommand command = new MySqlCommand(query, connection);
+            //command.ExecuteNonQuery();
+            //MySqlDataReader dr = command.ExecuteReader();
+            //
+            //try {
+            //    if (dr.HasRows) {
+            //        while (dr.Read()) {
+            //            cmbGetCarnet.Items.Add(dr.GetString("Carnet"));
+            //        }
+            //    } else {
+            //        MessageBox.Show("AUN NO HAY ALUMNOS INSCRITOS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        cmbMaterias.Enabled = false;
+            //        cmbGetCarnet.Enabled = false;
+            //        txtGetPrimerParcial.Enabled = false;
+            //        txtGetPrimerLab.Enabled = false;
+            //        txtGetSegundoParcial.Enabled = false;
+            //        txtGetSegundoLab.Enabled = false;
+            //        txtGetTercerParcial.Enabled = false;
+            //        txtGetTercerLab.Enabled = false;
+            //        txtGetCuartoParcial.Enabled = false;
+            //        txtGetCuartoLab.Enabled = false;
+            //        btnActualizar.Enabled = false;
+            //        btnAsignarNota.Enabled = false;
+            //        return;
+            //    }
+            //} catch (Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //} finally {
+            //    dr.Close();
+            //    connection.Close();
+            //}
         }
 
         void FilCmbMaterias() {
-            string query = "Select NombreMateria FROM Materias";
-            MySqlConnection connection = GenerateConnection.Connection();
-            MySqlCommand command = new MySqlCommand(query, connection);
-            command.ExecuteNonQuery();
-            MySqlDataReader dr = command.ExecuteReader();
-
-            try {
-                if (dr.HasRows) {
-                    while (dr.Read()) {
-                        cmbMaterias.Items.Add(dr.GetString("NombreMateria"));
-                    }
-                } else {
-                    MessageBox.Show("NO HAY MATERIAS DISPONIBLES", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    cmbMaterias.Enabled = false;
-                    cmbGetCarnet.Enabled = false;
-                    txtGetPrimerParcial.Enabled = false;
-                    txtGetPrimerLab.Enabled = false;
-                    txtGetSegundoParcial.Enabled = false;
-                    txtGetSegundoLab.Enabled = false;
-                    txtGetTercerParcial.Enabled = false;
-                    txtGetTercerLab.Enabled = false;
-                    txtGetCuartoParcial.Enabled = false;
-                    txtGetCuartoLab.Enabled = false;
-                    btnActualizar.Enabled = false;
-                    btnAsignarNota.Enabled = false;
-                    return;
-                }
-            } catch (Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            } finally {
-                dr.Close();
-                connection.Close();
-            }
+            //string query = "Select NombreMateria FROM Materias";
+            //MySqlConnection connection = GenerateConnection.Connection();
+            //MySqlCommand command = new MySqlCommand(query, connection);
+            //command.ExecuteNonQuery();
+            //MySqlDataReader dr = command.ExecuteReader();
+            //
+            //try {
+            //    if (dr.HasRows) {
+            //        while (dr.Read()) {
+            //            cmbMaterias.Items.Add(dr.GetString("NombreMateria"));
+            //        }
+            //    } else {
+            //        MessageBox.Show("NO HAY MATERIAS DISPONIBLES", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            //        cmbMaterias.Enabled = false;
+            //        cmbGetCarnet.Enabled = false;
+            //        txtGetPrimerParcial.Enabled = false;
+            //        txtGetPrimerLab.Enabled = false;
+            //        txtGetSegundoParcial.Enabled = false;
+            //        txtGetSegundoLab.Enabled = false;
+            //        txtGetTercerParcial.Enabled = false;
+            //        txtGetTercerLab.Enabled = false;
+            //        txtGetCuartoParcial.Enabled = false;
+            //        txtGetCuartoLab.Enabled = false;
+            //        btnActualizar.Enabled = false;
+            //        btnAsignarNota.Enabled = false;
+            //        return;
+            //    }
+            //} catch (Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //} finally {
+            //    dr.Close();
+            //    connection.Close();
+            //}
         }
 
         private void cmbCarreras_SelectedValueChanged(object sender, EventArgs e) {

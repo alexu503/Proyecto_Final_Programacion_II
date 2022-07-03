@@ -25,7 +25,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         }
         private void Modificar_Load(object sender, EventArgs e){
             this.LimpiarTodo();
-            this.mostrar();
+            //this.mostrar();
         }
 
         #region Limpiar
@@ -159,18 +159,18 @@ namespace SistemaUniversidad.DISEÑO.Administrador
                 sexo = "Masculino";
             }
 
-            MySqlConnection connection = GenerateConnection.Connection();
-            MySqlCommand command = new MySqlCommand();
-            command.Connection =  connection;
-            command.CommandText = "UPDATE Alumnos SET Nombres = '"+txtNombres.Text+"', PrimerApellido = '"+txrtPrimerApellido.Text+"', SegundoApellido = '"+txtSegundoApellido.Text+"'," +
-                "NombreCarrera = '"+cmbCarreras.Text+"', Carnet = '"+txtCarnet.Text+"', DocumentoDeIdentidad = '"+txtDocumentoIdentidad.Text+"', Sexo = '"+sexo+"', " +
-                "Direccion = '"+txtDireccion.Text+"', Telefono = '"+txtTelefono.Text+"', Celular = '"+txtCelular.Text+"', Correo = '"+txtCorreo.Text+"', Nacionalidad = '"+cmbNacionalidad.Text+"', " +
-                "EstadoCivil = '"+cmbEstadoCivil.Text+"' WHERE Carnet = '"+this.previousCarnet+"'; " +
-                "UPDATE Logins SET Usuario = '"+txtCarnet.Text+"' WHERE Usuario = '"+this.previousCarnet+"';" +
-                "UPDATE Notas SET NombreCarrera = '"+cmbCarreras.Text+"', CarnetAlumno = '"+txtCarnet.Text+"'";
-            //command.CommandText = "";
-            command.ExecuteNonQuery();
-            connection.Close();
+            //MySqlConnection connection = GenerateConnection.Connection();
+            //MySqlCommand command = new MySqlCommand();
+            //command.Connection =  connection;
+            //command.CommandText = "UPDATE Alumnos SET Nombres = '"+txtNombres.Text+"', PrimerApellido = '"+txrtPrimerApellido.Text+"', SegundoApellido = '"+txtSegundoApellido.Text+"'," +
+            //    "NombreCarrera = '"+cmbCarreras.Text+"', Carnet = '"+txtCarnet.Text+"', DocumentoDeIdentidad = '"+txtDocumentoIdentidad.Text+"', Sexo = '"+sexo+"', " +
+            //    "Direccion = '"+txtDireccion.Text+"', Telefono = '"+txtTelefono.Text+"', Celular = '"+txtCelular.Text+"', Correo = '"+txtCorreo.Text+"', Nacionalidad = '"+cmbNacionalidad.Text+"', " +
+            //    "EstadoCivil = '"+cmbEstadoCivil.Text+"' WHERE Carnet = '"+this.previousCarnet+"'; " +
+            //    "UPDATE Logins SET Usuario = '"+txtCarnet.Text+"' WHERE Usuario = '"+this.previousCarnet+"';" +
+            //    "UPDATE Notas SET NombreCarrera = '"+cmbCarreras.Text+"', CarnetAlumno = '"+txtCarnet.Text+"'";
+            ////command.CommandText = "";
+            //command.ExecuteNonQuery();
+            //connection.Close();
             #endregion
 
             LimpiarEtiquetas();
