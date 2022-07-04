@@ -61,6 +61,7 @@
             this.pnlSuperior.Name = "pnlSuperior";
             this.pnlSuperior.Size = new System.Drawing.Size(800, 35);
             this.pnlSuperior.TabIndex = 1;
+            this.pnlSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseDown);
             // 
             // lblTitulo
             // 

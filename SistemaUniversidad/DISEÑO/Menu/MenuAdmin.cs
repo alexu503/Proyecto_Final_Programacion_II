@@ -1,13 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using SistemaUniversidad.LOGICA;
+using System.Runtime.InteropServices;
 
 namespace SistemaUniversidad.DISEÑO.Menu {
     public partial class MenuAdmin : Form {
@@ -29,28 +24,31 @@ namespace SistemaUniversidad.DISEÑO.Menu {
         #region Ocultar-Mostrar Sub-Menús
         //Oculta los subMenus si están visibles
         private void OcultarSubMenus() {
-            //MENU LATERAL -> 32; 33; 51
-            //Fondo panel -> DarkSlateBlue
-            //Flat Button -> MediumSlateBlue
             if (pnlSubMenuAlumnos.Visible == true) {
                 pnlSubMenuAlumnos.Visible = false;
             }
             if (pnlSubMenuAsignaturas.Visible == true) {
                 pnlSubMenuAsignaturas.Visible = false;
             }
-            if(pnlSubCarreras.Visible == true) {
-                pnlSubCarreras.Visible = false;
+            if (pnlSubMenuCarreras.Visible == true) {
+                pnlSubMenuCarreras.Visible = false;
+            }
+            if (pnlSubMenuDocentes.Visible == true) {
+                pnlSubMenuDocentes.Visible = false;
+            }
+            if (pnlSubMenuHorarios.Visible == true) {
+                pnlSubMenuHorarios.Visible = false;
             }
         }
         //Muestra el panel de Sub Menú indicado como parámetro
         private void MostrarSubMenu(Panel mostrar) {
-            if (mostrar.Visible == false)//Si el su-menu no está visible
-            {
-                OcultarSubMenus();//Oculta todos los submenús
+            //Si el su-menu no está visible
+            if (mostrar.Visible == false) {
+                //Oculta todos los submenús
+                OcultarSubMenus();
                 mostrar.Visible = true;//Pone visible el menú indicado
                 //btn.BackColor = Color.FromArgb(0, 80, 200);
-            } else//Si el sub-menu ya está visible
-              {
+            } else {//Si el sub-menu ya está visible
                 mostrar.Visible = false;
                 //btn.BackColor = Color.FromArgb(32, 48, 68);
             }
@@ -101,24 +99,8 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             BotonesPnlSuperior boton = new BotonesPnlSuperior();
             boton.Minimizar(this, sender, e);
         }
-
-        private void btnMaximizar_Click(object sender, EventArgs e) {
-            BotonesPnlSuperior boton = new BotonesPnlSuperior();
-            boton.Maximizar(this, sender, e, btnMaximizar, btnRestaurar);
-        }
-
-        private void btnRestaurar_Click(object sender, EventArgs e) {
-            BotonesPnlSuperior boton = new BotonesPnlSuperior();
-            boton.Restaurar(this, sender, e, btnRestaurar, btnMaximizar);
-        }
-        private void btnCerrar_Click(object sender, EventArgs e) {
-
-            if (MessageBox.Show("¿SEGURO QUE DESEA CERRAR LA APLICACIÓN?", "¡ATENCION!", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) {
-                Application.Exit();
-            }
-        }
         private void pnlSuperiorMenuAdmin_MouseDown(object sender, MouseEventArgs e) {
-
+            //MostrarSubMenu(pnlSuperiorMenuAdmin);
         }
 
         #endregion
@@ -126,40 +108,15 @@ namespace SistemaUniversidad.DISEÑO.Menu {
         #region Eventos Click
 
         #region Cerrar Sesión
-        private void btnCerrarSesion_Click(object sender, EventArgs e) {
-            if (MessageBox.Show("¿SEGURO QUE DESEA CERRAR SESION?", "¡ATENCION!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-                Sesiones.Bienvenido bienvenido = new Sesiones.Bienvenido();
-                this.Hide();
-                bienvenido.Show();
-            }
-        }
         #endregion
 
         #region Más opciones
-        private void imgMasOpciones_Click(object sender, EventArgs e) {
-            this.Cursor = Cursors.WaitCursor;
-            imgMasOpciones.Enabled = false;
-            if (pnlMenuLateral.Width != AnchoIconos) {
-                pnlMenuLateral.Width = AnchoIconos;
-                //Acá debe ir el código de ocultar los submenús.
-                OcultarSubMenus();
-                pnlHome.Width = AnchoIconos;
-            } else {
-                OcultarSubMenus();
-                pnlMenuLateral.Width = AnchoNormal;
-                pnlHome.Width = AnchoNormal;
-            }
-            this.Cursor = Cursors.Default;
-            imgMasOpciones.Enabled = true;
-        }
         #endregion
 
         #region Abrir Sub-Menú
-        private void btnGestionarAlumnos_Click(object sender, EventArgs e) {
-            MostrarSubMenu(pnlSubMenuAlumnos);
-        }
-        private void btnGestionarAsignaturas_Click(object sender, EventArgs e) {
-            MostrarSubMenu(pnlSubMenuAsignaturas);
+
+        private void button5_Click(object sender, EventArgs e) {
+            //
         }
         #endregion
 
@@ -202,6 +159,69 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             this.Hide();
             aggAsig.agregarAsignatura = this;
             aggAsig.Show();
+        }
+
+        private void btnGestionarAlumnos_Click(object sender, EventArgs e) {
+            MostrarSubMenu(pnlSubMenuAlumnos);
+        }
+
+        private void btnGestionarAsignaturas_Click(object sender, EventArgs e) {
+            MostrarSubMenu(pnlSubMenuAsignaturas);
+        }
+
+        private void btnGestionarCarreras_Click(object sender, EventArgs e) {
+            MostrarSubMenu(pnlSubMenuCarreras);
+        }
+
+        private void btnGestionarDocentes_Click(object sender, EventArgs e) {
+            MostrarSubMenu(pnlSubMenuDocentes);
+        }
+
+        private void btnGestionarHorarios_Click(object sender, EventArgs e) {
+            MostrarSubMenu(pnlSubMenuHorarios);
+        }
+
+        private void imgMasOpciones_Click(object sender, EventArgs e) {
+            this.Cursor = Cursors.WaitCursor;
+            imgMasOpciones.Enabled = false;
+            if (pnlMenuLateral.Width != AnchoIconos) {
+                pnlMenuLateral.Width = AnchoIconos;
+                //Acá debe ir el código de ocultar los submenús.
+                OcultarSubMenus();
+                pnlHome.Width = AnchoIconos;
+            } else {
+                OcultarSubMenus();
+                pnlMenuLateral.Width = AnchoNormal;
+                pnlHome.Width = AnchoNormal;
+            }
+            this.Cursor = Cursors.Default;
+            imgMasOpciones.Enabled = true;
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e) {
+            if (MessageBox.Show("¿SEGURO QUE DESEA CERRAR SESION?", "¡ATENCION!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                Sesiones.Bienvenido bienvenido = new Sesiones.Bienvenido();
+                this.Hide();
+                bienvenido.Show();
+            }
+        }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e) {
+            if (MessageBox.Show("¿SEGURO QUE DESEA CERRAR SESION?", "¡ATENCION!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                Sesiones.Bienvenido bienvenido = new Sesiones.Bienvenido();
+                this.Hide();
+                bienvenido.Show();
+            }
+        }
+
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+        private void pnlSuperiorMenuAdmin_MouseDown_1(object sender, MouseEventArgs e) {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
     }
 }

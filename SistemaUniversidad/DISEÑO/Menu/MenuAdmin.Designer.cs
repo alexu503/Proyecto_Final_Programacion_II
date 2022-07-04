@@ -56,50 +56,75 @@ namespace SistemaUniversidad.DISEÑO.Menu
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.imgVision = new System.Windows.Forms.PictureBox();
-            this.imgMision = new System.Windows.Forms.PictureBox();
-            this.imgLogoTipo = new System.Windows.Forms.PictureBox();
-            this.pnlMenuLateral = new System.Windows.Forms.Panel();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.pnlSubCarreras = new System.Windows.Forms.Panel();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.pnlSubMenuAsignaturas = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pnlMenuLateral = new System.Windows.Forms.Panel();
+            this.pnlSubMenuHorarios = new System.Windows.Forms.Panel();
+            this.btnBuscarHorario = new System.Windows.Forms.Button();
+            this.btnAgregarHorario = new System.Windows.Forms.Button();
+            this.btnEliminarHorario = new System.Windows.Forms.Button();
+            this.btnModificarHorario = new System.Windows.Forms.Button();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.btnGestionarHorarios = new System.Windows.Forms.Button();
+            this.pnlSubMenuDocentes = new System.Windows.Forms.Panel();
+            this.btnEliminarDocentes = new System.Windows.Forms.Button();
+            this.btnModificarDocentes = new System.Windows.Forms.Button();
+            this.btnBuscaeDocentes = new System.Windows.Forms.Button();
+            this.btnAgregarDocentes = new System.Windows.Forms.Button();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.btnGestionarDocentes = new System.Windows.Forms.Button();
+            this.pnlSubMenuCarreras = new System.Windows.Forms.Panel();
+            this.btnBucarCarrera = new System.Windows.Forms.Button();
+            this.btnAgregarCarrera = new System.Windows.Forms.Button();
+            this.btnEliminarCarrera = new System.Windows.Forms.Button();
+            this.btnModificarCarrera = new System.Windows.Forms.Button();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnGestionarCarreras = new System.Windows.Forms.Button();
+            this.pnlSubMenuAsignaturas = new System.Windows.Forms.Panel();
+            this.btnEliminarAsignatura = new System.Windows.Forms.Button();
+            this.btnBuscarAsignatura = new System.Windows.Forms.Button();
+            this.btnAgregarAsignatura = new System.Windows.Forms.Button();
+            this.btnModificarAsignatura = new System.Windows.Forms.Button();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.btnGestionarAsignaturas = new System.Windows.Forms.Button();
             this.pnlSubMenuAlumnos = new System.Windows.Forms.Panel();
             this.btnBuscarAlumno = new System.Windows.Forms.Button();
             this.btnModificarAlumno = new System.Windows.Forms.Button();
             this.btnEliminarAlumno = new System.Windows.Forms.Button();
             this.btnAgregarAlumno = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
             this.btnGestionarAlumnos = new System.Windows.Forms.Button();
             this.pnlHome = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.imgVision = new System.Windows.Forms.PictureBox();
+            this.btnMaximizar = new System.Windows.Forms.Button();
+            this.imgMision = new System.Windows.Forms.PictureBox();
+            this.imgLogoTipo = new System.Windows.Forms.PictureBox();
             this.pnlSuperiorMenuAdmin = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnMaximizar = new System.Windows.Forms.Button();
-            this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.imgMasOpciones = new System.Windows.Forms.PictureBox();
             this.dragControlMenuAdmin = new SistemaUniversidad.LOGICA.DragControl();
             this.panelContenedor.SuspendLayout();
             this.pnlContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgVision)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMision)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoTipo)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.pnlMenuLateral.SuspendLayout();
-            this.pnlSubCarreras.SuspendLayout();
+            this.pnlSubMenuHorarios.SuspendLayout();
+            this.pnlSubMenuDocentes.SuspendLayout();
+            this.pnlSubMenuCarreras.SuspendLayout();
             this.pnlSubMenuAsignaturas.SuspendLayout();
             this.pnlSubMenuAlumnos.SuspendLayout();
             this.pnlHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgVision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoTipo)).BeginInit();
             this.pnlSuperiorMenuAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).BeginInit();
             this.SuspendLayout();
@@ -109,291 +134,535 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.panelContenedor.AutoScroll = true;
             this.panelContenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.panelContenedor.Controls.Add(this.pnlContenedor);
-            this.panelContenedor.Controls.Add(this.pnlMenuLateral);
             this.panelContenedor.Controls.Add(this.pnlSuperiorMenuAdmin);
-            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(0, 0);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(1207, 794);
+            this.panelContenedor.Size = new System.Drawing.Size(1207, 679);
             this.panelContenedor.TabIndex = 0;
             // 
             // pnlContenedor
             // 
             this.pnlContenedor.BackColor = System.Drawing.SystemColors.Control;
+            this.pnlContenedor.Controls.Add(this.panel1);
             this.pnlContenedor.Controls.Add(this.imgVision);
+            this.pnlContenedor.Controls.Add(this.btnMaximizar);
             this.pnlContenedor.Controls.Add(this.imgMision);
             this.pnlContenedor.Controls.Add(this.imgLogoTipo);
-            this.pnlContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlContenedor.Location = new System.Drawing.Point(200, 35);
+            this.pnlContenedor.Location = new System.Drawing.Point(0, 35);
             this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(1005, 757);
-            this.pnlContenedor.TabIndex = 2;
+            this.pnlContenedor.Size = new System.Drawing.Size(1205, 642);
+            this.pnlContenedor.TabIndex = 4;
             // 
-            // imgVision
+            // panel1
             // 
-            this.imgVision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgVision.Image = ((System.Drawing.Image)(resources.GetObject("imgVision.Image")));
-            this.imgVision.Location = new System.Drawing.Point(272, 458);
-            this.imgVision.Name = "imgVision";
-            this.imgVision.Size = new System.Drawing.Size(558, 126);
-            this.imgVision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgVision.TabIndex = 2;
-            this.imgVision.TabStop = false;
+            this.panel1.AutoScroll = true;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.panel2);
+            this.panel1.Controls.Add(this.pnlMenuLateral);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1205, 643);
+            this.panel1.TabIndex = 3;
             // 
-            // imgMision
+            // panel2
             // 
-            this.imgMision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgMision.Image = ((System.Drawing.Image)(resources.GetObject("imgMision.Image")));
-            this.imgMision.Location = new System.Drawing.Point(272, 306);
-            this.imgMision.Name = "imgMision";
-            this.imgMision.Size = new System.Drawing.Size(558, 126);
-            this.imgMision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgMision.TabIndex = 1;
-            this.imgMision.TabStop = false;
+            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.Controls.Add(this.pictureBox1);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.pictureBox3);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel2.Location = new System.Drawing.Point(200, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1003, 641);
+            this.panel2.TabIndex = 2;
             // 
-            // imgLogoTipo
+            // pictureBox1
             // 
-            this.imgLogoTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgLogoTipo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogoTipo.Image")));
-            this.imgLogoTipo.Location = new System.Drawing.Point(403, 77);
-            this.imgLogoTipo.Name = "imgLogoTipo";
-            this.imgLogoTipo.Size = new System.Drawing.Size(254, 188);
-            this.imgLogoTipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgLogoTipo.TabIndex = 0;
-            this.imgLogoTipo.TabStop = false;
+            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(271, 400);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(558, 126);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 2;
+            this.pictureBox1.TabStop = false;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(271, 248);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(558, 126);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 1;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(402, 19);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(254, 188);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox3.TabIndex = 0;
+            this.pictureBox3.TabStop = false;
             // 
             // pnlMenuLateral
             // 
             this.pnlMenuLateral.AutoScroll = true;
             this.pnlMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(51)))));
-            this.pnlMenuLateral.Controls.Add(this.panel4);
-            this.pnlMenuLateral.Controls.Add(this.pnlSubCarreras);
-            this.pnlMenuLateral.Controls.Add(this.button5);
+            this.pnlMenuLateral.Controls.Add(this.pnlSubMenuHorarios);
+            this.pnlMenuLateral.Controls.Add(this.btnGestionarHorarios);
+            this.pnlMenuLateral.Controls.Add(this.pnlSubMenuDocentes);
+            this.pnlMenuLateral.Controls.Add(this.btnGestionarDocentes);
+            this.pnlMenuLateral.Controls.Add(this.pnlSubMenuCarreras);
+            this.pnlMenuLateral.Controls.Add(this.btnGestionarCarreras);
             this.pnlMenuLateral.Controls.Add(this.pnlSubMenuAsignaturas);
             this.pnlMenuLateral.Controls.Add(this.btnGestionarAsignaturas);
             this.pnlMenuLateral.Controls.Add(this.pnlSubMenuAlumnos);
             this.pnlMenuLateral.Controls.Add(this.btnGestionarAlumnos);
             this.pnlMenuLateral.Controls.Add(this.pnlHome);
             this.pnlMenuLateral.Dock = System.Windows.Forms.DockStyle.Left;
-            this.pnlMenuLateral.Location = new System.Drawing.Point(0, 35);
+            this.pnlMenuLateral.Location = new System.Drawing.Point(0, 0);
             this.pnlMenuLateral.Name = "pnlMenuLateral";
-            this.pnlMenuLateral.Size = new System.Drawing.Size(200, 757);
+            this.pnlMenuLateral.Size = new System.Drawing.Size(200, 641);
             this.pnlMenuLateral.TabIndex = 1;
+            // 
+            // pnlSubMenuHorarios
+            // 
+            this.pnlSubMenuHorarios.Controls.Add(this.btnBuscarHorario);
+            this.pnlSubMenuHorarios.Controls.Add(this.btnAgregarHorario);
+            this.pnlSubMenuHorarios.Controls.Add(this.btnEliminarHorario);
+            this.pnlSubMenuHorarios.Controls.Add(this.btnModificarHorario);
+            this.pnlSubMenuHorarios.Controls.Add(this.panel5);
+            this.pnlSubMenuHorarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenuHorarios.Location = new System.Drawing.Point(0, 689);
+            this.pnlSubMenuHorarios.Name = "pnlSubMenuHorarios";
+            this.pnlSubMenuHorarios.Size = new System.Drawing.Size(183, 116);
+            this.pnlSubMenuHorarios.TabIndex = 11;
+            // 
+            // btnBuscarHorario
+            // 
+            this.btnBuscarHorario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarHorario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnBuscarHorario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnBuscarHorario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarHorario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarHorario.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarHorario.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarHorario.Image")));
+            this.btnBuscarHorario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarHorario.Location = new System.Drawing.Point(6, 84);
+            this.btnBuscarHorario.Name = "btnBuscarHorario";
+            this.btnBuscarHorario.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnBuscarHorario.Size = new System.Drawing.Size(198, 30);
+            this.btnBuscarHorario.TabIndex = 3;
+            this.btnBuscarHorario.Text = "Buscar";
+            this.btnBuscarHorario.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarHorario
+            // 
+            this.btnAgregarHorario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarHorario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnAgregarHorario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnAgregarHorario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarHorario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarHorario.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarHorario.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarHorario.Image")));
+            this.btnAgregarHorario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarHorario.Location = new System.Drawing.Point(6, -3);
+            this.btnAgregarHorario.Name = "btnAgregarHorario";
+            this.btnAgregarHorario.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnAgregarHorario.Size = new System.Drawing.Size(198, 30);
+            this.btnAgregarHorario.TabIndex = 4;
+            this.btnAgregarHorario.Text = "Agregar";
+            this.btnAgregarHorario.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarHorario
+            // 
+            this.btnEliminarHorario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarHorario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnEliminarHorario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnEliminarHorario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarHorario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarHorario.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarHorario.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarHorario.Image")));
+            this.btnEliminarHorario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarHorario.Location = new System.Drawing.Point(6, 26);
+            this.btnEliminarHorario.Name = "btnEliminarHorario";
+            this.btnEliminarHorario.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnEliminarHorario.Size = new System.Drawing.Size(198, 30);
+            this.btnEliminarHorario.TabIndex = 6;
+            this.btnEliminarHorario.Text = "Eliminar";
+            this.btnEliminarHorario.UseVisualStyleBackColor = true;
+            // 
+            // btnModificarHorario
+            // 
+            this.btnModificarHorario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarHorario.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnModificarHorario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnModificarHorario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarHorario.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarHorario.ForeColor = System.Drawing.Color.White;
+            this.btnModificarHorario.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarHorario.Image")));
+            this.btnModificarHorario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarHorario.Location = new System.Drawing.Point(6, 55);
+            this.btnModificarHorario.Name = "btnModificarHorario";
+            this.btnModificarHorario.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnModificarHorario.Size = new System.Drawing.Size(198, 30);
+            this.btnModificarHorario.TabIndex = 5;
+            this.btnModificarHorario.Text = "Modificar";
+            this.btnModificarHorario.UseVisualStyleBackColor = true;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel5.Location = new System.Drawing.Point(3, -2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 116);
+            this.panel5.TabIndex = 2;
+            // 
+            // btnGestionarHorarios
+            // 
+            this.btnGestionarHorarios.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionarHorarios.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarHorarios.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGestionarHorarios.FlatAppearance.BorderSize = 2;
+            this.btnGestionarHorarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGestionarHorarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarHorarios.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarHorarios.ForeColor = System.Drawing.Color.White;
+            this.btnGestionarHorarios.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarHorarios.Image")));
+            this.btnGestionarHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarHorarios.Location = new System.Drawing.Point(0, 654);
+            this.btnGestionarHorarios.Name = "btnGestionarHorarios";
+            this.btnGestionarHorarios.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
+            this.btnGestionarHorarios.Size = new System.Drawing.Size(183, 35);
+            this.btnGestionarHorarios.TabIndex = 10;
+            this.btnGestionarHorarios.Text = "   Horarios";
+            this.btnGestionarHorarios.UseVisualStyleBackColor = true;
+            this.btnGestionarHorarios.Click += new System.EventHandler(this.btnGestionarHorarios_Click);
+            // 
+            // pnlSubMenuDocentes
+            // 
+            this.pnlSubMenuDocentes.Controls.Add(this.btnEliminarDocentes);
+            this.pnlSubMenuDocentes.Controls.Add(this.btnModificarDocentes);
+            this.pnlSubMenuDocentes.Controls.Add(this.btnBuscaeDocentes);
+            this.pnlSubMenuDocentes.Controls.Add(this.btnAgregarDocentes);
+            this.pnlSubMenuDocentes.Controls.Add(this.panel3);
+            this.pnlSubMenuDocentes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenuDocentes.Location = new System.Drawing.Point(0, 538);
+            this.pnlSubMenuDocentes.Name = "pnlSubMenuDocentes";
+            this.pnlSubMenuDocentes.Size = new System.Drawing.Size(183, 116);
+            this.pnlSubMenuDocentes.TabIndex = 9;
+            // 
+            // btnEliminarDocentes
+            // 
+            this.btnEliminarDocentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarDocentes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnEliminarDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnEliminarDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarDocentes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarDocentes.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarDocentes.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarDocentes.Image")));
+            this.btnEliminarDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarDocentes.Location = new System.Drawing.Point(6, 28);
+            this.btnEliminarDocentes.Name = "btnEliminarDocentes";
+            this.btnEliminarDocentes.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnEliminarDocentes.Size = new System.Drawing.Size(198, 30);
+            this.btnEliminarDocentes.TabIndex = 1;
+            this.btnEliminarDocentes.Text = "Eliminar";
+            this.btnEliminarDocentes.UseVisualStyleBackColor = true;
+            // 
+            // btnModificarDocentes
+            // 
+            this.btnModificarDocentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarDocentes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnModificarDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnModificarDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarDocentes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarDocentes.ForeColor = System.Drawing.Color.White;
+            this.btnModificarDocentes.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarDocentes.Image")));
+            this.btnModificarDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarDocentes.Location = new System.Drawing.Point(6, 57);
+            this.btnModificarDocentes.Name = "btnModificarDocentes";
+            this.btnModificarDocentes.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnModificarDocentes.Size = new System.Drawing.Size(198, 30);
+            this.btnModificarDocentes.TabIndex = 1;
+            this.btnModificarDocentes.Text = "Modificar";
+            this.btnModificarDocentes.UseVisualStyleBackColor = true;
+            // 
+            // btnBuscaeDocentes
+            // 
+            this.btnBuscaeDocentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscaeDocentes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnBuscaeDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnBuscaeDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscaeDocentes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscaeDocentes.ForeColor = System.Drawing.Color.White;
+            this.btnBuscaeDocentes.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscaeDocentes.Image")));
+            this.btnBuscaeDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscaeDocentes.Location = new System.Drawing.Point(6, 86);
+            this.btnBuscaeDocentes.Name = "btnBuscaeDocentes";
+            this.btnBuscaeDocentes.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnBuscaeDocentes.Size = new System.Drawing.Size(198, 30);
+            this.btnBuscaeDocentes.TabIndex = 1;
+            this.btnBuscaeDocentes.Text = "Buscar";
+            this.btnBuscaeDocentes.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarDocentes
+            // 
+            this.btnAgregarDocentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarDocentes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnAgregarDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnAgregarDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarDocentes.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarDocentes.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarDocentes.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarDocentes.Image")));
+            this.btnAgregarDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarDocentes.Location = new System.Drawing.Point(6, -1);
+            this.btnAgregarDocentes.Name = "btnAgregarDocentes";
+            this.btnAgregarDocentes.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnAgregarDocentes.Size = new System.Drawing.Size(198, 30);
+            this.btnAgregarDocentes.TabIndex = 1;
+            this.btnAgregarDocentes.Text = "Agregar";
+            this.btnAgregarDocentes.UseVisualStyleBackColor = true;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel3.Location = new System.Drawing.Point(3, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 116);
+            this.panel3.TabIndex = 0;
+            // 
+            // btnGestionarDocentes
+            // 
+            this.btnGestionarDocentes.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionarDocentes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarDocentes.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGestionarDocentes.FlatAppearance.BorderSize = 2;
+            this.btnGestionarDocentes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGestionarDocentes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarDocentes.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarDocentes.ForeColor = System.Drawing.Color.White;
+            this.btnGestionarDocentes.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarDocentes.Image")));
+            this.btnGestionarDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarDocentes.Location = new System.Drawing.Point(0, 503);
+            this.btnGestionarDocentes.Name = "btnGestionarDocentes";
+            this.btnGestionarDocentes.Size = new System.Drawing.Size(183, 35);
+            this.btnGestionarDocentes.TabIndex = 8;
+            this.btnGestionarDocentes.Text = "   Docentes";
+            this.btnGestionarDocentes.UseVisualStyleBackColor = true;
+            this.btnGestionarDocentes.Click += new System.EventHandler(this.btnGestionarDocentes_Click);
+            // 
+            // pnlSubMenuCarreras
+            // 
+            this.pnlSubMenuCarreras.Controls.Add(this.btnBucarCarrera);
+            this.pnlSubMenuCarreras.Controls.Add(this.btnAgregarCarrera);
+            this.pnlSubMenuCarreras.Controls.Add(this.btnEliminarCarrera);
+            this.pnlSubMenuCarreras.Controls.Add(this.btnModificarCarrera);
+            this.pnlSubMenuCarreras.Controls.Add(this.panel4);
+            this.pnlSubMenuCarreras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenuCarreras.Location = new System.Drawing.Point(0, 387);
+            this.pnlSubMenuCarreras.Name = "pnlSubMenuCarreras";
+            this.pnlSubMenuCarreras.Size = new System.Drawing.Size(183, 116);
+            this.pnlSubMenuCarreras.TabIndex = 7;
+            // 
+            // btnBucarCarrera
+            // 
+            this.btnBucarCarrera.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBucarCarrera.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnBucarCarrera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnBucarCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBucarCarrera.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBucarCarrera.ForeColor = System.Drawing.Color.White;
+            this.btnBucarCarrera.Image = ((System.Drawing.Image)(resources.GetObject("btnBucarCarrera.Image")));
+            this.btnBucarCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBucarCarrera.Location = new System.Drawing.Point(6, 86);
+            this.btnBucarCarrera.Name = "btnBucarCarrera";
+            this.btnBucarCarrera.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnBucarCarrera.Size = new System.Drawing.Size(198, 30);
+            this.btnBucarCarrera.TabIndex = 1;
+            this.btnBucarCarrera.Text = "Buscar";
+            this.btnBucarCarrera.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregarCarrera
+            // 
+            this.btnAgregarCarrera.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarCarrera.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnAgregarCarrera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnAgregarCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarCarrera.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarCarrera.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarCarrera.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCarrera.Image")));
+            this.btnAgregarCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarCarrera.Location = new System.Drawing.Point(6, -1);
+            this.btnAgregarCarrera.Name = "btnAgregarCarrera";
+            this.btnAgregarCarrera.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnAgregarCarrera.Size = new System.Drawing.Size(198, 30);
+            this.btnAgregarCarrera.TabIndex = 1;
+            this.btnAgregarCarrera.Text = "Agregar";
+            this.btnAgregarCarrera.UseVisualStyleBackColor = true;
+            // 
+            // btnEliminarCarrera
+            // 
+            this.btnEliminarCarrera.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarCarrera.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnEliminarCarrera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnEliminarCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarCarrera.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarCarrera.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarCarrera.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarCarrera.Image")));
+            this.btnEliminarCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarCarrera.Location = new System.Drawing.Point(6, 28);
+            this.btnEliminarCarrera.Name = "btnEliminarCarrera";
+            this.btnEliminarCarrera.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnEliminarCarrera.Size = new System.Drawing.Size(198, 30);
+            this.btnEliminarCarrera.TabIndex = 1;
+            this.btnEliminarCarrera.Text = "Eliminar";
+            this.btnEliminarCarrera.UseVisualStyleBackColor = true;
+            // 
+            // btnModificarCarrera
+            // 
+            this.btnModificarCarrera.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarCarrera.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnModificarCarrera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnModificarCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarCarrera.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarCarrera.ForeColor = System.Drawing.Color.White;
+            this.btnModificarCarrera.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarCarrera.Image")));
+            this.btnModificarCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarCarrera.Location = new System.Drawing.Point(6, 57);
+            this.btnModificarCarrera.Name = "btnModificarCarrera";
+            this.btnModificarCarrera.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnModificarCarrera.Size = new System.Drawing.Size(198, 30);
+            this.btnModificarCarrera.TabIndex = 1;
+            this.btnModificarCarrera.Text = "Modificar";
+            this.btnModificarCarrera.UseVisualStyleBackColor = true;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel4.Location = new System.Drawing.Point(0, 400);
+            this.panel4.Location = new System.Drawing.Point(3, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 116);
-            this.panel4.TabIndex = 1;
+            this.panel4.TabIndex = 0;
             // 
-            // pnlSubCarreras
+            // btnGestionarCarreras
             // 
-            this.pnlSubCarreras.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlSubCarreras.Controls.Add(this.button9);
-            this.pnlSubCarreras.Controls.Add(this.button8);
-            this.pnlSubCarreras.Controls.Add(this.button6);
-            this.pnlSubCarreras.Controls.Add(this.button7);
-            this.pnlSubCarreras.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlSubCarreras.Location = new System.Drawing.Point(0, 394);
-            this.pnlSubCarreras.Name = "pnlSubCarreras";
-            this.pnlSubCarreras.Size = new System.Drawing.Size(200, 363);
-            this.pnlSubCarreras.TabIndex = 7;
-            // 
-            // button9
-            // 
-            this.button9.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button9.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Image = ((System.Drawing.Image)(resources.GetObject("button9.Image")));
-            this.button9.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button9.Location = new System.Drawing.Point(6, 92);
-            this.button9.Name = "button9";
-            this.button9.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.button9.Size = new System.Drawing.Size(198, 30);
-            this.button9.TabIndex = 1;
-            this.button9.Text = "Buscar";
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.btnBuscarAlumno_Click);
-            // 
-            // button8
-            // 
-            this.button8.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button8.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Image = ((System.Drawing.Image)(resources.GetObject("button8.Image")));
-            this.button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button8.Location = new System.Drawing.Point(6, 34);
-            this.button8.Name = "button8";
-            this.button8.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button8.Size = new System.Drawing.Size(198, 30);
-            this.button8.TabIndex = 1;
-            this.button8.Text = "Eliminar";
-            this.button8.UseVisualStyleBackColor = true;
-            this.button8.Click += new System.EventHandler(this.btnEliminarAlumno_Click);
-            // 
-            // button6
-            // 
-            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button6.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
-            this.button6.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button6.Location = new System.Drawing.Point(6, 5);
-            this.button6.Name = "button6";
-            this.button6.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button6.Size = new System.Drawing.Size(198, 30);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Agregar";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.btnAgregarAlumno_Click);
-            // 
-            // button7
-            // 
-            this.button7.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button7.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Image = ((System.Drawing.Image)(resources.GetObject("button7.Image")));
-            this.button7.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button7.Location = new System.Drawing.Point(6, 63);
-            this.button7.Name = "button7";
-            this.button7.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.button7.Size = new System.Drawing.Size(198, 30);
-            this.button7.TabIndex = 1;
-            this.button7.Text = "Modificar";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.btnModificarAlumno_Click);
-            // 
-            // button5
-            // 
-            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button5.Dock = System.Windows.Forms.DockStyle.Top;
-            this.button5.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button5.FlatAppearance.BorderSize = 2;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
-            this.button5.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button5.Location = new System.Drawing.Point(0, 359);
-            this.button5.Name = "button5";
-            this.button5.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.button5.Size = new System.Drawing.Size(200, 35);
-            this.button5.TabIndex = 6;
-            this.button5.Text = "       Carreras";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnGestionarCarreras.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnGestionarCarreras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGestionarCarreras.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGestionarCarreras.FlatAppearance.BorderSize = 2;
+            this.btnGestionarCarreras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnGestionarCarreras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGestionarCarreras.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGestionarCarreras.ForeColor = System.Drawing.Color.White;
+            this.btnGestionarCarreras.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarCarreras.Image")));
+            this.btnGestionarCarreras.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGestionarCarreras.Location = new System.Drawing.Point(0, 352);
+            this.btnGestionarCarreras.Name = "btnGestionarCarreras";
+            this.btnGestionarCarreras.Padding = new System.Windows.Forms.Padding(2, 0, 0, 0);
+            this.btnGestionarCarreras.Size = new System.Drawing.Size(183, 35);
+            this.btnGestionarCarreras.TabIndex = 6;
+            this.btnGestionarCarreras.Text = "  Carreras";
+            this.btnGestionarCarreras.UseVisualStyleBackColor = true;
+            this.btnGestionarCarreras.Click += new System.EventHandler(this.btnGestionarCarreras_Click);
             // 
             // pnlSubMenuAsignaturas
             // 
-            this.pnlSubMenuAsignaturas.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.pnlSubMenuAsignaturas.Controls.Add(this.button4);
-            this.pnlSubMenuAsignaturas.Controls.Add(this.button2);
-            this.pnlSubMenuAsignaturas.Controls.Add(this.button3);
-            this.pnlSubMenuAsignaturas.Controls.Add(this.panel2);
-            this.pnlSubMenuAsignaturas.Controls.Add(this.button1);
+            this.pnlSubMenuAsignaturas.Controls.Add(this.btnEliminarAsignatura);
+            this.pnlSubMenuAsignaturas.Controls.Add(this.btnBuscarAsignatura);
+            this.pnlSubMenuAsignaturas.Controls.Add(this.btnAgregarAsignatura);
+            this.pnlSubMenuAsignaturas.Controls.Add(this.btnModificarAsignatura);
+            this.pnlSubMenuAsignaturas.Controls.Add(this.panel7);
             this.pnlSubMenuAsignaturas.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenuAsignaturas.Location = new System.Drawing.Point(0, 236);
             this.pnlSubMenuAsignaturas.Name = "pnlSubMenuAsignaturas";
-            this.pnlSubMenuAsignaturas.Size = new System.Drawing.Size(200, 123);
+            this.pnlSubMenuAsignaturas.Size = new System.Drawing.Size(183, 116);
             this.pnlSubMenuAsignaturas.TabIndex = 5;
             // 
-            // button4
+            // btnEliminarAsignatura
             // 
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(3, 89);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(198, 30);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "Buscar";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.btnBuscarAlumno_Click);
+            this.btnEliminarAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminarAsignatura.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnEliminarAsignatura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnEliminarAsignatura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarAsignatura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarAsignatura.ForeColor = System.Drawing.Color.White;
+            this.btnEliminarAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarAsignatura.Image")));
+            this.btnEliminarAsignatura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarAsignatura.Location = new System.Drawing.Point(6, 28);
+            this.btnEliminarAsignatura.Name = "btnEliminarAsignatura";
+            this.btnEliminarAsignatura.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnEliminarAsignatura.Size = new System.Drawing.Size(198, 30);
+            this.btnEliminarAsignatura.TabIndex = 1;
+            this.btnEliminarAsignatura.Text = "Eliminar";
+            this.btnEliminarAsignatura.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnBuscarAsignatura
             // 
-            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button2.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(3, 31);
-            this.button2.Name = "button2";
-            this.button2.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button2.Size = new System.Drawing.Size(198, 30);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "Eliminar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.btnEliminarAlumno_Click);
+            this.btnBuscarAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscarAsignatura.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnBuscarAsignatura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnBuscarAsignatura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscarAsignatura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscarAsignatura.ForeColor = System.Drawing.Color.White;
+            this.btnBuscarAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarAsignatura.Image")));
+            this.btnBuscarAsignatura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBuscarAsignatura.Location = new System.Drawing.Point(6, 86);
+            this.btnBuscarAsignatura.Name = "btnBuscarAsignatura";
+            this.btnBuscarAsignatura.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
+            this.btnBuscarAsignatura.Size = new System.Drawing.Size(198, 30);
+            this.btnBuscarAsignatura.TabIndex = 1;
+            this.btnBuscarAsignatura.Text = "Buscar";
+            this.btnBuscarAsignatura.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnAgregarAsignatura
             // 
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(3, 60);
-            this.button3.Name = "button3";
-            this.button3.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
-            this.button3.Size = new System.Drawing.Size(198, 30);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Modificar";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.btnModificarAlumno_Click);
+            this.btnAgregarAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarAsignatura.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnAgregarAsignatura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnAgregarAsignatura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarAsignatura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarAsignatura.ForeColor = System.Drawing.Color.White;
+            this.btnAgregarAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarAsignatura.Image")));
+            this.btnAgregarAsignatura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarAsignatura.Location = new System.Drawing.Point(6, -1);
+            this.btnAgregarAsignatura.Name = "btnAgregarAsignatura";
+            this.btnAgregarAsignatura.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
+            this.btnAgregarAsignatura.Size = new System.Drawing.Size(198, 30);
+            this.btnAgregarAsignatura.TabIndex = 1;
+            this.btnAgregarAsignatura.Text = "Agregar";
+            this.btnAgregarAsignatura.UseVisualStyleBackColor = true;
             // 
-            // panel2
+            // btnModificarAsignatura
             // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel2.Location = new System.Drawing.Point(0, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(5, 116);
-            this.panel2.TabIndex = 0;
+            this.btnModificarAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnModificarAsignatura.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnModificarAsignatura.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.btnModificarAsignatura.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarAsignatura.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarAsignatura.ForeColor = System.Drawing.Color.White;
+            this.btnModificarAsignatura.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarAsignatura.Image")));
+            this.btnModificarAsignatura.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarAsignatura.Location = new System.Drawing.Point(6, 57);
+            this.btnModificarAsignatura.Name = "btnModificarAsignatura";
+            this.btnModificarAsignatura.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
+            this.btnModificarAsignatura.Size = new System.Drawing.Size(198, 30);
+            this.btnModificarAsignatura.TabIndex = 1;
+            this.btnModificarAsignatura.Text = "Modificar";
+            this.btnModificarAsignatura.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // panel7
             // 
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(3, 2);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(198, 30);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Agregar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnAgregarAlumno_Click);
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel7.Location = new System.Drawing.Point(3, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(5, 116);
+            this.panel7.TabIndex = 0;
             // 
             // btnGestionarAsignaturas
             // 
@@ -410,7 +679,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnGestionarAsignaturas.Location = new System.Drawing.Point(0, 201);
             this.btnGestionarAsignaturas.Name = "btnGestionarAsignaturas";
             this.btnGestionarAsignaturas.Padding = new System.Windows.Forms.Padding(5, 0, 0, 0);
-            this.btnGestionarAsignaturas.Size = new System.Drawing.Size(200, 35);
+            this.btnGestionarAsignaturas.Size = new System.Drawing.Size(183, 35);
             this.btnGestionarAsignaturas.TabIndex = 1;
             this.btnGestionarAsignaturas.Text = "       Asignaturas";
             this.btnGestionarAsignaturas.UseVisualStyleBackColor = true;
@@ -422,11 +691,11 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pnlSubMenuAlumnos.Controls.Add(this.btnModificarAlumno);
             this.pnlSubMenuAlumnos.Controls.Add(this.btnEliminarAlumno);
             this.pnlSubMenuAlumnos.Controls.Add(this.btnAgregarAlumno);
-            this.pnlSubMenuAlumnos.Controls.Add(this.panel1);
+            this.pnlSubMenuAlumnos.Controls.Add(this.panel8);
             this.pnlSubMenuAlumnos.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenuAlumnos.Location = new System.Drawing.Point(0, 85);
             this.pnlSubMenuAlumnos.Name = "pnlSubMenuAlumnos";
-            this.pnlSubMenuAlumnos.Size = new System.Drawing.Size(200, 116);
+            this.pnlSubMenuAlumnos.Size = new System.Drawing.Size(183, 116);
             this.pnlSubMenuAlumnos.TabIndex = 4;
             // 
             // btnBuscarAlumno
@@ -446,7 +715,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnBuscarAlumno.TabIndex = 1;
             this.btnBuscarAlumno.Text = "Buscar";
             this.btnBuscarAlumno.UseVisualStyleBackColor = true;
-            this.btnBuscarAlumno.Click += new System.EventHandler(this.btnBuscarAlumno_Click);
             // 
             // btnModificarAlumno
             // 
@@ -465,7 +733,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnModificarAlumno.TabIndex = 1;
             this.btnModificarAlumno.Text = "Modificar";
             this.btnModificarAlumno.UseVisualStyleBackColor = true;
-            this.btnModificarAlumno.Click += new System.EventHandler(this.btnModificarAlumno_Click);
             // 
             // btnEliminarAlumno
             // 
@@ -484,7 +751,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnEliminarAlumno.TabIndex = 1;
             this.btnEliminarAlumno.Text = "Eliminar";
             this.btnEliminarAlumno.UseVisualStyleBackColor = true;
-            this.btnEliminarAlumno.Click += new System.EventHandler(this.btnEliminarAlumno_Click);
             // 
             // btnAgregarAlumno
             // 
@@ -503,15 +769,14 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnAgregarAlumno.TabIndex = 1;
             this.btnAgregarAlumno.Text = "Agregar";
             this.btnAgregarAlumno.UseVisualStyleBackColor = true;
-            this.btnAgregarAlumno.Click += new System.EventHandler(this.btnAgregarAlumno_Click);
             // 
-            // panel1
+            // panel8
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel1.Location = new System.Drawing.Point(3, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(5, 116);
-            this.panel1.TabIndex = 0;
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel8.Location = new System.Drawing.Point(3, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(5, 116);
+            this.panel8.TabIndex = 0;
             // 
             // btnGestionarAlumnos
             // 
@@ -527,7 +792,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnGestionarAlumnos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnGestionarAlumnos.Location = new System.Drawing.Point(0, 50);
             this.btnGestionarAlumnos.Name = "btnGestionarAlumnos";
-            this.btnGestionarAlumnos.Size = new System.Drawing.Size(200, 35);
+            this.btnGestionarAlumnos.Size = new System.Drawing.Size(183, 35);
             this.btnGestionarAlumnos.TabIndex = 1;
             this.btnGestionarAlumnos.Text = "   Alumnos";
             this.btnGestionarAlumnos.UseVisualStyleBackColor = true;
@@ -539,7 +804,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pnlHome.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlHome.Location = new System.Drawing.Point(0, 0);
             this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(200, 50);
+            this.pnlHome.Size = new System.Drawing.Size(183, 50);
             this.pnlHome.TabIndex = 0;
             // 
             // btnCerrarSesion
@@ -561,35 +826,16 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // pnlSuperiorMenuAdmin
+            // imgVision
             // 
-            this.pnlSuperiorMenuAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
-            this.pnlSuperiorMenuAdmin.Controls.Add(this.btnMinimizar);
-            this.pnlSuperiorMenuAdmin.Controls.Add(this.btnMaximizar);
-            this.pnlSuperiorMenuAdmin.Controls.Add(this.btnRestaurar);
-            this.pnlSuperiorMenuAdmin.Controls.Add(this.btnCerrar);
-            this.pnlSuperiorMenuAdmin.Controls.Add(this.imgMasOpciones);
-            this.pnlSuperiorMenuAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSuperiorMenuAdmin.Location = new System.Drawing.Point(0, 0);
-            this.pnlSuperiorMenuAdmin.Name = "pnlSuperiorMenuAdmin";
-            this.pnlSuperiorMenuAdmin.Size = new System.Drawing.Size(1205, 35);
-            this.pnlSuperiorMenuAdmin.TabIndex = 0;
-            this.pnlSuperiorMenuAdmin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlSuperiorMenuAdmin_MouseDown);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1077, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 35);
-            this.btnMinimizar.TabIndex = 0;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            this.btnMinimizar.Click += new System.EventHandler(this.btnMinimizar_Click);
+            this.imgVision.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgVision.Image = ((System.Drawing.Image)(resources.GetObject("imgVision.Image")));
+            this.imgVision.Location = new System.Drawing.Point(372, 401);
+            this.imgVision.Name = "imgVision";
+            this.imgVision.Size = new System.Drawing.Size(558, 126);
+            this.imgVision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgVision.TabIndex = 2;
+            this.imgVision.TabStop = false;
             // 
             // btnMaximizar
             // 
@@ -599,28 +845,60 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnMaximizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
             this.btnMaximizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(1119, 0);
+            this.btnMaximizar.Location = new System.Drawing.Point(1119, 24);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(45, 35);
             this.btnMaximizar.TabIndex = 0;
             this.btnMaximizar.UseVisualStyleBackColor = true;
-            this.btnMaximizar.Click += new System.EventHandler(this.btnMaximizar_Click);
             // 
-            // btnRestaurar
+            // imgMision
             // 
-            this.btnRestaurar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnRestaurar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRestaurar.FlatAppearance.BorderSize = 0;
-            this.btnRestaurar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
-            this.btnRestaurar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRestaurar.Image = ((System.Drawing.Image)(resources.GetObject("btnRestaurar.Image")));
-            this.btnRestaurar.Location = new System.Drawing.Point(1119, 0);
-            this.btnRestaurar.Name = "btnRestaurar";
-            this.btnRestaurar.Size = new System.Drawing.Size(45, 35);
-            this.btnRestaurar.TabIndex = 0;
-            this.btnRestaurar.UseVisualStyleBackColor = true;
-            this.btnRestaurar.Visible = false;
-            this.btnRestaurar.Click += new System.EventHandler(this.btnRestaurar_Click);
+            this.imgMision.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgMision.Image = ((System.Drawing.Image)(resources.GetObject("imgMision.Image")));
+            this.imgMision.Location = new System.Drawing.Point(372, 249);
+            this.imgMision.Name = "imgMision";
+            this.imgMision.Size = new System.Drawing.Size(558, 126);
+            this.imgMision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgMision.TabIndex = 1;
+            this.imgMision.TabStop = false;
+            // 
+            // imgLogoTipo
+            // 
+            this.imgLogoTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgLogoTipo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogoTipo.Image")));
+            this.imgLogoTipo.Location = new System.Drawing.Point(503, 20);
+            this.imgLogoTipo.Name = "imgLogoTipo";
+            this.imgLogoTipo.Size = new System.Drawing.Size(254, 188);
+            this.imgLogoTipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgLogoTipo.TabIndex = 0;
+            this.imgLogoTipo.TabStop = false;
+            // 
+            // pnlSuperiorMenuAdmin
+            // 
+            this.pnlSuperiorMenuAdmin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
+            this.pnlSuperiorMenuAdmin.Controls.Add(this.btnMinimizar);
+            this.pnlSuperiorMenuAdmin.Controls.Add(this.btnCerrar);
+            this.pnlSuperiorMenuAdmin.Controls.Add(this.imgMasOpciones);
+            this.pnlSuperiorMenuAdmin.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlSuperiorMenuAdmin.Location = new System.Drawing.Point(0, 0);
+            this.pnlSuperiorMenuAdmin.Name = "pnlSuperiorMenuAdmin";
+            this.pnlSuperiorMenuAdmin.Size = new System.Drawing.Size(1205, 677);
+            this.pnlSuperiorMenuAdmin.TabIndex = 3;
+            this.pnlSuperiorMenuAdmin.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlSuperiorMenuAdmin_MouseDown_1);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(1119, 3);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(45, 35);
+            this.btnMinimizar.TabIndex = 0;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
             // 
             // btnCerrar
             // 
@@ -641,7 +919,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             // 
             this.imgMasOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
             this.imgMasOpciones.Image = ((System.Drawing.Image)(resources.GetObject("imgMasOpciones.Image")));
-            this.imgMasOpciones.Location = new System.Drawing.Point(3, -1);
+            this.imgMasOpciones.Location = new System.Drawing.Point(-1, 0);
             this.imgMasOpciones.Name = "imgMasOpciones";
             this.imgMasOpciones.Size = new System.Drawing.Size(36, 34);
             this.imgMasOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -651,14 +929,14 @@ namespace SistemaUniversidad.DISEÑO.Menu
             // 
             // dragControlMenuAdmin
             // 
-            this.dragControlMenuAdmin.SelectControl = this.pnlSuperiorMenuAdmin;
+            this.dragControlMenuAdmin.SelectControl = null;
             // 
             // MenuAdmin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(1207, 794);
+            this.ClientSize = new System.Drawing.Size(1207, 680);
             this.Controls.Add(this.panelContenedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -669,14 +947,21 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.Load += new System.EventHandler(this.MenuAdmin_Load);
             this.panelContenedor.ResumeLayout(false);
             this.pnlContenedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgVision)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMision)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoTipo)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.pnlMenuLateral.ResumeLayout(false);
-            this.pnlSubCarreras.ResumeLayout(false);
+            this.pnlSubMenuHorarios.ResumeLayout(false);
+            this.pnlSubMenuDocentes.ResumeLayout(false);
+            this.pnlSubMenuCarreras.ResumeLayout(false);
             this.pnlSubMenuAsignaturas.ResumeLayout(false);
             this.pnlSubMenuAlumnos.ResumeLayout(false);
             this.pnlHome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgVision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoTipo)).EndInit();
             this.pnlSuperiorMenuAdmin.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).EndInit();
             this.ResumeLayout(false);
@@ -686,40 +971,58 @@ namespace SistemaUniversidad.DISEÑO.Menu
         #endregion
 
         private System.Windows.Forms.Panel panelContenedor;
-        private System.Windows.Forms.Panel pnlSuperiorMenuAdmin;
-        private System.Windows.Forms.Panel pnlMenuLateral;
         private LOGICA.DragControl dragControlMenuAdmin;
-        private System.Windows.Forms.Panel pnlContenedor;
-        private System.Windows.Forms.Panel pnlHome;
-        private System.Windows.Forms.Button btnGestionarAlumnos;
-        private System.Windows.Forms.Button btnGestionarAsignaturas;
-        private System.Windows.Forms.Panel pnlSubMenuAlumnos;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnBuscarAlumno;
-        private System.Windows.Forms.Button btnModificarAlumno;
-        private System.Windows.Forms.Button btnEliminarAlumno;
-        private System.Windows.Forms.Button btnAgregarAlumno;
-        private System.Windows.Forms.PictureBox imgMasOpciones;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.Button btnRestaurar;
-        private System.Windows.Forms.Button btnMaximizar;
-        private System.Windows.Forms.Button btnMinimizar;
-        private System.Windows.Forms.Button btnCerrarSesion;
-        private PictureBox imgLogoTipo;
-        private PictureBox imgVision;
-        private PictureBox imgMision;
-        private Panel pnlSubMenuAsignaturas;
-        private Button button4;
-        private Button button2;
-        private Button button3;
+        private Panel pnlContenedor;
+        private Panel panel1;
         private Panel panel2;
-        private Button button1;
-        private Button button5;
+        private PictureBox pictureBox1;
+        private PictureBox pictureBox2;
+        private PictureBox pictureBox3;
+        private Panel pnlMenuLateral;
+        private Panel pnlSubMenuHorarios;
+        private Button btnBuscarHorario;
+        private Button btnAgregarHorario;
+        private Button btnEliminarHorario;
+        private Button btnModificarHorario;
+        private Panel panel5;
+        private Button btnGestionarHorarios;
+        private Panel pnlSubMenuDocentes;
+        private Button btnEliminarDocentes;
+        private Button btnModificarDocentes;
+        private Button btnBuscaeDocentes;
+        private Button btnAgregarDocentes;
+        private Panel panel3;
+        private Button btnGestionarDocentes;
+        private Panel pnlSubMenuCarreras;
+        private Button btnBucarCarrera;
+        private Button btnAgregarCarrera;
+        private Button btnEliminarCarrera;
+        private Button btnModificarCarrera;
         private Panel panel4;
-        private Panel pnlSubCarreras;
-        private Button button9;
-        private Button button8;
-        private Button button6;
-        private Button button7;
+        private Button btnGestionarCarreras;
+        private Panel pnlSubMenuAsignaturas;
+        private Button btnEliminarAsignatura;
+        private Button btnBuscarAsignatura;
+        private Button btnAgregarAsignatura;
+        private Button btnModificarAsignatura;
+        private Panel panel7;
+        private Button btnGestionarAsignaturas;
+        private Panel pnlSubMenuAlumnos;
+        private Button btnBuscarAlumno;
+        private Button btnModificarAlumno;
+        private Button btnEliminarAlumno;
+        private Button btnAgregarAlumno;
+        private Panel panel8;
+        private Button btnGestionarAlumnos;
+        private Panel pnlHome;
+        private Button btnCerrarSesion;
+        private PictureBox imgVision;
+        private Button btnMaximizar;
+        private PictureBox imgMision;
+        private PictureBox imgLogoTipo;
+        private Panel pnlSuperiorMenuAdmin;
+        private Button btnMinimizar;
+        private Button btnCerrar;
+        private PictureBox imgMasOpciones;
     }
 }
