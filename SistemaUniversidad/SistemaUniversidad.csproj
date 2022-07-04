@@ -130,11 +130,41 @@
     <Compile Include="DISEÑO\Administrador\Asignaturas\AgregarAsignatura.Designer.cs">
       <DependentUpon>AgregarAsignatura.cs</DependentUpon>
     </Compile>
+    <Compile Include="DISEÑO\Administrador\Asignaturas\BuscarAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Asignaturas\BuscarAsignatura.Designer.cs">
+      <DependentUpon>BuscarAsignatura.cs</DependentUpon>
+    </Compile>
     <Compile Include="DISEÑO\Administrador\Asignaturas\EliminarAsignatura.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="DISEÑO\Administrador\Asignaturas\EliminarAsignatura.Designer.cs">
       <DependentUpon>EliminarAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Asignaturas\ModificarAsignatura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Asignaturas\ModificarAsignatura.Designer.cs">
+      <DependentUpon>ModificarAsignatura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Carreras\AgregarCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Carreras\AgregarCarrera.Designer.cs">
+      <DependentUpon>AgregarCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Carreras\EliminarCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Carreras\EliminarCarrera.Designer.cs">
+      <DependentUpon>EliminarCarrera.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Carreras\ModificarCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Carreras\ModificarCarrera.Designer.cs">
+      <DependentUpon>ModificarCarrera.cs</DependentUpon>
     </Compile>
     <Compile Include="DISEÑO\Docente\AgregarCalificaciones.cs">
       <SubType>Form</SubType>
@@ -226,6 +256,9 @@
     <EmbeddedResource Include="DISEÑO\Administrador\Asignaturas\EliminarAsignatura.resx">
       <DependentUpon>EliminarAsignatura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Carreras\AgregarCarrera.resx">
+      <DependentUpon>AgregarCarrera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Docente\AgregarCalificaciones.resx">
       <DependentUpon>AgregarCalificaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -278,7 +311,10 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Folder Include="DISEÑO\Administrador\Docentes\" />
+    <Folder Include="DISEÑO\Administrador\Horarios\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="Images\1-login.png" />
     <Content Include="Images\1486503746-book-learning-bookmark-ribbon-education-mark-school_81290.ico" />

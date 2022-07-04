@@ -38,6 +38,9 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             if (pnlSubMenuAsignaturas.Visible == true) {
                 pnlSubMenuAsignaturas.Visible = false;
             }
+            if(pnlSubCarreras.Visible == true) {
+                pnlSubCarreras.Visible = false;
+            }
         }
         //Muestra el panel de Sub Menú indicado como parámetro
         private void MostrarSubMenu(Panel mostrar) {
@@ -125,10 +128,9 @@ namespace SistemaUniversidad.DISEÑO.Menu {
         #region Cerrar Sesión
         private void btnCerrarSesion_Click(object sender, EventArgs e) {
             if (MessageBox.Show("¿SEGURO QUE DESEA CERRAR SESION?", "¡ATENCION!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
-                Login.Login FormLogIn = new Login.Login();
+                Sesiones.Bienvenido bienvenido = new Sesiones.Bienvenido();
                 this.Hide();
-                FormLogIn.logIn = this;
-                FormLogIn.Show();
+                bienvenido.Show();
             }
         }
         #endregion

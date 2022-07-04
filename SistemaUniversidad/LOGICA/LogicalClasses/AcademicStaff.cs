@@ -7,8 +7,9 @@ using System.Threading.Tasks;
 namespace SistemaUniversidad.LOGICA.LogicalClasses {
     public abstract class AcademicStaff {
 
-        public string FirstName{get; set;}
-        public string Lastname { get; set; }
+        public string Name{get; set;}
+        public string FirstSurname { get; set; }
+        public string SecondSurname { get; set; }
         public string CareerA { get; set; }
         public string CareerB { get; set; }
         public string Password { get; set; }

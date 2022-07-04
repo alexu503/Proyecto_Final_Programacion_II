@@ -11,38 +11,31 @@ using MySql.Data.MySqlClient;
 using SistemaUniversidad.LOGICA;
 using SistemaUniversidad.LOGICA.DATABASE;
 
-namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas
-{
-    public partial class AgregarAsignatura : Form
-    {
+namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
+    public partial class AgregarAsignatura : Form {
         public Form agregarAsignatura;
-        public AgregarAsignatura()
-        {
+        public AgregarAsignatura() {
             InitializeComponent();
         }
 
-        private void btnRestaurar_Click(object sender, EventArgs e)
-        {
+        private void btnRestaurar_Click(object sender, EventArgs e) {
             BotonesPnlSuperior boton = new BotonesPnlSuperior();
             boton.Restaurar(this, sender, e, btnRestaurar, btnMaximizar);
         }
 
-        private void btnMinimizar_Click(object sender, EventArgs e)
-        {
+        private void btnMinimizar_Click(object sender, EventArgs e) {
             BotonesPnlSuperior boton = new BotonesPnlSuperior();
             boton.Minimizar(this, sender, e);
         }
 
-        private void btnCerrar_Click(object sender, EventArgs e)
-        {
+        private void btnCerrar_Click(object sender, EventArgs e) {
             Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();
             MenuAdmin.menuAdmin = this;
             this.Close();
             MenuAdmin.Show();
         }
 
-        private void btnMaximizar_Click(object sender, EventArgs e)
-        {
+        private void btnMaximizar_Click(object sender, EventArgs e) {
             BotonesPnlSuperior boton = new BotonesPnlSuperior();
             boton.Maximizar(this, sender, e, btnMaximizar, btnRestaurar);
         }

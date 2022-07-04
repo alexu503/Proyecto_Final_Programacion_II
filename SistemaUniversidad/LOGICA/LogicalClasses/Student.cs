@@ -8,7 +8,8 @@ namespace SistemaUniversidad.LOGICA.LogicalClasses{
     public class Student: AcademicStaff{
 
         private string name;
-        private string firstLastname;
+        private string firstSurname;
+        private string secondSurname;
         private string career;
         private string passwrd;
         private string birthday;
@@ -23,9 +24,10 @@ namespace SistemaUniversidad.LOGICA.LogicalClasses{
         private string nationality;
         //private float[] notas;
 
-        public Student(string n, string fl, string c, string p, string b, string dni, string sex, string add, string ph, string mph, string e, string id, string cs, string nn) {
+        public Student(string n, string fl1, string fl2, string c, string p, string b, string dni, string sex, string add, string ph, string mph, string e, string id, string cs, string nn) {
             name = n;
-            firstLastname = fl;
+            firstSurname = fl1;
+            secondSurname = fl2;
             career = c;
             passwrd = p;
             birthday = b;
@@ -45,8 +47,9 @@ namespace SistemaUniversidad.LOGICA.LogicalClasses{
         }
 
         public override void AddNewStaff() {
-            FirstName = this.name;
-            Lastname = firstLastname;
+            Name = this.name;
+            FirstSurname = firstSurname;
+            SecondSurname = secondSurname;
             CareerA = career;
             Password = passwrd;
             BirthDate = birthday;

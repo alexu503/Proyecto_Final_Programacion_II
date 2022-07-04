@@ -43,8 +43,9 @@ namespace SistemaUniversidad.DISEÑO.Registro {
         void ReceiveInputs() {
             Student student = new Student();
 
-            student.FirstName = txtGetName.Text;
-            student.Lastname = txtGetLastname.Text;
+            student.Name = txtGetName.Text;
+            student.FirstSurname = txtGet1stLastname.Text;
+            student.SecondSurname = txtGet2ndLastname.Text;
             student.BirthDate = dtPGetBirthday.Text;
             student.DNI = txtGetDNI.Text;
             student.Email = txtGetEmail.Text;
@@ -74,14 +75,25 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             }
         }
 
-        private void txtGetLastname_KeyPress(object sender, KeyPressEventArgs e) {
+        private void txtGet1stLastname_KeyPress(object sender, KeyPressEventArgs e) {
             if (char.IsDigit(e.KeyChar)) {
                 MessageBox.Show("No se permiten números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtGetLastname.Clear();
+                txtGet1stLastname.Clear();
             }
             if (char.IsPunctuation(e.KeyChar)) {
                 MessageBox.Show("No se permiten signos de puntuación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtGetLastname.Clear();
+                txtGet1stLastname.Clear();
+            }
+        }
+
+        private void txtGet2ndLastname_KeyPress(object sender, KeyPressEventArgs e) {
+            if (char.IsDigit(e.KeyChar)) {
+                MessageBox.Show("No se permiten números", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtGet2ndLastname.Clear();
+            }
+            if (char.IsPunctuation(e.KeyChar)) {
+                MessageBox.Show("No se permiten signos de puntuación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtGet2ndLastname.Clear();
             }
         }
 
@@ -96,7 +108,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
 
             string phoneCheckerRegex = "(+503|503| )?[ -]*(6|7)[ -]*([0-9][ -]*){8}"; //Formato para número de télefono
 
-            if (txtGetLastname.Text != "" && txtGetName.Text != "" &&txtGetDNI.Text != "" && txtGetEmail.Text != "" && txtGetMobilePhone.Text != "" && txtGetAddress.Text != "") {
+            if (txtGet1stLastname.Text != "" && txtGetName.Text != "" &&txtGetDNI.Text != "" && txtGetEmail.Text != "" && txtGetMobilePhone.Text != "" && txtGetAddress.Text != "") {
                 if (ValidateDate()) {
                     if (cmbGetNationality.Text != "" && cmbGetMaritalStatus.Text != "" && cmbGetCareer.Text != "") {
                         if(rbtnMale.Checked == true || rbtnFemale.Checked == true) {
@@ -132,7 +144,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
 
         private void btnCancell_Click(object sender, EventArgs e) {
             txtGetName.Clear();
-            txtGetLastname.Clear();
+            txtGet1stLastname.Clear();
             dtPGetBirthday.ResetText();
             txtGetDNI.Clear();
             txtGetEmail.Clear();
@@ -167,24 +179,6 @@ namespace SistemaUniversidad.DISEÑO.Registro {
         private void txtGetPhone_Enter(object sender, EventArgs e) {
             txtGetPhone.Clear();
             txtGetPhone.ForeColor = System.Drawing.Color.Black;
-        }
-
-        private void txtGetEmail_Leave(object sender, EventArgs e) {
-            txtGetEmail.Tag = "universidad@gmail.com";
-            txtGetEmail.Text = "universidad@gmail.com";
-            txtGetEmail.ForeColor = System.Drawing.Color.Gray;
-        }
-
-        private void txtGetMobilePhone_Leave(object sender, EventArgs e) {
-            txtGetMobilePhone.Tag = "7259-8563";
-            txtGetMobilePhone.Text = "7259-8563";
-            txtGetMobilePhone.ForeColor = System.Drawing.Color.Gray;
-        }
-
-        private void txtGetPhone_Leave(object sender, EventArgs e) {
-            txtGetPhone.Tag = "2665-0925";
-            txtGetPhone.Text = "2665-0925";
-            txtGetPhone.ForeColor = System.Drawing.Color.Gray;
         }
     }
 }

@@ -37,10 +37,12 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             this.cmbGetNationality = new System.Windows.Forms.ComboBox();
             this.lblCareer = new System.Windows.Forms.Label();
             this.cmbGetCareer = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblLastname = new System.Windows.Forms.Label();
             this.lblName = new System.Windows.Forms.Label();
             this.cmbGetMaritalStatus = new System.Windows.Forms.ComboBox();
-            this.txtGetLastname = new System.Windows.Forms.TextBox();
+            this.txtGet2ndLastname = new System.Windows.Forms.TextBox();
+            this.txtGet1stLastname = new System.Windows.Forms.TextBox();
             this.txtGetName = new System.Windows.Forms.TextBox();
             this.txtGetEmail = new System.Windows.Forms.TextBox();
             this.dtPGetBirthday = new System.Windows.Forms.DateTimePicker();
@@ -82,7 +84,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             this.lblDescrip.AutoSize = true;
             this.lblDescrip.Font = new System.Drawing.Font("Century Gothic", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDescrip.ForeColor = System.Drawing.Color.White;
-            this.lblDescrip.Location = new System.Drawing.Point(447, 2);
+            this.lblDescrip.Location = new System.Drawing.Point(482, 0);
             this.lblDescrip.Name = "lblDescrip";
             this.lblDescrip.Size = new System.Drawing.Size(171, 33);
             this.lblDescrip.TabIndex = 34;
@@ -97,10 +99,12 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             this.groupBox1.Controls.Add(this.cmbGetNationality);
             this.groupBox1.Controls.Add(this.lblCareer);
             this.groupBox1.Controls.Add(this.cmbGetCareer);
+            this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblLastname);
             this.groupBox1.Controls.Add(this.lblName);
             this.groupBox1.Controls.Add(this.cmbGetMaritalStatus);
-            this.groupBox1.Controls.Add(this.txtGetLastname);
+            this.groupBox1.Controls.Add(this.txtGet2ndLastname);
+            this.groupBox1.Controls.Add(this.txtGet1stLastname);
             this.groupBox1.Controls.Add(this.txtGetName);
             this.groupBox1.Controls.Add(this.txtGetEmail);
             this.groupBox1.Controls.Add(this.dtPGetBirthday);
@@ -152,7 +156,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             this.lblNoObli.AutoSize = true;
             this.lblNoObli.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNoObli.ForeColor = System.Drawing.Color.Maroon;
-            this.lblNoObli.Location = new System.Drawing.Point(568, 325);
+            this.lblNoObli.Location = new System.Drawing.Point(784, 286);
             this.lblNoObli.Name = "lblNoObli";
             this.lblNoObli.Size = new System.Drawing.Size(104, 16);
             this.lblNoObli.TabIndex = 26;
@@ -168,7 +172,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             "Honduras",
             "Nicaragua",
             "Costa Rica"});
-            this.cmbGetNationality.Location = new System.Drawing.Point(609, 376);
+            this.cmbGetNationality.Location = new System.Drawing.Point(702, 373);
             this.cmbGetNationality.Name = "cmbGetNationality";
             this.cmbGetNationality.Size = new System.Drawing.Size(151, 29);
             this.cmbGetNationality.TabIndex = 25;
@@ -192,21 +196,31 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             this.cmbGetCareer.Size = new System.Drawing.Size(307, 29);
             this.cmbGetCareer.TabIndex = 5;
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(286, 52);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(146, 21);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "Segundo apellido";
+            // 
             // lblLastname
             // 
             this.lblLastname.AutoSize = true;
             this.lblLastname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLastname.Location = new System.Drawing.Point(26, 49);
+            this.lblLastname.Location = new System.Drawing.Point(26, 52);
             this.lblLastname.Name = "lblLastname";
-            this.lblLastname.Size = new System.Drawing.Size(74, 21);
+            this.lblLastname.Size = new System.Drawing.Size(123, 21);
             this.lblLastname.TabIndex = 6;
-            this.lblLastname.Text = "Apellido";
+            this.lblLastname.Text = "Primer apellido";
             // 
             // lblName
             // 
             this.lblName.AutoSize = true;
             this.lblName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblName.Location = new System.Drawing.Point(474, 52);
+            this.lblName.Location = new System.Drawing.Point(579, 52);
             this.lblName.Name = "lblName";
             this.lblName.Size = new System.Drawing.Size(79, 21);
             this.lblName.TabIndex = 6;
@@ -226,19 +240,28 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             this.cmbGetMaritalStatus.Size = new System.Drawing.Size(172, 29);
             this.cmbGetMaritalStatus.TabIndex = 22;
             // 
-            // txtGetLastname
+            // txtGet2ndLastname
             // 
-            this.txtGetLastname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGetLastname.Location = new System.Drawing.Point(131, 46);
-            this.txtGetLastname.Name = "txtGetLastname";
-            this.txtGetLastname.Size = new System.Drawing.Size(176, 27);
-            this.txtGetLastname.TabIndex = 7;
-            this.txtGetLastname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetLastname_KeyPress);
+            this.txtGet2ndLastname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGet2ndLastname.Location = new System.Drawing.Point(438, 46);
+            this.txtGet2ndLastname.Multiline = true;
+            this.txtGet2ndLastname.Name = "txtGet2ndLastname";
+            this.txtGet2ndLastname.Size = new System.Drawing.Size(135, 27);
+            this.txtGet2ndLastname.TabIndex = 28;
+            // 
+            // txtGet1stLastname
+            // 
+            this.txtGet1stLastname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGet1stLastname.Location = new System.Drawing.Point(156, 46);
+            this.txtGet1stLastname.Name = "txtGet1stLastname";
+            this.txtGet1stLastname.Size = new System.Drawing.Size(124, 27);
+            this.txtGet1stLastname.TabIndex = 7;
+            this.txtGet1stLastname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGet1stLastname_KeyPress);
             // 
             // txtGetName
             // 
             this.txtGetName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGetName.Location = new System.Drawing.Point(571, 49);
+            this.txtGetName.Location = new System.Drawing.Point(664, 46);
             this.txtGetName.Name = "txtGetName";
             this.txtGetName.Size = new System.Drawing.Size(189, 27);
             this.txtGetName.TabIndex = 9;
@@ -248,14 +271,13 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             // 
             this.txtGetEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGetEmail.ForeColor = System.Drawing.Color.DimGray;
-            this.txtGetEmail.Location = new System.Drawing.Point(559, 214);
+            this.txtGetEmail.Location = new System.Drawing.Point(652, 205);
             this.txtGetEmail.Name = "txtGetEmail";
             this.txtGetEmail.Size = new System.Drawing.Size(201, 27);
             this.txtGetEmail.TabIndex = 19;
             this.txtGetEmail.Tag = "universidad@gmail.com";
             this.txtGetEmail.Text = "universidad@gmail.com";
             this.txtGetEmail.Enter += new System.EventHandler(this.txtGetEmail_Enter);
-            this.txtGetEmail.Leave += new System.EventHandler(this.txtGetEmail_Leave);
             // 
             // dtPGetBirthday
             // 
@@ -279,7 +301,6 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             this.txtGetMobilePhone.Tag = "7259-8563";
             this.txtGetMobilePhone.Text = "7259-8563";
             this.txtGetMobilePhone.Enter += new System.EventHandler(this.txtGetMobilePhone_Enter);
-            this.txtGetMobilePhone.Leave += new System.EventHandler(this.txtGetMobilePhone_Leave);
             // 
             // lblBirthday
             // 
@@ -295,7 +316,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             // 
             this.txtGetPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtGetPhone.ForeColor = System.Drawing.Color.DimGray;
-            this.txtGetPhone.Location = new System.Drawing.Point(558, 286);
+            this.txtGetPhone.Location = new System.Drawing.Point(652, 283);
             this.txtGetPhone.MaxLength = 9;
             this.txtGetPhone.Name = "txtGetPhone";
             this.txtGetPhone.Size = new System.Drawing.Size(126, 27);
@@ -303,13 +324,12 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             this.txtGetPhone.Tag = "2665-0925";
             this.txtGetPhone.Text = "2665-0925";
             this.txtGetPhone.Enter += new System.EventHandler(this.txtGetPhone_Enter);
-            this.txtGetPhone.Leave += new System.EventHandler(this.txtGetPhone_Leave);
             // 
             // lblSex
             // 
             this.lblSex.AutoSize = true;
             this.lblSex.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSex.Location = new System.Drawing.Point(475, 130);
+            this.lblSex.Location = new System.Drawing.Point(567, 128);
             this.lblSex.Name = "lblSex";
             this.lblSex.Size = new System.Drawing.Size(46, 21);
             this.lblSex.TabIndex = 12;
@@ -347,7 +367,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(478, 214);
+            this.lblEmail.Location = new System.Drawing.Point(571, 205);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(63, 21);
             this.lblEmail.TabIndex = 15;
@@ -357,7 +377,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             // 
             this.rbtnMale.AutoSize = true;
             this.rbtnMale.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnMale.Location = new System.Drawing.Point(527, 130);
+            this.rbtnMale.Location = new System.Drawing.Point(637, 126);
             this.rbtnMale.Name = "rbtnMale";
             this.rbtnMale.Size = new System.Drawing.Size(106, 25);
             this.rbtnMale.TabIndex = 14;
@@ -379,7 +399,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             // 
             this.rbtnFemale.AutoSize = true;
             this.rbtnFemale.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtnFemale.Location = new System.Drawing.Point(639, 130);
+            this.rbtnFemale.Location = new System.Drawing.Point(749, 126);
             this.rbtnFemale.Name = "rbtnFemale";
             this.rbtnFemale.Size = new System.Drawing.Size(104, 25);
             this.rbtnFemale.TabIndex = 14;
@@ -391,7 +411,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             // 
             this.lblNacionalidad.AutoSize = true;
             this.lblNacionalidad.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNacionalidad.Location = new System.Drawing.Point(478, 376);
+            this.lblNacionalidad.Location = new System.Drawing.Point(571, 376);
             this.lblNacionalidad.Name = "lblNacionalidad";
             this.lblNacionalidad.Size = new System.Drawing.Size(116, 21);
             this.lblNacionalidad.TabIndex = 15;
@@ -411,7 +431,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             // 
             this.lblPhone.AutoSize = true;
             this.lblPhone.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPhone.Location = new System.Drawing.Point(477, 289);
+            this.lblPhone.Location = new System.Drawing.Point(571, 289);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(76, 21);
             this.lblPhone.TabIndex = 15;
@@ -487,7 +507,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
         private System.Windows.Forms.Label lblLastname;
         private System.Windows.Forms.Label lblName;
         private System.Windows.Forms.ComboBox cmbGetMaritalStatus;
-        private System.Windows.Forms.TextBox txtGetLastname;
+        private System.Windows.Forms.TextBox txtGet1stLastname;
         private System.Windows.Forms.TextBox txtGetName;
         private System.Windows.Forms.TextBox txtGetEmail;
         private System.Windows.Forms.DateTimePicker dtPGetBirthday;
@@ -510,5 +530,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
         private System.Windows.Forms.Button btnCancell;
         private System.Windows.Forms.Button btnSignup;
         private System.Windows.Forms.Label lblSex;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtGet2ndLastname;
     }
 }

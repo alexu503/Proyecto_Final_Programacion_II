@@ -42,6 +42,9 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblCarrera = new System.Windows.Forms.Label();
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.pnlSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -142,18 +145,18 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(323, 238);
+            this.btnGuardar.Location = new System.Drawing.Point(237, 341);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(89, 31);
             this.btnGuardar.TabIndex = 2;
-            this.btnGuardar.Text = "GUARDAR";
+            this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // txtNombre
             // 
             this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNombre.Location = new System.Drawing.Point(389, 180);
+            this.txtNombre.Location = new System.Drawing.Point(182, 177);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(230, 23);
             this.txtNombre.TabIndex = 3;
@@ -163,17 +166,17 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(221, 183);
+            this.lblNombre.Location = new System.Drawing.Point(19, 180);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(162, 17);
+            this.lblNombre.Size = new System.Drawing.Size(157, 17);
             this.lblNombre.TabIndex = 4;
-            this.lblNombre.Text = "NOMBRE DE LA MATERIA:";
+            this.lblNombre.Text = "Nombre de la materia:";
             // 
             // lblCarrera
             // 
             this.lblCarrera.AutoSize = true;
             this.lblCarrera.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarrera.Location = new System.Drawing.Point(146, 127);
+            this.lblCarrera.Location = new System.Drawing.Point(155, 72);
             this.lblCarrera.Name = "lblCarrera";
             this.lblCarrera.Size = new System.Drawing.Size(171, 20);
             this.lblCarrera.TabIndex = 6;
@@ -183,10 +186,40 @@
             // 
             this.cmbCarreras.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarreras.FormattingEnabled = true;
-            this.cmbCarreras.Location = new System.Drawing.Point(323, 124);
+            this.cmbCarreras.Location = new System.Drawing.Point(332, 69);
             this.cmbCarreras.Name = "cmbCarreras";
             this.cmbCarreras.Size = new System.Drawing.Size(296, 28);
             this.cmbCarreras.TabIndex = 5;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(453, 180);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(141, 17);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Docente designado:";
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(600, 174);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(169, 28);
+            this.comboBox1.TabIndex = 5;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Location = new System.Drawing.Point(456, 341);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(89, 31);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Cancelar";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // AgregarAsignatura
             // 
@@ -194,9 +227,12 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.lblCarrera);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.cmbCarreras);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.pnlSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -226,5 +262,8 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.ComboBox cmbCarreras;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button button1;
     }
 }
