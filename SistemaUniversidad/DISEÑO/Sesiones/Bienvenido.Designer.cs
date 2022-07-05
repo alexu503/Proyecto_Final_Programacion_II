@@ -36,9 +36,9 @@
             this.pnlContBienve = new System.Windows.Forms.Panel();
             this.pnlSuperiorBienvenido = new System.Windows.Forms.Panel();
             this.btnCerrar = new System.Windows.Forms.Button();
-            this.dragControlBienvenido = new SistemaUniversidad.LOGICA.DragControl();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnSignup = new System.Windows.Forms.Button();
+            this.dragControlBienvenido = new SistemaUniversidad.LOGICA.DragControl();
             this.groupBoxIniciarSesión.SuspendLayout();
             this.pnlContBienve.SuspendLayout();
             this.pnlSuperiorBienvenido.SuspendLayout();
@@ -135,10 +135,6 @@
             this.btnCerrar.UseVisualStyleBackColor = true;
             this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
-            // dragControlBienvenido
-            // 
-            this.dragControlBienvenido.SelectControl = this.pnlSuperiorBienvenido;
-            // 
             // groupBox1
             // 
             this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -163,6 +159,10 @@
             this.btnSignup.TabIndex = 2;
             this.btnSignup.UseVisualStyleBackColor = true;
             this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
+            // 
+            // dragControlBienvenido
+            // 
+            this.dragControlBienvenido.SelectControl = this.pnlSuperiorBienvenido;
             // 
             // Bienvenido
             // 

@@ -77,7 +77,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.panel3 = new System.Windows.Forms.Panel();
             this.btnGestionarDocentes = new System.Windows.Forms.Button();
             this.pnlSubMenuCarreras = new System.Windows.Forms.Panel();
-            this.btnBucarCarrera = new System.Windows.Forms.Button();
             this.btnAgregarCarrera = new System.Windows.Forms.Button();
             this.btnEliminarCarrera = new System.Windows.Forms.Button();
             this.btnModificarCarrera = new System.Windows.Forms.Button();
@@ -238,7 +237,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pnlSubMenuHorarios.Controls.Add(this.btnModificarHorario);
             this.pnlSubMenuHorarios.Controls.Add(this.panel5);
             this.pnlSubMenuHorarios.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuHorarios.Location = new System.Drawing.Point(0, 689);
+            this.pnlSubMenuHorarios.Location = new System.Drawing.Point(0, 659);
             this.pnlSubMenuHorarios.Name = "pnlSubMenuHorarios";
             this.pnlSubMenuHorarios.Size = new System.Drawing.Size(183, 116);
             this.pnlSubMenuHorarios.TabIndex = 11;
@@ -335,7 +334,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnGestionarHorarios.ForeColor = System.Drawing.Color.White;
             this.btnGestionarHorarios.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarHorarios.Image")));
             this.btnGestionarHorarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionarHorarios.Location = new System.Drawing.Point(0, 654);
+            this.btnGestionarHorarios.Location = new System.Drawing.Point(0, 624);
             this.btnGestionarHorarios.Name = "btnGestionarHorarios";
             this.btnGestionarHorarios.Padding = new System.Windows.Forms.Padding(8, 0, 0, 0);
             this.btnGestionarHorarios.Size = new System.Drawing.Size(183, 35);
@@ -352,7 +351,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pnlSubMenuDocentes.Controls.Add(this.btnAgregarDocentes);
             this.pnlSubMenuDocentes.Controls.Add(this.panel3);
             this.pnlSubMenuDocentes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuDocentes.Location = new System.Drawing.Point(0, 538);
+            this.pnlSubMenuDocentes.Location = new System.Drawing.Point(0, 508);
             this.pnlSubMenuDocentes.Name = "pnlSubMenuDocentes";
             this.pnlSubMenuDocentes.Size = new System.Drawing.Size(183, 116);
             this.pnlSubMenuDocentes.TabIndex = 9;
@@ -449,7 +448,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnGestionarDocentes.ForeColor = System.Drawing.Color.White;
             this.btnGestionarDocentes.Image = ((System.Drawing.Image)(resources.GetObject("btnGestionarDocentes.Image")));
             this.btnGestionarDocentes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnGestionarDocentes.Location = new System.Drawing.Point(0, 503);
+            this.btnGestionarDocentes.Location = new System.Drawing.Point(0, 473);
             this.btnGestionarDocentes.Name = "btnGestionarDocentes";
             this.btnGestionarDocentes.Size = new System.Drawing.Size(183, 35);
             this.btnGestionarDocentes.TabIndex = 8;
@@ -459,7 +458,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             // 
             // pnlSubMenuCarreras
             // 
-            this.pnlSubMenuCarreras.Controls.Add(this.btnBucarCarrera);
             this.pnlSubMenuCarreras.Controls.Add(this.btnAgregarCarrera);
             this.pnlSubMenuCarreras.Controls.Add(this.btnEliminarCarrera);
             this.pnlSubMenuCarreras.Controls.Add(this.btnModificarCarrera);
@@ -467,26 +465,8 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pnlSubMenuCarreras.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenuCarreras.Location = new System.Drawing.Point(0, 387);
             this.pnlSubMenuCarreras.Name = "pnlSubMenuCarreras";
-            this.pnlSubMenuCarreras.Size = new System.Drawing.Size(183, 116);
+            this.pnlSubMenuCarreras.Size = new System.Drawing.Size(183, 86);
             this.pnlSubMenuCarreras.TabIndex = 7;
-            // 
-            // btnBucarCarrera
-            // 
-            this.btnBucarCarrera.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBucarCarrera.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnBucarCarrera.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.btnBucarCarrera.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBucarCarrera.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBucarCarrera.ForeColor = System.Drawing.Color.White;
-            this.btnBucarCarrera.Image = ((System.Drawing.Image)(resources.GetObject("btnBucarCarrera.Image")));
-            this.btnBucarCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBucarCarrera.Location = new System.Drawing.Point(6, 86);
-            this.btnBucarCarrera.Name = "btnBucarCarrera";
-            this.btnBucarCarrera.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
-            this.btnBucarCarrera.Size = new System.Drawing.Size(198, 30);
-            this.btnBucarCarrera.TabIndex = 1;
-            this.btnBucarCarrera.Text = "Buscar";
-            this.btnBucarCarrera.UseVisualStyleBackColor = true;
             // 
             // btnAgregarCarrera
             // 
@@ -505,6 +485,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnAgregarCarrera.TabIndex = 1;
             this.btnAgregarCarrera.Text = "Agregar";
             this.btnAgregarCarrera.UseVisualStyleBackColor = true;
+            this.btnAgregarCarrera.Click += new System.EventHandler(this.btnAgregarCarrera_Click);
             // 
             // btnEliminarCarrera
             // 
@@ -523,6 +504,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnEliminarCarrera.TabIndex = 1;
             this.btnEliminarCarrera.Text = "Eliminar";
             this.btnEliminarCarrera.UseVisualStyleBackColor = true;
+            this.btnEliminarCarrera.Click += new System.EventHandler(this.btnEliminarCarrera_Click);
             // 
             // btnModificarCarrera
             // 
@@ -541,6 +523,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnModificarCarrera.TabIndex = 1;
             this.btnModificarCarrera.Text = "Modificar";
             this.btnModificarCarrera.UseVisualStyleBackColor = true;
+            this.btnModificarCarrera.Click += new System.EventHandler(this.btnModificarCarrera_Click);
             // 
             // panel4
             // 
@@ -601,6 +584,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnEliminarAsignatura.TabIndex = 1;
             this.btnEliminarAsignatura.Text = "Eliminar";
             this.btnEliminarAsignatura.UseVisualStyleBackColor = true;
+            this.btnEliminarAsignatura.Click += new System.EventHandler(this.btnEliminarAsignatura_Click);
             // 
             // btnBuscarAsignatura
             // 
@@ -619,6 +603,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnBuscarAsignatura.TabIndex = 1;
             this.btnBuscarAsignatura.Text = "Buscar";
             this.btnBuscarAsignatura.UseVisualStyleBackColor = true;
+            this.btnBuscarAsignatura.Click += new System.EventHandler(this.btnBuscarAsignatura_Click);
             // 
             // btnAgregarAsignatura
             // 
@@ -637,6 +622,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnAgregarAsignatura.TabIndex = 1;
             this.btnAgregarAsignatura.Text = "Agregar";
             this.btnAgregarAsignatura.UseVisualStyleBackColor = true;
+            this.btnAgregarAsignatura.Click += new System.EventHandler(this.btnAgregarAsignatura_Click_1);
             // 
             // btnModificarAsignatura
             // 
@@ -655,6 +641,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnModificarAsignatura.TabIndex = 1;
             this.btnModificarAsignatura.Text = "Modificar";
             this.btnModificarAsignatura.UseVisualStyleBackColor = true;
+            this.btnModificarAsignatura.Click += new System.EventHandler(this.btnModificarAsignatura_Click);
             // 
             // panel7
             // 
@@ -994,7 +981,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
         private Panel panel3;
         private Button btnGestionarDocentes;
         private Panel pnlSubMenuCarreras;
-        private Button btnBucarCarrera;
         private Button btnAgregarCarrera;
         private Button btnEliminarCarrera;
         private Button btnModificarCarrera;

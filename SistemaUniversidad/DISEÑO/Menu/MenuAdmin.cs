@@ -3,6 +3,8 @@ using System.Drawing;
 using System.Windows.Forms;
 using SistemaUniversidad.LOGICA;
 using System.Runtime.InteropServices;
+using SistemaUniversidad.DISEÑO.Administrador.Asignaturas;
+using SistemaUniversidad.DISEÑO.Administrador.Carreras;
 
 namespace SistemaUniversidad.DISEÑO.Menu {
     public partial class MenuAdmin : Form {
@@ -92,67 +94,6 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             base.OnPaint(e);
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
-        #endregion
-
-        #region Botones Minimizar Maximizar Cerrar
-        private void btnMinimizar_Click(object sender, EventArgs e) {
-            BotonesPnlSuperior boton = new BotonesPnlSuperior();
-            boton.Minimizar(this, sender, e);
-        }
-        private void pnlSuperiorMenuAdmin_MouseDown(object sender, MouseEventArgs e) {
-            //MostrarSubMenu(pnlSuperiorMenuAdmin);
-        }
-
-        #endregion
-
-        #region Eventos Click
-
-        #region Cerrar Sesión
-        #endregion
-
-        #region Más opciones
-        #endregion
-
-        #region Abrir Sub-Menú
-
-        private void button5_Click(object sender, EventArgs e) {
-            //
-        }
-        #endregion
-
-        #region Alumnos
-        //----> Agregar nuevo alumno
-        private void btnAgregarAlumno_Click(object sender, EventArgs e) {
-            Administrador.NuevoAlumno NuevoAlumno = new Administrador.NuevoAlumno();
-            this.Hide();
-            NuevoAlumno.Show();
-        }
-        //----> Eliminar alumno
-        private void btnEliminarAlumno_Click(object sender, EventArgs e) {
-            Administrador.EliminarAlumno EliminarAlumno = new Administrador.EliminarAlumno();
-            this.Hide();
-            EliminarAlumno.eliminarAlumno = this;
-            EliminarAlumno.Show();
-        }
-        //----> Modificar datos de alumno
-        private void btnModificarAlumno_Click(object sender, EventArgs e) {
-            Administrador.ModificarAlumno ModificarAlumno = new Administrador.ModificarAlumno();
-            this.Hide();
-            ModificarAlumno.modificarAlumno = this;
-            ModificarAlumno.Show();
-        }
-        //----> Buscar alumno
-        private void btnBuscarAlumno_Click(object sender, EventArgs e) {
-            Administrador.BuscarAlumno BuscarAlumno = new Administrador.BuscarAlumno();
-            this.Hide();
-            BuscarAlumno.buscarAlumno = this;
-            BuscarAlumno.Show();
-
-        }
-
-        #endregion
-
-        #endregion
 
         private void btnAgregarAsignatura_Click(object sender, EventArgs e) {
             Administrador.Asignaturas.AgregarAsignatura aggAsig = new Administrador.Asignaturas.AgregarAsignatura();
@@ -198,6 +139,32 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             imgMasOpciones.Enabled = true;
         }
 
+        #endregion
+
+        #region Botones Minimizar Maximizar Cerrar
+        private void btnMinimizar_Click(object sender, EventArgs e) {
+            BotonesPnlSuperior boton = new BotonesPnlSuperior();
+            boton.Minimizar(this, sender, e);
+        }
+        private void pnlSuperiorMenuAdmin_MouseDown(object sender, MouseEventArgs e) {
+            //MostrarSubMenu(pnlSuperiorMenuAdmin);
+        }
+
+        #endregion
+
+        #region Eventos Click
+
+        #region Cerrar Sesión
+        #endregion
+
+        #region Más opciones
+        #endregion
+
+        #region Abrir Sub-Menú
+
+        private void button5_Click(object sender, EventArgs e) {
+            //
+        }
         private void btnCerrar_Click(object sender, EventArgs e) {
             if (MessageBox.Show("¿SEGURO QUE DESEA CERRAR SESION?", "¡ATENCION!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
                 Sesiones.Bienvenido bienvenido = new Sesiones.Bienvenido();
@@ -223,5 +190,94 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        #endregion
+
+        #region Alumnos
+        //----> Agregar nuevo alumno
+        private void btnAgregarAlumno_Click(object sender, EventArgs e) {
+            Administrador.NuevoAlumno NuevoAlumno = new Administrador.NuevoAlumno();
+            this.Hide();
+            NuevoAlumno.Show();
+        }
+        //----> Eliminar alumno
+        private void btnEliminarAlumno_Click(object sender, EventArgs e) {
+            Administrador.EliminarAlumno EliminarAlumno = new Administrador.EliminarAlumno();
+            this.Hide();
+            EliminarAlumno.eliminarAlumno = this;
+            EliminarAlumno.Show();
+        }
+        //----> Modificar datos de alumno
+        private void btnModificarAlumno_Click(object sender, EventArgs e) {
+            Administrador.ModificarAlumno ModificarAlumno = new Administrador.ModificarAlumno();
+            this.Hide();
+            ModificarAlumno.modificarAlumno = this;
+            ModificarAlumno.Show();
+        }
+        //----> Buscar alumno
+        private void btnBuscarAlumno_Click(object sender, EventArgs e) {
+            Administrador.BuscarAlumno BuscarAlumno = new Administrador.BuscarAlumno();
+            this.Hide();
+            BuscarAlumno.buscarAlumno = this;
+            BuscarAlumno.Show();
+
+        }
+
+        #endregion
+
+        #region Asignaturas
+
+        private void btnAgregarAsignatura_Click_1(object sender, EventArgs e) {
+            AgregarAsignatura agregarAsignatura = new AgregarAsignatura();
+            this.Hide();
+            agregarAsignatura.Show();
+        }
+
+        private void btnEliminarAsignatura_Click(object sender, EventArgs e) {
+            EliminarAsignatura eliminarAsignatura = new EliminarAsignatura();
+            this.Hide();
+            eliminarAsignatura.Show();
+        }
+
+        private void btnModificarAsignatura_Click(object sender, EventArgs e) {
+            ModificarAsignatura modificarAsignatura = new ModificarAsignatura();
+            this.Hide();
+            modificarAsignatura.Show();
+        }
+
+        private void btnBuscarAsignatura_Click(object sender, EventArgs e) {
+            BuscarAsignatura buscarAsignatura = new BuscarAsignatura();
+            this.Hide();
+            buscarAsignatura.Show();
+        }
+
+
+        #endregion
+
+        #region Carreras
+
+        private void btnAgregarCarrera_Click(object sender, EventArgs e) {
+            AgregarCarrera agregarCarrera = new AgregarCarrera();
+            this.Hide();
+            agregarCarrera.Show();
+        }
+
+        private void btnEliminarCarrera_Click(object sender, EventArgs e) {
+            EliminarCarrera eliminarCarrera = new EliminarCarrera();
+            this.Hide();
+            eliminarCarrera.Show();
+        }
+
+        private void btnModificarCarrera_Click(object sender, EventArgs e) {
+            ModificarCarrera modificarCarrera = new ModificarCarrera();
+            this.Hide();
+            modificarCarrera.Show();
+        }
+
+        #endregion
+
+
+
+        #endregion
     }
 }

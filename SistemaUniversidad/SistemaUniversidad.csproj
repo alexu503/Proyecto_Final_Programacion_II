@@ -259,6 +259,9 @@
     <EmbeddedResource Include="DISEÑO\Administrador\Carreras\AgregarCarrera.resx">
       <DependentUpon>AgregarCarrera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Carreras\EliminarCarrera.resx">
+      <DependentUpon>EliminarCarrera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Docente\AgregarCalificaciones.resx">
       <DependentUpon>AgregarCalificaciones.cs</DependentUpon>
     </EmbeddedResource>

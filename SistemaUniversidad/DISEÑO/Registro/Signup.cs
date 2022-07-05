@@ -106,7 +106,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
 
         private void btnSignup_Click(object sender, EventArgs e) {
 
-            string phoneCheckerRegex = "(+503|503| )?[ -]*(6|7)[ -]*([0-9][ -]*){8}"; //Formato para número de télefono
+            //string phoneCheckerRegex = "(+503|503| )?[ -]*(6|7)[ -]*([0-9][ -]*){8}"; //Formato para número de télefono
 
             if (txtGet1stLastname.Text != "" && txtGetName.Text != "" &&txtGetDNI.Text != "" && txtGetEmail.Text != "" && txtGetMobilePhone.Text != "" && txtGetAddress.Text != "") {
                 if (ValidateDate()) {
