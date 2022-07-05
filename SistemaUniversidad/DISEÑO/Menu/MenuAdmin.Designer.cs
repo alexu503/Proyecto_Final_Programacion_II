@@ -106,8 +106,8 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.btnBuscarCarrera = new System.Windows.Forms.Button();
-            this.dragControlMenuAdmin = new SistemaUniversidad.LOGICA.DragControl();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.dragControlMenuAdmin = new SistemaUniversidad.LOGICA.DragControl();
             this.pnlSuperiorMenuAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).BeginInit();
             this.pnlContenedor.SuspendLayout();
@@ -177,7 +177,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1119, 3);
+            this.btnMinimizar.Location = new System.Drawing.Point(1109, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 35);
             this.btnMinimizar.TabIndex = 0;
@@ -927,10 +927,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnBuscarCarrera.UseVisualStyleBackColor = true;
             this.btnBuscarCarrera.Click += new System.EventHandler(this.btnBuscarCarrera_Click);
             // 
-            // dragControlMenuAdmin
-            // 
-            this.dragControlMenuAdmin.SelectControl = null;
-            // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
@@ -938,6 +934,10 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 116);
             this.panel4.TabIndex = 2;
+            // 
+            // dragControlMenuAdmin
+            // 
+            this.dragControlMenuAdmin.SelectControl = null;
             // 
             // MenuAdmin
             // 
