@@ -73,5 +73,13 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
                 this.Close();
             }
         }
+
+        private void btnCancell_Click(object sender, EventArgs e) {
+            if (MessageBox.Show("¿Seguro que desea salir?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                MenuAdmin menuAdmin = new MenuAdmin();
+                menuAdmin.Show();
+                this.Close();
+            }
+        }
     }
 }

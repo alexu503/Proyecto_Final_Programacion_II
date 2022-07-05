@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using SistemaUniversidad.DISEÑO.Menu;
+using SistemaUniversidad.LOGICA.DATABASE.Queries;
 
 namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
     public partial class EliminarCarrera : Form {
@@ -27,6 +29,22 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
 
         private void EliminarCarrera_Load(object sender, EventArgs e) {
             LoadCareers();
+        }
+
+        private void btnCerrar_Click(object sender, EventArgs e) {
+            if (MessageBox.Show("¿Seguro que desea salir?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                MenuAdmin menuAdmin = new MenuAdmin();
+                menuAdmin.Show();
+                this.Close();
+            }
+        }
+
+        private void btnCancell_Click(object sender, EventArgs e) {
+            if (MessageBox.Show("¿Seguro que desea salir?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                MenuAdmin menuAdmin = new MenuAdmin();
+                menuAdmin.Show();
+                this.Close();
+            }
         }
     }
 }

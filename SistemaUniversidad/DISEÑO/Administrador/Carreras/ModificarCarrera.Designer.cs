@@ -49,7 +49,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.btnCerrar = new System.Windows.Forms.Button();
             this.cmbGetCareersList = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancell = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.lblNewName = new System.Windows.Forms.Label();
             this.txtGetNewName = new System.Windows.Forms.TextBox();
@@ -127,15 +127,16 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.lblNombre.TabIndex = 16;
             this.lblNombre.Text = "Seleccionar la carrera a modificar:";
             // 
-            // button1
+            // btnCancell
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(539, 281);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 31);
-            this.button1.TabIndex = 14;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnCancell.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancell.Location = new System.Drawing.Point(539, 281);
+            this.btnCancell.Name = "btnCancell";
+            this.btnCancell.Size = new System.Drawing.Size(89, 31);
+            this.btnCancell.TabIndex = 14;
+            this.btnCancell.Text = "Cancelar";
+            this.btnCancell.UseVisualStyleBackColor = true;
+            this.btnCancell.Click += new System.EventHandler(this.btnCancell_Click);
             // 
             // btnGuardar
             // 
@@ -176,7 +177,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.Controls.Add(this.cmbGetCareersList);
             this.Controls.Add(this.lblNewName);
             this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancell);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.pnlSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -200,7 +201,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.ComboBox cmbGetCareersList;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancell;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Label lblNewName;
         private System.Windows.Forms.TextBox txtGetNewName;

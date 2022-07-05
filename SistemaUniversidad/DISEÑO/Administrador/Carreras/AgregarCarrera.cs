@@ -28,9 +28,11 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
         }
 
         private void btnCerrar_Click(object sender, EventArgs e) {
-            Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();
-            this.Close();
-            MenuAdmin.Show();
+            if (MessageBox.Show("¿Seguro que desea salir?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                MenuAdmin menuAdmin = new MenuAdmin();
+                menuAdmin.Show();
+                this.Close();
+            }
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e) {
@@ -50,7 +52,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             if(txtGetCareerName.Text != "") {
                 try {
                     InsertData.AddNewCareer(GetFirstCharToUpper(txtGetCareerName.Text.Trim()));
-                    MessageBox.Show("Agergado exitsamente");
+                    MessageBox.Show("Agergado exitosamente");
                     txtGetCareerName.Clear();
                 }
                 catch(Exception ex) {
@@ -66,6 +68,14 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
         private void pnlSuperior_MouseDown(object sender, MouseEventArgs e) {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnCancell_Click(object sender, EventArgs e) {
+            if (MessageBox.Show("¿Seguro que desea salir?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                MenuAdmin menuAdmin = new MenuAdmin();
+                menuAdmin.Show();
+                this.Close();
+            }
         }
     }
 }
