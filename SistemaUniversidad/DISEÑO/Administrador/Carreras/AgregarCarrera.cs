@@ -37,9 +37,25 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.WindowState = FormWindowState.Minimized;
         }
 
+        string GetFirstCharToUpper(string career) {
+            // Check for empty string.  
+            if (string.IsNullOrEmpty(career)) {
+                return string.Empty;
+            }
+            // Return char and concat substring.  
+            return char.ToUpper(career[0]) + career.Substring(1);
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e) {
             if(txtGetCareerName.Text != "") {
-                InsertData.AddNewCareer(txtGetCareerName.Text.ToUpper().Trim());
+                try {
+                    InsertData.AddNewCareer(GetFirstCharToUpper(txtGetCareerName.Text.Trim()));
+                    MessageBox.Show("Agergado exitsamente");
+                    txtGetCareerName.Clear();
+                }
+                catch(Exception ex) {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
             }
         }
 

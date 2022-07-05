@@ -154,6 +154,12 @@
     <Compile Include="DISEÑO\Administrador\Carreras\AgregarCarrera.Designer.cs">
       <DependentUpon>AgregarCarrera.cs</DependentUpon>
     </Compile>
+    <Compile Include="DISEÑO\Administrador\Carreras\BuscarCarrera.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Carreras\BuscarCarrera.Designer.cs">
+      <DependentUpon>BuscarCarrera.cs</DependentUpon>
+    </Compile>
     <Compile Include="DISEÑO\Administrador\Carreras\EliminarCarrera.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Administrador\Carreras\EliminarCarrera.resx">
       <DependentUpon>EliminarCarrera.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Carreras\ModificarCarrera.resx">
+      <DependentUpon>ModificarCarrera.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Docente\AgregarCalificaciones.resx">
       <DependentUpon>AgregarCalificaciones.cs</DependentUpon>

@@ -127,7 +127,7 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
                 "@Password," +
                 "@Rol)";
             foreach (Student l in lstData) {
-                username = l.FirstSurname.Substring(0, 1) + l.SecondSurname.Substring(0, 1) + idRandomCode.ToString();
+                username = l.FirstSurname.Substring(0, 1).ToUpper() + l.SecondSurname.Substring(0, 1) + idRandomCode.ToString();
             }
             query.Parameters.Add(new SQLiteParameter("@Username", username));
             query.Parameters.Add(new SQLiteParameter("@Password", password));

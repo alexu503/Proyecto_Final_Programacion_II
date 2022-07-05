@@ -274,9 +274,14 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             modificarCarrera.Show();
         }
 
+        private void btnBuscarCarrera_Click(object sender, EventArgs e) {
+            BuscarCarrera buscarCarrera = new BuscarCarrera();
+            this.Hide();
+            buscarCarrera.Show();
+        }
+
+
         #endregion
-
-
 
         #endregion
     }

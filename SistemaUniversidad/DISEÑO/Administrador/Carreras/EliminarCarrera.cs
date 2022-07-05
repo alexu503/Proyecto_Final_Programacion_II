@@ -24,5 +24,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
+
+        private void EliminarCarrera_Load(object sender, EventArgs e) {
+            LoadCareers();
+        }
     }
 }

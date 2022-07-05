@@ -1,4 +1,8 @@
-﻿namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
+﻿using System;
+using System.Windows.Forms;
+using SistemaUniversidad.LOGICA.DATABASE.Queries;
+
+namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
     partial class EliminarCarrera {
         /// <summary>
         /// Required designer variable.
@@ -16,6 +20,22 @@
             base.Dispose(disposing);
         }
 
+        void LoadCareers() {
+
+            try {
+                cmbDeleteCareers.Text = "Selecciona una carrerea";
+                if (SearchData.GetCareers().HasRows) {
+                    while (SearchData.GetCareers().Read()) {
+                        cmbDeleteCareers.Items.Add(SearchData.GetCareers().GetString(0));
+                    }
+                } else {
+                    MessageBox.Show("No hay carreras para mostrar");
+                }
+            }catch(Exception ex) {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -31,7 +51,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbDeleteCareers = new System.Windows.Forms.ComboBox();
             this.pnlSuperior.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -117,21 +137,21 @@
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmbDeleteCareers
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 9.75F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(382, 140);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(215, 25);
-            this.comboBox1.TabIndex = 13;
+            this.cmbDeleteCareers.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.cmbDeleteCareers.FormattingEnabled = true;
+            this.cmbDeleteCareers.Location = new System.Drawing.Point(382, 140);
+            this.cmbDeleteCareers.Name = "cmbDeleteCareers";
+            this.cmbDeleteCareers.Size = new System.Drawing.Size(215, 25);
+            this.cmbDeleteCareers.TabIndex = 13;
             // 
             // EliminarCarrera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmbDeleteCareers);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.btnGuardar);
@@ -140,6 +160,7 @@
             this.Name = "EliminarCarrera";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EliminarCarrera";
+            this.Load += new System.EventHandler(this.EliminarCarrera_Load);
             this.pnlSuperior.ResumeLayout(false);
             this.pnlSuperior.PerformLayout();
             this.ResumeLayout(false);
@@ -156,6 +177,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbDeleteCareers;
     }
 }
