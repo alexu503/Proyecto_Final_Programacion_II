@@ -265,6 +265,9 @@
     <EmbeddedResource Include="DISEÑO\Administrador\Carreras\AgregarCarrera.resx">
       <DependentUpon>AgregarCarrera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Carreras\BuscarCarrera.resx">
+      <DependentUpon>BuscarCarrera.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Administrador\Carreras\EliminarCarrera.resx">
       <DependentUpon>EliminarCarrera.cs</DependentUpon>
     </EmbeddedResource>

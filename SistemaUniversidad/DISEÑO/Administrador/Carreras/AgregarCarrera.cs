@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using SistemaUniversidad.DISEÑO.Menu;
 using SistemaUniversidad.LOGICA.DATABASE.Queries;
 
 namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {

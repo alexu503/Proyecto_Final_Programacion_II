@@ -106,8 +106,8 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.btnBuscarCarrera = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.dragControlMenuAdmin = new SistemaUniversidad.LOGICA.DragControl();
+            this.panel4 = new System.Windows.Forms.Panel();
             this.pnlSuperiorMenuAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).BeginInit();
             this.pnlContenedor.SuspendLayout();
@@ -258,7 +258,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             // 
             this.pnlMenuLateral.AutoScroll = true;
             this.pnlMenuLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(33)))), ((int)(((byte)(51)))));
-            this.pnlMenuLateral.Controls.Add(this.panel4);
             this.pnlMenuLateral.Controls.Add(this.pnlSubMenuHorarios);
             this.pnlMenuLateral.Controls.Add(this.btnGestionarHorarios);
             this.pnlMenuLateral.Controls.Add(this.pnlSubMenuDocentes);
@@ -559,9 +558,10 @@ namespace SistemaUniversidad.DISEÑO.Menu
             // pnlSubMenuCarreras
             // 
             this.pnlSubMenuCarreras.Controls.Add(this.btnAgregarCarrera);
+            this.pnlSubMenuCarreras.Controls.Add(this.panel4);
             this.pnlSubMenuCarreras.Controls.Add(this.btnBuscarCarrera);
-            this.pnlSubMenuCarreras.Controls.Add(this.btnEliminarCarrera);
             this.pnlSubMenuCarreras.Controls.Add(this.btnModificarCarrera);
+            this.pnlSubMenuCarreras.Controls.Add(this.btnEliminarCarrera);
             this.pnlSubMenuCarreras.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSubMenuCarreras.Location = new System.Drawing.Point(0, 387);
             this.pnlSubMenuCarreras.Name = "pnlSubMenuCarreras";
@@ -578,7 +578,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnModificarCarrera.ForeColor = System.Drawing.Color.White;
             this.btnModificarCarrera.Image = ((System.Drawing.Image)(resources.GetObject("btnModificarCarrera.Image")));
             this.btnModificarCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificarCarrera.Location = new System.Drawing.Point(2, 60);
+            this.btnModificarCarrera.Location = new System.Drawing.Point(6, 60);
             this.btnModificarCarrera.Name = "btnModificarCarrera";
             this.btnModificarCarrera.Padding = new System.Windows.Forms.Padding(18, 0, 0, 0);
             this.btnModificarCarrera.Size = new System.Drawing.Size(198, 30);
@@ -597,7 +597,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnEliminarCarrera.ForeColor = System.Drawing.Color.White;
             this.btnEliminarCarrera.Image = ((System.Drawing.Image)(resources.GetObject("btnEliminarCarrera.Image")));
             this.btnEliminarCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarCarrera.Location = new System.Drawing.Point(2, 31);
+            this.btnEliminarCarrera.Location = new System.Drawing.Point(6, 31);
             this.btnEliminarCarrera.Name = "btnEliminarCarrera";
             this.btnEliminarCarrera.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnEliminarCarrera.Size = new System.Drawing.Size(198, 30);
@@ -616,7 +616,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnAgregarCarrera.ForeColor = System.Drawing.Color.White;
             this.btnAgregarCarrera.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarCarrera.Image")));
             this.btnAgregarCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAgregarCarrera.Location = new System.Drawing.Point(2, 2);
+            this.btnAgregarCarrera.Location = new System.Drawing.Point(6, 2);
             this.btnAgregarCarrera.Name = "btnAgregarCarrera";
             this.btnAgregarCarrera.Padding = new System.Windows.Forms.Padding(15, 0, 0, 0);
             this.btnAgregarCarrera.Size = new System.Drawing.Size(198, 30);
@@ -918,7 +918,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnBuscarCarrera.ForeColor = System.Drawing.Color.White;
             this.btnBuscarCarrera.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscarCarrera.Image")));
             this.btnBuscarCarrera.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBuscarCarrera.Location = new System.Drawing.Point(2, 88);
+            this.btnBuscarCarrera.Location = new System.Drawing.Point(6, 88);
             this.btnBuscarCarrera.Name = "btnBuscarCarrera";
             this.btnBuscarCarrera.Padding = new System.Windows.Forms.Padding(16, 0, 0, 0);
             this.btnBuscarCarrera.Size = new System.Drawing.Size(198, 30);
@@ -927,17 +927,17 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnBuscarCarrera.UseVisualStyleBackColor = true;
             this.btnBuscarCarrera.Click += new System.EventHandler(this.btnBuscarCarrera_Click);
             // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel4.Location = new System.Drawing.Point(0, 386);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 116);
-            this.panel4.TabIndex = 2;
-            // 
             // dragControlMenuAdmin
             // 
             this.dragControlMenuAdmin.SelectControl = null;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel4.Location = new System.Drawing.Point(3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 116);
+            this.panel4.TabIndex = 2;
             // 
             // MenuAdmin
             // 
