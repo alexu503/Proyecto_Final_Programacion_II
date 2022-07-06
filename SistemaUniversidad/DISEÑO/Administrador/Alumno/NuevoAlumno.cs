@@ -25,15 +25,15 @@ namespace SistemaUniversidad.DISEÑO.Administrador {
         }
         private void NuevoAlumno_Load(object sender, EventArgs e) {
             DateTime fechaInscripcion = DateTime.Today;
-            txtFechaInscripcion.Text = fechaInscripcion.ToShortDateString().ToString();
+            //txtFechaInscripcion.Text = fechaInscripcion.ToShortDateString().ToString();
             LimpiarTodo();
 
         }
 
         #region Limpiar
         private void LimpiarEtiquetas() {
-            lblMensaje1.ForeColor = Color.Black;
-            lblMensaje1.Text = "";
+            //lblMensaje1.ForeColor = Color.Black;
+            //lblMensaje1.Text = "";
 
             lblMensaje2.ForeColor = Color.Black;
             lblMensaje2.Text = "";
@@ -72,9 +72,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador {
             cmbNacionalidad.Items.Add("Costa Rica");
 
             LimpiarEtiquetas();
-            txtCarnet.Text = "";
-            txtMatricula.Tag = "****";
-            txtMatricula.Text = "****";
+            //txtCarnet.Text = "";
+            //txtMatricula.Tag = "****";
+            //txtMatricula.Text = "****";
             txrtPrimerApellido.Text = "";//Hay que fijarse que tiene una "r" xD
             txtSegundoApellido.Text = "";
             txtNombres.Text = "";
@@ -102,7 +102,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador {
         private void txtCarnet_KeyPress(object sender, KeyPressEventArgs e) {
             LimpiarEtiquetas();
             Validaciones validar = new Validaciones();
-            validar.ValidarLetrasNumero(sender, e, lblMensaje1);
+            //validar.ValidarLetrasNumero(sender, e, lblMensaje1);
         }
 
         private void txrtPrimerApellido_KeyPress(object sender, KeyPressEventArgs e) {
@@ -148,7 +148,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador {
             string expresion2 = "^[_a-z0-9]+(.[_a-z0-9-])*@[a-z0-9]+(.[a-z0-9-]+)*\\.(.[a-z]{2,4})$";
 
             //Valida si todos los campos del formulario están llenos
-            if (txtCarnet.Text != "" && cmbCarreras.Text != "" && txrtPrimerApellido.Text != ""
+            if (cmbCarreras.Text != "" && txrtPrimerApellido.Text != ""
                 && txtSegundoApellido.Text != "" && txtNombres.Text != "" && txtDocumentoIdentidad.Text != ""
                 && true != (rbtnMasculino.Checked == true && rbtnFemenino.Checked == true) && txtDireccion.Text != ""
                 && txtCelular.Text != "" && txtCorreo.Text != "" && cmbNacionalidad.Text != ""
@@ -269,9 +269,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador {
 
         #region Regresar
         private void btnSalirAggAlumno_Click(object sender, EventArgs e) {
-            Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();
             this.Close();
-            MenuAdmin.Show();
         }
         private void btnCerrar_Click(object sender, EventArgs e) {
             Menu.MenuAdmin MenuAdmin = new Menu.MenuAdmin();

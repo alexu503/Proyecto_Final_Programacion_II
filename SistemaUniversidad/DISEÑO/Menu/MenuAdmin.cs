@@ -157,9 +157,6 @@ namespace SistemaUniversidad.DISEÑO.Menu {
         #region Cerrar Sesión
         #endregion
 
-        #region Más opciones
-        #endregion
-
         #region Abrir Sub-Menú
 
         private void button5_Click(object sender, EventArgs e) {
@@ -181,6 +178,14 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             }
         }
 
+        private void btnCloseForm_Click(object sender, EventArgs e) {
+            if (MessageBox.Show("¿SEGURO QUE DESEA CERRAR SESION?", "¡ATENCION!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes) {
+                Sesiones.Bienvenido bienvenido = new Sesiones.Bienvenido();
+                this.Hide();
+                bienvenido.Show();
+            }
+        }
+
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
         private extern static void ReleaseCapture();
         [DllImport("user32.DLL", EntryPoint = "SendMessage")]
@@ -191,36 +196,43 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void lblTitulo_MouseDown(object sender, MouseEventArgs e) {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
         #endregion
 
         #region Alumnos
         //----> Agregar nuevo alumno
-        private void btnAgregarAlumno_Click(object sender, EventArgs e) {
-            Administrador.NuevoAlumno NuevoAlumno = new Administrador.NuevoAlumno();
-            this.Hide();
-            NuevoAlumno.Show();
+
+        private Form activeForm = null;
+        private void openChildForm(Form childForm) {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(childForm);
+            panel1.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
         }
-        //----> Eliminar alumno
+
         private void btnEliminarAlumno_Click(object sender, EventArgs e) {
-            Administrador.EliminarAlumno EliminarAlumno = new Administrador.EliminarAlumno();
-            this.Hide();
-            EliminarAlumno.eliminarAlumno = this;
-            EliminarAlumno.Show();
+            openChildForm(new Administrador.EliminarAlumno());
+            lblTitulo.Text = "Eliminar un estudiante";
         }
         //----> Modificar datos de alumno
         private void btnModificarAlumno_Click(object sender, EventArgs e) {
-            Administrador.ModificarAlumno ModificarAlumno = new Administrador.ModificarAlumno();
-            this.Hide();
-            ModificarAlumno.modificarAlumno = this;
-            ModificarAlumno.Show();
+            openChildForm(new Administrador.ModificarAlumno());
+            lblTitulo.Text = "Eliminar datos de un estudiante";
         }
         //----> Buscar alumno
         private void btnBuscarAlumno_Click(object sender, EventArgs e) {
-            Administrador.BuscarAlumno BuscarAlumno = new Administrador.BuscarAlumno();
-            this.Hide();
-            BuscarAlumno.buscarAlumno = this;
-            BuscarAlumno.Show();
-
+            openChildForm(new Administrador.BuscarAlumno());
+            lblTitulo.Text = "Ver datos del estudiante";
         }
 
         #endregion

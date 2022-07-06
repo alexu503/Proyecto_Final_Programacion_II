@@ -50,7 +50,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.btnCerrar = new System.Windows.Forms.Button();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnCancell = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.cmbDeleteCareers = new System.Windows.Forms.ComboBox();
             this.pnlSuperior.SuspendLayout();
             this.SuspendLayout();
@@ -129,15 +129,16 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.btnCancell.UseVisualStyleBackColor = true;
             this.btnCancell.Click += new System.EventHandler(this.btnCancell_Click);
             // 
-            // btnGuardar
+            // btnDelete
             // 
-            this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(144, 282);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(89, 31);
-            this.btnGuardar.TabIndex = 10;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDelete.Location = new System.Drawing.Point(144, 282);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(89, 31);
+            this.btnDelete.TabIndex = 10;
+            this.btnDelete.Text = "Eliminar";
+            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // cmbDeleteCareers
             // 
@@ -147,6 +148,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.cmbDeleteCareers.Name = "cmbDeleteCareers";
             this.cmbDeleteCareers.Size = new System.Drawing.Size(215, 25);
             this.cmbDeleteCareers.TabIndex = 13;
+            this.cmbDeleteCareers.Text = "Seleccionar";
             // 
             // EliminarCarrera
             // 
@@ -156,7 +158,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.Controls.Add(this.cmbDeleteCareers);
             this.Controls.Add(this.lblNombre);
             this.Controls.Add(this.btnCancell);
-            this.Controls.Add(this.btnGuardar);
+            this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.pnlSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EliminarCarrera";
@@ -178,7 +180,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnCancell;
-        private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.ComboBox cmbDeleteCareers;
     }
 }

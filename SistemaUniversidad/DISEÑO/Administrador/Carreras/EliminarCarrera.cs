@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using SistemaUniversidad.DISEÑO.Menu;
@@ -44,6 +37,23 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
                 MenuAdmin menuAdmin = new MenuAdmin();
                 menuAdmin.Show();
                 this.Close();
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e) {
+            if(cmbDeleteCareers.Text != "Seleccionar") {
+                string carrerToDelete = cmbDeleteCareers.Text;
+
+                try {
+                    if (MessageBox.Show("¿Seguro que desea continuar?", "Atención", MessageBoxButtons.OKCancel) == DialogResult.OK) {
+                        DeleteData.DeleteCareer(ref carrerToDelete);
+                    }
+                    MessageBox.Show("Carrera eliminada satisfactoriamente");
+                } catch(Exception ex) {
+                    MessageBox.Show("Error: " + ex.Message);
+                } finally {
+                    cmbDeleteCareers.Text = "Seleccionar";
+                }
             }
         }
     }

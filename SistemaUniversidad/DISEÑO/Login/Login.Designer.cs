@@ -29,18 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
-            this.groupBoxImg = new System.Windows.Forms.GroupBox();
-            this.imgLogIn = new System.Windows.Forms.PictureBox();
             this.groupBoxDatosLogin = new System.Windows.Forms.GroupBox();
-            this.lblMensaje2 = new System.Windows.Forms.Label();
-            this.lblMensaje1 = new System.Windows.Forms.Label();
             this.BtnCancelar = new System.Windows.Forms.Button();
             this.BtnAcceder = new System.Windows.Forms.Button();
             this.lblClave = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.txtClave = new System.Windows.Forms.TextBox();
             this.txtCorreo = new System.Windows.Forms.TextBox();
-            this.imgKey = new System.Windows.Forms.PictureBox();
             this.imgUser = new System.Windows.Forms.PictureBox();
             this.pnlSuperior = new System.Windows.Forms.Panel();
             this.btnMinimizar = new System.Windows.Forms.Button();
@@ -49,86 +44,42 @@
             this.pnlContAcceder = new System.Windows.Forms.Panel();
             this.dragControlPnlAcceedr = new SistemaUniversidad.LOGICA.DragControl();
             this.dragControlImgAcceder = new SistemaUniversidad.LOGICA.DragControl();
-            this.groupBoxImg.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogIn)).BeginInit();
+            this.groupBoxImg = new System.Windows.Forms.GroupBox();
+            this.imgLogIn = new System.Windows.Forms.PictureBox();
             this.groupBoxDatosLogin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgKey)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).BeginInit();
             this.pnlSuperior.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgIcono)).BeginInit();
             this.pnlContAcceder.SuspendLayout();
+            this.groupBoxImg.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogIn)).BeginInit();
             this.SuspendLayout();
-            // 
-            // groupBoxImg
-            // 
-            this.groupBoxImg.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBoxImg.Controls.Add(this.imgLogIn);
-            this.groupBoxImg.Location = new System.Drawing.Point(65, 89);
-            this.groupBoxImg.Name = "groupBoxImg";
-            this.groupBoxImg.Size = new System.Drawing.Size(334, 417);
-            this.groupBoxImg.TabIndex = 0;
-            this.groupBoxImg.TabStop = false;
-            // 
-            // imgLogIn
-            // 
-            this.imgLogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgLogIn.Image = ((System.Drawing.Image)(resources.GetObject("imgLogIn.Image")));
-            this.imgLogIn.Location = new System.Drawing.Point(35, 82);
-            this.imgLogIn.Name = "imgLogIn";
-            this.imgLogIn.Size = new System.Drawing.Size(254, 252);
-            this.imgLogIn.TabIndex = 0;
-            this.imgLogIn.TabStop = false;
             // 
             // groupBoxDatosLogin
             // 
             this.groupBoxDatosLogin.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.groupBoxDatosLogin.Controls.Add(this.lblMensaje2);
-            this.groupBoxDatosLogin.Controls.Add(this.lblMensaje1);
             this.groupBoxDatosLogin.Controls.Add(this.BtnCancelar);
             this.groupBoxDatosLogin.Controls.Add(this.BtnAcceder);
             this.groupBoxDatosLogin.Controls.Add(this.lblClave);
             this.groupBoxDatosLogin.Controls.Add(this.lblCorreo);
             this.groupBoxDatosLogin.Controls.Add(this.txtClave);
             this.groupBoxDatosLogin.Controls.Add(this.txtCorreo);
-            this.groupBoxDatosLogin.Controls.Add(this.imgKey);
             this.groupBoxDatosLogin.Controls.Add(this.imgUser);
             this.groupBoxDatosLogin.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxDatosLogin.ForeColor = System.Drawing.Color.Black;
-            this.groupBoxDatosLogin.Location = new System.Drawing.Point(405, 89);
+            this.groupBoxDatosLogin.Location = new System.Drawing.Point(367, 22);
             this.groupBoxDatosLogin.Name = "groupBoxDatosLogin";
             this.groupBoxDatosLogin.Size = new System.Drawing.Size(368, 417);
             this.groupBoxDatosLogin.TabIndex = 1;
             this.groupBoxDatosLogin.TabStop = false;
             this.groupBoxDatosLogin.Text = "Acceder";
             // 
-            // lblMensaje2
-            // 
-            this.lblMensaje2.AutoSize = true;
-            this.lblMensaje2.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje2.Location = new System.Drawing.Point(289, 289);
-            this.lblMensaje2.Name = "lblMensaje2";
-            this.lblMensaje2.Size = new System.Drawing.Size(71, 17);
-            this.lblMensaje2.TabIndex = 0;
-            this.lblMensaje2.Text = "Mensaje 2";
-            this.lblMensaje2.Visible = false;
-            // 
-            // lblMensaje1
-            // 
-            this.lblMensaje1.AutoSize = true;
-            this.lblMensaje1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMensaje1.Location = new System.Drawing.Point(289, 263);
-            this.lblMensaje1.Name = "lblMensaje1";
-            this.lblMensaje1.Size = new System.Drawing.Size(71, 17);
-            this.lblMensaje1.TabIndex = 9;
-            this.lblMensaje1.Text = "Mensaje 1";
-            this.lblMensaje1.Visible = false;
-            // 
             // BtnCancelar
             // 
             this.BtnCancelar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.BtnCancelar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnCancelar.ForeColor = System.Drawing.Color.Black;
-            this.BtnCancelar.Location = new System.Drawing.Point(208, 329);
+            this.BtnCancelar.Location = new System.Drawing.Point(200, 343);
             this.BtnCancelar.Name = "BtnCancelar";
             this.BtnCancelar.Size = new System.Drawing.Size(75, 23);
             this.BtnCancelar.TabIndex = 8;
@@ -142,7 +93,7 @@
             this.BtnAcceder.Cursor = System.Windows.Forms.Cursors.Hand;
             this.BtnAcceder.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnAcceder.ForeColor = System.Drawing.Color.Black;
-            this.BtnAcceder.Location = new System.Drawing.Point(104, 329);
+            this.BtnAcceder.Location = new System.Drawing.Point(96, 343);
             this.BtnAcceder.Name = "BtnAcceder";
             this.BtnAcceder.Size = new System.Drawing.Size(75, 23);
             this.BtnAcceder.TabIndex = 7;
@@ -156,7 +107,7 @@
             this.lblClave.AutoSize = true;
             this.lblClave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblClave.ForeColor = System.Drawing.Color.Black;
-            this.lblClave.Location = new System.Drawing.Point(6, 289);
+            this.lblClave.Location = new System.Drawing.Point(6, 303);
             this.lblClave.Name = "lblClave";
             this.lblClave.Size = new System.Drawing.Size(88, 17);
             this.lblClave.TabIndex = 6;
@@ -178,7 +129,7 @@
             // 
             this.txtClave.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txtClave.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtClave.Location = new System.Drawing.Point(96, 286);
+            this.txtClave.Location = new System.Drawing.Point(96, 300);
             this.txtClave.Name = "txtClave";
             this.txtClave.PasswordChar = '*';
             this.txtClave.Size = new System.Drawing.Size(179, 23);
@@ -195,23 +146,13 @@
             this.txtCorreo.TabIndex = 3;
             this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
-            // imgKey
-            // 
-            this.imgKey.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgKey.Image = ((System.Drawing.Image)(resources.GetObject("imgKey.Image")));
-            this.imgKey.Location = new System.Drawing.Point(154, 163);
-            this.imgKey.Name = "imgKey";
-            this.imgKey.Size = new System.Drawing.Size(80, 81);
-            this.imgKey.TabIndex = 2;
-            this.imgKey.TabStop = false;
-            // 
             // imgUser
             // 
             this.imgUser.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.imgUser.Image = ((System.Drawing.Image)(resources.GetObject("imgUser.Image")));
-            this.imgUser.Location = new System.Drawing.Point(154, 39);
+            this.imgUser.Location = new System.Drawing.Point(117, 82);
             this.imgUser.Name = "imgUser";
-            this.imgUser.Size = new System.Drawing.Size(80, 83);
+            this.imgUser.Size = new System.Drawing.Size(129, 130);
             this.imgUser.TabIndex = 0;
             this.imgUser.TabStop = false;
             // 
@@ -224,7 +165,7 @@
             this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
             this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
             this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(816, 35);
+            this.pnlSuperior.Size = new System.Drawing.Size(767, 35);
             this.pnlSuperior.TabIndex = 2;
             // 
             // btnMinimizar
@@ -235,7 +176,7 @@
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(729, 0);
+            this.btnMinimizar.Location = new System.Drawing.Point(680, 0);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 35);
             this.btnMinimizar.TabIndex = 3;
@@ -250,7 +191,7 @@
             this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
             this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(771, 0);
+            this.btnCerrar.Location = new System.Drawing.Point(722, 0);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(45, 35);
             this.btnCerrar.TabIndex = 2;
@@ -276,7 +217,7 @@
             this.pnlContAcceder.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContAcceder.Location = new System.Drawing.Point(0, 35);
             this.pnlContAcceder.Name = "pnlContAcceder";
-            this.pnlContAcceder.Size = new System.Drawing.Size(816, 624);
+            this.pnlContAcceder.Size = new System.Drawing.Size(767, 467);
             this.pnlContAcceder.TabIndex = 3;
             // 
             // dragControlPnlAcceedr
@@ -287,12 +228,32 @@
             // 
             this.dragControlImgAcceder.SelectControl = this.imgIcono;
             // 
+            // groupBoxImg
+            // 
+            this.groupBoxImg.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.groupBoxImg.Controls.Add(this.imgLogIn);
+            this.groupBoxImg.Location = new System.Drawing.Point(27, 22);
+            this.groupBoxImg.Name = "groupBoxImg";
+            this.groupBoxImg.Size = new System.Drawing.Size(334, 417);
+            this.groupBoxImg.TabIndex = 0;
+            this.groupBoxImg.TabStop = false;
+            // 
+            // imgLogIn
+            // 
+            this.imgLogIn.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgLogIn.Image = ((System.Drawing.Image)(resources.GetObject("imgLogIn.Image")));
+            this.imgLogIn.Location = new System.Drawing.Point(35, 82);
+            this.imgLogIn.Name = "imgLogIn";
+            this.imgLogIn.Size = new System.Drawing.Size(254, 252);
+            this.imgLogIn.TabIndex = 0;
+            this.imgLogIn.TabStop = false;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(816, 659);
+            this.ClientSize = new System.Drawing.Size(767, 502);
             this.Controls.Add(this.pnlContAcceder);
             this.Controls.Add(this.pnlSuperior);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -303,34 +264,27 @@
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-            this.groupBoxImg.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogIn)).EndInit();
             this.groupBoxDatosLogin.ResumeLayout(false);
             this.groupBoxDatosLogin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgKey)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).EndInit();
             this.pnlSuperior.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imgIcono)).EndInit();
             this.pnlContAcceder.ResumeLayout(false);
+            this.groupBoxImg.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogIn)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
-
-        private System.Windows.Forms.GroupBox groupBoxImg;
-        private System.Windows.Forms.PictureBox imgLogIn;
         private System.Windows.Forms.GroupBox groupBoxDatosLogin;
         private System.Windows.Forms.PictureBox imgUser;
         private System.Windows.Forms.TextBox txtCorreo;
-        private System.Windows.Forms.PictureBox imgKey;
         private System.Windows.Forms.TextBox txtClave;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblClave;
         private System.Windows.Forms.Button BtnCancelar;
         private System.Windows.Forms.Button BtnAcceder;
-        private System.Windows.Forms.Label lblMensaje2;
-        private System.Windows.Forms.Label lblMensaje1;
         private System.Windows.Forms.Panel pnlSuperior;
         private System.Windows.Forms.PictureBox imgIcono;
         private System.Windows.Forms.Panel pnlContAcceder;
@@ -338,5 +292,7 @@
         private LOGICA.DragControl dragControlImgAcceder;
         private System.Windows.Forms.Button btnCerrar;
         private System.Windows.Forms.Button btnMinimizar;
+        private System.Windows.Forms.GroupBox groupBoxImg;
+        private System.Windows.Forms.PictureBox imgLogIn;
     }
 }

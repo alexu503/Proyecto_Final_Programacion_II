@@ -38,8 +38,8 @@ namespace SistemaUniversidad.DISEÑO.Login{
              VolverIncio(this, sender, e);
         }
         private void LimpiarEtiquetas(){
-            lblMensaje1.Text = "";
-            lblMensaje2.Text = "";
+            //lblMensaje1.Text = "";
+            //lblMensaje2.Text = "";
         }
 
         void GoToAdminPannel() {
@@ -95,15 +95,15 @@ namespace SistemaUniversidad.DISEÑO.Login{
         private void txtCorreo_KeyPress(object sender, KeyPressEventArgs e){
             Validaciones validar = new Validaciones();
             LimpiarEtiquetas();
-            lblMensaje1.Visible = true;
-            validar.ValidarEspacios(sender, e, lblMensaje1);
+            //lblMensaje1.Visible = true;
+            //validar.ValidarEspacios(sender, e, lblMensaje1);
         }
 
         private void txtClave_KeyPress(object sender, KeyPressEventArgs e){
             Validaciones validar = new Validaciones();
             LimpiarEtiquetas();
-            lblMensaje2.Visible = true;
-            validar.ValidarEspacios(sender, e, lblMensaje2);
+            //lblMensaje2.Visible = true;
+            //validar.ValidarEspacios(sender, e, lblMensaje2);
         }
         #endregion
 

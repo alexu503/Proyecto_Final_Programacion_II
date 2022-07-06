@@ -15,6 +15,8 @@ namespace SistemaUniversidad.DISEÑO.Sesiones {
     public partial class Bienvenido : Form {
         public Bienvenido() {
             InitializeComponent();
+            btnIniciarSesion.TabStop = false;
+            btnSignup.TabStop = false;
         }
 
         #region Mover el Formulario
@@ -43,10 +45,6 @@ namespace SistemaUniversidad.DISEÑO.Sesiones {
 
         private void btnCerrar_Click(object sender, EventArgs e) {
             Application.Exit();
-        }
-
-        private void pnlContBienve_Paint(object sender, PaintEventArgs e) {
-            //GenerateConnection.GetConnection();
         }
 
         private void btnSignup_Click(object sender, EventArgs e) {

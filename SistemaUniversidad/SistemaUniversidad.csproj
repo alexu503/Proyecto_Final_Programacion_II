@@ -172,6 +172,12 @@
     <Compile Include="DISEÑO\Administrador\Carreras\ModificarCarrera.Designer.cs">
       <DependentUpon>ModificarCarrera.cs</DependentUpon>
     </Compile>
+    <Compile Include="DISEÑO\Administrador\Docentes\AgregarDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Docentes\AgregarDocente.Designer.cs">
+      <DependentUpon>AgregarDocente.cs</DependentUpon>
+    </Compile>
     <Compile Include="DISEÑO\Docente\AgregarCalificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +280,9 @@
     <EmbeddedResource Include="DISEÑO\Administrador\Carreras\ModificarCarrera.resx">
       <DependentUpon>ModificarCarrera.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Docentes\AgregarDocente.resx">
+      <DependentUpon>AgregarDocente.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Docente\AgregarCalificaciones.resx">
       <DependentUpon>AgregarCalificaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -327,7 +336,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DISEÑO\Administrador\Docentes\" />
     <Folder Include="DISEÑO\Administrador\Horarios\" />
   </ItemGroup>
   <ItemGroup>
