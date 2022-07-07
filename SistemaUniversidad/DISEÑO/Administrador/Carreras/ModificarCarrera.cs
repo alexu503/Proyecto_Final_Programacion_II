@@ -59,11 +59,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
         }
 
         private void ModificarCarrera_Load(object sender, EventArgs e) {
-            try {
-                LoadCareers();
-            }catch(Exception ex) {
-                MessageBox.Show("Error: " + ex.Message);
-            }
+            //EDIT THIS:
+            //try {
+            //    LoadCareers();
+            //}catch(Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
         }
 
         private void btnCerrar_Click(object sender, EventArgs e) {
@@ -84,6 +85,16 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
 
         private void btnReturnToMainForm_Click(object sender, EventArgs e) {
             this.Close();
+        }
+
+        private void btnGuardar_Click_1(object sender, EventArgs e) {
+            if(cmbGetCareersList.Text != "Seleccionar" && txtGetNewName.Text != "") {
+                if(txtGetManagerName.Text == "") {
+                    //
+                } else {
+                    //
+                }
+            }
         }
     }
 }

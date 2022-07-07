@@ -21,7 +21,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
         }
 
         private void EliminarCarrera_Load(object sender, EventArgs e) {
-            LoadCareers();
+            //EDIT THIS:
+            //try {
+            //    LoadCareers();
+            //}catch(Exception ex) {
+            //    MessageBox.Show("Error: " + ex.Message);
+            //}
         }
 
         private void btnCerrar_Click(object sender, EventArgs e) {

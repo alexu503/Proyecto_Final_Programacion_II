@@ -28,7 +28,7 @@
             this.cmbDeleteCareers = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnCancell = new System.Windows.Forms.Button();
-            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnSearchCareer = new System.Windows.Forms.Button();
             this.btnReturnToMainForm = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1.SuspendLayout();
@@ -40,10 +40,10 @@
             this.groupBox1.Controls.Add(this.cmbDeleteCareers);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.btnCancell);
-            this.groupBox1.Controls.Add(this.btnDelete);
-            this.groupBox1.Location = new System.Drawing.Point(160, 145);
+            this.groupBox1.Controls.Add(this.btnSearchCareer);
+            this.groupBox1.Location = new System.Drawing.Point(160, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(789, 482);
+            this.groupBox1.Size = new System.Drawing.Size(789, 238);
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             // 
@@ -51,9 +51,9 @@
             // 
             this.cmbDeleteCareers.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbDeleteCareers.FormattingEnabled = true;
-            this.cmbDeleteCareers.Location = new System.Drawing.Point(435, 163);
+            this.cmbDeleteCareers.Location = new System.Drawing.Point(377, 34);
             this.cmbDeleteCareers.Name = "cmbDeleteCareers";
-            this.cmbDeleteCareers.Size = new System.Drawing.Size(215, 29);
+            this.cmbDeleteCareers.Size = new System.Drawing.Size(277, 29);
             this.cmbDeleteCareers.TabIndex = 21;
             this.cmbDeleteCareers.Text = "Seleccionar";
             // 
@@ -61,7 +61,7 @@
             // 
             this.lblNombre.AutoSize = true;
             this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(138, 166);
+            this.lblNombre.Location = new System.Drawing.Point(142, 37);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(183, 21);
             this.lblNombre.TabIndex = 20;
@@ -70,22 +70,22 @@
             // btnCancell
             // 
             this.btnCancell.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancell.Location = new System.Drawing.Point(553, 289);
+            this.btnCancell.Location = new System.Drawing.Point(557, 160);
             this.btnCancell.Name = "btnCancell";
             this.btnCancell.Size = new System.Drawing.Size(97, 31);
             this.btnCancell.TabIndex = 18;
             this.btnCancell.Text = "Cancelar";
             this.btnCancell.UseVisualStyleBackColor = true;
             // 
-            // btnDelete
+            // btnSearchCareer
             // 
-            this.btnDelete.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(142, 289);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(97, 31);
-            this.btnDelete.TabIndex = 19;
-            this.btnDelete.Text = "Eliminar";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnSearchCareer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchCareer.Location = new System.Drawing.Point(146, 160);
+            this.btnSearchCareer.Name = "btnSearchCareer";
+            this.btnSearchCareer.Size = new System.Drawing.Size(97, 31);
+            this.btnSearchCareer.TabIndex = 19;
+            this.btnSearchCareer.Text = "Ver";
+            this.btnSearchCareer.UseVisualStyleBackColor = true;
             // 
             // btnReturnToMainForm
             // 
@@ -133,7 +133,7 @@
         private System.Windows.Forms.ComboBox cmbDeleteCareers;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Button btnCancell;
-        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnSearchCareer;
         private System.Windows.Forms.Button btnReturnToMainForm;
         private System.Windows.Forms.PictureBox imgLogo;
     }

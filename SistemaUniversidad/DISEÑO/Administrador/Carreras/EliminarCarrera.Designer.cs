@@ -106,6 +106,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.btnDelete.TabIndex = 15;
             this.btnDelete.Text = "Eliminar";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnReturnToMainForm
             // 

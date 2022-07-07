@@ -53,7 +53,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             if(txtGetCareerName.Text != "") {
                 try {
                     InsertData.AddNewCareer(GetFirstCharToUpper(txtGetCareerName.Text.Trim()));
-                    MessageBox.Show("Agergado exitosamente");
+                    MessageBox.Show("Agregado exitosamente");
                     txtGetCareerName.Clear();
                 }
                 catch(Exception ex) {

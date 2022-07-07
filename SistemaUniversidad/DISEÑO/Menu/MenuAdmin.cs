@@ -161,6 +161,7 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             panel1.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+            lblTitulo.Text = "Bienvenido";
         }
 
         #region Cerrar Sesión

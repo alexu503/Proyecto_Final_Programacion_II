@@ -46,7 +46,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.btnReturnToMainForm = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGetManagerName = new System.Windows.Forms.TextBox();
             this.txtGetNewName = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.cmbGetCareersList = new System.Windows.Forms.ComboBox();
@@ -81,7 +81,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtGetManagerName);
             this.groupBox1.Controls.Add(this.txtGetNewName);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.cmbGetCareersList);
@@ -95,14 +95,14 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.groupBox1.TabIndex = 21;
             this.groupBox1.TabStop = false;
             // 
-            // textBox1
+            // txtGetManagerName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(453, 245);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(215, 25);
-            this.textBox1.TabIndex = 25;
+            this.txtGetManagerName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGetManagerName.Location = new System.Drawing.Point(453, 245);
+            this.txtGetManagerName.Multiline = true;
+            this.txtGetManagerName.Name = "txtGetManagerName";
+            this.txtGetManagerName.Size = new System.Drawing.Size(215, 25);
+            this.txtGetManagerName.TabIndex = 25;
             // 
             // txtGetNewName
             // 
@@ -171,6 +171,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
             this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click_1);
             // 
             // ModificarCarrera
             // 
@@ -197,7 +198,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
         private Button btnReturnToMainForm;
         private PictureBox imgLogo;
         private GroupBox groupBox1;
-        private TextBox textBox1;
+        private TextBox txtGetManagerName;
         private TextBox txtGetNewName;
         private Label label1;
         private ComboBox cmbGetCareersList;
