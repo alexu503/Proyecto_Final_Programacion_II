@@ -89,6 +89,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             this.lblDescrip.Size = new System.Drawing.Size(171, 33);
             this.lblDescrip.TabIndex = 34;
             this.lblDescrip.Text = "Registrarme";
+            this.lblDescrip.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblDescrip_MouseDown);
             // 
             // groupBox1
             // 

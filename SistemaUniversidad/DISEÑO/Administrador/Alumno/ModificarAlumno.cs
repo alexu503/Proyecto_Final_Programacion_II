@@ -131,5 +131,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             //}
         }
         #endregion
+
+        private void btnReturnToMainForm_Click(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }

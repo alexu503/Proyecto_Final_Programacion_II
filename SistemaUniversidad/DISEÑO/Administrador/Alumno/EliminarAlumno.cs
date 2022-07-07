@@ -167,5 +167,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             //    connection.Close();
             //}
         }
+
+        private void btnReturnToMainForm_Click(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }

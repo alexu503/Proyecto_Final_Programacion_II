@@ -142,6 +142,10 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             SendMessage(this.Handle, 0x112, 0xf012, 0);
         }
 
+        private void lblDescrip_MouseDown(object sender, MouseEventArgs e) {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
         private void btnCancell_Click(object sender, EventArgs e) {
             txtGetName.Clear();
             txtGet1stLastname.Clear();

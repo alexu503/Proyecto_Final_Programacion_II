@@ -66,8 +66,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarAlumno));
-            this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
-            this.dragControl2 = new SistemaUniversidad.LOGICA.DragControl();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.groupBoxFiltro = new System.Windows.Forms.GroupBox();
             this.txtDato = new System.Windows.Forms.TextBox();
@@ -80,6 +78,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.lblCarrera = new System.Windows.Forms.Label();
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
             this.pnlContendor = new System.Windows.Forms.Panel();
+            this.btnReturnToMainForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.groupBoxFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
@@ -105,7 +104,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.groupBoxFiltro.Controls.Add(this.cmbFiltro);
             this.groupBoxFiltro.Controls.Add(this.lblFiltro);
             this.groupBoxFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxFiltro.Location = new System.Drawing.Point(269, 65);
+            this.groupBoxFiltro.Location = new System.Drawing.Point(269, 137);
             this.groupBoxFiltro.Name = "groupBoxFiltro";
             this.groupBoxFiltro.Size = new System.Drawing.Size(521, 179);
             this.groupBoxFiltro.TabIndex = 11;
@@ -160,7 +159,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.cmbCarreras.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarreras.FormattingEnabled = true;
-            this.cmbCarreras.Location = new System.Drawing.Point(479, 11);
+            this.cmbCarreras.Location = new System.Drawing.Point(479, 56);
             this.cmbCarreras.Name = "cmbCarreras";
             this.cmbCarreras.Size = new System.Drawing.Size(311, 28);
             this.cmbCarreras.TabIndex = 10;
@@ -180,7 +179,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.lblCarrera.AutoSize = true;
             this.lblCarrera.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarrera.Location = new System.Drawing.Point(265, 14);
+            this.lblCarrera.Location = new System.Drawing.Point(265, 59);
             this.lblCarrera.Name = "lblCarrera";
             this.lblCarrera.Size = new System.Drawing.Size(171, 20);
             this.lblCarrera.TabIndex = 9;
@@ -188,30 +187,41 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             // dgvAlumnos
             // 
-            this.dgvAlumnos.Location = new System.Drawing.Point(11, 279);
+            this.dgvAlumnos.Location = new System.Drawing.Point(11, 348);
             this.dgvAlumnos.Name = "dgvAlumnos";
-            this.dgvAlumnos.Size = new System.Drawing.Size(966, 243);
+            this.dgvAlumnos.Size = new System.Drawing.Size(1047, 325);
             this.dgvAlumnos.TabIndex = 0;
             // 
             // pnlContendor
             // 
             this.pnlContendor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlContendor.Controls.Add(this.btnReturnToMainForm);
             this.pnlContendor.Controls.Add(this.groupBoxFiltro);
             this.pnlContendor.Controls.Add(this.dgvAlumnos);
             this.pnlContendor.Controls.Add(this.cmbCarreras);
             this.pnlContendor.Controls.Add(this.imgLogo);
             this.pnlContendor.Controls.Add(this.lblCarrera);
-            this.pnlContendor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.pnlContendor.Location = new System.Drawing.Point(0, 0);
             this.pnlContendor.Name = "pnlContendor";
-            this.pnlContendor.Size = new System.Drawing.Size(990, 538);
+            this.pnlContendor.Size = new System.Drawing.Size(1071, 687);
             this.pnlContendor.TabIndex = 14;
+            // 
+            // btnReturnToMainForm
+            // 
+            this.btnReturnToMainForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturnToMainForm.Location = new System.Drawing.Point(1010, 11);
+            this.btnReturnToMainForm.Name = "btnReturnToMainForm";
+            this.btnReturnToMainForm.Size = new System.Drawing.Size(48, 35);
+            this.btnReturnToMainForm.TabIndex = 12;
+            this.btnReturnToMainForm.Text = "X";
+            this.btnReturnToMainForm.UseVisualStyleBackColor = true;
+            this.btnReturnToMainForm.Click += new System.EventHandler(this.btnReturnToMainForm_Click);
             // 
             // ModificarAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(990, 538);
+            this.ClientSize = new System.Drawing.Size(1071, 686);
             this.Controls.Add(this.pnlContendor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModificarAlumno";
@@ -228,8 +238,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         }
 
         #endregion
-        private LOGICA.DragControl dragControl1;
-        private LOGICA.DragControl dragControl2;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.GroupBox groupBoxFiltro;
         private System.Windows.Forms.TextBox txtDato;
@@ -242,5 +250,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private System.Windows.Forms.DataGridView dgvAlumnos;
         private Panel pnlContendor;
         private Button btnFiltrarDatos;
+        private Button btnReturnToMainForm;
     }
 }

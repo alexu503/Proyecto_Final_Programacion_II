@@ -90,7 +90,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(EliminarAlumno));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.lblCarrera = new System.Windows.Forms.Label();
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
@@ -101,24 +101,19 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.cmbFiltro = new System.Windows.Forms.ComboBox();
             this.lblFiltro = new System.Windows.Forms.Label();
             this.dgvAlumnos = new System.Windows.Forms.DataGridView();
-            this.groupBoxBotones = new System.Windows.Forms.GroupBox();
-            this.btnRegresar = new System.Windows.Forms.Button();
-            this.btnEliminar = new System.Windows.Forms.Button();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.pnlContenedor = new System.Windows.Forms.Panel();
-            this.dragControl1 = new SistemaUniversidad.LOGICA.DragControl();
-            this.dragControl2 = new SistemaUniversidad.LOGICA.DragControl();
+            this.btnEliminar = new System.Windows.Forms.Button();
+            this.btnReturnToMainForm = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.groupBoxFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).BeginInit();
-            this.groupBoxBotones.SuspendLayout();
             this.pnlContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // imgLogo
             // 
             this.imgLogo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogo.Image")));
-            this.imgLogo.Location = new System.Drawing.Point(30, 32);
+            this.imgLogo.Location = new System.Drawing.Point(12, 11);
             this.imgLogo.Name = "imgLogo";
             this.imgLogo.Size = new System.Drawing.Size(150, 110);
             this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -129,7 +124,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.lblCarrera.AutoSize = true;
             this.lblCarrera.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCarrera.Location = new System.Drawing.Point(301, 35);
+            this.lblCarrera.Location = new System.Drawing.Point(251, 35);
             this.lblCarrera.Name = "lblCarrera";
             this.lblCarrera.Size = new System.Drawing.Size(171, 20);
             this.lblCarrera.TabIndex = 4;
@@ -139,7 +134,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // 
             this.cmbCarreras.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbCarreras.FormattingEnabled = true;
-            this.cmbCarreras.Location = new System.Drawing.Point(478, 32);
+            this.cmbCarreras.Location = new System.Drawing.Point(568, 32);
             this.cmbCarreras.Name = "cmbCarreras";
             this.cmbCarreras.Size = new System.Drawing.Size(311, 28);
             this.cmbCarreras.TabIndex = 5;
@@ -147,6 +142,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // groupBoxFiltro
             // 
             this.groupBoxFiltro.Controls.Add(this.txtDato);
+            this.groupBoxFiltro.Controls.Add(this.btnEliminar);
             this.groupBoxFiltro.Controls.Add(this.lblDatos);
             this.groupBoxFiltro.Controls.Add(this.btnFiltrarDatos);
             this.groupBoxFiltro.Controls.Add(this.cmbFiltro);
@@ -154,16 +150,16 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.groupBoxFiltro.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBoxFiltro.Location = new System.Drawing.Point(255, 97);
             this.groupBoxFiltro.Name = "groupBoxFiltro";
-            this.groupBoxFiltro.Size = new System.Drawing.Size(315, 179);
+            this.groupBoxFiltro.Size = new System.Drawing.Size(624, 179);
             this.groupBoxFiltro.TabIndex = 6;
             this.groupBoxFiltro.TabStop = false;
             this.groupBoxFiltro.Text = "Filtrar búsqueda";
             // 
             // txtDato
             // 
-            this.txtDato.Location = new System.Drawing.Point(147, 81);
+            this.txtDato.Location = new System.Drawing.Point(313, 81);
             this.txtDato.Name = "txtDato";
-            this.txtDato.Size = new System.Drawing.Size(151, 26);
+            this.txtDato.Size = new System.Drawing.Size(277, 26);
             this.txtDato.TabIndex = 4;
             // 
             // lblDatos
@@ -179,20 +175,20 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             // btnFiltrarDatos
             // 
             this.btnFiltrarDatos.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFiltrarDatos.Location = new System.Drawing.Point(86, 123);
+            this.btnFiltrarDatos.Location = new System.Drawing.Point(32, 123);
             this.btnFiltrarDatos.Name = "btnFiltrarDatos";
-            this.btnFiltrarDatos.Size = new System.Drawing.Size(151, 30);
+            this.btnFiltrarDatos.Size = new System.Drawing.Size(135, 30);
             this.btnFiltrarDatos.TabIndex = 0;
-            this.btnFiltrarDatos.Text = "CARGAR DATOS";
+            this.btnFiltrarDatos.Text = "Cargar";
             this.btnFiltrarDatos.UseVisualStyleBackColor = true;
             this.btnFiltrarDatos.Click += new System.EventHandler(this.btnFiltrarDatos_Click);
             // 
             // cmbFiltro
             // 
             this.cmbFiltro.FormattingEnabled = true;
-            this.cmbFiltro.Location = new System.Drawing.Point(147, 37);
+            this.cmbFiltro.Location = new System.Drawing.Point(313, 37);
             this.cmbFiltro.Name = "cmbFiltro";
-            this.cmbFiltro.Size = new System.Drawing.Size(151, 28);
+            this.cmbFiltro.Size = new System.Drawing.Size(277, 28);
             this.cmbFiltro.TabIndex = 2;
             // 
             // lblFiltro
@@ -209,87 +205,64 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.dgvAlumnos.AllowUserToAddRows = false;
             this.dgvAlumnos.AllowUserToDeleteRows = false;
             this.dgvAlumnos.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(11)))), ((int)(((byte)(30)))), ((int)(((byte)(46)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Century Gothic", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvAlumnos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgvAlumnos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvAlumnos.Location = new System.Drawing.Point(30, 321);
+            this.dgvAlumnos.Location = new System.Drawing.Point(12, 321);
             this.dgvAlumnos.Name = "dgvAlumnos";
             this.dgvAlumnos.ReadOnly = true;
             this.dgvAlumnos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAlumnos.Size = new System.Drawing.Size(968, 242);
+            this.dgvAlumnos.Size = new System.Drawing.Size(1047, 352);
             this.dgvAlumnos.TabIndex = 7;
-            // 
-            // groupBoxBotones
-            // 
-            this.groupBoxBotones.Controls.Add(this.btnRegresar);
-            this.groupBoxBotones.Controls.Add(this.btnEliminar);
-            this.groupBoxBotones.Controls.Add(this.btnActualizar);
-            this.groupBoxBotones.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxBotones.Location = new System.Drawing.Point(589, 97);
-            this.groupBoxBotones.Name = "groupBoxBotones";
-            this.groupBoxBotones.Size = new System.Drawing.Size(200, 179);
-            this.groupBoxBotones.TabIndex = 8;
-            this.groupBoxBotones.TabStop = false;
-            // 
-            // btnRegresar
-            // 
-            this.btnRegresar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegresar.Location = new System.Drawing.Point(24, 123);
-            this.btnRegresar.Name = "btnRegresar";
-            this.btnRegresar.Size = new System.Drawing.Size(151, 37);
-            this.btnRegresar.TabIndex = 2;
-            this.btnRegresar.Text = "REGRESAR";
-            this.btnRegresar.UseVisualStyleBackColor = true;
-            this.btnRegresar.Click += new System.EventHandler(this.btnRegresar_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEliminar.Location = new System.Drawing.Point(24, 70);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(151, 37);
-            this.btnEliminar.TabIndex = 1;
-            this.btnEliminar.Text = "ELIMINAR REGISTRO";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnActualizar.Location = new System.Drawing.Point(24, 23);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(151, 37);
-            this.btnActualizar.TabIndex = 0;
-            this.btnActualizar.Text = "CARGAR DATOS";
-            this.btnActualizar.UseVisualStyleBackColor = true;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // pnlContenedor
             // 
             this.pnlContenedor.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.pnlContenedor.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pnlContenedor.Controls.Add(this.btnReturnToMainForm);
             this.pnlContenedor.Controls.Add(this.imgLogo);
             this.pnlContenedor.Controls.Add(this.dgvAlumnos);
-            this.pnlContenedor.Controls.Add(this.groupBoxBotones);
             this.pnlContenedor.Controls.Add(this.lblCarrera);
             this.pnlContenedor.Controls.Add(this.groupBoxFiltro);
             this.pnlContenedor.Controls.Add(this.cmbCarreras);
-            this.pnlContenedor.Location = new System.Drawing.Point(0, 0);
+            this.pnlContenedor.Location = new System.Drawing.Point(-1, 0);
             this.pnlContenedor.Name = "pnlContenedor";
-            this.pnlContenedor.Size = new System.Drawing.Size(1032, 598);
+            this.pnlContenedor.Size = new System.Drawing.Size(1074, 686);
             this.pnlContenedor.TabIndex = 9;
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEliminar.Location = new System.Drawing.Point(455, 123);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(135, 30);
+            this.btnEliminar.TabIndex = 1;
+            this.btnEliminar.Text = "ELIMINAR";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
+            // 
+            // btnReturnToMainForm
+            // 
+            this.btnReturnToMainForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturnToMainForm.Location = new System.Drawing.Point(1011, 11);
+            this.btnReturnToMainForm.Name = "btnReturnToMainForm";
+            this.btnReturnToMainForm.Size = new System.Drawing.Size(48, 35);
+            this.btnReturnToMainForm.TabIndex = 13;
+            this.btnReturnToMainForm.Text = "X";
+            this.btnReturnToMainForm.UseVisualStyleBackColor = true;
+            this.btnReturnToMainForm.Click += new System.EventHandler(this.btnReturnToMainForm_Click);
             // 
             // EliminarAlumno
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1032, 597);
+            this.ClientSize = new System.Drawing.Size(1071, 686);
             this.Controls.Add(this.pnlContenedor);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EliminarAlumno";
@@ -300,7 +273,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador
             this.groupBoxFiltro.ResumeLayout(false);
             this.groupBoxFiltro.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvAlumnos)).EndInit();
-            this.groupBoxBotones.ResumeLayout(false);
             this.pnlContenedor.ResumeLayout(false);
             this.pnlContenedor.PerformLayout();
             this.ResumeLayout(false);
@@ -317,13 +289,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador
         private System.Windows.Forms.Label lblDatos;
         private System.Windows.Forms.TextBox txtDato;
         private System.Windows.Forms.DataGridView dgvAlumnos;
-        private System.Windows.Forms.GroupBox groupBoxBotones;
-        private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button btnEliminar;
-        private System.Windows.Forms.Button btnRegresar;
         private System.Windows.Forms.Panel pnlContenedor;
-        private DragControl dragControl1;
-        private DragControl dragControl2;
         private Button btnFiltrarDatos;
+        private Button btnEliminar;
+        private Button btnReturnToMainForm;
     }
 }

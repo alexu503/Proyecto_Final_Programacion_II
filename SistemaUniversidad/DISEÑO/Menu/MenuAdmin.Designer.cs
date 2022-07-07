@@ -54,7 +54,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
-            this.dragControlMenuAdmin = new SistemaUniversidad.LOGICA.DragControl();
             this.pnlSuperiorMenuAdmin = new System.Windows.Forms.Panel();
             this.imgMasOpciones = new System.Windows.Forms.PictureBox();
             this.btnCerrar = new System.Windows.Forms.Button();
@@ -103,6 +102,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.imgMision = new System.Windows.Forms.PictureBox();
             this.imgVision = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dragControlMenuAdmin = new SistemaUniversidad.LOGICA.DragControl();
             this.pnlSuperiorMenuAdmin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).BeginInit();
             this.panelContenedor.SuspendLayout();
@@ -118,10 +118,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             ((System.ComponentModel.ISupportInitialize)(this.imgVision)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // dragControlMenuAdmin
-            // 
-            this.dragControlMenuAdmin.SelectControl = null;
             // 
             // pnlSuperiorMenuAdmin
             // 
@@ -865,6 +861,10 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1276, 686);
             this.panel1.TabIndex = 4;
+            // 
+            // dragControlMenuAdmin
+            // 
+            this.dragControlMenuAdmin.SelectControl = null;
             // 
             // MenuAdmin
             // 
