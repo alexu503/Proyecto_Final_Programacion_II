@@ -81,5 +81,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
                 this.Close();
             }
         }
+
+        private void btnReturnToMainForm_Click(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }

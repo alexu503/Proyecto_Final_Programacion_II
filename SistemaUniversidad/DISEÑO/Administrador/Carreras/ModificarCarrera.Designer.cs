@@ -43,167 +43,167 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
         /// </summary>
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ModificarCarrera));
-            this.pnlSuperior = new System.Windows.Forms.Panel();
-            this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
+            this.btnReturnToMainForm = new System.Windows.Forms.Button();
+            this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtGetNewName = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.cmbGetCareersList = new System.Windows.Forms.ComboBox();
+            this.lblNewName = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
             this.btnCancell = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.lblNewName = new System.Windows.Forms.Label();
-            this.txtGetNewName = new System.Windows.Forms.TextBox();
-            this.pnlSuperior.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // pnlSuperior
+            // btnReturnToMainForm
             // 
-            this.pnlSuperior.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(93)))), ((int)(((byte)(142)))));
-            this.pnlSuperior.Controls.Add(this.lblTitulo);
-            this.pnlSuperior.Controls.Add(this.btnMinimizar);
-            this.pnlSuperior.Controls.Add(this.btnCerrar);
-            this.pnlSuperior.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSuperior.Location = new System.Drawing.Point(0, 0);
-            this.pnlSuperior.Name = "pnlSuperior";
-            this.pnlSuperior.Size = new System.Drawing.Size(800, 35);
-            this.pnlSuperior.TabIndex = 4;
+            this.btnReturnToMainForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturnToMainForm.Location = new System.Drawing.Point(1011, 12);
+            this.btnReturnToMainForm.Name = "btnReturnToMainForm";
+            this.btnReturnToMainForm.Size = new System.Drawing.Size(48, 35);
+            this.btnReturnToMainForm.TabIndex = 19;
+            this.btnReturnToMainForm.Text = "X";
+            this.btnReturnToMainForm.UseVisualStyleBackColor = true;
+            this.btnReturnToMainForm.Click += new System.EventHandler(this.btnReturnToMainForm_Click);
             // 
-            // lblTitulo
+            // imgLogo
             // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.Color.White;
-            this.lblTitulo.Location = new System.Drawing.Point(324, 6);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(139, 20);
-            this.lblTitulo.TabIndex = 3;
-            this.lblTitulo.Text = "Modificar carrera";
+            this.imgLogo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogo.Image")));
+            this.imgLogo.Location = new System.Drawing.Point(12, 12);
+            this.imgLogo.Name = "imgLogo";
+            this.imgLogo.Size = new System.Drawing.Size(125, 90);
+            this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgLogo.TabIndex = 20;
+            this.imgLogo.TabStop = false;
             // 
-            // btnMinimizar
+            // groupBox1
             // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(704, 0);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 35);
-            this.btnMinimizar.TabIndex = 0;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
+            this.groupBox1.Controls.Add(this.textBox1);
+            this.groupBox1.Controls.Add(this.txtGetNewName);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cmbGetCareersList);
+            this.groupBox1.Controls.Add(this.lblNewName);
+            this.groupBox1.Controls.Add(this.lblNombre);
+            this.groupBox1.Controls.Add(this.btnCancell);
+            this.groupBox1.Controls.Add(this.btnGuardar);
+            this.groupBox1.Location = new System.Drawing.Point(175, 125);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(716, 456);
+            this.groupBox1.TabIndex = 21;
+            this.groupBox1.TabStop = false;
             // 
-            // btnCerrar
+            // textBox1
             // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(755, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(45, 35);
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            this.textBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(453, 245);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(215, 25);
+            this.textBox1.TabIndex = 25;
+            // 
+            // txtGetNewName
+            // 
+            this.txtGetNewName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtGetNewName.Location = new System.Drawing.Point(453, 146);
+            this.txtGetNewName.Multiline = true;
+            this.txtGetNewName.Name = "txtGetNewName";
+            this.txtGetNewName.Size = new System.Drawing.Size(215, 25);
+            this.txtGetNewName.TabIndex = 26;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(49, 249);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(166, 21);
+            this.label1.TabIndex = 21;
+            this.label1.Text = "Nuevo coordinador:";
             // 
             // cmbGetCareersList
             // 
-            this.cmbGetCareersList.Font = new System.Drawing.Font("Century Gothic", 9.75F);
+            this.cmbGetCareersList.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbGetCareersList.FormattingEnabled = true;
-            this.cmbGetCareersList.Location = new System.Drawing.Point(413, 139);
+            this.cmbGetCareersList.Location = new System.Drawing.Point(453, 39);
             this.cmbGetCareersList.Name = "cmbGetCareersList";
-            this.cmbGetCareersList.Size = new System.Drawing.Size(215, 25);
-            this.cmbGetCareersList.TabIndex = 17;
+            this.cmbGetCareersList.Size = new System.Drawing.Size(215, 29);
+            this.cmbGetCareersList.TabIndex = 24;
+            // 
+            // lblNewName
+            // 
+            this.lblNewName.AutoSize = true;
+            this.lblNewName.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNewName.Location = new System.Drawing.Point(49, 150);
+            this.lblNewName.Name = "lblNewName";
+            this.lblNewName.Size = new System.Drawing.Size(252, 21);
+            this.lblNewName.TabIndex = 22;
+            this.lblNewName.Text = "Nuevo nombre para la carrera:";
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombre.Location = new System.Drawing.Point(172, 142);
+            this.lblNombre.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombre.Location = new System.Drawing.Point(49, 45);
             this.lblNombre.Name = "lblNombre";
-            this.lblNombre.Size = new System.Drawing.Size(231, 17);
-            this.lblNombre.TabIndex = 16;
+            this.lblNombre.Size = new System.Drawing.Size(275, 21);
+            this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "Seleccionar la carrera a modificar:";
             // 
             // btnCancell
             // 
             this.btnCancell.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancell.Location = new System.Drawing.Point(539, 281);
+            this.btnCancell.Location = new System.Drawing.Point(579, 387);
             this.btnCancell.Name = "btnCancell";
             this.btnCancell.Size = new System.Drawing.Size(89, 31);
-            this.btnCancell.TabIndex = 14;
+            this.btnCancell.TabIndex = 19;
             this.btnCancell.Text = "Cancelar";
             this.btnCancell.UseVisualStyleBackColor = true;
-            this.btnCancell.Click += new System.EventHandler(this.btnCancell_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(175, 281);
+            this.btnGuardar.Location = new System.Drawing.Point(53, 387);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(89, 31);
-            this.btnGuardar.TabIndex = 15;
+            this.btnGuardar.TabIndex = 20;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
-            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
-            // 
-            // lblNewName
-            // 
-            this.lblNewName.AutoSize = true;
-            this.lblNewName.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNewName.Location = new System.Drawing.Point(172, 208);
-            this.lblNewName.Name = "lblNewName";
-            this.lblNewName.Size = new System.Drawing.Size(211, 17);
-            this.lblNewName.TabIndex = 16;
-            this.lblNewName.Text = "Nuevo nombre para la carrera:";
-            // 
-            // txtGetNewName
-            // 
-            this.txtGetNewName.Location = new System.Drawing.Point(413, 207);
-            this.txtGetNewName.Multiline = true;
-            this.txtGetNewName.Name = "txtGetNewName";
-            this.txtGetNewName.Size = new System.Drawing.Size(215, 25);
-            this.txtGetNewName.TabIndex = 18;
-            this.txtGetNewName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetNewName_KeyPress);
             // 
             // ModificarCarrera
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.txtGetNewName);
-            this.Controls.Add(this.cmbGetCareersList);
-            this.Controls.Add(this.lblNewName);
-            this.Controls.Add(this.lblNombre);
-            this.Controls.Add(this.btnCancell);
-            this.Controls.Add(this.btnGuardar);
-            this.Controls.Add(this.pnlSuperior);
+            this.ClientSize = new System.Drawing.Size(1071, 686);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.imgLogo);
+            this.Controls.Add(this.btnReturnToMainForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "ModificarCarrera";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "ModificarCarrera";
             this.Load += new System.EventHandler(this.ModificarCarrera_Load);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.ModificarCarrera_MouseDown);
-            this.pnlSuperior.ResumeLayout(false);
-            this.pnlSuperior.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel pnlSuperior;
-        private System.Windows.Forms.Label lblTitulo;
-        private System.Windows.Forms.Button btnMinimizar;
-        private System.Windows.Forms.Button btnCerrar;
-        private System.Windows.Forms.ComboBox cmbGetCareersList;
-        private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.Button btnCancell;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Label lblNewName;
-        private System.Windows.Forms.TextBox txtGetNewName;
+        private Button btnReturnToMainForm;
+        private PictureBox imgLogo;
+        private GroupBox groupBox1;
+        private TextBox textBox1;
+        private TextBox txtGetNewName;
+        private Label label1;
+        private ComboBox cmbGetCareersList;
+        private Label lblNewName;
+        private Label lblNombre;
+        private Button btnCancell;
+        private Button btnGuardar;
     }
 }

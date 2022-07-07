@@ -13,5 +13,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
         public BuscarCarrera() {
             InitializeComponent();
         }
+
+        private void btnReturnToMainForm_Click(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }
