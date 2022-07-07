@@ -17,5 +17,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Carreras {
         private void btnReturnToMainForm_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        private void btnSearchCareer_Click(object sender, EventArgs e) {
+            //
+        }
     }
 }

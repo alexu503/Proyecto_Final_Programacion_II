@@ -152,8 +152,10 @@ namespace SistemaUniversidad.DISEÑO.Menu {
 
         private Form activeForm = null;
         private void openChildForm(Form childForm) {
-            if (activeForm != null)
+            if (activeForm != null) {
                 activeForm.Close();
+                lblTitulo.Text = "Bienvenido";
+            }
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;

@@ -86,6 +86,7 @@
             this.btnSearchCareer.TabIndex = 19;
             this.btnSearchCareer.Text = "Ver";
             this.btnSearchCareer.UseVisualStyleBackColor = true;
+            this.btnSearchCareer.Click += new System.EventHandler(this.btnSearchCareer_Click);
             // 
             // btnReturnToMainForm
             // 
