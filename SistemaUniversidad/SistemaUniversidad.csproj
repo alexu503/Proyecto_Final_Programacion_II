@@ -256,6 +256,9 @@
     <EmbeddedResource Include="DISEÑO\Administrador\Asignaturas\AgregarAsignatura.resx">
       <DependentUpon>AgregarAsignatura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Asignaturas\BuscarAsignatura.resx">
+      <DependentUpon>BuscarAsignatura.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Administrador\Asignaturas\EliminarAsignatura.resx">
       <DependentUpon>EliminarAsignatura.cs</DependentUpon>
     </EmbeddedResource>

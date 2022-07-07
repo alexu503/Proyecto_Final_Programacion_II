@@ -21,7 +21,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
 
         private void btnRestaurar_Click(object sender, EventArgs e) {
             BotonesPnlSuperior boton = new BotonesPnlSuperior();
-            boton.Restaurar(this, sender, e, btnRestaurar, btnMaximizar);
+            //boton.Restaurar(this, sender, e, btnRestaurar, btnMaximizar);
         }
 
         private void btnMinimizar_Click(object sender, EventArgs e) {
@@ -38,7 +38,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
 
         private void btnMaximizar_Click(object sender, EventArgs e) {
             BotonesPnlSuperior boton = new BotonesPnlSuperior();
-            boton.Maximizar(this, sender, e, btnMaximizar, btnRestaurar);
+            //boton.Maximizar(this, sender, e, btnMaximizar, btnRestaurar);
         }
 
         private void AgregarAsignatura_Load(object sender, EventArgs e) {

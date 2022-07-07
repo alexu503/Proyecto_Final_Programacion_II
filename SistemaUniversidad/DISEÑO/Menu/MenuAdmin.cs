@@ -95,12 +95,7 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             ControlPaint.DrawSizeGrip(e.Graphics, Color.Transparent, sizeGripRectangle);
         }
 
-        private void btnAgregarAsignatura_Click(object sender, EventArgs e) {
-            Administrador.Asignaturas.AgregarAsignatura aggAsig = new Administrador.Asignaturas.AgregarAsignatura();
-            this.Hide();
-            aggAsig.agregarAsignatura = this;
-            aggAsig.Show();
-        }
+        
 
         private void btnGestionarAlumnos_Click(object sender, EventArgs e) {
             MostrarSubMenu(pnlSubMenuAlumnos);
@@ -154,6 +149,20 @@ namespace SistemaUniversidad.DISEÑO.Menu {
 
         #region Eventos Click
 
+        private Form activeForm = null;
+        private void openChildForm(Form childForm) {
+            if (activeForm != null)
+                activeForm.Close();
+            activeForm = childForm;
+            childForm.TopLevel = false;
+            childForm.FormBorderStyle = FormBorderStyle.None;
+            childForm.Dock = DockStyle.Fill;
+            panel1.Controls.Add(childForm);
+            panel1.Tag = childForm;
+            childForm.BringToFront();
+            childForm.Show();
+        }
+
         #region Cerrar Sesión
         #endregion
 
@@ -205,21 +214,6 @@ namespace SistemaUniversidad.DISEÑO.Menu {
 
         #region Alumnos
         //----> Agregar nuevo alumno
-
-        private Form activeForm = null;
-        private void openChildForm(Form childForm) {
-            if (activeForm != null)
-                activeForm.Close();
-            activeForm = childForm;
-            childForm.TopLevel = false;
-            childForm.FormBorderStyle = FormBorderStyle.None;
-            childForm.Dock = DockStyle.Fill;
-            panel1.Controls.Add(childForm);
-            panel1.Tag = childForm;
-            childForm.BringToFront();
-            childForm.Show();
-        }
-
         private void btnEliminarAlumno_Click(object sender, EventArgs e) {
             openChildForm(new Administrador.EliminarAlumno());
             lblTitulo.Text = "Eliminar un estudiante";
@@ -239,11 +233,10 @@ namespace SistemaUniversidad.DISEÑO.Menu {
 
         #region Asignaturas
 
-        private void btnAgregarAsignatura_Click_1(object sender, EventArgs e) {
-            AgregarAsignatura agregarAsignatura = new AgregarAsignatura();
-            this.Hide();
-            agregarAsignatura.Show();
-        }
+        private void btnAgregarAsignatura_Click(object sender, EventArgs e) {
+            openChildForm(new AgregarAsignatura());
+            lblTitulo.Text = "Registrar nueva asignatura";
+        }   
 
         private void btnEliminarAsignatura_Click(object sender, EventArgs e) {
             EliminarAsignatura eliminarAsignatura = new EliminarAsignatura();
