@@ -39,6 +39,7 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.btnReturnToMainForm = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
@@ -136,7 +137,6 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(296, 27);
             this.txtNombre.TabIndex = 7;
-            this.txtNombre.Text = "Seleccionar";
             // 
             // imgLogo
             // 
@@ -148,11 +148,23 @@
             this.imgLogo.TabIndex = 4;
             this.imgLogo.TabStop = false;
             // 
+            // btnReturnToMainForm
+            // 
+            this.btnReturnToMainForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturnToMainForm.Location = new System.Drawing.Point(1011, 12);
+            this.btnReturnToMainForm.Name = "btnReturnToMainForm";
+            this.btnReturnToMainForm.Size = new System.Drawing.Size(48, 35);
+            this.btnReturnToMainForm.TabIndex = 14;
+            this.btnReturnToMainForm.Text = "X";
+            this.btnReturnToMainForm.UseVisualStyleBackColor = true;
+            this.btnReturnToMainForm.Click += new System.EventHandler(this.btnReturnToMainForm_Click);
+            // 
             // AgregarAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 686);
+            this.Controls.Add(this.btnReturnToMainForm);
             this.Controls.Add(this.imgLogo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -180,5 +192,6 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.PictureBox imgLogo;
+        private System.Windows.Forms.Button btnReturnToMainForm;
     }
 }

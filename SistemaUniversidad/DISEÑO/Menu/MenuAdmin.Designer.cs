@@ -654,6 +654,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnEliminarAsignatura.TabIndex = 1;
             this.btnEliminarAsignatura.Text = "Eliminar";
             this.btnEliminarAsignatura.UseVisualStyleBackColor = true;
+            this.btnEliminarAsignatura.Click += new System.EventHandler(this.btnEliminarAsignatura_Click);
             // 
             // btnBuscarAsignatura
             // 
@@ -672,6 +673,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnBuscarAsignatura.TabIndex = 1;
             this.btnBuscarAsignatura.Text = "Buscar";
             this.btnBuscarAsignatura.UseVisualStyleBackColor = true;
+            this.btnBuscarAsignatura.Click += new System.EventHandler(this.btnBuscarAsignatura_Click);
             // 
             // btnAgregarAsignatura
             // 
@@ -709,6 +711,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnModificarAsignatura.TabIndex = 1;
             this.btnModificarAsignatura.Text = "Modificar";
             this.btnModificarAsignatura.UseVisualStyleBackColor = true;
+            this.btnModificarAsignatura.Click += new System.EventHandler(this.btnModificarAsignatura_Click);
             // 
             // panel7
             // 

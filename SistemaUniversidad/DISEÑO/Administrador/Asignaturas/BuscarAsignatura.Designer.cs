@@ -34,6 +34,7 @@
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
+            this.btnReturnToMainForm = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
@@ -46,7 +47,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblNombre);
             this.groupBox1.Controls.Add(this.txtNombre);
-            this.groupBox1.Location = new System.Drawing.Point(162, 128);
+            this.groupBox1.Location = new System.Drawing.Point(185, 125);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(703, 340);
             this.groupBox1.TabIndex = 7;
@@ -114,7 +115,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(720, 540);
+            this.button1.Location = new System.Drawing.Point(743, 540);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 31);
             this.button1.TabIndex = 5;
@@ -124,7 +125,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(216, 540);
+            this.btnGuardar.Location = new System.Drawing.Point(239, 540);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(89, 31);
             this.btnGuardar.TabIndex = 6;
@@ -141,11 +142,23 @@
             this.imgLogo.TabIndex = 8;
             this.imgLogo.TabStop = false;
             // 
+            // btnReturnToMainForm
+            // 
+            this.btnReturnToMainForm.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReturnToMainForm.Location = new System.Drawing.Point(1011, 12);
+            this.btnReturnToMainForm.Name = "btnReturnToMainForm";
+            this.btnReturnToMainForm.Size = new System.Drawing.Size(48, 35);
+            this.btnReturnToMainForm.TabIndex = 14;
+            this.btnReturnToMainForm.Text = "X";
+            this.btnReturnToMainForm.UseVisualStyleBackColor = true;
+            this.btnReturnToMainForm.Click += new System.EventHandler(this.btnReturnToMainForm_Click);
+            // 
             // BuscarAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1071, 686);
+            this.Controls.Add(this.btnReturnToMainForm);
             this.Controls.Add(this.imgLogo);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.button1);
@@ -172,5 +185,6 @@
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.Button btnReturnToMainForm;
     }
 }

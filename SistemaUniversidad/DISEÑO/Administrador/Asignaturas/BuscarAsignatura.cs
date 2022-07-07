@@ -13,5 +13,9 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
         public BuscarAsignatura() {
             InitializeComponent();
         }
+
+        private void btnReturnToMainForm_Click(object sender, EventArgs e) {
+            this.Close();
+        }
     }
 }

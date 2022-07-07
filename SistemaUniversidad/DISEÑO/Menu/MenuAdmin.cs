@@ -239,21 +239,18 @@ namespace SistemaUniversidad.DISEÑO.Menu {
         }   
 
         private void btnEliminarAsignatura_Click(object sender, EventArgs e) {
-            EliminarAsignatura eliminarAsignatura = new EliminarAsignatura();
-            this.Hide();
-            eliminarAsignatura.Show();
+            openChildForm(new EliminarAsignatura());
+            lblTitulo.Text = "Eliminar asignaturas";
         }
 
         private void btnModificarAsignatura_Click(object sender, EventArgs e) {
-            ModificarAsignatura modificarAsignatura = new ModificarAsignatura();
-            this.Hide();
-            modificarAsignatura.Show();
+            openChildForm(new ModificarAsignatura());
+            lblTitulo.Text = "Modificar asignaturas";
         }
 
         private void btnBuscarAsignatura_Click(object sender, EventArgs e) {
-            BuscarAsignatura buscarAsignatura = new BuscarAsignatura();
-            this.Hide();
-            buscarAsignatura.Show();
+            openChildForm(new BuscarAsignatura());
+            lblTitulo.Text = "Eliminar asignaturas";
         }
 
 

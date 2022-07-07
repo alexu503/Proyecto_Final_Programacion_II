@@ -43,10 +43,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
 
         private void AgregarAsignatura_Load(object sender, EventArgs e) {
             cmbCarreras.DropDownStyle = ComboBoxStyle.DropDownList;
-            cmbCarreras.Items.Add("Ingeniería de Sistemas Informáticos");
-            cmbCarreras.Items.Add("Ingeniería Agronómica");
-            cmbCarreras.Items.Add("Ingeniería Eléctrica");
-            cmbCarreras.Items.Add("Ingeniería Industrial");
         }
 
         private void btnGuardar_Click(object sender, EventArgs e) {
@@ -96,6 +92,10 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
         private void pnlSuperior_MouseDown(object sender, MouseEventArgs e) {
             ReleaseCapture();
             SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
+
+        private void btnReturnToMainForm_Click(object sender, EventArgs e) {
+            this.Close();
         }
     }
 }
