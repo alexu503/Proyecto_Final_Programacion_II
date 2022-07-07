@@ -30,11 +30,11 @@
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.btnReturnToMainForm = new System.Windows.Forms.Button();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.SuspendLayout();
@@ -43,10 +43,10 @@
             // 
             this.groupBox1.Controls.Add(this.lblCarrera);
             this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.comboBox2);
             this.groupBox1.Controls.Add(this.cmbCarreras);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblNombre);
-            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Location = new System.Drawing.Point(185, 125);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(703, 340);
@@ -103,15 +103,6 @@
             this.lblNombre.TabIndex = 9;
             this.lblNombre.Text = "Nombre de la materia:";
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtNombre.Location = new System.Drawing.Point(351, 154);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(296, 27);
-            this.txtNombre.TabIndex = 7;
-            this.txtNombre.Text = "Seleccionar";
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -153,6 +144,16 @@
             this.btnReturnToMainForm.UseVisualStyleBackColor = true;
             this.btnReturnToMainForm.Click += new System.EventHandler(this.btnReturnToMainForm_Click);
             // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(351, 158);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(296, 29);
+            this.comboBox2.TabIndex = 11;
+            this.comboBox2.Text = "Seleccionar";
+            // 
             // BuscarAsignatura
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -182,9 +183,9 @@
         private System.Windows.Forms.ComboBox cmbCarreras;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnReturnToMainForm;
+        private System.Windows.Forms.ComboBox comboBox2;
     }
 }

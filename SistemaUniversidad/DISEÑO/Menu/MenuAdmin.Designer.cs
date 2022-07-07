@@ -540,6 +540,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnAgregarCarrera.TabIndex = 1;
             this.btnAgregarCarrera.Text = "Agregar";
             this.btnAgregarCarrera.UseVisualStyleBackColor = true;
+            this.btnAgregarCarrera.Click += new System.EventHandler(this.btnAgregarCarrera_Click);
             // 
             // panel4
             // 
@@ -566,6 +567,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnBuscarCarrera.TabIndex = 1;
             this.btnBuscarCarrera.Text = "Buscar";
             this.btnBuscarCarrera.UseVisualStyleBackColor = true;
+            this.btnBuscarCarrera.Click += new System.EventHandler(this.btnBuscarCarrera_Click);
             // 
             // btnModificarCarrera
             // 
@@ -584,6 +586,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnModificarCarrera.TabIndex = 1;
             this.btnModificarCarrera.Text = "Modificar";
             this.btnModificarCarrera.UseVisualStyleBackColor = true;
+            this.btnModificarCarrera.Click += new System.EventHandler(this.btnModificarCarrera_Click);
             // 
             // btnEliminarCarrera
             // 
@@ -602,6 +605,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnEliminarCarrera.TabIndex = 1;
             this.btnEliminarCarrera.Text = "Eliminar";
             this.btnEliminarCarrera.UseVisualStyleBackColor = true;
+            this.btnEliminarCarrera.Click += new System.EventHandler(this.btnEliminarCarrera_Click);
             // 
             // btnGestionarCarreras
             // 

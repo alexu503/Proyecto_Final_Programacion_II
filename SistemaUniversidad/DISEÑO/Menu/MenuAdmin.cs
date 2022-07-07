@@ -259,27 +259,23 @@ namespace SistemaUniversidad.DISEÑO.Menu {
         #region Carreras
 
         private void btnAgregarCarrera_Click(object sender, EventArgs e) {
-            AgregarCarrera agregarCarrera = new AgregarCarrera();
-            this.Hide();
-            agregarCarrera.Show();
+            openChildForm(new AgregarCarrera());
+            lblTitulo.Text = "Agregar nueva carrera";
         }
 
         private void btnEliminarCarrera_Click(object sender, EventArgs e) {
-            EliminarCarrera eliminarCarrera = new EliminarCarrera();
-            this.Hide();
-            eliminarCarrera.Show();
+            openChildForm(new EliminarCarrera());
+            lblTitulo.Text = "Eliminar una carrera";
         }
 
         private void btnModificarCarrera_Click(object sender, EventArgs e) {
-            ModificarCarrera modificarCarrera = new ModificarCarrera();
-            this.Hide();
-            modificarCarrera.Show();
+            openChildForm(new ModificarCarrera());
+            lblTitulo.Text = "Modificar carrera";
         }
 
         private void btnBuscarCarrera_Click(object sender, EventArgs e) {
-            BuscarCarrera buscarCarrera = new BuscarCarrera();
-            this.Hide();
-            buscarCarrera.Show();
+            openChildForm(new BuscarCarrera());
+            lblTitulo.Text = "Detalles de la carrera";
         }
 
 

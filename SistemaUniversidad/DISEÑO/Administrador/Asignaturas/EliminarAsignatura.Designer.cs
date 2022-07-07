@@ -30,9 +30,10 @@
             this.lblCarrera = new System.Windows.Forms.Label();
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -61,9 +62,10 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblCarrera);
+            this.groupBox1.Controls.Add(this.comboBox2);
+            this.groupBox1.Controls.Add(this.comboBox1);
             this.groupBox1.Controls.Add(this.cmbCarreras);
             this.groupBox1.Controls.Add(this.lblNombre);
-            this.groupBox1.Controls.Add(this.txtNombre);
             this.groupBox1.Location = new System.Drawing.Point(216, 113);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(703, 340);
@@ -100,15 +102,6 @@
             this.lblNombre.TabIndex = 9;
             this.lblNombre.Text = "Nombre de la materia:";
             // 
-            // txtNombre
-            // 
-            this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtNombre.Location = new System.Drawing.Point(351, 214);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(296, 27);
-            this.txtNombre.TabIndex = 7;
-            this.txtNombre.Text = "Seleccionar";
-            // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -128,6 +121,26 @@
             this.btnGuardar.TabIndex = 16;
             this.btnGuardar.Text = "Confirmar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(351, 221);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(296, 29);
+            this.comboBox1.TabIndex = 11;
+            this.comboBox1.Text = "Seleccionar";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(351, 218);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(296, 29);
+            this.comboBox2.TabIndex = 11;
+            this.comboBox2.Text = "Seleccionar";
             // 
             // EliminarAsignatura
             // 
@@ -158,8 +171,9 @@
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.ComboBox cmbCarreras;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button btnGuardar;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
