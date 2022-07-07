@@ -12,6 +12,7 @@ namespace SistemaUniversidad.DISEÑO.Menu {
         public Form menuAdmin;
         private const int AnchoNormal = 200;
         private const int AnchoIconos = 62;
+
         public MenuAdmin() {
             InitializeComponent();
             //Estas lineas eliminan los parpadeos del formulario o controles en la interfaz grafica (Pero no en un 100%)

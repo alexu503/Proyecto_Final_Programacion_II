@@ -869,7 +869,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnCerrarSesion.TabIndex = 0;
             this.btnCerrarSesion.Text = "      Cerrar sesion";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click_1);
             // 
             // dragControlMenuAdmin
             // 
