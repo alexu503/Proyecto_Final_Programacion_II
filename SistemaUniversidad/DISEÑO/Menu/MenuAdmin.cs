@@ -6,7 +6,7 @@ using System.Runtime.InteropServices;
 using SistemaUniversidad.DISEÑO.Administrador.Asignaturas;
 using SistemaUniversidad.DISEÑO.Administrador.Carreras;
 using SistemaUniversidad.DISEÑO.Administrador.Docentes;
-//using SistemaUniversidad.DISEÑO.Administrador.Horarios;
+using SistemaUniversidad.DISEÑO.Administrador.Horarios;
 
 namespace SistemaUniversidad.DISEÑO.Menu {
     public partial class MenuAdmin : Form {
@@ -307,10 +307,31 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             lblTitulo.Text = "Eliminar un docente";
         }
 
-        #endregion
 
         #endregion
 
+        #region Horarios
+        private void btnAgregarHorario_Click(object sender, EventArgs e) {
+            openChildForm(new AgregarHorario());
+            lblTitulo.Text = "Agregar un nuevo horario";
+        }
 
+        private void btnEliminarHorario_Click(object sender, EventArgs e) {
+            openChildForm(new EliminarHorario());
+            lblTitulo.Text = "Eliminar un horario";
+        }
+
+        private void btnModificarHorario_Click(object sender, EventArgs e) {
+            openChildForm(new ModificarHorarios());
+            lblTitulo.Text = "Modificar horario";
+        }
+
+        private void btnBuscarHorario_Click(object sender, EventArgs e) {
+            openChildForm(new BuscarHorarios());
+            lblTitulo.Text = "Buscar horarios";
+        }
+        #endregion
+
+        #endregion
     }
 }
