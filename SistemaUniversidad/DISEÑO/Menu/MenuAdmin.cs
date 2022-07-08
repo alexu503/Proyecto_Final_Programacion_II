@@ -157,9 +157,6 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             if (activeForm != null)
                 activeForm.Close();
 
-            if (activeForm == new MenuAdmin()) 
-                lblTitulo.Text = "Bienvenido";
-
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -168,7 +165,6 @@ namespace SistemaUniversidad.DISEÑO.Menu {
             panel1.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-            lblTitulo.Text = "Bienvenido";
         }
 
         #region Cerrar Sesión

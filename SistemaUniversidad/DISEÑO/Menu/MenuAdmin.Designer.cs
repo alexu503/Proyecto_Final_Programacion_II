@@ -70,7 +70,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pnlSubMenuAlumnos = new System.Windows.Forms.Panel();
             this.panel8 = new System.Windows.Forms.Panel();
             this.pnlHome = new System.Windows.Forms.Panel();
-            this.dragControlMenuAdmin = new SistemaUniversidad.LOGICA.DragControl();
             this.imgVision = new System.Windows.Forms.PictureBox();
             this.imgMision = new System.Windows.Forms.PictureBox();
             this.imgLogoTipo = new System.Windows.Forms.PictureBox();
@@ -103,6 +102,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnMinimizar = new System.Windows.Forms.Button();
             this.btnCerrar = new System.Windows.Forms.Button();
             this.imgMasOpciones = new System.Windows.Forms.PictureBox();
+            this.dragControlMenuAdmin = new SistemaUniversidad.LOGICA.DragControl();
             this.pnlSuperiorMenuAdmin.SuspendLayout();
             this.panelContenedor.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -306,10 +306,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pnlHome.Name = "pnlHome";
             this.pnlHome.Size = new System.Drawing.Size(183, 50);
             this.pnlHome.TabIndex = 0;
-            // 
-            // dragControlMenuAdmin
-            // 
-            this.dragControlMenuAdmin.SelectControl = null;
             // 
             // imgVision
             // 
@@ -846,7 +842,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
             this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1172, -1);
+            this.btnMinimizar.Location = new System.Drawing.Point(1177, -2);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(45, 35);
             this.btnMinimizar.TabIndex = 0;
@@ -878,6 +874,10 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.imgMasOpciones.TabIndex = 0;
             this.imgMasOpciones.TabStop = false;
             this.imgMasOpciones.Click += new System.EventHandler(this.imgMasOpciones_Click);
+            // 
+            // dragControlMenuAdmin
+            // 
+            this.dragControlMenuAdmin.SelectControl = null;
             // 
             // MenuAdmin
             // 

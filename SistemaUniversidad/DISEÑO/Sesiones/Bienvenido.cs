@@ -13,10 +13,12 @@ using SistemaUniversidad.LOGICA.DATABASE;
 
 namespace SistemaUniversidad.DISEÑO.Sesiones {
     public partial class Bienvenido : Form {
+
         public Bienvenido() {
             InitializeComponent();
             btnIniciarSesion.TabStop = false;
             btnSignup.TabStop = false;
+            btnCerrar.TabStop = false;
         }
 
         #region Mover el Formulario

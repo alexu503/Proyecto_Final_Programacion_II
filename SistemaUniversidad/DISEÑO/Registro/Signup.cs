@@ -184,5 +184,16 @@ namespace SistemaUniversidad.DISEÑO.Registro {
             txtGetPhone.Clear();
             txtGetPhone.ForeColor = System.Drawing.Color.Black;
         }
+
+        private void Signup_Load(object sender, EventArgs e) {
+            txtGetName.TabStop = false;
+            txtGet1stLastname.TabStop = false;
+            dtPGetBirthday.TabStop = false;
+            txtGetDNI.TabStop = false;
+            txtGetEmail.TabStop = false;
+            txtGetMobilePhone.TabStop = false;
+            txtGetPhone.TabStop = false;
+            txtGetAddress.TabStop = false;
+        }
     }
 }

@@ -172,6 +172,30 @@
     <Compile Include="DISEÑO\Administrador\Docentes\AgregarDocente.Designer.cs">
       <DependentUpon>AgregarDocente.cs</DependentUpon>
     </Compile>
+    <Compile Include="DISEÑO\Administrador\Docentes\EliminarDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Docentes\EliminarDocente.Designer.cs">
+      <DependentUpon>EliminarDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Docentes\BuscarDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Docentes\BuscarDocente.Designer.cs">
+      <DependentUpon>BuscarDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Docentes\ModificarDocente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Docentes\ModificarDocente.Designer.cs">
+      <DependentUpon>ModificarDocente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Horarios\AgregarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Horarios\AgregarHorario.Designer.cs">
+      <DependentUpon>AgregarHorario.cs</DependentUpon>
+    </Compile>
     <Compile Include="DISEÑO\Docente\AgregarCalificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -280,6 +304,18 @@
     <EmbeddedResource Include="DISEÑO\Administrador\Docentes\AgregarDocente.resx">
       <DependentUpon>AgregarDocente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Docentes\EliminarDocente.resx">
+      <DependentUpon>EliminarDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Docentes\BuscarDocente.resx">
+      <DependentUpon>BuscarDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Docentes\ModificarDocente.resx">
+      <DependentUpon>ModificarDocente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Horarios\AgregarHorario.resx">
+      <DependentUpon>AgregarHorario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Docente\AgregarCalificaciones.resx">
       <DependentUpon>AgregarCalificaciones.cs</DependentUpon>
     </EmbeddedResource>
@@ -332,9 +368,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DISEÑO\Administrador\Horarios\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="Images\1-login.png" />
     <Content Include="Images\1486503746-book-learning-bookmark-ribbon-education-mark-school_81290.ico" />
