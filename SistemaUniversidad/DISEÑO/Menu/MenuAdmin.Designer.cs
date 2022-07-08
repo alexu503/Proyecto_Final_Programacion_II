@@ -56,60 +56,56 @@ namespace SistemaUniversidad.DISEÑO.Menu
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuAdmin));
             this.pnlSuperiorMenuAdmin = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
-            this.btnCloseForm = new System.Windows.Forms.Button();
-            this.btnMinimizar = new System.Windows.Forms.Button();
-            this.btnCerrar = new System.Windows.Forms.Button();
-            this.imgMasOpciones = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pnlMenuLateral = new System.Windows.Forms.Panel();
+            this.pnlSubMenuHorarios = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.pnlSubMenuDocentes = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.pnlSubMenuCarreras = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.pnlSubMenuAsignaturas = new System.Windows.Forms.Panel();
+            this.panel7 = new System.Windows.Forms.Panel();
+            this.pnlSubMenuAlumnos = new System.Windows.Forms.Panel();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.pnlHome = new System.Windows.Forms.Panel();
+            this.dragControlMenuAdmin = new SistemaUniversidad.LOGICA.DragControl();
             this.imgVision = new System.Windows.Forms.PictureBox();
             this.imgMision = new System.Windows.Forms.PictureBox();
             this.imgLogoTipo = new System.Windows.Forms.PictureBox();
-            this.pnlMenuLateral = new System.Windows.Forms.Panel();
-            this.pnlSubMenuHorarios = new System.Windows.Forms.Panel();
             this.btnBuscarHorario = new System.Windows.Forms.Button();
             this.btnAgregarHorario = new System.Windows.Forms.Button();
             this.btnEliminarHorario = new System.Windows.Forms.Button();
             this.btnModificarHorario = new System.Windows.Forms.Button();
-            this.panel5 = new System.Windows.Forms.Panel();
             this.btnGestionarHorarios = new System.Windows.Forms.Button();
-            this.pnlSubMenuDocentes = new System.Windows.Forms.Panel();
             this.btnEliminarDocentes = new System.Windows.Forms.Button();
             this.btnModificarDocentes = new System.Windows.Forms.Button();
             this.btnBuscaeDocentes = new System.Windows.Forms.Button();
             this.btnAgregarDocentes = new System.Windows.Forms.Button();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.btnGestionarDocentes = new System.Windows.Forms.Button();
-            this.pnlSubMenuCarreras = new System.Windows.Forms.Panel();
             this.btnAgregarCarrera = new System.Windows.Forms.Button();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.btnBuscarCarrera = new System.Windows.Forms.Button();
             this.btnModificarCarrera = new System.Windows.Forms.Button();
             this.btnEliminarCarrera = new System.Windows.Forms.Button();
             this.btnGestionarCarreras = new System.Windows.Forms.Button();
-            this.pnlSubMenuAsignaturas = new System.Windows.Forms.Panel();
             this.btnEliminarAsignatura = new System.Windows.Forms.Button();
             this.btnBuscarAsignatura = new System.Windows.Forms.Button();
             this.btnAgregarAsignatura = new System.Windows.Forms.Button();
             this.btnModificarAsignatura = new System.Windows.Forms.Button();
-            this.panel7 = new System.Windows.Forms.Panel();
             this.btnGestionarAsignaturas = new System.Windows.Forms.Button();
-            this.pnlSubMenuAlumnos = new System.Windows.Forms.Panel();
             this.btnBuscarAlumno = new System.Windows.Forms.Button();
             this.btnModificarAlumno = new System.Windows.Forms.Button();
             this.btnEliminarAlumno = new System.Windows.Forms.Button();
-            this.panel8 = new System.Windows.Forms.Panel();
             this.btnGestionarAlumnos = new System.Windows.Forms.Button();
-            this.pnlHome = new System.Windows.Forms.Panel();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.dragControlMenuAdmin = new SistemaUniversidad.LOGICA.DragControl();
+            this.btnCloseForm = new System.Windows.Forms.Button();
+            this.btnMinimizar = new System.Windows.Forms.Button();
+            this.btnCerrar = new System.Windows.Forms.Button();
+            this.imgMasOpciones = new System.Windows.Forms.PictureBox();
             this.pnlSuperiorMenuAdmin.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).BeginInit();
             this.panelContenedor.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgVision)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMision)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoTipo)).BeginInit();
             this.pnlMenuLateral.SuspendLayout();
             this.pnlSubMenuHorarios.SuspendLayout();
             this.pnlSubMenuDocentes.SuspendLayout();
@@ -117,6 +113,10 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pnlSubMenuAsignaturas.SuspendLayout();
             this.pnlSubMenuAlumnos.SuspendLayout();
             this.pnlHome.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.imgVision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMision)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoTipo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).BeginInit();
             this.SuspendLayout();
             // 
             // pnlSuperiorMenuAdmin
@@ -147,62 +147,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.lblTitulo.Text = "Bienvenido";
             this.lblTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblTitulo_MouseDown);
             // 
-            // btnCloseForm
-            // 
-            this.btnCloseForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCloseForm.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCloseForm.FlatAppearance.BorderSize = 0;
-            this.btnCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
-            this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCloseForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseForm.Image")));
-            this.btnCloseForm.Location = new System.Drawing.Point(1228, -1);
-            this.btnCloseForm.Name = "btnCloseForm";
-            this.btnCloseForm.Size = new System.Drawing.Size(45, 35);
-            this.btnCloseForm.TabIndex = 0;
-            this.btnCloseForm.UseVisualStyleBackColor = true;
-            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
-            // 
-            // btnMinimizar
-            // 
-            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnMinimizar.FlatAppearance.BorderSize = 0;
-            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
-            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(1172, -1);
-            this.btnMinimizar.Name = "btnMinimizar";
-            this.btnMinimizar.Size = new System.Drawing.Size(45, 35);
-            this.btnMinimizar.TabIndex = 0;
-            this.btnMinimizar.UseVisualStyleBackColor = true;
-            // 
-            // btnCerrar
-            // 
-            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCerrar.FlatAppearance.BorderSize = 0;
-            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
-            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1284, 0);
-            this.btnCerrar.Name = "btnCerrar";
-            this.btnCerrar.Size = new System.Drawing.Size(45, 35);
-            this.btnCerrar.TabIndex = 0;
-            this.btnCerrar.UseVisualStyleBackColor = true;
-            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
-            // 
-            // imgMasOpciones
-            // 
-            this.imgMasOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.imgMasOpciones.Image = ((System.Drawing.Image)(resources.GetObject("imgMasOpciones.Image")));
-            this.imgMasOpciones.Location = new System.Drawing.Point(-1, 0);
-            this.imgMasOpciones.Name = "imgMasOpciones";
-            this.imgMasOpciones.Size = new System.Drawing.Size(36, 34);
-            this.imgMasOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgMasOpciones.TabIndex = 0;
-            this.imgMasOpciones.TabStop = false;
-            this.imgMasOpciones.Click += new System.EventHandler(this.imgMasOpciones_Click);
-            // 
             // panelContenedor
             // 
             this.panelContenedor.AutoScroll = true;
@@ -228,39 +172,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1276, 686);
             this.panel1.TabIndex = 4;
-            // 
-            // imgVision
-            // 
-            this.imgVision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgVision.Image = ((System.Drawing.Image)(resources.GetObject("imgVision.Image")));
-            this.imgVision.Location = new System.Drawing.Point(433, 419);
-            this.imgVision.Name = "imgVision";
-            this.imgVision.Size = new System.Drawing.Size(558, 126);
-            this.imgVision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgVision.TabIndex = 8;
-            this.imgVision.TabStop = false;
-            // 
-            // imgMision
-            // 
-            this.imgMision.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgMision.Image = ((System.Drawing.Image)(resources.GetObject("imgMision.Image")));
-            this.imgMision.Location = new System.Drawing.Point(433, 287);
-            this.imgMision.Name = "imgMision";
-            this.imgMision.Size = new System.Drawing.Size(558, 126);
-            this.imgMision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgMision.TabIndex = 7;
-            this.imgMision.TabStop = false;
-            // 
-            // imgLogoTipo
-            // 
-            this.imgLogoTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.imgLogoTipo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogoTipo.Image")));
-            this.imgLogoTipo.Location = new System.Drawing.Point(593, 28);
-            this.imgLogoTipo.Name = "imgLogoTipo";
-            this.imgLogoTipo.Size = new System.Drawing.Size(254, 188);
-            this.imgLogoTipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.imgLogoTipo.TabIndex = 6;
-            this.imgLogoTipo.TabStop = false;
             // 
             // pnlMenuLateral
             // 
@@ -295,6 +206,143 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pnlSubMenuHorarios.Name = "pnlSubMenuHorarios";
             this.pnlSubMenuHorarios.Size = new System.Drawing.Size(183, 116);
             this.pnlSubMenuHorarios.TabIndex = 11;
+            // 
+            // panel5
+            // 
+            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel5.Location = new System.Drawing.Point(3, -2);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(5, 116);
+            this.panel5.TabIndex = 2;
+            // 
+            // pnlSubMenuDocentes
+            // 
+            this.pnlSubMenuDocentes.Controls.Add(this.btnEliminarDocentes);
+            this.pnlSubMenuDocentes.Controls.Add(this.btnModificarDocentes);
+            this.pnlSubMenuDocentes.Controls.Add(this.btnBuscaeDocentes);
+            this.pnlSubMenuDocentes.Controls.Add(this.btnAgregarDocentes);
+            this.pnlSubMenuDocentes.Controls.Add(this.panel3);
+            this.pnlSubMenuDocentes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenuDocentes.Location = new System.Drawing.Point(0, 514);
+            this.pnlSubMenuDocentes.Name = "pnlSubMenuDocentes";
+            this.pnlSubMenuDocentes.Size = new System.Drawing.Size(183, 116);
+            this.pnlSubMenuDocentes.TabIndex = 9;
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel3.Location = new System.Drawing.Point(3, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(5, 116);
+            this.panel3.TabIndex = 0;
+            // 
+            // pnlSubMenuCarreras
+            // 
+            this.pnlSubMenuCarreras.Controls.Add(this.btnAgregarCarrera);
+            this.pnlSubMenuCarreras.Controls.Add(this.panel4);
+            this.pnlSubMenuCarreras.Controls.Add(this.btnBuscarCarrera);
+            this.pnlSubMenuCarreras.Controls.Add(this.btnModificarCarrera);
+            this.pnlSubMenuCarreras.Controls.Add(this.btnEliminarCarrera);
+            this.pnlSubMenuCarreras.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenuCarreras.Location = new System.Drawing.Point(0, 361);
+            this.pnlSubMenuCarreras.Name = "pnlSubMenuCarreras";
+            this.pnlSubMenuCarreras.Size = new System.Drawing.Size(183, 118);
+            this.pnlSubMenuCarreras.TabIndex = 7;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel4.Location = new System.Drawing.Point(3, 2);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(5, 116);
+            this.panel4.TabIndex = 2;
+            // 
+            // pnlSubMenuAsignaturas
+            // 
+            this.pnlSubMenuAsignaturas.Controls.Add(this.btnEliminarAsignatura);
+            this.pnlSubMenuAsignaturas.Controls.Add(this.btnBuscarAsignatura);
+            this.pnlSubMenuAsignaturas.Controls.Add(this.btnAgregarAsignatura);
+            this.pnlSubMenuAsignaturas.Controls.Add(this.btnModificarAsignatura);
+            this.pnlSubMenuAsignaturas.Controls.Add(this.panel7);
+            this.pnlSubMenuAsignaturas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenuAsignaturas.Location = new System.Drawing.Point(0, 210);
+            this.pnlSubMenuAsignaturas.Name = "pnlSubMenuAsignaturas";
+            this.pnlSubMenuAsignaturas.Size = new System.Drawing.Size(183, 116);
+            this.pnlSubMenuAsignaturas.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel7.Location = new System.Drawing.Point(3, 0);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(5, 116);
+            this.panel7.TabIndex = 0;
+            // 
+            // pnlSubMenuAlumnos
+            // 
+            this.pnlSubMenuAlumnos.Controls.Add(this.btnBuscarAlumno);
+            this.pnlSubMenuAlumnos.Controls.Add(this.btnModificarAlumno);
+            this.pnlSubMenuAlumnos.Controls.Add(this.btnEliminarAlumno);
+            this.pnlSubMenuAlumnos.Controls.Add(this.panel8);
+            this.pnlSubMenuAlumnos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlSubMenuAlumnos.Location = new System.Drawing.Point(0, 85);
+            this.pnlSubMenuAlumnos.Name = "pnlSubMenuAlumnos";
+            this.pnlSubMenuAlumnos.Size = new System.Drawing.Size(183, 90);
+            this.pnlSubMenuAlumnos.TabIndex = 4;
+            // 
+            // panel8
+            // 
+            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
+            this.panel8.Location = new System.Drawing.Point(3, 0);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(5, 116);
+            this.panel8.TabIndex = 0;
+            // 
+            // pnlHome
+            // 
+            this.pnlHome.Controls.Add(this.btnCerrarSesion);
+            this.pnlHome.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnlHome.Location = new System.Drawing.Point(0, 0);
+            this.pnlHome.Name = "pnlHome";
+            this.pnlHome.Size = new System.Drawing.Size(183, 50);
+            this.pnlHome.TabIndex = 0;
+            // 
+            // dragControlMenuAdmin
+            // 
+            this.dragControlMenuAdmin.SelectControl = null;
+            // 
+            // imgVision
+            // 
+            this.imgVision.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgVision.Image = ((System.Drawing.Image)(resources.GetObject("imgVision.Image")));
+            this.imgVision.Location = new System.Drawing.Point(433, 419);
+            this.imgVision.Name = "imgVision";
+            this.imgVision.Size = new System.Drawing.Size(558, 126);
+            this.imgVision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgVision.TabIndex = 8;
+            this.imgVision.TabStop = false;
+            // 
+            // imgMision
+            // 
+            this.imgMision.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgMision.Image = ((System.Drawing.Image)(resources.GetObject("imgMision.Image")));
+            this.imgMision.Location = new System.Drawing.Point(433, 287);
+            this.imgMision.Name = "imgMision";
+            this.imgMision.Size = new System.Drawing.Size(558, 126);
+            this.imgMision.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgMision.TabIndex = 7;
+            this.imgMision.TabStop = false;
+            // 
+            // imgLogoTipo
+            // 
+            this.imgLogoTipo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.imgLogoTipo.Image = ((System.Drawing.Image)(resources.GetObject("imgLogoTipo.Image")));
+            this.imgLogoTipo.Location = new System.Drawing.Point(593, 28);
+            this.imgLogoTipo.Name = "imgLogoTipo";
+            this.imgLogoTipo.Size = new System.Drawing.Size(254, 188);
+            this.imgLogoTipo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgLogoTipo.TabIndex = 6;
+            this.imgLogoTipo.TabStop = false;
             // 
             // btnBuscarHorario
             // 
@@ -368,14 +416,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnModificarHorario.Text = "Modificar";
             this.btnModificarHorario.UseVisualStyleBackColor = true;
             // 
-            // panel5
-            // 
-            this.panel5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel5.Location = new System.Drawing.Point(3, -2);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(5, 116);
-            this.panel5.TabIndex = 2;
-            // 
             // btnGestionarHorarios
             // 
             this.btnGestionarHorarios.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -397,19 +437,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnGestionarHorarios.UseVisualStyleBackColor = true;
             this.btnGestionarHorarios.Click += new System.EventHandler(this.btnGestionarHorarios_Click);
             // 
-            // pnlSubMenuDocentes
-            // 
-            this.pnlSubMenuDocentes.Controls.Add(this.btnEliminarDocentes);
-            this.pnlSubMenuDocentes.Controls.Add(this.btnModificarDocentes);
-            this.pnlSubMenuDocentes.Controls.Add(this.btnBuscaeDocentes);
-            this.pnlSubMenuDocentes.Controls.Add(this.btnAgregarDocentes);
-            this.pnlSubMenuDocentes.Controls.Add(this.panel3);
-            this.pnlSubMenuDocentes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuDocentes.Location = new System.Drawing.Point(0, 514);
-            this.pnlSubMenuDocentes.Name = "pnlSubMenuDocentes";
-            this.pnlSubMenuDocentes.Size = new System.Drawing.Size(183, 116);
-            this.pnlSubMenuDocentes.TabIndex = 9;
-            // 
             // btnEliminarDocentes
             // 
             this.btnEliminarDocentes.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -427,6 +454,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnEliminarDocentes.TabIndex = 1;
             this.btnEliminarDocentes.Text = "Eliminar";
             this.btnEliminarDocentes.UseVisualStyleBackColor = true;
+            this.btnEliminarDocentes.Click += new System.EventHandler(this.btnEliminarDocentes_Click);
             // 
             // btnModificarDocentes
             // 
@@ -445,6 +473,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnModificarDocentes.TabIndex = 1;
             this.btnModificarDocentes.Text = "Modificar";
             this.btnModificarDocentes.UseVisualStyleBackColor = true;
+            this.btnModificarDocentes.Click += new System.EventHandler(this.btnModificarDocentes_Click);
             // 
             // btnBuscaeDocentes
             // 
@@ -463,6 +492,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnBuscaeDocentes.TabIndex = 1;
             this.btnBuscaeDocentes.Text = "Buscar";
             this.btnBuscaeDocentes.UseVisualStyleBackColor = true;
+            this.btnBuscaeDocentes.Click += new System.EventHandler(this.btnBuscaeDocentes_Click);
             // 
             // btnAgregarDocentes
             // 
@@ -481,14 +511,7 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnAgregarDocentes.TabIndex = 1;
             this.btnAgregarDocentes.Text = "Agregar";
             this.btnAgregarDocentes.UseVisualStyleBackColor = true;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel3.Location = new System.Drawing.Point(3, 0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(5, 116);
-            this.panel3.TabIndex = 0;
+            this.btnAgregarDocentes.Click += new System.EventHandler(this.btnAgregarDocentes_Click);
             // 
             // btnGestionarDocentes
             // 
@@ -510,19 +533,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnGestionarDocentes.UseVisualStyleBackColor = true;
             this.btnGestionarDocentes.Click += new System.EventHandler(this.btnGestionarDocentes_Click);
             // 
-            // pnlSubMenuCarreras
-            // 
-            this.pnlSubMenuCarreras.Controls.Add(this.btnAgregarCarrera);
-            this.pnlSubMenuCarreras.Controls.Add(this.panel4);
-            this.pnlSubMenuCarreras.Controls.Add(this.btnBuscarCarrera);
-            this.pnlSubMenuCarreras.Controls.Add(this.btnModificarCarrera);
-            this.pnlSubMenuCarreras.Controls.Add(this.btnEliminarCarrera);
-            this.pnlSubMenuCarreras.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuCarreras.Location = new System.Drawing.Point(0, 361);
-            this.pnlSubMenuCarreras.Name = "pnlSubMenuCarreras";
-            this.pnlSubMenuCarreras.Size = new System.Drawing.Size(183, 118);
-            this.pnlSubMenuCarreras.TabIndex = 7;
-            // 
             // btnAgregarCarrera
             // 
             this.btnAgregarCarrera.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -541,14 +551,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnAgregarCarrera.Text = "Agregar";
             this.btnAgregarCarrera.UseVisualStyleBackColor = true;
             this.btnAgregarCarrera.Click += new System.EventHandler(this.btnAgregarCarrera_Click);
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel4.Location = new System.Drawing.Point(3, 2);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(5, 116);
-            this.panel4.TabIndex = 2;
             // 
             // btnBuscarCarrera
             // 
@@ -628,19 +630,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnGestionarCarreras.UseVisualStyleBackColor = true;
             this.btnGestionarCarreras.Click += new System.EventHandler(this.btnGestionarCarreras_Click);
             // 
-            // pnlSubMenuAsignaturas
-            // 
-            this.pnlSubMenuAsignaturas.Controls.Add(this.btnEliminarAsignatura);
-            this.pnlSubMenuAsignaturas.Controls.Add(this.btnBuscarAsignatura);
-            this.pnlSubMenuAsignaturas.Controls.Add(this.btnAgregarAsignatura);
-            this.pnlSubMenuAsignaturas.Controls.Add(this.btnModificarAsignatura);
-            this.pnlSubMenuAsignaturas.Controls.Add(this.panel7);
-            this.pnlSubMenuAsignaturas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuAsignaturas.Location = new System.Drawing.Point(0, 210);
-            this.pnlSubMenuAsignaturas.Name = "pnlSubMenuAsignaturas";
-            this.pnlSubMenuAsignaturas.Size = new System.Drawing.Size(183, 116);
-            this.pnlSubMenuAsignaturas.TabIndex = 5;
-            // 
             // btnEliminarAsignatura
             // 
             this.btnEliminarAsignatura.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -717,14 +706,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnModificarAsignatura.UseVisualStyleBackColor = true;
             this.btnModificarAsignatura.Click += new System.EventHandler(this.btnModificarAsignatura_Click);
             // 
-            // panel7
-            // 
-            this.panel7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel7.Location = new System.Drawing.Point(3, 0);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(5, 116);
-            this.panel7.TabIndex = 0;
-            // 
             // btnGestionarAsignaturas
             // 
             this.btnGestionarAsignaturas.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -745,18 +726,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnGestionarAsignaturas.Text = "       Asignaturas";
             this.btnGestionarAsignaturas.UseVisualStyleBackColor = true;
             this.btnGestionarAsignaturas.Click += new System.EventHandler(this.btnGestionarAsignaturas_Click);
-            // 
-            // pnlSubMenuAlumnos
-            // 
-            this.pnlSubMenuAlumnos.Controls.Add(this.btnBuscarAlumno);
-            this.pnlSubMenuAlumnos.Controls.Add(this.btnModificarAlumno);
-            this.pnlSubMenuAlumnos.Controls.Add(this.btnEliminarAlumno);
-            this.pnlSubMenuAlumnos.Controls.Add(this.panel8);
-            this.pnlSubMenuAlumnos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlSubMenuAlumnos.Location = new System.Drawing.Point(0, 85);
-            this.pnlSubMenuAlumnos.Name = "pnlSubMenuAlumnos";
-            this.pnlSubMenuAlumnos.Size = new System.Drawing.Size(183, 90);
-            this.pnlSubMenuAlumnos.TabIndex = 4;
             // 
             // btnBuscarAlumno
             // 
@@ -815,14 +784,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnEliminarAlumno.UseVisualStyleBackColor = true;
             this.btnEliminarAlumno.Click += new System.EventHandler(this.btnEliminarAlumno_Click);
             // 
-            // panel8
-            // 
-            this.panel8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(80)))), ((int)(((byte)(200)))));
-            this.panel8.Location = new System.Drawing.Point(3, 0);
-            this.panel8.Name = "panel8";
-            this.panel8.Size = new System.Drawing.Size(5, 116);
-            this.panel8.TabIndex = 0;
-            // 
             // btnGestionarAlumnos
             // 
             this.btnGestionarAlumnos.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -843,15 +804,6 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnGestionarAlumnos.UseVisualStyleBackColor = true;
             this.btnGestionarAlumnos.Click += new System.EventHandler(this.btnGestionarAlumnos_Click);
             // 
-            // pnlHome
-            // 
-            this.pnlHome.Controls.Add(this.btnCerrarSesion);
-            this.pnlHome.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnlHome.Location = new System.Drawing.Point(0, 0);
-            this.pnlHome.Name = "pnlHome";
-            this.pnlHome.Size = new System.Drawing.Size(183, 50);
-            this.pnlHome.TabIndex = 0;
-            // 
             // btnCerrarSesion
             // 
             this.btnCerrarSesion.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -871,9 +823,61 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // dragControlMenuAdmin
+            // btnCloseForm
             // 
-            this.dragControlMenuAdmin.SelectControl = null;
+            this.btnCloseForm.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCloseForm.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCloseForm.FlatAppearance.BorderSize = 0;
+            this.btnCloseForm.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
+            this.btnCloseForm.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCloseForm.Image = ((System.Drawing.Image)(resources.GetObject("btnCloseForm.Image")));
+            this.btnCloseForm.Location = new System.Drawing.Point(1228, -1);
+            this.btnCloseForm.Name = "btnCloseForm";
+            this.btnCloseForm.Size = new System.Drawing.Size(45, 35);
+            this.btnCloseForm.TabIndex = 0;
+            this.btnCloseForm.UseVisualStyleBackColor = true;
+            this.btnCloseForm.Click += new System.EventHandler(this.btnCloseForm_Click);
+            // 
+            // btnMinimizar
+            // 
+            this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnMinimizar.FlatAppearance.BorderSize = 0;
+            this.btnMinimizar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(31)))), ((int)(((byte)(115)))), ((int)(((byte)(164)))));
+            this.btnMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
+            this.btnMinimizar.Location = new System.Drawing.Point(1172, -1);
+            this.btnMinimizar.Name = "btnMinimizar";
+            this.btnMinimizar.Size = new System.Drawing.Size(45, 35);
+            this.btnMinimizar.TabIndex = 0;
+            this.btnMinimizar.UseVisualStyleBackColor = true;
+            // 
+            // btnCerrar
+            // 
+            this.btnCerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCerrar.FlatAppearance.BorderSize = 0;
+            this.btnCerrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Red;
+            this.btnCerrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
+            this.btnCerrar.Location = new System.Drawing.Point(1284, 0);
+            this.btnCerrar.Name = "btnCerrar";
+            this.btnCerrar.Size = new System.Drawing.Size(45, 35);
+            this.btnCerrar.TabIndex = 0;
+            this.btnCerrar.UseVisualStyleBackColor = true;
+            this.btnCerrar.Click += new System.EventHandler(this.btnCerrar_Click);
+            // 
+            // imgMasOpciones
+            // 
+            this.imgMasOpciones.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.imgMasOpciones.Image = ((System.Drawing.Image)(resources.GetObject("imgMasOpciones.Image")));
+            this.imgMasOpciones.Location = new System.Drawing.Point(-1, 0);
+            this.imgMasOpciones.Name = "imgMasOpciones";
+            this.imgMasOpciones.Size = new System.Drawing.Size(36, 34);
+            this.imgMasOpciones.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.imgMasOpciones.TabIndex = 0;
+            this.imgMasOpciones.TabStop = false;
+            this.imgMasOpciones.Click += new System.EventHandler(this.imgMasOpciones_Click);
             // 
             // MenuAdmin
             // 
@@ -891,12 +895,8 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.Load += new System.EventHandler(this.MenuAdmin_Load);
             this.pnlSuperiorMenuAdmin.ResumeLayout(false);
             this.pnlSuperiorMenuAdmin.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.imgVision)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgMision)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.imgLogoTipo)).EndInit();
             this.pnlMenuLateral.ResumeLayout(false);
             this.pnlSubMenuHorarios.ResumeLayout(false);
             this.pnlSubMenuDocentes.ResumeLayout(false);
@@ -904,6 +904,10 @@ namespace SistemaUniversidad.DISEÑO.Menu
             this.pnlSubMenuAsignaturas.ResumeLayout(false);
             this.pnlSubMenuAlumnos.ResumeLayout(false);
             this.pnlHome.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.imgVision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMision)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgLogoTipo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imgMasOpciones)).EndInit();
             this.ResumeLayout(false);
 
         }

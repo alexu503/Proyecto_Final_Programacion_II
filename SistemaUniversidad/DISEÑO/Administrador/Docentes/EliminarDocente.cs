@@ -9,12 +9,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaUniversidad.DISEÑO.Administrador.Docentes {
-    public partial class AgregarDocente : Form {
-        public AgregarDocente() {
+    public partial class EliminarDocente : Form {
+        public EliminarDocente() {
             InitializeComponent();
         }
 
-        private void btnCloseForm_Click(object sender, EventArgs e) {
+        private void btnReturnToMainForm_Click(object sender, EventArgs e) {
             this.Close();
         }
     }

@@ -5,6 +5,8 @@ using SistemaUniversidad.LOGICA;
 using System.Runtime.InteropServices;
 using SistemaUniversidad.DISEÑO.Administrador.Asignaturas;
 using SistemaUniversidad.DISEÑO.Administrador.Carreras;
+using SistemaUniversidad.DISEÑO.Administrador.Docentes;
+//using SistemaUniversidad.DISEÑO.Administrador.Horarios;
 
 namespace SistemaUniversidad.DISEÑO.Menu {
     public partial class MenuAdmin : Form {
@@ -152,10 +154,12 @@ namespace SistemaUniversidad.DISEÑO.Menu {
 
         private Form activeForm = null;
         private void openChildForm(Form childForm) {
-            if (activeForm != null) {
+            if (activeForm != null)
                 activeForm.Close();
+
+            if (activeForm == new MenuAdmin()) 
                 lblTitulo.Text = "Bienvenido";
-            }
+
             activeForm = childForm;
             childForm.TopLevel = false;
             childForm.FormBorderStyle = FormBorderStyle.None;
@@ -285,6 +289,32 @@ namespace SistemaUniversidad.DISEÑO.Menu {
 
         #endregion
 
+        #region Docentes
+
+        private void btnAgregarDocentes_Click(object sender, EventArgs e) {
+            openChildForm(new AgregarDocente());
+            lblTitulo.Text = "Registrar un nuevo docente";
+        }
+
+        private void btnEliminarDocentes_Click(object sender, EventArgs e) {
+            openChildForm(new EliminarDocente());
+            lblTitulo.Text = "Eliminar un docente";
+        }
+
+        private void btnModificarDocentes_Click(object sender, EventArgs e) {
+            openChildForm(new ModificarDocente());
+            lblTitulo.Text = "Eliminar un docente";
+        }
+
+        private void btnBuscaeDocentes_Click(object sender, EventArgs e) {
+            openChildForm(new BuscarDocente());
+            lblTitulo.Text = "Eliminar un docente";
+        }
+
         #endregion
+
+        #endregion
+
+
     }
 }
