@@ -56,7 +56,6 @@
             this.lblBienvenido.Size = new System.Drawing.Size(160, 31);
             this.lblBienvenido.TabIndex = 0;
             this.lblBienvenido.Text = "Bienvenid@";
-            this.lblBienvenido.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblBienvenido_MouseDown);
             // 
             // lblLineaDivisora
             // 
@@ -68,7 +67,6 @@
             this.lblLineaDivisora.Size = new System.Drawing.Size(325, 13);
             this.lblLineaDivisora.TabIndex = 1;
             this.lblLineaDivisora.Text = "_____________________________________________________";
-            this.lblLineaDivisora.MouseDown += new System.Windows.Forms.MouseEventHandler(this.lblLineaDivisora_MouseDown);
             // 
             // btnIniciarSesion
             // 
@@ -108,7 +106,6 @@
             this.pnlContBienve.Name = "pnlContBienve";
             this.pnlContBienve.Size = new System.Drawing.Size(403, 526);
             this.pnlContBienve.TabIndex = 7;
-            this.pnlContBienve.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlContBienve_MouseDown);
             // 
             // pnlSuperiorBienvenido
             // 
@@ -118,6 +115,7 @@
             this.pnlSuperiorBienvenido.Name = "pnlSuperiorBienvenido";
             this.pnlSuperiorBienvenido.Size = new System.Drawing.Size(402, 35);
             this.pnlSuperiorBienvenido.TabIndex = 7;
+            this.pnlSuperiorBienvenido.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlSuperiorBienvenido_MouseDown);
             // 
             // btnCerrar
             // 

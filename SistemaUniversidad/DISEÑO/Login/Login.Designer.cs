@@ -42,10 +42,10 @@
             this.btnCerrar = new System.Windows.Forms.Button();
             this.imgIcono = new System.Windows.Forms.PictureBox();
             this.pnlContAcceder = new System.Windows.Forms.Panel();
-            this.dragControlPnlAcceedr = new SistemaUniversidad.LOGICA.DragControl();
-            this.dragControlImgAcceder = new SistemaUniversidad.LOGICA.DragControl();
             this.groupBoxImg = new System.Windows.Forms.GroupBox();
             this.imgLogIn = new System.Windows.Forms.PictureBox();
+            this.dragControlPnlAcceedr = new SistemaUniversidad.LOGICA.DragControl();
+            this.dragControlImgAcceder = new SistemaUniversidad.LOGICA.DragControl();
             this.groupBoxDatosLogin.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgUser)).BeginInit();
             this.pnlSuperior.SuspendLayout();
@@ -167,6 +167,7 @@
             this.pnlSuperior.Name = "pnlSuperior";
             this.pnlSuperior.Size = new System.Drawing.Size(767, 35);
             this.pnlSuperior.TabIndex = 2;
+            this.pnlSuperior.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pnlSuperior_MouseDown);
             // 
             // btnMinimizar
             // 
@@ -220,14 +221,6 @@
             this.pnlContAcceder.Size = new System.Drawing.Size(767, 467);
             this.pnlContAcceder.TabIndex = 3;
             // 
-            // dragControlPnlAcceedr
-            // 
-            this.dragControlPnlAcceedr.SelectControl = this.pnlSuperior;
-            // 
-            // dragControlImgAcceder
-            // 
-            this.dragControlImgAcceder.SelectControl = this.imgIcono;
-            // 
             // groupBoxImg
             // 
             this.groupBoxImg.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -247,6 +240,14 @@
             this.imgLogIn.Size = new System.Drawing.Size(254, 252);
             this.imgLogIn.TabIndex = 0;
             this.imgLogIn.TabStop = false;
+            // 
+            // dragControlPnlAcceedr
+            // 
+            this.dragControlPnlAcceedr.SelectControl = this.pnlSuperior;
+            // 
+            // dragControlImgAcceder
+            // 
+            this.dragControlImgAcceder.SelectControl = this.imgIcono;
             // 
             // Login
             // 
