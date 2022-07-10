@@ -1,16 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
-using MySql.Data.MySqlClient;
 using SistemaUniversidad.LOGICA;
-using SistemaUniversidad.LOGICA.DATABASE;
+using SistemaUniversidad.LOGICA.DATABASE.Queries;
 
 namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
     public partial class AgregarAsignatura : Form {
@@ -45,43 +37,45 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
             cmbCarreras.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
+        string FirstCharToUpper(string subjectName) {
+
+            if (string.IsNullOrEmpty(subjectName)) {
+                return string.Empty;
+            }
+            // Return char and concat substring.  
+            return char.ToUpper(subjectName[0]) + subjectName.Substring(1);
+        }
+
         private void btnGuardar_Click(object sender, EventArgs e) {
-            //if(cmbCarreras.Text != "") {
-            //    if(txtNombre.Text != "" || txtNombre.Text.Length < 7) {
-            //        MySqlConnection connection = GenerateConnection.Connection();
-            //        MySqlCommand query = new MySqlCommand();
-            //        query.Connection = connection;
-            //
-            //        try {
-            //            query.CommandText = "INSERT INTO Materias(NombreCarrera, NombreMateria) VALUES('"+cmbCarreras.Text+"', '"+txtNombre.Text+"')";
-            //            query.ExecuteNonQuery();
-            //
-            //            MessageBox.Show("DATOS GUARDADOS", "ATENCIÓN", MessageBoxButtons.OK);
-            //            cmbCarreras.Text = "";
-            //            txtNombre.Clear();
-            //
-            //        }catch(Exception ex) {
-            //            MessageBox.Show("Error: " + ex.Message);
-            //        } finally {
-            //            connection.Close();
-            //        }
-            //    } else {
-            //        MessageBox.Show("INGRESE EL NOMBRE DE LA MATERIA CORRECTAMENTE", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //    }
-            //} else {
-            //    MessageBox.Show("SELECCIONE UNA CARRERA", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
+
+            if(cmbCarreras.Text != "Seleccionar" && txtGetNewSubjectName.Text != "" && cmbSelectProfessor.Text != "") {
+
+                string career = cmbCarreras.Text;
+                string subjectName = txtGetNewSubjectName.Text.Trim();
+                string professorSelected = cmbSelectProfessor.Text;
+
+                string newSubjectName = FirstCharToUpper(subjectName);
+
+                try {
+                    InsertData.AddNewSubject(ref career, ref newSubjectName, ref professorSelected);
+                    MessageBox.Show("Materia agregada correctamente");
+                } catch(Exception ex) {
+                    MessageBox.Show("Error: " + ex.Message);
+                }
+            } else {
+                MessageBox.Show("Rellene los campos vacíos");
+            }
         }
 
         private void txtNombre_KeyPress(object sender, KeyPressEventArgs e) {
             if (char.IsDigit(e.KeyChar)) {
-                MessageBox.Show("NO SE PERMITEN NÚMEROS ARÁBIGOS. EN SU LUGAR, USE NÚMEROS ROMANOS", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtNombre.Clear();
+                MessageBox.Show("No se permiten números arábigos. Únicamente romanos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtGetNewSubjectName.Clear();
             }
 
             if (char.IsPunctuation(e.KeyChar)) {
-                MessageBox.Show("NO SE PERMITEN SIGNOS DE PUNTUACIÓN", "ERROR", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                txtNombre.Clear();
+                MessageBox.Show("No se permiten signos de puntuación", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                txtGetNewSubjectName.Clear();
             }
         }
 

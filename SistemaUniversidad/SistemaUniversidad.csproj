@@ -196,6 +196,24 @@
     <Compile Include="DISEÑO\Administrador\Horarios\AgregarHorario.Designer.cs">
       <DependentUpon>AgregarHorario.cs</DependentUpon>
     </Compile>
+    <Compile Include="DISEÑO\Administrador\Horarios\BuscarHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Horarios\BuscarHorarios.Designer.cs">
+      <DependentUpon>BuscarHorarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Horarios\EliminarHorario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Horarios\EliminarHorario.Designer.cs">
+      <DependentUpon>EliminarHorario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Horarios\ModificarHorarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DISEÑO\Administrador\Horarios\ModificarHorarios.Designer.cs">
+      <DependentUpon>ModificarHorarios.cs</DependentUpon>
+    </Compile>
     <Compile Include="DISEÑO\Docente\AgregarCalificaciones.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -315,6 +333,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Administrador\Horarios\AgregarHorario.resx">
       <DependentUpon>AgregarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Horarios\BuscarHorarios.resx">
+      <DependentUpon>BuscarHorarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Horarios\EliminarHorario.resx">
+      <DependentUpon>EliminarHorario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DISEÑO\Administrador\Horarios\ModificarHorarios.resx">
+      <DependentUpon>ModificarHorarios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DISEÑO\Docente\AgregarCalificaciones.resx">
       <DependentUpon>AgregarCalificaciones.cs</DependentUpon>

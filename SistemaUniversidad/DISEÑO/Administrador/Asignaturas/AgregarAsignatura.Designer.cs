@@ -33,11 +33,11 @@
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCarrera = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbSelectProfessor = new System.Windows.Forms.ComboBox();
             this.cmbCarreras = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lblNombre = new System.Windows.Forms.Label();
-            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtGetNewSubjectName = new System.Windows.Forms.TextBox();
             this.imgLogo = new System.Windows.Forms.PictureBox();
             this.btnReturnToMainForm = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
@@ -47,7 +47,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnGuardar.Location = new System.Drawing.Point(216, 540);
+            this.btnGuardar.Location = new System.Drawing.Point(162, 540);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(89, 31);
             this.btnGuardar.TabIndex = 2;
@@ -58,7 +58,7 @@
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(720, 540);
+            this.button1.Location = new System.Drawing.Point(776, 540);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 31);
             this.button1.TabIndex = 2;
@@ -69,11 +69,11 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.lblCarrera);
-            this.groupBox1.Controls.Add(this.comboBox1);
+            this.groupBox1.Controls.Add(this.cmbSelectProfessor);
             this.groupBox1.Controls.Add(this.cmbCarreras);
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Controls.Add(this.lblNombre);
-            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtGetNewSubjectName);
             this.groupBox1.Location = new System.Drawing.Point(162, 128);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(703, 340);
@@ -90,15 +90,15 @@
             this.lblCarrera.TabIndex = 12;
             this.lblCarrera.Text = "Seleccione la carrera:";
             // 
-            // comboBox1
+            // cmbSelectProfessor
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(351, 255);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(296, 28);
-            this.comboBox1.TabIndex = 10;
-            this.comboBox1.Text = "Seleccionar";
+            this.cmbSelectProfessor.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelectProfessor.FormattingEnabled = true;
+            this.cmbSelectProfessor.Location = new System.Drawing.Point(351, 255);
+            this.cmbSelectProfessor.Name = "cmbSelectProfessor";
+            this.cmbSelectProfessor.Size = new System.Drawing.Size(296, 28);
+            this.cmbSelectProfessor.TabIndex = 10;
+            this.cmbSelectProfessor.Text = "Seleccionar";
             // 
             // cmbCarreras
             // 
@@ -130,13 +130,13 @@
             this.lblNombre.TabIndex = 9;
             this.lblNombre.Text = "Nombre de la materia:";
             // 
-            // txtNombre
+            // txtGetNewSubjectName
             // 
-            this.txtNombre.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.txtNombre.Location = new System.Drawing.Point(351, 154);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(296, 27);
-            this.txtNombre.TabIndex = 7;
+            this.txtGetNewSubjectName.Font = new System.Drawing.Font("Century Gothic", 12F);
+            this.txtGetNewSubjectName.Location = new System.Drawing.Point(351, 154);
+            this.txtGetNewSubjectName.Name = "txtGetNewSubjectName";
+            this.txtGetNewSubjectName.Size = new System.Drawing.Size(296, 27);
+            this.txtGetNewSubjectName.TabIndex = 7;
             // 
             // imgLogo
             // 
@@ -186,11 +186,11 @@
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblCarrera;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbSelectProfessor;
         private System.Windows.Forms.ComboBox cmbCarreras;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lblNombre;
-        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtGetNewSubjectName;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Button btnReturnToMainForm;
     }

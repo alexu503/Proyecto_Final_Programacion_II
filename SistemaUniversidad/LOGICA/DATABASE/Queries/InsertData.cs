@@ -148,6 +148,18 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
             connection.Close();
         }
 
+        public static void AddNewSubject(ref string career, ref string newSubject, ref string designedProfessor) {
+
+            SQLiteConnection connection = GenerateConnection.GetConnection();
+            SQLiteCommand query = new SQLiteCommand();
+            query.Connection = connection;
+            //Execute query:
+            query.CommandText = "INSERT INTO Careers(CareerName) VALUES(@CareerName)";
+            query.Parameters.Add(new SQLiteParameter("@CareerName", career));
+            query.ExecuteNonQuery();
+            connection.Close();
+        }
+
         public static void InsertToDB(string staffType, ref List<Student> lstAddNewStaff) {
 
             switch (staffType) {
