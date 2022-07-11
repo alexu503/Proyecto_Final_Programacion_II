@@ -20,7 +20,7 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
             query.CommandText = "SELECT * FROM Careers";
             SQLiteDataReader dr = query.ExecuteReader();
             //Close DB Connection
-            connection.Close();
+            //connection.Close();
             //Return data reader value.
             return dr;
         }

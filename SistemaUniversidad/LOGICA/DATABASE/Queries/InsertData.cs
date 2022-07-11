@@ -127,7 +127,7 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
                 "@Password," +
                 "@Rol)";
             foreach (Student l in lstData) {
-                username = l.FirstSurname.Substring(0, 1).ToUpper() + l.SecondSurname.Substring(0, 1) + idRandomCode.ToString();
+                username = l.FirstSurname.Substring(0, 1).ToUpper() + l.SecondSurname.Substring(0, 1) + DateTime.Today.Year.ToString().Substring(2, 2) + idRandomCode.ToString();
             }
             query.Parameters.Add(new SQLiteParameter("@Username", username));
             query.Parameters.Add(new SQLiteParameter("@Password", password));
@@ -148,14 +148,20 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
             connection.Close();
         }
 
+        //Modify
+
         public static void AddNewSubject(ref string career, ref string newSubject, ref string designedProfessor) {
 
             SQLiteConnection connection = GenerateConnection.GetConnection();
             SQLiteCommand query = new SQLiteCommand();
             query.Connection = connection;
             //Execute query:
-            query.CommandText = "INSERT INTO Careers(CareerName) VALUES(@CareerName)";
+            query.CommandText = "INSERT INTO Subjects(" +
+                "Career, Subject, ProfessorID) " +
+                "VALUES(@CareerName, @SubjectName, @ProfessorID)";
             query.Parameters.Add(new SQLiteParameter("@CareerName", career));
+            query.Parameters.Add(new SQLiteParameter("@SubjectName", newSubject));
+            query.Parameters.Add(new SQLiteParameter("@ProfessorID", designedProfessor));
             query.ExecuteNonQuery();
             connection.Close();
         }

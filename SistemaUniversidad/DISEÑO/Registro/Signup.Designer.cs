@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using SistemaUniversidad.LOGICA.LogicalClasses;
+using SistemaUniversidad.LOGICA.DATABASE.Queries;
 
 namespace SistemaUniversidad.DISEÑO.Registro {
     partial class Signup {
@@ -18,6 +19,18 @@ namespace SistemaUniversidad.DISEÑO.Registro {
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+
+        void LoadCarrersToCmb() {
+            try {
+
+                cmbGetCareer.Text = "Seleccionar";
+
+            }catch(System.Exception ex) {
+                //
+            } finally {
+                //
+            }
         }
 
         #region Windows Form Designer generated code

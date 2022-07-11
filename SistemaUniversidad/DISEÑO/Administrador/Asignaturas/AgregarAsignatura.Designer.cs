@@ -1,7 +1,11 @@
-﻿namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas
-{
-    partial class AgregarAsignatura
-    {
+﻿using System;
+using System.Windows.Forms;
+using System.Data.SQLite;
+using SistemaUniversidad.LOGICA.DATABASE;
+//using SistemaUniversidad.LOGICA.DATABASE.Queries;
+
+namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
+    partial class AgregarAsignatura {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,13 +15,35 @@
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing)
-        {
-            if (disposing && (components != null))
-            {
+        protected override void Dispose(bool disposing) {
+            if (disposing && (components != null)) {
                 components.Dispose();
             }
             base.Dispose(disposing);
+        }
+        void LoadCarrersToCmb() {
+
+            SQLiteConnection connection = GenerateConnection.GetConnection();
+            SQLiteCommand query = new SQLiteCommand();
+            query.Connection = connection;
+
+            try {
+                //Execute query:
+                query.CommandText = "SELECT * FROM Careers";
+                SQLiteDataReader dr = query.ExecuteReader();
+
+                if (dr.HasRows) {
+                    while (dr.Read()) {
+                        cmbCarreras.Items.Add(dr.GetString(0));
+                    }
+                } else {
+                    MessageBox.Show("No hay carreras para mostrar");
+                }
+            } catch (System.Exception ex) {
+                MessageBox.Show("Error: " + ex.Message);
+            } finally {
+                connection.Close();
+            }
         }
 
         #region Windows Form Designer generated code
@@ -26,8 +52,7 @@
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent()
-        {
+        private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarAsignatura));
             this.btnGuardar = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -92,11 +117,11 @@
             // 
             // cmbSelectProfessor
             // 
-            this.cmbSelectProfessor.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelectProfessor.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cmbSelectProfessor.FormattingEnabled = true;
             this.cmbSelectProfessor.Location = new System.Drawing.Point(351, 255);
             this.cmbSelectProfessor.Name = "cmbSelectProfessor";
-            this.cmbSelectProfessor.Size = new System.Drawing.Size(296, 28);
+            this.cmbSelectProfessor.Size = new System.Drawing.Size(296, 29);
             this.cmbSelectProfessor.TabIndex = 10;
             this.cmbSelectProfessor.Text = "Seleccionar";
             // 

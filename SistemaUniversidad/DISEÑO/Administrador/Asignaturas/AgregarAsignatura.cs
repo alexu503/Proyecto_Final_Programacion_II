@@ -9,6 +9,8 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
         public Form agregarAsignatura;
         public AgregarAsignatura() {
             InitializeComponent();
+            cmbCarreras.Text = "Seleccionar";
+            this.LoadCarrersToCmb();
         }
 
         private void btnRestaurar_Click(object sender, EventArgs e) {
@@ -30,7 +32,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
 
         private void btnMaximizar_Click(object sender, EventArgs e) {
             BotonesPnlSuperior boton = new BotonesPnlSuperior();
-            //boton.Maximizar(this, sender, e, btnMaximizar, btnRestaurar);
         }
 
         private void AgregarAsignatura_Load(object sender, EventArgs e) {
