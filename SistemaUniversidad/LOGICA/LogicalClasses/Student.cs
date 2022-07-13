@@ -22,7 +22,6 @@ namespace SistemaUniversidad.LOGICA.LogicalClasses{
         private string inscriptiondate;
         private string civilstate;
         private string nationality;
-        //private float[] notas;
 
         public Student(string n, string fl1, string fl2, string c, string p, string b, string dni, string sex, string add, string ph, string mph, string e, string id, string cs, string nn) {
             name = n;
@@ -47,7 +46,7 @@ namespace SistemaUniversidad.LOGICA.LogicalClasses{
         }
 
         public override void AddNewStaff() {
-            Name = this.name;
+            Name = name;
             FirstSurname = firstSurname;
             SecondSurname = secondSurname;
             CareerA = career;

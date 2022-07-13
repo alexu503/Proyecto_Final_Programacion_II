@@ -41,6 +41,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
         //}
 
         void ReceiveInputs() {
+
             Student student = new Student();
 
             student.Name = txtGetName.Text;
@@ -114,7 +115,7 @@ namespace SistemaUniversidad.DISEÑO.Registro {
                         if(rbtnMale.Checked == true || rbtnFemale.Checked == true) {
                             ReceiveInputs();
                             try {
-                                InsertData.InsertToDB("Estudiante", ref lstStudent);
+                                InsertData.InsertToStudentsTable(ref lstStudent);
                                 MessageBox.Show("Registrado correctamente");
                             } catch (Exception ex) {
                                 MessageBox.Show("Error: " + ex.Message);

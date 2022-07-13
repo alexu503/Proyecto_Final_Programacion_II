@@ -47,6 +47,33 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
             }
         }
 
+        void LoadProfessors(string selectedCareer) {
+            SQLiteConnection connection = GenerateConnection.GetConnection();
+            SQLiteCommand query = new SQLiteCommand();
+            query.Connection = connection;
+
+            try {
+                //Execute query:
+                query.CommandText = "SELECT ProfessorID FROM Professor WHERE CareerA = @CareerA OR CareerB = @CareerB";
+                query.Parameters.Add(new SQLiteParameter("@CareerA", selectedCareer));
+                query.Parameters.Add(new SQLiteParameter("@CareerB", selectedCareer));
+                SQLiteDataReader dr = query.ExecuteReader();
+
+                if (dr.HasRows) {
+                    while (dr.Read()) {
+                        cmbSelectProfessor.Items.Add(dr.GetString(0));
+                    }
+                } else {
+                    MessageBox.Show("No hay carreras para mostrar");
+                    cmbCarreras.Text = "Seleccionar";
+                }
+            } catch (System.Exception ex) {
+                MessageBox.Show("Error: " + ex.Message);
+            } finally {
+                connection.Close();
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -56,7 +83,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarAsignatura));
             this.btnGuardar = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnCancell = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.lblCarrera = new System.Windows.Forms.Label();
             this.cmbSelectProfessor = new System.Windows.Forms.ComboBox();
@@ -81,16 +108,16 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
             this.btnGuardar.UseVisualStyleBackColor = true;
             this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
-            // button1
+            // btnCancell
             // 
-            this.button1.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(776, 540);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(89, 31);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Cancelar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.btnGuardar_Click);
+            this.btnCancell.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancell.Location = new System.Drawing.Point(776, 540);
+            this.btnCancell.Name = "btnCancell";
+            this.btnCancell.Size = new System.Drawing.Size(89, 31);
+            this.btnCancell.TabIndex = 2;
+            this.btnCancell.Text = "Cancelar";
+            this.btnCancell.UseVisualStyleBackColor = true;
+            this.btnCancell.Click += new System.EventHandler(this.btnCancell_Click);
             // 
             // groupBox1
             // 
@@ -135,6 +162,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
             this.cmbCarreras.Size = new System.Drawing.Size(296, 29);
             this.cmbCarreras.TabIndex = 11;
             this.cmbCarreras.Text = "Seleccionar";
+            this.cmbCarreras.SelectedValueChanged += new System.EventHandler(this.cmbCarreras_SelectedValueChanged);
             // 
             // label1
             // 
@@ -193,7 +221,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
             this.Controls.Add(this.btnReturnToMainForm);
             this.Controls.Add(this.imgLogo);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnCancell);
             this.Controls.Add(this.btnGuardar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarAsignatura";
@@ -209,7 +237,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
 
         #endregion
         private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnCancell;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label lblCarrera;
         private System.Windows.Forms.ComboBox cmbSelectProfessor;

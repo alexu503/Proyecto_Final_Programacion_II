@@ -274,7 +274,7 @@
     <Compile Include="LOGICA\DATABASE\Queries\InsertData.cs" />
     <Compile Include="LOGICA\DATABASE\Queries\SearchData.cs" />
     <Compile Include="LOGICA\DATABASE\Queries\UpdateData.cs" />
-    <Compile Include="LOGICA\LogicalClasses\Docente.cs" />
+    <Compile Include="LOGICA\LogicalClasses\Proffessor.cs" />
     <Compile Include="LOGICA\LogicalClasses\DragControl.cs">
       <SubType>Component</SubType>
     </Compile>

@@ -92,5 +92,15 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
         private void btnReturnToMainForm_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        private void btnCancell_Click(object sender, EventArgs e) {
+            cmbCarreras.Text = "Seleccionar";
+            txtGetNewSubjectName.Clear();
+            cmbSelectProfessor.Text = "Seleccionar";
+        }
+
+        private void cmbCarreras_SelectedValueChanged(object sender, EventArgs e) {
+            this.LoadProfessors(cmbCarreras.Text);
+        }
     }
 }

@@ -1,9 +1,17 @@
-﻿namespace SistemaUniversidad.DISEÑO.Administrador.Docentes {
+﻿using System;
+using System.Collections.Generic;
+using System.Windows.Forms;
+using System.Data.SQLite;
+using SistemaUniversidad.LOGICA.LogicalClasses;
+using SistemaUniversidad.LOGICA.DATABASE;
+
+namespace SistemaUniversidad.DISEÑO.Administrador.Docentes {
     partial class AgregarDocente {
         /// <summary>
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
+        List<Proffessor> lstProfessor = new List<Proffessor>();
 
         /// <summary>
         /// Clean up any resources being used.
@@ -16,6 +24,58 @@
             base.Dispose(disposing);
         }
 
+        void LoadFirstCarrerToCmb() {
+
+            SQLiteConnection connection = GenerateConnection.GetConnection();
+            SQLiteCommand query = new SQLiteCommand();
+            query.Connection = connection;
+
+            try {
+                //Execute query:
+                query.CommandText = "SELECT * FROM Careers";
+                SQLiteDataReader dr = query.ExecuteReader();
+
+                if (dr.HasRows) {
+                    while (dr.Read()) {
+                        cmbGetFirstCareer.Items.Add(dr.GetString(0));
+                    }
+                } else {
+                    MessageBox.Show("No hay carreras para mostrar");
+                    cmbGetFirstCareer.Text = "Seleccionar";
+                }
+            } catch (System.Exception ex) {
+                MessageBox.Show("Error: " + ex.Message);
+            } finally {
+                connection.Close();
+            }
+        }
+
+        void LoadSecondCareerToCmb() {
+
+            SQLiteConnection connection = GenerateConnection.GetConnection();
+            SQLiteCommand query = new SQLiteCommand();
+            query.Connection = connection;
+
+            try {
+                //Execute query:
+                query.CommandText = "SELECT * FROM Careers";
+                SQLiteDataReader dr = query.ExecuteReader();
+
+                if (dr.HasRows) {
+                    while (dr.Read()) {
+                        cmbGetSecondCareer.Items.Add(dr.GetString(0));
+                    }
+                } else {
+                    MessageBox.Show("No hay carreras para mostrar");
+                    cmbGetSecondCareer.Text = "Seleccionar";
+                }
+            } catch (System.Exception ex) {
+                MessageBox.Show("Error: " + ex.Message);
+            } finally {
+                connection.Close();
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -25,12 +85,10 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarDocente));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.cmbGetSubject = new System.Windows.Forms.ComboBox();
             this.cmbGetSecondCareer = new System.Windows.Forms.ComboBox();
             this.cmbGetFirstCareer = new System.Windows.Forms.ComboBox();
             this.btnCancell = new System.Windows.Forms.Button();
             this.btnAgregar = new System.Windows.Forms.Button();
-            this.lblSubject = new System.Windows.Forms.Label();
             this.lblSecondCareer = new System.Windows.Forms.Label();
             this.lblFirstCareer = new System.Windows.Forms.Label();
             this.txtGetSecondSurname = new System.Windows.Forms.TextBox();
@@ -47,12 +105,10 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.cmbGetSubject);
             this.groupBox1.Controls.Add(this.cmbGetSecondCareer);
             this.groupBox1.Controls.Add(this.cmbGetFirstCareer);
             this.groupBox1.Controls.Add(this.btnCancell);
             this.groupBox1.Controls.Add(this.btnAgregar);
-            this.groupBox1.Controls.Add(this.lblSubject);
             this.groupBox1.Controls.Add(this.lblSecondCareer);
             this.groupBox1.Controls.Add(this.lblFirstCareer);
             this.groupBox1.Controls.Add(this.txtGetSecondSurname);
@@ -67,71 +123,55 @@
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             // 
-            // cmbGetSubject
-            // 
-            this.cmbGetSubject.Font = new System.Drawing.Font("Century Gothic", 12F);
-            this.cmbGetSubject.FormattingEnabled = true;
-            this.cmbGetSubject.Location = new System.Drawing.Point(338, 457);
-            this.cmbGetSubject.Name = "cmbGetSubject";
-            this.cmbGetSubject.Size = new System.Drawing.Size(170, 29);
-            this.cmbGetSubject.TabIndex = 3;
-            this.cmbGetSubject.Text = "Seleccionar";
-            // 
             // cmbGetSecondCareer
             // 
             this.cmbGetSecondCareer.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.cmbGetSecondCareer.FormattingEnabled = true;
-            this.cmbGetSecondCareer.Location = new System.Drawing.Point(338, 377);
+            this.cmbGetSecondCareer.Location = new System.Drawing.Point(338, 442);
             this.cmbGetSecondCareer.Name = "cmbGetSecondCareer";
             this.cmbGetSecondCareer.Size = new System.Drawing.Size(170, 29);
             this.cmbGetSecondCareer.TabIndex = 3;
             this.cmbGetSecondCareer.Text = "Seleccionar";
+            this.cmbGetSecondCareer.TextChanged += new System.EventHandler(this.cmbGetSecondCareer_TextChanged);
             // 
             // cmbGetFirstCareer
             // 
             this.cmbGetFirstCareer.Font = new System.Drawing.Font("Century Gothic", 12F);
             this.cmbGetFirstCareer.FormattingEnabled = true;
-            this.cmbGetFirstCareer.Location = new System.Drawing.Point(338, 287);
+            this.cmbGetFirstCareer.Location = new System.Drawing.Point(338, 341);
             this.cmbGetFirstCareer.Name = "cmbGetFirstCareer";
             this.cmbGetFirstCareer.Size = new System.Drawing.Size(170, 29);
             this.cmbGetFirstCareer.TabIndex = 3;
             this.cmbGetFirstCareer.Text = "Seleccionar";
+            this.cmbGetFirstCareer.TextChanged += new System.EventHandler(this.cmbGetFirstCareer_TextChanged);
             // 
             // btnCancell
             // 
             this.btnCancell.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancell.Location = new System.Drawing.Point(410, 573);
+            this.btnCancell.Location = new System.Drawing.Point(410, 561);
             this.btnCancell.Name = "btnCancell";
             this.btnCancell.Size = new System.Drawing.Size(98, 37);
             this.btnCancell.TabIndex = 2;
             this.btnCancell.Text = "Cancelar";
             this.btnCancell.UseVisualStyleBackColor = true;
+            this.btnCancell.Click += new System.EventHandler(this.btnCancell_Click);
             // 
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(84, 573);
+            this.btnAgregar.Location = new System.Drawing.Point(84, 561);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(98, 37);
             this.btnAgregar.TabIndex = 2;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
-            // lblSubject
-            // 
-            this.lblSubject.AutoSize = true;
-            this.lblSubject.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSubject.Location = new System.Drawing.Point(55, 457);
-            this.lblSubject.Name = "lblSubject";
-            this.lblSubject.Size = new System.Drawing.Size(155, 21);
-            this.lblSubject.TabIndex = 0;
-            this.lblSubject.Text = "Materia a impartir:";
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // lblSecondCareer
             // 
             this.lblSecondCareer.AutoSize = true;
             this.lblSecondCareer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSecondCareer.Location = new System.Drawing.Point(55, 377);
+            this.lblSecondCareer.Location = new System.Drawing.Point(55, 442);
             this.lblSecondCareer.Name = "lblSecondCareer";
             this.lblSecondCareer.Size = new System.Drawing.Size(146, 21);
             this.lblSecondCareer.TabIndex = 0;
@@ -141,7 +181,7 @@
             // 
             this.lblFirstCareer.AutoSize = true;
             this.lblFirstCareer.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblFirstCareer.Location = new System.Drawing.Point(55, 290);
+            this.lblFirstCareer.Location = new System.Drawing.Point(55, 344);
             this.lblFirstCareer.Name = "lblFirstCareer";
             this.lblFirstCareer.Size = new System.Drawing.Size(133, 21);
             this.lblFirstCareer.TabIndex = 0;
@@ -150,17 +190,18 @@
             // txtGetSecondSurname
             // 
             this.txtGetSecondSurname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGetSecondSurname.Location = new System.Drawing.Point(338, 208);
+            this.txtGetSecondSurname.Location = new System.Drawing.Point(338, 242);
             this.txtGetSecondSurname.Multiline = true;
             this.txtGetSecondSurname.Name = "txtGetSecondSurname";
             this.txtGetSecondSurname.Size = new System.Drawing.Size(170, 27);
             this.txtGetSecondSurname.TabIndex = 1;
+            this.txtGetSecondSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetSecondSurname_KeyPress);
             // 
             // lblSecondSurname
             // 
             this.lblSecondSurname.AutoSize = true;
             this.lblSecondSurname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSecondSurname.Location = new System.Drawing.Point(55, 208);
+            this.lblSecondSurname.Location = new System.Drawing.Point(55, 242);
             this.lblSecondSurname.Name = "lblSecondSurname";
             this.lblSecondSurname.Size = new System.Drawing.Size(150, 21);
             this.lblSecondSurname.TabIndex = 0;
@@ -169,17 +210,18 @@
             // txtGetFirstSurname
             // 
             this.txtGetFirstSurname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtGetFirstSurname.Location = new System.Drawing.Point(338, 126);
+            this.txtGetFirstSurname.Location = new System.Drawing.Point(338, 143);
             this.txtGetFirstSurname.Multiline = true;
             this.txtGetFirstSurname.Name = "txtGetFirstSurname";
             this.txtGetFirstSurname.Size = new System.Drawing.Size(170, 27);
             this.txtGetFirstSurname.TabIndex = 1;
+            this.txtGetFirstSurname.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetFirstSurname_KeyPress);
             // 
             // lblPrimerApellido
             // 
             this.lblPrimerApellido.AutoSize = true;
             this.lblPrimerApellido.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrimerApellido.Location = new System.Drawing.Point(55, 126);
+            this.lblPrimerApellido.Location = new System.Drawing.Point(55, 143);
             this.lblPrimerApellido.Name = "lblPrimerApellido";
             this.lblPrimerApellido.Size = new System.Drawing.Size(127, 21);
             this.lblPrimerApellido.TabIndex = 0;
@@ -193,6 +235,7 @@
             this.txtGetName.Name = "txtGetName";
             this.txtGetName.Size = new System.Drawing.Size(170, 27);
             this.txtGetName.TabIndex = 1;
+            this.txtGetName.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGetName_KeyPress);
             // 
             // lblNewProfessor
             // 
@@ -237,6 +280,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarDocente";
             this.Text = "AgregarDocente";
+            this.Load += new System.EventHandler(this.AgregarDocente_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -250,7 +294,6 @@
         private System.Windows.Forms.ComboBox cmbGetFirstCareer;
         private System.Windows.Forms.Button btnCancell;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Label lblSubject;
         private System.Windows.Forms.Label lblSecondCareer;
         private System.Windows.Forms.Label lblFirstCareer;
         private System.Windows.Forms.TextBox txtGetSecondSurname;
@@ -260,7 +303,6 @@
         private System.Windows.Forms.TextBox txtGetName;
         private System.Windows.Forms.Label lblNewProfessor;
         private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.ComboBox cmbGetSubject;
         private System.Windows.Forms.Button btnCloseForm;
     }
 }
