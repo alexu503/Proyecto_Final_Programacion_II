@@ -157,7 +157,7 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
             query.Connection = connection;
             //Execute query:
             query.CommandText = "INSERT INTO Subjects(" +
-                "Career, Subject, ProfessorID) " +
+                "Carrer, Subject, ProfessorID) " +
                 "VALUES(@CareerName, @SubjectName, @ProfessorID)";
             query.Parameters.Add(new SQLiteParameter("@CareerName", career));
             query.Parameters.Add(new SQLiteParameter("@SubjectName", newSubject));

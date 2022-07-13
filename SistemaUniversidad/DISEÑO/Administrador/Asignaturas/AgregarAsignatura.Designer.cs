@@ -38,6 +38,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
                     }
                 } else {
                     MessageBox.Show("No hay carreras para mostrar");
+                    cmbCarreras.Text = "Seleccionar";
                 }
             } catch (System.Exception ex) {
                 MessageBox.Show("Error: " + ex.Message);
