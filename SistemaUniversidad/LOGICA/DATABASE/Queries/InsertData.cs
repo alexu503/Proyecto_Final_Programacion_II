@@ -6,18 +6,6 @@ using SistemaUniversidad.LOGICA.LogicalClasses;
 namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
     internal static class InsertData {
 
-        static int CutName(string name) {
-
-            int lettersCounter = 0;
-
-            for(int x = 0; x < name.Length; x++) {
-                while (name[x].ToString() != " ") {
-                    lettersCounter++;
-                }
-            }
-            return lettersCounter;
-        }
-
         #region ProfessorTable
         public static void InsertToProfessorTable(ref List<Proffessor> lstData) {
 
@@ -43,7 +31,8 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
                 "@CareerA," +
                 "@CareerB)";
             foreach (AcademicStaff x in lstData) {
-                string username = x.Name.ToLower().Substring(0, CutName(x.Name)) + "." + x.FirstSurname.ToLower() + DateTime.Today.Year.ToString().Substring(2, 2) + idRandomCode.ToString().Substring(2, 2);
+
+                string username = x.FirstSurname.ToLower() + "." + x.SecondSurname.ToLower() + DateTime.Today.Year.ToString().Substring(2, 2) + idRandomCode.ToString().Substring(2, 2);
 
                 query.Parameters.Add(new SQLiteParameter("@ProfessorID", username));
                 query.Parameters.Add(new SQLiteParameter("@Name", x.Name));
@@ -124,7 +113,6 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
         static void InsertToLogins(string staffType, string username) {
 
             Random r = new Random();
-            int idRandomCode = r.Next(1000, 9999);
             string password = DateTime.Today.Year.ToString().Substring(2, 2) + r.Next(100000, 999999).ToString();
 
             SQLiteConnection connection = GenerateConnection.GetConnection();
@@ -169,7 +157,7 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
             query.Connection = connection;
             //Execute query:
             query.CommandText = "INSERT INTO Subjects(" +
-                "Carrer, Subject, ProfessorID) " +
+                "Career, Subject, ProfessorID) " +
                 "VALUES(@CareerName, @SubjectName, @ProfessorID)";
             query.Parameters.Add(new SQLiteParameter("@CareerName", career));
             query.Parameters.Add(new SQLiteParameter("@SubjectName", newSubject));
