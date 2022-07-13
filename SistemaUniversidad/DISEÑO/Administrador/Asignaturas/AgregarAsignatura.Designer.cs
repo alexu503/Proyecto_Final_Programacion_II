@@ -64,7 +64,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
                         cmbSelectProfessor.Items.Add(dr.GetString(0));
                     }
                 } else {
-                    MessageBox.Show("No hay carreras para mostrar");
+                    MessageBox.Show("No hay materias para mostrar");
                     cmbCarreras.Text = "Seleccionar";
                 }
             } catch (System.Exception ex) {

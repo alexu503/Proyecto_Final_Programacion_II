@@ -36,6 +36,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
 
         private void AgregarAsignatura_Load(object sender, EventArgs e) {
             cmbCarreras.DropDownStyle = ComboBoxStyle.DropDownList;
+            cmbSelectProfessor.DropDownStyle = ComboBoxStyle.DropDownList;
         }
 
         string FirstCharToUpper(string subjectName) {
@@ -96,10 +97,12 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Asignaturas {
         private void btnCancell_Click(object sender, EventArgs e) {
             cmbCarreras.Text = "Seleccionar";
             txtGetNewSubjectName.Clear();
+            cmbSelectProfessor.Items.Clear();
             cmbSelectProfessor.Text = "Seleccionar";
         }
 
         private void cmbCarreras_SelectedValueChanged(object sender, EventArgs e) {
+            cmbSelectProfessor.Items.Clear();
             this.LoadProfessors(cmbCarreras.Text);
         }
     }
