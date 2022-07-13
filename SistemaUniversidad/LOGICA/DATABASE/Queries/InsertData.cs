@@ -6,33 +6,53 @@ using SistemaUniversidad.LOGICA.LogicalClasses;
 namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
     internal static class InsertData {
 
+        static int CutName(string name) {
+
+            int lettersCounter = 0;
+
+            for(int x = 0; x < name.Length; x++) {
+                while (name[x].ToString() != " ") {
+                    lettersCounter++;
+                }
+            }
+            return lettersCounter;
+        }
+
         #region ProfessorTable
         public static void InsertToProfessorTable(ref List<Proffessor> lstData) {
 
+            Random r = new Random();
+            int idRandomCode = r.Next(1000, 9999);
             SQLiteConnection connection = GenerateConnection.GetConnection();
             SQLiteCommand query = new SQLiteCommand();
             query.Connection = connection;
+            
             //Execute query:
             query.CommandText = "INSERT INTO Professor(" +
+                "ProfessorID," +
                 "Name," +
                 "FirstSurname," +
                 "SecondSurname," +
                 "CareerA," +
                 "CareerB) " +
                 "VALUES(" +
+                "@ProfessorID," +
                 "@Name," +
                 "@FirstSurname," +
                 "@SecondSurname," +
                 "@CareerA," +
                 "@CareerB)";
             foreach (AcademicStaff x in lstData) {
+                string username = x.Name.ToLower().Substring(0, CutName(x.Name)) + "." + x.FirstSurname.ToLower() + DateTime.Today.Year.ToString().Substring(2, 2) + idRandomCode.ToString().Substring(2, 2);
+
+                query.Parameters.Add(new SQLiteParameter("@ProfessorID", username));
                 query.Parameters.Add(new SQLiteParameter("@Name", x.Name));
                 query.Parameters.Add(new SQLiteParameter("@FirstSurname", x.FirstSurname));
                 query.Parameters.Add(new SQLiteParameter("@SecondSurname", x.SecondSurname));
                 query.Parameters.Add(new SQLiteParameter("@CareerA", x.CareerA));
                 query.Parameters.Add(new SQLiteParameter("@CareerB", x.CareerB));
 
-                InsertToLogins("Docente", x.Name, x.FirstSurname, x.SecondSurname);
+                InsertToLogins("Docente", username);
 
             }
             query.ExecuteNonQuery();
@@ -43,6 +63,8 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
         #region StudentTable
         public static void InsertToStudentsTable(ref List<Student> lstData) {
 
+            Random r = new Random();
+            int idRandomCode = r.Next(1000, 9999);
             SQLiteConnection connection = GenerateConnection.GetConnection();
             SQLiteCommand query = new SQLiteCommand();
             query.Connection = connection;
@@ -51,6 +73,7 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
                 "FirstName," +
                 "Lastname," +
                 "Career," +
+                "ID," +
                 "DNI," +
                 "Birthday," +
                 "Sex," +
@@ -63,6 +86,7 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
                 "@Firstname," +
                 "@Lastname," +
                 "@Career," +
+                "@ID," +
                 "@DNI," +
                 "@Birthday," +
                 "@Sex," +
@@ -72,10 +96,13 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
                 "@Nationality," +
                 "@CivilStatus)";
             foreach (AcademicStaff x in lstData) {
+                string username = x.FirstSurname.Substring(0, 1).ToUpper() + x.SecondSurname.Substring(0, 1) + DateTime.Today.Year.ToString().Substring(2, 2) + idRandomCode.ToString();
+
                 query.Parameters.Add(new SQLiteParameter("@FirstName", x.Name));
                 query.Parameters.Add(new SQLiteParameter("@Lastame", x.FirstSurname));
                 query.Parameters.Add(new SQLiteParameter("@Lastame", x.SecondSurname));
                 query.Parameters.Add(new SQLiteParameter("@Career", x.CareerA));
+                query.Parameters.Add(new SQLiteParameter("@ID", username));
                 query.Parameters.Add(new SQLiteParameter("@DNI", x.DNI));
                 query.Parameters.Add(new SQLiteParameter("@Birthday", x.BirthDate));
                 query.Parameters.Add(new SQLiteParameter("@Sex", x.Sex));
@@ -85,7 +112,7 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
                 query.Parameters.Add(new SQLiteParameter("@Nationality", x.Nationality));
                 query.Parameters.Add(new SQLiteParameter("@CivilStatus", x.MaritalStatus));
 
-                InsertToLogins("Estudiante", x.Name, x.FirstSurname, x.SecondSurname);
+                InsertToLogins("Estudiante", username);
 
             }
             query.ExecuteNonQuery();
@@ -94,19 +121,11 @@ namespace SistemaUniversidad.LOGICA.DATABASE.Queries {
         #endregion
 
         #region LoginTable
-        static void InsertToLogins(string staffType, string name, string firstSurname, string secondSurname) {
+        static void InsertToLogins(string staffType, string username) {
 
             Random r = new Random();
-            //DateTime dt = new DateTime();
             int idRandomCode = r.Next(1000, 9999);
-            string username = "";
             string password = DateTime.Today.Year.ToString().Substring(2, 2) + r.Next(100000, 999999).ToString();
-            
-            if(staffType == "Estudiante") {
-                username = firstSurname.Substring(0, 1).ToUpper() + secondSurname.Substring(0, 1) + DateTime.Today.Year.ToString().Substring(2, 2) + idRandomCode.ToString();
-            } else {
-                username = name.ToLower() + firstSurname.ToLower() + DateTime.Today.Year.ToString().Substring(2, 2) + idRandomCode.ToString().Substring(2, 2);
-            }
 
             SQLiteConnection connection = GenerateConnection.GetConnection();
             SQLiteCommand query = new SQLiteCommand();
