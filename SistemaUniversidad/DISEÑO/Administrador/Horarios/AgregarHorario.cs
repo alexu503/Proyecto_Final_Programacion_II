@@ -17,5 +17,17 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
         private void btnReturnToMainForm_Click(object sender, EventArgs e) {
             this.Close();
         }
+
+        private void AgregarHorario_Load(object sender, EventArgs e) {
+            this.LoadCarrersToCmb();
+        }
+
+        private void cmbGetCareerList_SelectedValueChanged(object sender, EventArgs e) {
+            this.LoadSubjects(cmbGetCareerList.Text);
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e) {
+            //
+        }
     }
 }

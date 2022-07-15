@@ -1,4 +1,10 @@
-﻿namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
+﻿using System;
+using System.Windows.Forms;
+using System.Data.SQLite;
+using SistemaUniversidad.LOGICA.DATABASE;
+using SistemaUniversidad.LOGICA.DATABASE.Queries;
+
+namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
     partial class AgregarHorario {
         /// <summary>
         /// Required designer variable.
@@ -16,6 +22,59 @@
             base.Dispose(disposing);
         }
 
+        void LoadCarrersToCmb() {
+
+            SQLiteConnection connection = GenerateConnection.GetConnection();
+            SQLiteCommand query = new SQLiteCommand();
+            query.Connection = connection;
+
+            try {
+                //Execute query:
+                query.CommandText = "SELECT * FROM Careers";
+                SQLiteDataReader dr = query.ExecuteReader();
+
+                if (dr.HasRows) {
+                    while (dr.Read()) {
+                        cmbGetCareerList.Items.Add(dr.GetString(0));
+                    }
+                } else {
+                    MessageBox.Show("No hay carreras para mostrar");
+                    cmbGetCareerList.Text = "Seleccionar";
+                }
+            } catch (Exception ex) {
+                MessageBox.Show("Error: " + ex.Message);
+            } finally {
+                connection.Close();
+            }
+        }
+
+        void LoadSubjects(string selectedCareer) {
+            SQLiteConnection connection = GenerateConnection.GetConnection();
+            SQLiteCommand query = new SQLiteCommand();
+            query.Connection = connection;
+
+            try {
+                //Execute query:
+                query.CommandText = "SELECT Subject FROM Subjects WHERE Career = @CareerA OR Career = @CareerB";
+                query.Parameters.Add(new SQLiteParameter("@CareerA", selectedCareer));
+                query.Parameters.Add(new SQLiteParameter("@CareerB", selectedCareer));
+                SQLiteDataReader dr = query.ExecuteReader();
+
+                if (dr.HasRows) {
+                    while (dr.Read()) {
+                        cmbSelectSubject.Items.Add(dr.GetString(0));
+                    }
+                } else {
+                    MessageBox.Show("No hay materias para mostrar");
+                    cmbSelectSubject.Text = "Seleccionar";
+                }
+            } catch (Exception ex) {
+                MessageBox.Show("Error: " + ex.Message);
+            } finally {
+                connection.Close();
+            }
+        }
+
         #region Windows Form Designer generated code
 
         /// <summary>
@@ -25,16 +84,16 @@
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarHorario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.btnCancell = new System.Windows.Forms.Button();
-            this.btnAgregar = new System.Windows.Forms.Button();
             this.lblSelectDay = new System.Windows.Forms.Label();
             this.lblSubjectList = new System.Windows.Forms.Label();
+            this.cmbSelectDay = new System.Windows.Forms.ComboBox();
+            this.cmbSelectSubject = new System.Windows.Forms.ComboBox();
             this.cmbGetCareerList = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
+            this.btnCancell = new System.Windows.Forms.Button();
+            this.btnAgregar = new System.Windows.Forms.Button();
             this.btnReturnToMainForm = new System.Windows.Forms.Button();
             this.imgLogo = new System.Windows.Forms.PictureBox();
-            this.cmbSelectSubject = new System.Windows.Forms.ComboBox();
-            this.cmbSelectDay = new System.Windows.Forms.ComboBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSecondSurname = new System.Windows.Forms.Label();
@@ -69,26 +128,6 @@
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
             // 
-            // btnCancell
-            // 
-            this.btnCancell.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancell.Location = new System.Drawing.Point(961, 631);
-            this.btnCancell.Name = "btnCancell";
-            this.btnCancell.Size = new System.Drawing.Size(98, 37);
-            this.btnCancell.TabIndex = 34;
-            this.btnCancell.Text = "Cancelar";
-            this.btnCancell.UseVisualStyleBackColor = true;
-            // 
-            // btnAgregar
-            // 
-            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(961, 505);
-            this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(98, 37);
-            this.btnAgregar.TabIndex = 35;
-            this.btnAgregar.Text = "Agregar";
-            this.btnAgregar.UseVisualStyleBackColor = true;
-            // 
             // lblSelectDay
             // 
             this.lblSelectDay.AutoSize = true;
@@ -109,6 +148,33 @@
             this.lblSubjectList.TabIndex = 30;
             this.lblSubjectList.Text = "Seleccionar materia:";
             // 
+            // cmbSelectDay
+            // 
+            this.cmbSelectDay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelectDay.FormattingEnabled = true;
+            this.cmbSelectDay.Items.AddRange(new object[] {
+            "Lunes",
+            "Martes",
+            "Miércoles",
+            "Jueves",
+            "Viernes",
+            "Sábado"});
+            this.cmbSelectDay.Location = new System.Drawing.Point(531, 162);
+            this.cmbSelectDay.Name = "cmbSelectDay";
+            this.cmbSelectDay.Size = new System.Drawing.Size(215, 29);
+            this.cmbSelectDay.TabIndex = 24;
+            this.cmbSelectDay.Text = "Seleccionar";
+            // 
+            // cmbSelectSubject
+            // 
+            this.cmbSelectSubject.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelectSubject.FormattingEnabled = true;
+            this.cmbSelectSubject.Location = new System.Drawing.Point(531, 90);
+            this.cmbSelectSubject.Name = "cmbSelectSubject";
+            this.cmbSelectSubject.Size = new System.Drawing.Size(215, 29);
+            this.cmbSelectSubject.TabIndex = 24;
+            this.cmbSelectSubject.Text = "Seleccionar";
+            // 
             // cmbGetCareerList
             // 
             this.cmbGetCareerList.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -117,6 +183,8 @@
             this.cmbGetCareerList.Name = "cmbGetCareerList";
             this.cmbGetCareerList.Size = new System.Drawing.Size(215, 29);
             this.cmbGetCareerList.TabIndex = 24;
+            this.cmbGetCareerList.Text = "Seleccionar";
+            this.cmbGetCareerList.SelectedValueChanged += new System.EventHandler(this.cmbGetCareerList_SelectedValueChanged);
             // 
             // lblNombre
             // 
@@ -127,6 +195,27 @@
             this.lblNombre.Size = new System.Drawing.Size(165, 21);
             this.lblNombre.TabIndex = 23;
             this.lblNombre.Text = "Seleccionar carrera:";
+            // 
+            // btnCancell
+            // 
+            this.btnCancell.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancell.Location = new System.Drawing.Point(961, 631);
+            this.btnCancell.Name = "btnCancell";
+            this.btnCancell.Size = new System.Drawing.Size(98, 37);
+            this.btnCancell.TabIndex = 34;
+            this.btnCancell.Text = "Cancelar";
+            this.btnCancell.UseVisualStyleBackColor = true;
+            // 
+            // btnAgregar
+            // 
+            this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Location = new System.Drawing.Point(961, 498);
+            this.btnAgregar.Name = "btnAgregar";
+            this.btnAgregar.Size = new System.Drawing.Size(98, 37);
+            this.btnAgregar.TabIndex = 35;
+            this.btnAgregar.Text = "Agregar";
+            this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // btnReturnToMainForm
             // 
@@ -148,31 +237,6 @@
             this.imgLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.imgLogo.TabIndex = 29;
             this.imgLogo.TabStop = false;
-            // 
-            // cmbSelectSubject
-            // 
-            this.cmbSelectSubject.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSelectSubject.FormattingEnabled = true;
-            this.cmbSelectSubject.Location = new System.Drawing.Point(531, 90);
-            this.cmbSelectSubject.Name = "cmbSelectSubject";
-            this.cmbSelectSubject.Size = new System.Drawing.Size(215, 29);
-            this.cmbSelectSubject.TabIndex = 24;
-            // 
-            // cmbSelectDay
-            // 
-            this.cmbSelectDay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSelectDay.FormattingEnabled = true;
-            this.cmbSelectDay.Items.AddRange(new object[] {
-            "Lunes",
-            "Martes",
-            "Miércoles",
-            "Jueves",
-            "Viernes",
-            "Sábado"});
-            this.cmbSelectDay.Location = new System.Drawing.Point(531, 162);
-            this.cmbSelectDay.Name = "cmbSelectDay";
-            this.cmbSelectDay.Size = new System.Drawing.Size(215, 29);
-            this.cmbSelectDay.TabIndex = 24;
             // 
             // groupBox2
             // 
@@ -429,6 +493,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AgregarHorario";
             this.Text = "AgregarHorario";
+            this.Load += new System.EventHandler(this.AgregarHorario_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).EndInit();
