@@ -84,9 +84,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
         private void InitializeComponent() {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AgregarHorario));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.lblSelectDay = new System.Windows.Forms.Label();
             this.lblSubjectList = new System.Windows.Forms.Label();
-            this.cmbSelectDay = new System.Windows.Forms.ComboBox();
             this.cmbSelectSubject = new System.Windows.Forms.ComboBox();
             this.cmbGetCareerList = new System.Windows.Forms.ComboBox();
             this.lblNombre = new System.Windows.Forms.Label();
@@ -97,17 +95,21 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.label2 = new System.Windows.Forms.Label();
             this.lblSecondSurname = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmbGetSecondMinuteA = new System.Windows.Forms.ComboBox();
+            this.cmbGetSecondHourA = new System.Windows.Forms.ComboBox();
+            this.cmbGetFirstMinuteA = new System.Windows.Forms.ComboBox();
+            this.cmbGetFirstHourA = new System.Windows.Forms.ComboBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.comboBox6 = new System.Windows.Forms.ComboBox();
-            this.comboBox7 = new System.Windows.Forms.ComboBox();
-            this.comboBox8 = new System.Windows.Forms.ComboBox();
+            this.cmbGetSecondMinuteB = new System.Windows.Forms.ComboBox();
+            this.cmbGetSecondHourB = new System.Windows.Forms.ComboBox();
+            this.cmbGetFirstMinuteB = new System.Windows.Forms.ComboBox();
+            this.cmbGetFirstHourB = new System.Windows.Forms.ComboBox();
+            this.lblSelectDay = new System.Windows.Forms.Label();
+            this.cmbSelectFirstDay = new System.Windows.Forms.ComboBox();
+            this.cmbSelectSecondDay = new System.Windows.Forms.ComboBox();
+            this.label4 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imgLogo)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -116,27 +118,15 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.lblSelectDay);
             this.groupBox1.Controls.Add(this.lblSubjectList);
-            this.groupBox1.Controls.Add(this.cmbSelectDay);
             this.groupBox1.Controls.Add(this.cmbSelectSubject);
             this.groupBox1.Controls.Add(this.cmbGetCareerList);
             this.groupBox1.Controls.Add(this.lblNombre);
-            this.groupBox1.Location = new System.Drawing.Point(152, 18);
+            this.groupBox1.Location = new System.Drawing.Point(152, 12);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(790, 217);
+            this.groupBox1.Size = new System.Drawing.Size(790, 145);
             this.groupBox1.TabIndex = 30;
             this.groupBox1.TabStop = false;
-            // 
-            // lblSelectDay
-            // 
-            this.lblSelectDay.AutoSize = true;
-            this.lblSelectDay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSelectDay.Location = new System.Drawing.Point(49, 170);
-            this.lblSelectDay.Name = "lblSelectDay";
-            this.lblSelectDay.Size = new System.Drawing.Size(133, 21);
-            this.lblSelectDay.TabIndex = 29;
-            this.lblSelectDay.Text = "Seleccionar día:";
             // 
             // lblSubjectList
             // 
@@ -147,23 +137,6 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             this.lblSubjectList.Size = new System.Drawing.Size(170, 21);
             this.lblSubjectList.TabIndex = 30;
             this.lblSubjectList.Text = "Seleccionar materia:";
-            // 
-            // cmbSelectDay
-            // 
-            this.cmbSelectDay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbSelectDay.FormattingEnabled = true;
-            this.cmbSelectDay.Items.AddRange(new object[] {
-            "Lunes",
-            "Martes",
-            "Miércoles",
-            "Jueves",
-            "Viernes",
-            "Sábado"});
-            this.cmbSelectDay.Location = new System.Drawing.Point(531, 162);
-            this.cmbSelectDay.Name = "cmbSelectDay";
-            this.cmbSelectDay.Size = new System.Drawing.Size(215, 29);
-            this.cmbSelectDay.TabIndex = 24;
-            this.cmbSelectDay.Text = "Seleccionar";
             // 
             // cmbSelectSubject
             // 
@@ -199,7 +172,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             // btnCancell
             // 
             this.btnCancell.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancell.Location = new System.Drawing.Point(961, 631);
+            this.btnCancell.Location = new System.Drawing.Point(663, 631);
             this.btnCancell.Name = "btnCancell";
             this.btnCancell.Size = new System.Drawing.Size(98, 37);
             this.btnCancell.TabIndex = 34;
@@ -209,7 +182,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             // btnAgregar
             // 
             this.btnAgregar.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAgregar.Location = new System.Drawing.Point(961, 498);
+            this.btnAgregar.Location = new System.Drawing.Point(321, 631);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(98, 37);
             this.btnAgregar.TabIndex = 35;
@@ -240,16 +213,18 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.lblSelectDay);
+            this.groupBox2.Controls.Add(this.cmbSelectFirstDay);
             this.groupBox2.Controls.Add(this.label2);
             this.groupBox2.Controls.Add(this.lblSecondSurname);
-            this.groupBox2.Controls.Add(this.comboBox4);
-            this.groupBox2.Controls.Add(this.comboBox3);
-            this.groupBox2.Controls.Add(this.comboBox2);
-            this.groupBox2.Controls.Add(this.comboBox1);
+            this.groupBox2.Controls.Add(this.cmbGetSecondMinuteA);
+            this.groupBox2.Controls.Add(this.cmbGetSecondHourA);
+            this.groupBox2.Controls.Add(this.cmbGetFirstMinuteA);
+            this.groupBox2.Controls.Add(this.cmbGetFirstHourA);
             this.groupBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(152, 268);
+            this.groupBox2.Location = new System.Drawing.Point(152, 183);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(790, 182);
+            this.groupBox2.Size = new System.Drawing.Size(790, 207);
             this.groupBox2.TabIndex = 36;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Primer horario";
@@ -258,7 +233,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(49, 111);
+            this.label2.Location = new System.Drawing.Point(49, 156);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(98, 21);
             this.label2.TabIndex = 34;
@@ -268,31 +243,31 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             // 
             this.lblSecondSurname.AutoSize = true;
             this.lblSecondSurname.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSecondSurname.Location = new System.Drawing.Point(49, 56);
+            this.lblSecondSurname.Location = new System.Drawing.Point(49, 101);
             this.lblSecondSurname.Name = "lblSecondSurname";
             this.lblSecondSurname.Size = new System.Drawing.Size(116, 21);
             this.lblSecondSurname.TabIndex = 35;
             this.lblSecondSurname.Text = "Hora de inico:";
             // 
-            // comboBox4
+            // cmbGetSecondMinuteA
             // 
-            this.comboBox4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cmbGetSecondMinuteA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetSecondMinuteA.FormattingEnabled = true;
+            this.cmbGetSecondMinuteA.Items.AddRange(new object[] {
             "00",
             "15",
             "30",
             "45"});
-            this.comboBox4.Location = new System.Drawing.Point(668, 108);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(78, 29);
-            this.comboBox4.TabIndex = 29;
+            this.cmbGetSecondMinuteA.Location = new System.Drawing.Point(668, 153);
+            this.cmbGetSecondMinuteA.Name = "cmbGetSecondMinuteA";
+            this.cmbGetSecondMinuteA.Size = new System.Drawing.Size(78, 29);
+            this.cmbGetSecondMinuteA.TabIndex = 29;
             // 
-            // comboBox3
+            // cmbGetSecondHourA
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cmbGetSecondHourA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetSecondHourA.FormattingEnabled = true;
+            this.cmbGetSecondHourA.Items.AddRange(new object[] {
             "4",
             "5",
             "6",
@@ -311,30 +286,30 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             "19",
             "20",
             "21"});
-            this.comboBox3.Location = new System.Drawing.Point(531, 108);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(78, 29);
-            this.comboBox3.TabIndex = 30;
+            this.cmbGetSecondHourA.Location = new System.Drawing.Point(531, 153);
+            this.cmbGetSecondHourA.Name = "cmbGetSecondHourA";
+            this.cmbGetSecondHourA.Size = new System.Drawing.Size(78, 29);
+            this.cmbGetSecondHourA.TabIndex = 30;
             // 
-            // comboBox2
+            // cmbGetFirstMinuteA
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cmbGetFirstMinuteA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetFirstMinuteA.FormattingEnabled = true;
+            this.cmbGetFirstMinuteA.Items.AddRange(new object[] {
             "00",
             "15",
             "30",
             "45"});
-            this.comboBox2.Location = new System.Drawing.Point(668, 53);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(78, 29);
-            this.comboBox2.TabIndex = 31;
+            this.cmbGetFirstMinuteA.Location = new System.Drawing.Point(668, 98);
+            this.cmbGetFirstMinuteA.Name = "cmbGetFirstMinuteA";
+            this.cmbGetFirstMinuteA.Size = new System.Drawing.Size(78, 29);
+            this.cmbGetFirstMinuteA.TabIndex = 31;
             // 
-            // comboBox1
+            // cmbGetFirstHourA
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cmbGetFirstHourA.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetFirstHourA.FormattingEnabled = true;
+            this.cmbGetFirstHourA.Items.AddRange(new object[] {
             "4",
             "5",
             "6",
@@ -353,23 +328,25 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             "19",
             "20",
             "21"});
-            this.comboBox1.Location = new System.Drawing.Point(531, 53);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(78, 29);
-            this.comboBox1.TabIndex = 32;
+            this.cmbGetFirstHourA.Location = new System.Drawing.Point(531, 98);
+            this.cmbGetFirstHourA.Name = "cmbGetFirstHourA";
+            this.cmbGetFirstHourA.Size = new System.Drawing.Size(78, 29);
+            this.cmbGetFirstHourA.TabIndex = 32;
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.cmbSelectSecondDay);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.comboBox5);
-            this.groupBox3.Controls.Add(this.comboBox6);
-            this.groupBox3.Controls.Add(this.comboBox7);
-            this.groupBox3.Controls.Add(this.comboBox8);
+            this.groupBox3.Controls.Add(this.cmbGetSecondMinuteB);
+            this.groupBox3.Controls.Add(this.cmbGetSecondHourB);
+            this.groupBox3.Controls.Add(this.cmbGetFirstMinuteB);
+            this.groupBox3.Controls.Add(this.cmbGetFirstHourB);
             this.groupBox3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(152, 489);
+            this.groupBox3.Location = new System.Drawing.Point(152, 413);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(790, 179);
+            this.groupBox3.Size = new System.Drawing.Size(790, 202);
             this.groupBox3.TabIndex = 36;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Segundo horario";
@@ -378,7 +355,7 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(49, 114);
+            this.label1.Location = new System.Drawing.Point(49, 153);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(98, 21);
             this.label1.TabIndex = 34;
@@ -388,31 +365,31 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(49, 59);
+            this.label3.Location = new System.Drawing.Point(49, 98);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(116, 21);
             this.label3.TabIndex = 35;
             this.label3.Text = "Hora de inico:";
             // 
-            // comboBox5
+            // cmbGetSecondMinuteB
             // 
-            this.comboBox5.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
+            this.cmbGetSecondMinuteB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetSecondMinuteB.FormattingEnabled = true;
+            this.cmbGetSecondMinuteB.Items.AddRange(new object[] {
             "00",
             "15",
             "30",
             "45"});
-            this.comboBox5.Location = new System.Drawing.Point(668, 111);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(78, 29);
-            this.comboBox5.TabIndex = 29;
+            this.cmbGetSecondMinuteB.Location = new System.Drawing.Point(668, 150);
+            this.cmbGetSecondMinuteB.Name = "cmbGetSecondMinuteB";
+            this.cmbGetSecondMinuteB.Size = new System.Drawing.Size(78, 29);
+            this.cmbGetSecondMinuteB.TabIndex = 29;
             // 
-            // comboBox6
+            // cmbGetSecondHourB
             // 
-            this.comboBox6.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox6.FormattingEnabled = true;
-            this.comboBox6.Items.AddRange(new object[] {
+            this.cmbGetSecondHourB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetSecondHourB.FormattingEnabled = true;
+            this.cmbGetSecondHourB.Items.AddRange(new object[] {
             "4",
             "5",
             "6",
@@ -431,30 +408,30 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             "19",
             "20",
             "21"});
-            this.comboBox6.Location = new System.Drawing.Point(531, 111);
-            this.comboBox6.Name = "comboBox6";
-            this.comboBox6.Size = new System.Drawing.Size(78, 29);
-            this.comboBox6.TabIndex = 30;
+            this.cmbGetSecondHourB.Location = new System.Drawing.Point(531, 150);
+            this.cmbGetSecondHourB.Name = "cmbGetSecondHourB";
+            this.cmbGetSecondHourB.Size = new System.Drawing.Size(78, 29);
+            this.cmbGetSecondHourB.TabIndex = 30;
             // 
-            // comboBox7
+            // cmbGetFirstMinuteB
             // 
-            this.comboBox7.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox7.FormattingEnabled = true;
-            this.comboBox7.Items.AddRange(new object[] {
+            this.cmbGetFirstMinuteB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetFirstMinuteB.FormattingEnabled = true;
+            this.cmbGetFirstMinuteB.Items.AddRange(new object[] {
             "00",
             "15",
             "30",
             "45"});
-            this.comboBox7.Location = new System.Drawing.Point(668, 56);
-            this.comboBox7.Name = "comboBox7";
-            this.comboBox7.Size = new System.Drawing.Size(78, 29);
-            this.comboBox7.TabIndex = 31;
+            this.cmbGetFirstMinuteB.Location = new System.Drawing.Point(668, 95);
+            this.cmbGetFirstMinuteB.Name = "cmbGetFirstMinuteB";
+            this.cmbGetFirstMinuteB.Size = new System.Drawing.Size(78, 29);
+            this.cmbGetFirstMinuteB.TabIndex = 31;
             // 
-            // comboBox8
+            // cmbGetFirstHourB
             // 
-            this.comboBox8.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox8.FormattingEnabled = true;
-            this.comboBox8.Items.AddRange(new object[] {
+            this.cmbGetFirstHourB.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbGetFirstHourB.FormattingEnabled = true;
+            this.cmbGetFirstHourB.Items.AddRange(new object[] {
             "4",
             "5",
             "6",
@@ -473,10 +450,64 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
             "19",
             "20",
             "21"});
-            this.comboBox8.Location = new System.Drawing.Point(531, 56);
-            this.comboBox8.Name = "comboBox8";
-            this.comboBox8.Size = new System.Drawing.Size(78, 29);
-            this.comboBox8.TabIndex = 32;
+            this.cmbGetFirstHourB.Location = new System.Drawing.Point(531, 95);
+            this.cmbGetFirstHourB.Name = "cmbGetFirstHourB";
+            this.cmbGetFirstHourB.Size = new System.Drawing.Size(78, 29);
+            this.cmbGetFirstHourB.TabIndex = 32;
+            // 
+            // lblSelectDay
+            // 
+            this.lblSelectDay.AutoSize = true;
+            this.lblSelectDay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSelectDay.Location = new System.Drawing.Point(49, 43);
+            this.lblSelectDay.Name = "lblSelectDay";
+            this.lblSelectDay.Size = new System.Drawing.Size(133, 21);
+            this.lblSelectDay.TabIndex = 37;
+            this.lblSelectDay.Text = "Seleccionar día:";
+            // 
+            // cmbSelectFirstDay
+            // 
+            this.cmbSelectFirstDay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelectFirstDay.FormattingEnabled = true;
+            this.cmbSelectFirstDay.Items.AddRange(new object[] {
+            "Lunes",
+            "Martes",
+            "Miércoles",
+            "Jueves",
+            "Viernes",
+            "Sábado"});
+            this.cmbSelectFirstDay.Location = new System.Drawing.Point(531, 35);
+            this.cmbSelectFirstDay.Name = "cmbSelectFirstDay";
+            this.cmbSelectFirstDay.Size = new System.Drawing.Size(215, 29);
+            this.cmbSelectFirstDay.TabIndex = 36;
+            this.cmbSelectFirstDay.Text = "Seleccionar";
+            // 
+            // cmbSelectSecondDay
+            // 
+            this.cmbSelectSecondDay.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbSelectSecondDay.FormattingEnabled = true;
+            this.cmbSelectSecondDay.Items.AddRange(new object[] {
+            "Lunes",
+            "Martes",
+            "Miércoles",
+            "Jueves",
+            "Viernes",
+            "Sábado"});
+            this.cmbSelectSecondDay.Location = new System.Drawing.Point(531, 38);
+            this.cmbSelectSecondDay.Name = "cmbSelectSecondDay";
+            this.cmbSelectSecondDay.Size = new System.Drawing.Size(215, 29);
+            this.cmbSelectSecondDay.TabIndex = 36;
+            this.cmbSelectSecondDay.Text = "Seleccionar";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(49, 46);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(133, 21);
+            this.label4.TabIndex = 37;
+            this.label4.Text = "Seleccionar día:";
             // 
             // AgregarHorario
             // 
@@ -510,27 +541,29 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnCancell;
         private System.Windows.Forms.Button btnAgregar;
-        private System.Windows.Forms.Label lblSelectDay;
         private System.Windows.Forms.Label lblSubjectList;
         private System.Windows.Forms.ComboBox cmbGetCareerList;
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.PictureBox imgLogo;
         private System.Windows.Forms.Button btnReturnToMainForm;
         private System.Windows.Forms.ComboBox cmbSelectSubject;
-        private System.Windows.Forms.ComboBox cmbSelectDay;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblSecondSurname;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmbGetSecondMinuteA;
+        private System.Windows.Forms.ComboBox cmbGetSecondHourA;
+        private System.Windows.Forms.ComboBox cmbGetFirstMinuteA;
+        private System.Windows.Forms.ComboBox cmbGetFirstHourA;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.ComboBox comboBox6;
-        private System.Windows.Forms.ComboBox comboBox7;
-        private System.Windows.Forms.ComboBox comboBox8;
+        private System.Windows.Forms.ComboBox cmbGetSecondMinuteB;
+        private System.Windows.Forms.ComboBox cmbGetSecondHourB;
+        private System.Windows.Forms.ComboBox cmbGetFirstMinuteB;
+        private System.Windows.Forms.ComboBox cmbGetFirstHourB;
+        private Label lblSelectDay;
+        private ComboBox cmbSelectFirstDay;
+        private Label label4;
+        private ComboBox cmbSelectSecondDay;
     }
 }

@@ -27,7 +27,37 @@ namespace SistemaUniversidad.DISEÑO.Administrador.Horarios {
         }
 
         private void btnAgregar_Click(object sender, EventArgs e) {
-            //
+            if(cmbGetCareerList.Text != "Seleccionar") {
+                
+                if(cmbSelectSubject.Text != "Seleccionar") {
+                    
+                    if(cmbSelectFirstDay.Text != "Seleccionar" && cmbSelectSecondDay.Text != "Seleccionar") {
+
+                        if(cmbGetFirstHourA.Text != "" && cmbGetFirstMinuteA.Text != "" && cmbGetSecondHourA.Text != "" && cmbGetSecondMinuteA.Text != "") {
+                            
+                            if(cmbGetFirstHourB.Text != "" && cmbGetFirstMinuteB.Text != "" && cmbGetSecondHourB.Text != "" && cmbGetSecondMinuteB.Text != "") {
+
+                                //
+
+                            } else {
+                                MessageBox.Show("Seleccione el horario correctamente");
+                            }else {
+                                MessageBox.Show("Seleccione el horario correctamente");
+                            }
+
+                        }
+
+                    } else {
+                        MessageBox.Show("Seleccione los días");
+                    }
+
+                } else {
+                    MessageBox.Show("Seleccione una materia");
+                }
+
+            } else {
+                MessageBox.Show("Seleccione una carrera");
+            }
         }
     }
 }
